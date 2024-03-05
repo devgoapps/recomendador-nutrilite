@@ -1,0 +1,102 @@
+<div>
+
+    <img src="assets/img/headerResult1.png" draggable="false" style="width: 100%;" alt="">
+
+    <div class="container" style="padding-bottom: 2rem;">
+        <div class="name-section">
+            <div class="cart-name">
+                @if (clientName) {
+                    <span class="g-title">¡Hola, {{ clientName }}!</span>
+                } @else {
+                    <span class="g-title">Contesta el questionario</span>
+                }
+            </div>
+    
+            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a las respuesta a la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino hacia el bienestar.</span>
+        </div>
+    </div>
+
+    <img src="assets/img/headerResult2.png" draggable="false" style="width: 100%;" alt="">
+    <div class="vertical-line">
+        <span></span>
+    </div>
+    
+    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="row">
+            @for (product of recommendedProducts; track $index) {
+                <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
+                    <div class="cart-product">
+                        <img [src]="product.img" draggable="false" alt="">
+                        <div>
+                            <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
+                            <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
+                            <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                            <button class="primary-btn g-text-sm" style="margin: 0;">
+                                Comprar ahora
+                            </button>
+                            <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
+                        </div>
+                    </div>
+                </div>
+            } @empty {
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <span class="g-subtitle text-center mb-4">Lo sentimos, no tenemos ninguna recomendación de productos aquí, debido a algunas de tus respuestas</span>
+                    <button class="primary-btn g-subtitle" (click)="startQuestionnaire()"  style="margin: 0;">
+                        Comenzar cuestionario
+                    </button>
+                </div>
+            }
+        </div>
+
+        @if (recommendedProducts && recommendedProducts.length > 0) {
+            <p class="g-text text-center green" style="cursor: pointer;">Explora más productos</p>
+        }
+    </div>
+
+    <img src="assets/img/headerResult3.png" draggable="false" style="width: 100%;" alt="">
+    <div class="vertical-line">
+        <span></span>
+    </div>
+
+    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="cart-recommendation">
+                    <img src="assets/img/cart1.png" draggable="false" alt="">
+                    <div class="recommendation-body">
+                        <span class="g-text" style="margin-bottom: .5rem;"><b>Consume grasas saludables</b></span>
+                        <span class="g-text-sm" style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis obcaecati odit ducimus harum velit omnis, aut excepturi unde enim, vel natus totam error rem dolore placeat sit expedita eligendi aspernatur.</span>
+                        
+                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div  class="cart-recommendation">
+                    <img src="assets/img/cart2.png" draggable="false" alt="">
+                    <div class="recommendation-body">
+                        <span class="g-text" style="margin-bottom: .5rem;"><b>Sal al aire libre</b></span>
+                        <span class="g-text-sm" style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis obcaecati odit ducimus harum velit omnis, aut excepturi unde enim, vel natus totam error rem dolore placeat sit expedita eligendi aspernatur.</span>
+                        
+                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div  class="cart-recommendation">
+                    <img src="assets/img/cart3.png" draggable="false" alt="">
+                    <div class="recommendation-body">
+                        <span class="g-text" style="margin-bottom: .5rem;"><b>Escucha música</b></span>
+                        <span class="g-text-sm" style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis obcaecati odit ducimus harum velit omnis, aut excepturi unde enim, vel natus totam error rem dolore placeat sit expedita eligendi aspernatur.</span>
+                        
+                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<app-footer></app-footer>

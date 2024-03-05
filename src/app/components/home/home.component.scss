@@ -1,0 +1,15 @@
+.home-section {
+    width: 100%; 
+    height: 80%; 
+    display: flex; 
+    align-items: center; 
+    background-image: url('/assets/img/headerHome.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+
+.home-cart {
+    width: 30%; 
+    padding: 2rem;
+}

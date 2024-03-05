@@ -1,0 +1,100 @@
+
+.how-does-it-work {
+    height: calc(100% - 70px); 
+    display: flex;
+    flex-direction: column;
+}
+
+.header-how-work {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column; 
+    height: 35%; 
+    background: #f2f2f2;
+    text-align: center;
+
+}
+
+.body-how-work {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 55%; 
+    padding: 4rem 2rem 0;
+    overflow-y: auto;
+}
+
+.c-list {
+    display: flex;
+    align-items: center;
+
+    img {
+        flex-basis: 80px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
+
+
+// extra Small devices (smartphones, 576px and down)
+@media (min-width: 250px) and (max-width: 374px) { 
+    .c-list {
+        img {
+            flex-basis: 40px;
+        }
+    }
+}
+
+
+// Small devices (smartphones, 576px and down)
+@media (min-width: 375px) and (max-width: 576px) { 
+    .c-list {
+        img {
+            flex-basis: 50px;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and down)
+@media (min-width: 577px) and (max-width: 768px) {
+    .c-list {
+        img {
+            flex-basis: 60px;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and dpwn)
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .c-list {
+        img {
+            flex-basis: 60px;
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1399px and down)
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .c-list {
+        img {
+            flex-basis: 60px;
+        }
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1799px) {
+    .c-list {
+        img {
+            flex-basis: 60px;
+        }
+    }
+}
+
+@media (min-width: 1800px) {
+    
+}
+
+

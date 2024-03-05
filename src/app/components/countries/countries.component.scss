@@ -1,0 +1,66 @@
+
+
+.buy {
+    background: #F4F4F4; 
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.country-img {
+    width: 60%; 
+    margin: 2rem; 
+    cursor: pointer;
+}
+
+
+
+.country-flags {
+    padding: 2rem; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.custom-row {
+    width: 70%;
+}
+
+
+// extra Small devices (smartphones, 576px and down)
+@media (min-width: 250px) and (max-width: 374px) { 
+    .country-img {
+        width: 75%; 
+        margin-bottom: 2rem;
+    }
+}
+
+
+// Small devices (smartphones, 576px and down)
+@media (min-width: 375px) and (max-width: 576px) { 
+    .country-img {
+        width: 75%; 
+        margin-bottom: 2rem;
+    }
+}
+
+// Medium devices (tablets, 768px and down)
+@media (min-width: 577px) and (max-width: 768px) {
+    .country-img {
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+@media (min-width: 1600px) {
+    .custom-row {
+        width: 70%;
+    }
+}

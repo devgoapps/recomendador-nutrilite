@@ -1,0 +1,160 @@
+
+
+.name-section {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    position: relative;
+}
+
+
+.cart-name {
+    border: 1px solid #ccc; 
+    width: 50%; 
+    height: 200px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 0 15px 2px #eee;
+    position: absolute;
+    top: -15%;
+    background-color: #fff;
+}
+
+.cart-product {
+    padding: 1rem; 
+    border: 1px solid #ccc; 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    border-radius: 10px;
+    height: 100%;
+
+    img {
+        width: 120px; 
+        flex-grow: 0; 
+        flex-shrink: 0;
+    }
+}
+
+.cart-recommendation {
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    margin-bottom: 1rem;
+
+    img { 
+        width: 100%;
+    }
+
+    .recommendation-body {
+        display: flex; 
+        flex-direction: column; 
+        padding: 1rem;
+    }
+}
+
+.vertical-line {
+    text-align: center;
+
+    span {
+        display: inline-block;
+        width: 3px;
+        height: 50px;
+        background-color: green;
+    }
+}
+
+
+.green-link {
+    color: green; 
+    margin-top: 2rem; 
+    display: block; 
+    font-weight: 600; 
+    cursor: pointer;
+}
+
+
+// extra Small devices (smartphones, 576px and down)
+@media (min-width: 250px) and (max-width: 374px) { 
+    .cart-name {
+        width: 70%; 
+        height: 130px;
+    }
+    
+    .cart-product {
+        img {
+            width: 100px; 
+        }
+    }
+}
+
+
+// Small devices (smartphones, 576px and down)
+@media (min-width: 375px) and (max-width: 576px) { 
+    .cart-name {
+        width: 70%; 
+        height: 130px;
+    }
+    
+    .cart-product {
+        img {
+            width: 100px; 
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and down)
+@media (min-width: 577px) and (max-width: 768px) {
+    .cart-name {
+        width: 50%; 
+        height: 150px;
+    }
+    
+    .cart-product {
+        img {
+            width: 100px; 
+        }
+    }
+}
+
+// Large devices (desktops, 992px and dpwn)
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .cart-name {
+        width: 35%; 
+        height: 165px;
+    }
+    
+    .cart-product {
+        img {
+            width: 100px; 
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1399px and down)
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .cart-name {
+        width: 35%; 
+        height: 165px;
+    }
+    
+    .cart-product {
+        img {
+            width: 100px; 
+        }
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1799px) {
+    .cart-name {
+        width: 35%; 
+        height: 180px;
+    }
+}
+
+@media (min-width: 1800px) {
+    
+}
+

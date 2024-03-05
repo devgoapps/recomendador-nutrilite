@@ -1,0 +1,18 @@
+<div class="navbar">
+    <span class="g-text" [routerLink]="['/home']" style="cursor: pointer;">Recomendador de Bienestar de Nutrilite™</span>
+
+    <div class="dropdown dropstart" >
+        <button type="button" class="toggle-btn" id="toggleMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+    
+        <div class="dropdown-menu" id="toggleDropdown" aria-labelledby="toggleMenu">
+            <a (click)="closeSubMenu2()" [routerLink]="['/home']" routerLinkActive="active-route" class="dropdown-item g-text" href="javascript:void(0)">Inicio</a>
+            <a (click)="closeSubMenu2()" [routerLink]="['/start-questionnaire']" routerLinkActive="active-route" class="dropdown-item g-text" href="javascript:void(0)">Recomendador</a>
+            <a (click)="closeSubMenu2()" [routerLink]="['/countries']" routerLinkActive="active-route" class="dropdown-item g-text" href="javascript:void(0)">Comprar</a>
+        </div>
+    </div>
+
+</div>

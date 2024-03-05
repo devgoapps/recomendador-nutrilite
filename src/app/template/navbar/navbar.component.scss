@@ -1,0 +1,59 @@
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    padding: 0 1rem;
+}
+
+.toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    background: #fff;
+    color: #222;
+    border: none;
+    outline: none;
+
+    &:active {
+        background: rgba(250, 250, 250, .8);
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 2px;
+        background-color: #222;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+}
+
+
+.dropdown-menu {
+    --bs-dropdown-link-active-color: #212529 !important;
+    --bs-dropdown-link-active-bg: #eee !important;
+
+    top: 70px !important;
+}
+
+.dropdown-item {
+    padding: .8rem 2rem;
+}
+
+/**
+.toggle-dropdown {
+    --bs-dropdown-link-active-color: #212529 !important;
+    --bs-dropdown-link-active-bg: #eee !important;
+    
+    transform: translate(-136px, 0px) !important;
+}
+*/
+
+.active-route {
+    background: #eee !important;
+}

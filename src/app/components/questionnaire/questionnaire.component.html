@@ -1,0 +1,76 @@
+
+
+<div class="questionnaire">
+
+    <div class="question">
+        <div class="container">
+            @if (questions[questionIndex]?.isMessage) {
+                <span class="g-title">¡Un placer conocerte, {{ questions[0]?.selected }}!</span>
+            } 
+            @else if (questions[questionIndex]?.isFinished) {
+                <img src="assets/img/flowers.jpg" draggable="false" class="g-img" alt=""><br>
+                <span class="g-title">{{ questions[questionIndex]?.question }}</span>
+            }
+            @else {
+                @if (questions[questionIndex]?.isInput) {
+                    <span class="g-text">¡Comencemos!</span><br>
+                }
+                <span class="g-title">{{ questions[questionIndex]?.question }}</span><br>
+                <span class="g-text">{{ questions[questionIndex]?.subQuestion }}</span>
+            }
+
+            <!--input [(ngModel)]="questionIndex" type="text" maxlength="50" placeholder="Indicanos tu nombre aquí" class="form-control" -->
+        </div>
+    </div>
+
+    <div class="container options">
+
+        @if (questions[questionIndex]?.isInput) {
+            <div class="form-group gw-30"  >
+                <label class="g-text required" >Nombre</label>
+                <input [(ngModel)]="questions[questionIndex].selected" type="text" maxlength="50" placeholder="Indicanos tu nombre aquí" class="form-control" [ngClass]="{ 'required-error': !questions[questionIndex]?.selected && questions[questionIndex]?.showRequired }">
+            </div>
+
+            @if (!questions[questionIndex]?.selected && questions[questionIndex]?.showRequired) {
+                <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu nombre</span>
+            }
+        } @else {
+            @for (option of questions[questionIndex]?.options; track $index) {
+                <div (click)="selectOption(questionIndex, option.value, questions[questionIndex]?.multi)" class="option-btn gw-30">
+                    <span [ngClass]="{ 'checkbox': questions[questionIndex]?.multi, 'radio': !questions[questionIndex]?.multi, 'active': isActive(questionIndex, option.value, questions[questionIndex]?.multi) }" ></span>
+                    <label class="g-text">{{ option.label }}</label>
+                </div>
+            }
+    
+            @if ((!questions[questionIndex]?.selected || questions[questionIndex]?.selected.length == 0) && questions[questionIndex]?.showRequired) {
+                <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa tu respuesta</span>
+            }
+        }
+
+
+        <div [innerHTML]="questions[questionIndex]?.footer" class="g-footer"></div>
+    </div>
+
+
+    <img src="assets/img/hoja.png" class="sheet-img" style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="">
+
+    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" ></div>
+
+    <div class="footer-btns">
+        <button (click)="prevQuestion()" class="g-text secondary-btn">
+            <i class="fa fa-chevron-left"></i> Regresar
+        </button>
+        @if(questions[questionIndex]?.isFinished){
+            <button (click)="showProducts()" class="g-text primary-btn">
+                Mis resultados <i class="fa fa-chevron-right"></i>
+            </button>
+        } @else {
+            <button (click)="nextQuestion()" class="g-text primary-btn">
+                Continuar <i class="fa fa-chevron-right"></i>
+            </button>
+        }
+
+    </div>
+
+</div>
+

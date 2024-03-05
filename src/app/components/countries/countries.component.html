@@ -1,0 +1,32 @@
+<div class="buy">
+
+
+    <img src="assets/img/Compras/Header.png" draggable="false" style="width: 100%;" alt="">
+
+    <div class="custom-container">
+
+        <div class="country-flags">
+
+            <h2 class="general-subtitle normal-text">Selecciona la bandera de tu país para poder empezar tu compra</h2>
+
+            <div class="row custom-row" >
+                @for (country of countries; track $index) {
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <img [src]="country.img" (click)="openLink(country.link)" draggable="false" class="country-img" alt="">
+                    </div>
+                }
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--div style="width: 100%; text-align: end;">
+        <button (click)="goTo()" class="go-to-top">
+            <img src="assets/imgs/Por_Que_Naturales/flecha.png" style="width: 40px;" alt="">
+        </button>
+    </div-->
+</div>
+
+
+<app-footer></app-footer>
