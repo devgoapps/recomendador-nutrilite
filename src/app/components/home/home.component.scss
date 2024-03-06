@@ -1,15 +1,16 @@
 .home-section {
-    width: 100%; 
-    height: 80%; 
-    display: flex; 
-    align-items: center; 
-    background-image: url('/assets/img/headerHome.png'); 
-    background-repeat: no-repeat; 
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
 
+
 .home-cart {
-    width: 30%; 
+    width: 30%;
     padding: 2rem;
 }
