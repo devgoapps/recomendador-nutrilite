@@ -500,31 +500,80 @@ export class QuestionnaireComponent implements OnInit {
     sessionStorage.setItem('clientName', this.questions[0].selected);
     sessionStorage.setItem('recommendedProducts', JSON.stringify(this.recommendedProducts));
 
-    this.router.navigate(['recommendations']);
-    //this.validateSpecialConditions();
+    this.validateSpecialConditions();
   }
 
   validateSpecialConditions(){
-    let mostRecommendedProduct = null;
-    let removeIndexes = [];
-    //console.warn([...this.recommendedProducts]);
+    console.warn([...this.recommendedProducts]);
+
+    let hasDaily1 = false;
+    let daily1Index = null;
+
+    let hasDailyPlus = false;
+    let dailyPlusIndex = null;
+
+    let hasDoubleX = false;
+    let doubleXIndex = null;
+
+    let bPlusIndex = null;
+    let multicarotenoIndex = null;
 
     for (let i = 0; i < this.recommendedProducts.length; i++) {
-      if(this.recommendedProducts[i].name == 'Double X' && !mostRecommendedProduct) {
-        mostRecommendedProduct = 'Double X';
-      }else if(this.recommendedProducts[i].name == 'Double X' && mostRecommendedProduct && mostRecommendedProduct != 'Double X'){
-        removeIndexes.push(i);
-      }else if((this.recommendedProducts[i].name.includes('Daily') || this.recommendedProducts[i].name == 'B Plus' || this.recommendedProducts[i].name == 'Multicaroteno') && !mostRecommendedProduct) {
-        mostRecommendedProduct = this.recommendedProducts[i].name;
-      }else if((this.recommendedProducts[i].name.includes('Daily') || this.recommendedProducts[i].name == 'B Plus' || this.recommendedProducts[i].name == 'Multicaroteno') && mostRecommendedProduct && mostRecommendedProduct == 'Double X'){
-        removeIndexes.push(i);
+      if(this.recommendedProducts[i].name == 'Daily Plus'){
+        hasDailyPlus = true;
+        dailyPlusIndex = i;
+      }else if(this.recommendedProducts[i].name.includes('Daily +1')){
+        hasDaily1 = true;
+        daily1Index = i;
+      }else if(this.recommendedProducts[i].name == 'Double X'){
+        hasDoubleX = true;
+        doubleXIndex = i;
+      }else if(this.recommendedProducts[i].name == 'B Plus'){
+        bPlusIndex = i;
+      }else if(this.recommendedProducts[i].name == 'Multicaroteno'){
+        multicarotenoIndex = i;
       }
     }
 
-    for (let j = 0; j < removeIndexes.length; j++) {
-      this.recommendedProducts.splice(removeIndexes[j], 1);
+    //console.log(hasDaily1, hasDailyPlus, hasDoubleX)
+    //console.log(daily1Index, dailyPlusIndex, doubleXIndex)
+
+    if(hasDailyPlus && hasDoubleX){
+      if(dailyPlusIndex && doubleXIndex && (dailyPlusIndex < doubleXIndex)) {
+        this.recommendedProducts[doubleXIndex] = null;
+
+        /*if(bPlusIndex)
+          this.recommendedProducts[bPlusIndex] == null;
+        if(multicarotenoIndex)
+          this.recommendedProducts[multicarotenoIndex] == null;*/
+      }else if(dailyPlusIndex && doubleXIndex && (dailyPlusIndex > doubleXIndex)) {
+        this.recommendedProducts[dailyPlusIndex] = null;
+      }
+    }else if(hasDaily1 && hasDoubleX){
+      if(doubleXIndex)
+        this.recommendedProducts[doubleXIndex] = null;
+
+      /*if(bPlusIndex)
+        this.recommendedProducts[bPlusIndex] == null;
+      if(multicarotenoIndex)
+        this.recommendedProducts[multicarotenoIndex] == null;*/
+    }else if(hasDoubleX && !hasDaily1 && !hasDailyPlus){
+      if(bPlusIndex)
+        this.recommendedProducts[bPlusIndex] = null;
+      if(multicarotenoIndex)
+        this.recommendedProducts[multicarotenoIndex] = null;
     }
-    //console.warn([...this.recommendedProducts]);
+
+    //console.log([...this.recommendedProducts]);
+
+    this.recommendedProducts = this.recommendedProducts.filter((product) => {
+      if(product != null) return product;
+    });
+
+  
+    console.warn([...this.recommendedProducts]);
+
+    //this.router.navigate(['recommendations']);
   }
 
   sortByCount(a: any, b: any){

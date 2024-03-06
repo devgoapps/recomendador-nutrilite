@@ -24,20 +24,22 @@
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="row">
             @for (product of recommendedProducts; track $index) {
-                <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
-                    <div class="cart-product">
-                        <img [src]="product.img" draggable="false" alt="">
-                        <div>
-                            <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
-                            <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
-                            <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                            <button class="primary-btn g-text-sm" style="margin: 0;">
-                                Comprar ahora
-                            </button>
-                            <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
+                @if(($index + 1) <= numberProducts) {
+                    <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
+                        <div class="cart-product">
+                            <img [src]="product.img" draggable="false" alt="">
+                            <div>
+                                <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
+                                <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
+                                <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                                <button class="primary-btn g-text-sm" style="margin: 0;">
+                                    Comprar ahora
+                                </button>
+                                <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             } @empty {
                 <div style="display: flex; align-items: center; flex-direction: column;">
                     <span class="g-subtitle text-center mb-4">Lo sentimos, no tenemos ninguna recomendación de productos aquí, debido a algunas de tus respuestas</span>
@@ -49,7 +51,11 @@
         </div>
 
         @if (recommendedProducts && recommendedProducts.length > 0) {
-            <p class="g-text text-center green" style="cursor: pointer;">Explora más productos</p>
+            @if (numberProducts == 6) {
+                <p  (click)="numberProducts = 20;" class="g-text text-center green" style="cursor: pointer;">Explora más productos</p>
+            }@else {
+                <p  (click)="numberProducts = 6;" class="g-text text-center green" style="cursor: pointer;">Mostrar menos productos</p>
+            }
         }
     </div>
 
@@ -96,6 +102,71 @@
         </div>
 
     </div>
+
+    <img src="assets/img/headerResult4.png" draggable="false" style="width: 100%;" alt="">
+    <div class="vertical-line">
+        <span></span>
+    </div>
+
+
+
+    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+
+
+        <div style="margin-bottom: 3rem;">
+            <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: green;">NUTRILITE™</b> y nuestros productos?</span>
+            <span (click)="startQuestionnaire()" class="g-text text-center" style="cursor: pointer; text-decoration: underline;">Contestar nuevamente la evaluación</span>
+        </div>
+
+
+        <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+            <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
+                <div class="form-group">
+                    <label class="g-text required" >Dirección de correo electrónico</label>
+                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" ></p-chips>
+
+                    @if (cSend['emails'].errors && isFormSubmitted) {
+                        @if (cSend['emails'].errors?.['required']) {
+                            <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        }
+                    }
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="g-text" >Nota adicional</label>
+                    <textarea formControlName="aditionalNote" rows="4" class="form-control"></textarea>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 1rem;">
+                        <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control" >
+                        
+                        <span class="g-text" style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid green; display: inline;">{{ captcha }}</span>
+                        
+                        <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text" style="margin: 0;">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+    
+                    @if (cSend['captcha'].errors && isFormSubmitted) {
+                        @if (cSend['captcha'].errors?.['required']) {
+                            <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        }
+                    }@else if (!captchaIsValid && isFormSubmitted) {
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
+                    }
+                </div>
+    
+               <div style="display: flex; justify-content: end;">
+                    <button class="primary-btn g-text" style="margin: 0;">
+                        Enviar <i class="fa-regular fa-envelope"></i>
+                    </button>
+               </div>
+            </form>
+        </div>
+    </div>
+
+
 </div>
 
 
