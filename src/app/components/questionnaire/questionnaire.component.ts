@@ -497,9 +497,6 @@ export class QuestionnaireComponent implements OnInit {
     this.recommendedProducts = this.recommendedProducts.sort(this.sortByCount);
     console.error([...this.recommendedProducts]);
 
-    sessionStorage.setItem('clientName', this.questions[0].selected);
-    sessionStorage.setItem('recommendedProducts', JSON.stringify(this.recommendedProducts));
-
     this.validateSpecialConditions();
   }
 
@@ -535,18 +532,18 @@ export class QuestionnaireComponent implements OnInit {
       }
     }
 
-    //console.log(hasDaily1, hasDailyPlus, hasDoubleX)
-    //console.log(daily1Index, dailyPlusIndex, doubleXIndex)
+    console.log(hasDaily1, hasDailyPlus, hasDoubleX)
+    console.log(daily1Index, dailyPlusIndex, doubleXIndex)
 
     if(hasDailyPlus && hasDoubleX){
-      if(dailyPlusIndex && doubleXIndex && (dailyPlusIndex < doubleXIndex)) {
+      if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex < doubleXIndex)) {
         this.recommendedProducts[doubleXIndex] = null;
 
         /*if(bPlusIndex)
           this.recommendedProducts[bPlusIndex] == null;
         if(multicarotenoIndex)
           this.recommendedProducts[multicarotenoIndex] == null;*/
-      }else if(dailyPlusIndex && doubleXIndex && (dailyPlusIndex > doubleXIndex)) {
+      }else if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex > doubleXIndex)) {
         this.recommendedProducts[dailyPlusIndex] = null;
       }
     }else if(hasDaily1 && hasDoubleX){
@@ -558,13 +555,13 @@ export class QuestionnaireComponent implements OnInit {
       if(multicarotenoIndex)
         this.recommendedProducts[multicarotenoIndex] == null;*/
     }else if(hasDoubleX && !hasDaily1 && !hasDailyPlus){
-      if(bPlusIndex)
+      if(bPlusIndex !== null)
         this.recommendedProducts[bPlusIndex] = null;
-      if(multicarotenoIndex)
+      if(multicarotenoIndex !== null)
         this.recommendedProducts[multicarotenoIndex] = null;
     }
 
-    //console.log([...this.recommendedProducts]);
+    console.log([...this.recommendedProducts]);
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
@@ -572,6 +569,9 @@ export class QuestionnaireComponent implements OnInit {
 
   
     console.warn([...this.recommendedProducts]);
+
+    sessionStorage.setItem('clientName', this.questions[0].selected);
+    sessionStorage.setItem('recommendedProducts', JSON.stringify(this.recommendedProducts));
 
     this.router.navigate(['recommendations']);
   }

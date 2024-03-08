@@ -60,6 +60,7 @@ export class RecommendationsComponent implements OnInit {
     this.makeCaptcha();
   }
 
+
   buildForm(){
     this.sendForm = this.fb.group({
       emails: [[], [Validators.required]],
