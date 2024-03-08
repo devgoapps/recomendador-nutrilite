@@ -148,6 +148,9 @@ label.required::after {
 
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
+    .g-title-xl {
+        font-size: 2rem;
+    } 
 
     .g-title-lg {
         font-size: 1.8rem;
@@ -193,6 +196,9 @@ label.required::after {
 
 // Small devices (smartphones, 576px and down)
 @media (min-width: 375px) and (max-width: 576px) { 
+    .g-title-xl {
+        font-size: 2.2rem;
+    } 
     .g-title-lg {
         font-size: 1.9rem;
     }
@@ -206,7 +212,7 @@ label.required::after {
     }
 
     .g-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .g-text-sm {
@@ -236,6 +242,9 @@ label.required::after {
 
 // Medium devices (tablets, 768px and down)
 @media (min-width: 577px) and (max-width: 768px) {
+    .g-title-xl {
+        font-size: 2.5rem;
+    } 
 
     .g-title-lg {
         font-size: 2.5rem;
@@ -280,7 +289,11 @@ label.required::after {
 }
 
 // Large devices (desktops, 992px and dpwn)
-@media (min-width: 769px) and (max-width: 1024px) { 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .g-title-xl {
+        font-size: 2.2rem;
+    } 
+
     .g-title-lg {
         font-size: 2.2rem;
     }
@@ -310,7 +323,9 @@ label.required::after {
 
 // X-Large devices (large desktops, 1399px and down)
 @media (min-width: 1025px) and (max-width: 1399px) {
-
+    .g-title-xl {
+        font-size: 2.5rem;
+    }
     .g-title-lg {
         font-size: 2.2rem;
     }
@@ -339,6 +354,10 @@ label.required::after {
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) and (max-width: 1799px) {
+    .g-title-xl {
+        font-size: 2.8rem;
+    }
+
     .g-title-lg {
         font-size: 2.5rem;
     }

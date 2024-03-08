@@ -58,20 +58,6 @@ export class RecommendationsComponent implements OnInit {
 
     this.buildForm();
     this.makeCaptcha();
-
-
-    Email.send({
-      Host: "smtp.gmail.com",
-      Username: "diego.hernandez.condor@gmail.com",
-      Password: "devmean5008",
-      To: 'diego.hernandez.condor@gmail.com',
-      From: "diego.hernandez.condor@gmail.com",
-      Subject: "Sending Email using javascript",
-      Body: "Well that was easy!!",
-    }).then(function (message: string) {
-      console.log(message)
-          alert("Mail has been sent successfully")
-    });
   }
 
   buildForm(){

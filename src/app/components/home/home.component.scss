@@ -6,11 +6,60 @@
     background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
-
 
 
 .home-cart {
     width: 30%;
     padding: 2rem;
 }
+
+
+
+
+// extra Small devices (smartphones, 576px and down)
+@media (min-width: 250px) and (max-width: 374px) { 
+    .home-cart {
+        width: 90%;
+    }
+}
+
+
+// Small devices (smartphones, 576px and down)
+@media (min-width: 375px) and (max-width: 576px) { 
+    .home-cart {
+        width: 90%;
+    }
+}
+
+// Medium devices (tablets, 768px and down)
+@media (min-width: 577px) and (max-width: 768px) {
+    .home-cart {
+        width: 60%;
+    }
+}
+
+// Large devices (desktops, 992px and dpwn)
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .home-cart {
+        width: 40%;
+    }
+}
+
+// X-Large devices (large desktops, 1399px and down)
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .home-cart {
+        width: 35%;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1799px) {
+    
+}
+
+@media (min-width: 1800px) {
+    
+}
+
