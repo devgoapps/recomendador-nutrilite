@@ -134,8 +134,8 @@ export class QuestionnaireComponent implements OnInit {
       selected: null,
       footer: ` <small class="gw-30 g-text-sm">
                   <b>Algunos ejemplos que te ayudarán a seleccionar la mejor respuesta de acuerdo a tu alimentación.</b><br><br>
-                  <b>Carbohidratos:</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br><br>
-                  <b>Proteína:</b> carne de res, pollo, pescado, mariscos, huevos, leche y derivados, leguminosas como frijol, guisantes y semillas como nueces, avellanas, piñones.<br><br>
+                  <b>Carbohidratos:</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br>
+                  <b>Proteína:</b> carne de res, pollo, pescado, mariscos, huevos, leche y derivados, leguminosas como frijol, guisantes y semillas como nueces, avellanas, piñones.<br>
                   <b>Grasas:</b> aceites, mantequilla, crema de leche, tocino, margarinas.
                 </small>
               `
@@ -573,7 +573,7 @@ export class QuestionnaireComponent implements OnInit {
   
     console.warn([...this.recommendedProducts]);
 
-    //this.router.navigate(['recommendations']);
+    this.router.navigate(['recommendations']);
   }
 
   sortByCount(a: any, b: any){
