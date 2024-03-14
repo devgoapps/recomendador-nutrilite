@@ -170,4 +170,48 @@
 </div>
 
 
+<div style="visibility: hidden; height: 0px; overflow-y: hidden;">
+    <div id="mail" style="display: flex; align-items: center; justify-content: center; background-color: #fff;">
+    
+        <div style="padding: 2rem;">
+            <h1 style="color: green; text-align: center; font-size: 3rem;">Tus recomendaciones de Nutrilite</h1>
+    
+            <p style="color: #444; font-size: 1.2rem;">Aqui estan tus recomendaciones de productos Nutrilite personalizadas según tu evaluación de suplementos recientemente completada.</p>
+    
+            <p style="color: #444; font-size: 1.2rem; margin-bottom: 2rem;"><b>Notas adicionales:</b> {{ vSend.aditionalNote }}</p>
+    
+            <div style="border: 1px solid #ccc; padding: 1rem;">
+                @for (product of recommendedProducts; track $index) {
+                    <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+                        <img src="https://res.cloudinary.com/dieggo/image/upload/v1710374599/tc9swrv4qyhrrx6zk0cp.png" draggable="false" style="width: 120px;" alt="">
+                        <div>
+                            <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
+                            <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
+                            <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                            <button style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;">
+                                Comprar ahora
+                            </button>
+                            <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                        </div>
+                    </div>
+                }
+            </div>
+           
+            <div style="display: flex; justify-content: center; margin-top: 1rem;">
+                <div style="display: flex; gap: 2rem; justify-content: center;">
+                    <div style="margin-right: 2rem;">
+                        <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 200px" alt="">
+                    </div>
+                    <div>
+                        <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
+                        <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
+                        <p style="color: #444;">(Tiempo del centro de México)</p>
+                        <a href="www.amway.com.mx">www.amway.com.mx</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <app-footer></app-footer>
