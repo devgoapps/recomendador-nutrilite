@@ -1,13 +1,21 @@
 
 
 <div class="questionnaire">
-
-    <div class="question">
+    @if (questions[questionIndex]?.isMessage) {
+     <br><br><br><br>   <br><br><br><br>   <br><br><br><br>   
+    } 
+    @else{
+        <img src="assets/img/hoja.png" class="sheet-img" style="position: absolute; z-index: 1; bottom: 10%;" >
+        <img src="assets/img/hoja2.png" class="sheet-img2" alt="">
+    }
+    <div class="question" >
         <div class="container">
+         
             @if (questions[questionIndex]?.isMessage) {
-                <span class="g-title">¡Un placer conocerte, {{ questions[0]?.selected }}!</span>
+                <br>
+                <span class="g-title" >¡Un placer conocerte, {{ questions[0]?.selected }}!</span>
             } 
-            @else if (questions[questionIndex]?.isFinished) {
+            @if (questions[questionIndex]?.isFinished) {
                 <img src="assets/img/flowers.jpg" draggable="false" class="g-img" alt=""><br>
                 <span class="g-title">{{ questions[questionIndex]?.question }}</span>
             }
@@ -46,13 +54,10 @@
                 <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa tu respuesta</span>
             }
         }
-
-
         <div [innerHTML]="questions[questionIndex]?.footer" class="g-footer"></div>
     </div>
 
 
-    <img src="assets/img/hoja.png" class="sheet-img" style="position: absolute; z-index: 1; bottom: 10%;" >
  <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
  
     <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" ></div>

@@ -23,6 +23,16 @@
     .home-cart {
         width: 90%;
     }
+    .home-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        background-image: radial-gradient(86.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 
@@ -31,6 +41,17 @@
     .home-cart {
         width: 90%;
     }
+    .home-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        background-image: radial-gradient(86.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
 }
 
 // Medium devices (tablets, 768px and down)
@@ -38,6 +59,17 @@
     .home-cart {
         width: 60%;
     }
+    .home-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        background-image: radial-gradient(86.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
 }
 
 // Large devices (desktops, 992px and dpwn)
@@ -45,12 +77,32 @@
     .home-cart {
         width: 40%;
     }
+    .home-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        background-image: radial-gradient(86.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 // X-Large devices (large desktops, 1399px and down)
 @media (min-width: 1025px) and (max-width: 1399px) {
     .home-cart {
         width: 35%;
+    }
+    .home-section {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        background-image: radial-gradient(86.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/HomeLanding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 }
 
