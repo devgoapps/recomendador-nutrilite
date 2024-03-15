@@ -74,6 +74,36 @@
     cursor: pointer;
 }
 
+.toast {
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 5%;
+    right: 1%;
+    visibility: hidden;
+    transition: .5s linear;
+
+    i {
+        font-size: 2rem;
+        color: green;
+    }
+
+    span {
+        font-weight: 500;
+    }
+}
+
+.toast.show {
+    visibility: visible;
+    transition: .5s linear;
+}
+
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
     .cart-name {

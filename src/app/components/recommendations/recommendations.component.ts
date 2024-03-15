@@ -74,13 +74,13 @@ export class RecommendationsComponent implements OnInit {
 
     if(this.sendForm.invalid || !this.captchaIsValid) return;
 
-
     console.log(this.vSend);
 
     this.sendEmail();
   }
 
   sendEmail(){
+    let toast = document.getElementById('toast');
     let mailBody = document.getElementById('mail');
 
     let emails = this.vSend.emails.toString();
@@ -92,14 +92,22 @@ export class RecommendationsComponent implements OnInit {
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,
     }).then((message: any) => {
-          console.log(message);
-          console.log("Mensaje enviado");
+      console.log(message);
 
-          this.sendForm.reset();
+      this.sendForm.reset();
+      this.isFormSubmitted = false;
+      this.makeCaptcha();
+
+      toast?.classList.add("show");
+      setTimeout(() => {
+        toast?.classList.remove("show");
+      }, 2000)
     });
   }
   
-  
+  openLink(link: string){
+    window.open(link, '_blank')
+  }
   /*
   Secure token
   c646155a-175b-47c7-b135-812a36bc50fc

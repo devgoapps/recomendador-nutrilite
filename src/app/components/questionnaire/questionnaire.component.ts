@@ -279,6 +279,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas & 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
       img: 'assets/img/LAS/Daily Plus.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -286,6 +288,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Cal Mag D',
       whyIsRecommended: 'Cal Mag D aporta dos fuentes naturales de calcio: carbonato de calcio (piedra caliza) y algas marinas calcificadas, además contiene vitamina D y magnesio que promueven y ayudan al organismo con la absorción, retención y utilización del calcio para el desarrollo de huesos y dientes fuertes.',
       img: 'assets/img/LAS/CalMagD.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -293,6 +297,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Proteína Vegetal en polvo',
       whyIsRecommended: 'Fórmula con proteína 100% vegetal de alta calidad, libre de ingredientes modificados genéticamente, que combina propiedades de soya, chícharo/ arveja y trigo. Naturalmente libre de lactosa, grasas saturadas y colesterol.',
       img: 'assets/img/LAS/Protein.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -300,6 +306,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Omega 3 Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario fuente de ácidos grasos Omega 3 esenciales, EPA y DHA, que junto con el ejercicio regular y una alimentación balanceada puede contribuir a mantener la salud cardiovascular.',
       img: 'assets/img/LAS/Omega.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -307,6 +315,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Double X',
       whyIsRecommended: 'Suplemento alimenticio/dietario que contiene 12 Vitaminas, 10 Minerales y 22 Concentrados de Plantas (fitonutrientes) que ayudan a complementar tu alimentación, utilizando mejor la energía de los alimentos para mantener las exigencias del ritmo de vida diario.',
       img: 'assets/img/LAS/Double X.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -314,6 +324,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Fibra en Polvo',
       whyIsRecommended: 'Suplemento alimenticio/dietario/alimento a base de tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
       img: 'assets/img/LAS/Fibra.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -321,6 +333,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Equilibra tu vida',
       whyIsRecommended: 'Esta solución contribuye en el buen funcionamiento y mantenimiento del sistema circulatorio. Daily Plus aporta vitaminas y minerales como la vitamina B1, B2, B6, ácido fólico, vitamina C, hierro, cobre y zinc que contribuyen a la salud del corazón, apoyan el funcionamiento normal de los vasos sanguíneos, ayudan a formar y mantener las células sanguíneas y a la hemoglobina. Los Omega 3 EPA y DHA, contribuyen al funcionamiento normal del corazón.',
       img: 'assets/img/LAS/Daily+1/Equilibra tu vida.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -328,6 +342,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'C Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario que tiene la capacidad de liberar lentamente la vitamina C en el cuerpo, fortaleciendo las defensas y permitiendo que sus propiedades se aprovechen mejor.',
       img: 'assets/img/LAS/C Plus.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -335,6 +351,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'B Plus',
       whyIsRecommended: 'Aporta 8 vitaminas del complejo B y gracias a su tecnología bicapa de doble acción, libera las vitaminas del complejo B durante 8 horas. Las vitaminas B2 y B12 se liberan de inmediato.Las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas.',
       img: 'assets/img/LAS/B Plus.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -342,6 +360,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Tri Iron Folic',
       whyIsRecommended: 'Suplemento alimenticio/dietario rico en fitonutrientes. Aporta tres fuentes de hierro, ácido fólico y vitamina C la cual ayuda a una mejor absorción del hierro.',
       img: 'assets/img/LAS/Tri-Iron Folic.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -349,6 +369,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Bodykey Shake Plus',
       whyIsRecommended: 'Bebida en polvo baja en grasa y carbohidratos. Proporciona 9 g de proteína, además de vitaminas, minerales y fibra.',
       img: 'assets/img/LAS/Shake Plus.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -356,6 +378,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Prende tu día',
       whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras.',
       img: 'assets/img/LAS/Daily+1/Prende tu dia.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -363,6 +387,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Respuesta Óptima',
       whyIsRecommended: 'Esta combinación de la mano de hábitos saludables como el ejercicio, una alimentación equilibrada y el descanso, aporta variedad de nutrientes como vitamina C, D, E, A, B6, selenio y zinc que pueden contribuir para que el sistema de defensas funcione apropiadamente, protegiendo el organismo de multitud de agresores como virus y bacterias.',
       img: 'assets/img/LAS/Daily+1/Respuesta optima.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -370,6 +396,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Muévete Libre',
       whyIsRecommended: 'Para ayudar a mantener huesos y músculos fuertes y resistentes, que nos permitan movilizarnos con facilidad, realizar trabajos de fuerza y potencia, junto con hábitos saludables, requerimos de nutrientes como proteína, calcio, vitamina C y vitamina D, presentes en esta solución.',
       img: 'assets/img/LAS/Daily+1/Mueevete libre.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -377,6 +405,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Lecitina E',
       whyIsRecommended: 'Suplemento alimenticio masticable con vitamina E y lecitina, tiene un agradable sabor a miel y nuez de arce. La Vitamina E es antioxidante, ayuda a disminuir el daño celular ocasionado por los radicales libres.',
       img: 'assets/img/LAS/LecithinE.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -384,6 +414,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Multicaroteno',
       whyIsRecommended: 'Suplemento alimenticio/dietario aporta alfa y betacarotenos, luteína y zeaxantina. Los alfa y betacarotenos se transforman en vitamina A en el organismo después de ser consumidos. Importante para la protección de las células contra el daño ocasionado por los radicales libres y para el mantenimiento de la visión.',
       img: 'assets/img/LAS/Multicaroteno.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -391,6 +423,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Luce Radiante',
       whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales  brillante, suave y resistente y mantener las uñas saludables, es decir, fuertes y resistentes.',
       img: 'assets/img/LAS/Daily+1/Luce radiante.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -398,6 +432,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily + 1 Vive Libre',
       whyIsRecommended: 'La función principal del intestino es absorber los nutrientes y el agua; y a la vez eliminar los desechos de la digestión. Cumple otras funciones extraintestinales, relacionadas con la microbiota intestinal. Los prebióticos o fibras vegetales (como la de chicoria/ achicoria), les sirven de alimento a las bacterias buenas, estimula su crecimiento y ayuda a disminuir la absorción de grasas y azúcares de la alimentación. Esta solución apoya el bienestar intestinal aportando vitaminas, minerales y fibra soluble.',
       img: 'assets/img/LAS/Daily+1/Vive libre.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     },
     {
@@ -405,6 +441,8 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Ajo Concentrado',
       whyIsRecommended: 'Contiene el ingrediente Alicina y Quercetina. Puede contribuir en la reducción de los niveles altos de grasa en sangre y a prevenir la formación de depósitos de grasa en las arterias. Hipotensor.',
       img: 'assets/img/LAS/Ajo Concentrado.png',
+      emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/',
+      link:'',
       count: 0,
     }
   ];

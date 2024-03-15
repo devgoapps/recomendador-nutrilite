@@ -32,7 +32,7 @@
                                 <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
                                 <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
                                 <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                                <button class="primary-btn g-text-sm" style="margin: 0;">
+                                <button (click)="openLink(product.link)" class="primary-btn g-text-sm" style="margin: 0;">
                                     Comprar ahora
                                 </button>
                                 <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
@@ -123,7 +123,7 @@
             <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
                 <div class="form-group">
                     <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" ></p-chips>
+                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true" ></p-chips>
 
                     @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors?.['required']) {
@@ -166,9 +166,12 @@
         </div>
     </div>
 
-
 </div>
 
+<div id="toast" class="toast">
+    <i class="fa fa-check"></i>
+    <span>Correo enviado correctamente</span>
+</div>
 
 <div style="visibility: hidden; height: 0px; overflow-y: hidden;">
     <div id="mail" style="display: flex; align-items: center; justify-content: center; background-color: #fff;">
@@ -183,14 +186,14 @@
             <div style="border: 1px solid #ccc; padding: 1rem;">
                 @for (product of recommendedProducts; track $index) {
                     <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                        <img src="https://res.cloudinary.com/dieggo/image/upload/v1710374599/tc9swrv4qyhrrx6zk0cp.png" draggable="false" style="width: 120px;" alt="">
+                        <img [src]="product.emailImg" draggable="false" style="width: 120px;" alt="">
                         <div>
                             <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
                             <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
                             <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                            <button style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;">
+                            <a href="www.facebook.com" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
                                 Comprar ahora
-                            </button>
+                            </a>
                             <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
                         </div>
                     </div>
