@@ -30,7 +30,7 @@ export class RecommendationsComponent implements OnInit {
   clientName: string | null = '';
   recommendedProducts: Array<any> = [];
 
-  numberProducts: number = 6;
+  numberProducts: number = 4;
 
   values = [];
 
