@@ -37,30 +37,31 @@
             <div class="form-group gw-30"  >
                 <label class="g-text required" >Nombre</label>
                 <input [(ngModel)]="questions[questionIndex].selected" type="text" maxlength="50" placeholder="Indicanos tu nombre aquí" class="form-control" [ngClass]="{ 'required-error': !questions[questionIndex]?.selected && questions[questionIndex]?.showRequired }">
+                
+                @if (!questions[questionIndex]?.selected && questions[questionIndex]?.showRequired) {
+                    <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu nombre</span>
+                }
                 <br>
-                <label class="g-text required"  >Pais</label>
-                <select class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.selected && questions[questionIndex]?.showRequired }">
-                    <option selected>Seleccione una opcion...</option>
-                    <option value="1">Mexico</option>
-                    <option value="2">Colombia</option>
-                    <option value="3">Argentina</option>
-                    <option value="4">Chile</option>
-                    <option value="5">Uruguay</option>
-                    <option value="6">Honduras</option>
-                    <option value="7">Guatemala</option>
-                    <option value="8">Costa rica</option>
-                    <option value="9">España</option>
-                    <option value="10">Panama</option>
-                    <option value="11">Venezuela</option>
 
-
+                <label class="g-text required" >Pais</label>
+                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }">
+                    <option value="MX">Mexico</option>
+                    <option value="CO">Colombia</option>
+                    <option value="BZ">Brazil</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CH">Chile</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="HO">Honduras</option>
+                    <option value="GU">Guatemala</option>
+                    <option value="CR">Costa rica</option>
+                    <option value="ES">España</option>
+                    <option value="PA">Panama</option>
+                    <option value="VZ">Venezuela</option>
                   </select>
-
+                  @if (!questions[questionIndex]?.country && questions[questionIndex]?.showRequired) {
+                      <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu país</span>
+                  }
             </div>
-
-            @if (!questions[questionIndex]?.selected && questions[questionIndex]?.showRequired) {
-                <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu nombre</span>
-            }
         } @else {
             @for (option of questions[questionIndex]?.options; track $index) {
                 <div (click)="selectOption(questionIndex, option.value, questions[questionIndex]?.multi)" class="option-btn gw-30">

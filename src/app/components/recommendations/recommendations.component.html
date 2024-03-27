@@ -32,7 +32,7 @@
                                 <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
                                 <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
                                 <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                                <button (click)="openLink(product.link)" class="primary-btn g-text-sm" style="margin: 0;">
+                                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin: 0;">
                                     Comprar ahora
                                 </button>
                                 <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
@@ -275,7 +275,7 @@
                             <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
                             <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
                             <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                            <a href="www.facebook.com" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
+                            <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
                                 Comprar ahora
                             </a>
                             <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>

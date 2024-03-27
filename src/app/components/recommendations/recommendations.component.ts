@@ -28,6 +28,7 @@ declare var Email: any;
 export class RecommendationsComponent implements OnInit {
 
   clientName: string | null = '';
+  clientCountry: string | null = '';
   recommendedProducts: Array<any> = [];
 
   numberProducts: number = 4;
@@ -51,6 +52,7 @@ export class RecommendationsComponent implements OnInit {
     }, 500);
 
     this.clientName = sessionStorage.getItem('clientName');
+    this.clientCountry = sessionStorage.getItem('clientCountry');
 
     let products = sessionStorage.getItem('recommendedProducts');
     if(products)
@@ -59,7 +61,6 @@ export class RecommendationsComponent implements OnInit {
     this.buildForm();
     this.makeCaptcha();
   }
-
 
   buildForm(){
     this.sendForm = this.fb.group({
@@ -87,7 +88,7 @@ export class RecommendationsComponent implements OnInit {
 
     Email.send({
       SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
-      From: "diego.hernandez.condor@gmail.com",
+      From: "brenda@ethos.com.mx",
       To: emails,
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,
