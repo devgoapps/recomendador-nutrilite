@@ -12,49 +12,87 @@
 
 
 .country-img {
-    width: 60%; 
-    margin: 2rem; 
+    width: 100%;
+    height: 100%; 
     cursor: pointer;
+    padding: 25px;
+    margin: 0rem 10px;
+   
+
 }
 
-
-
 .country-flags {
-    padding: 2rem; 
-    text-align: center; 
+    
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    margin-top: 30px;
+    width: 50%;
+    height:100%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 5px 10px #f1f1f1;
+
+
+margin-left: auto;
+
+margin-right: auto;
+    
 }
 
 .custom-row {
-    width: 70%;
+    width: 100%;
+    
 }
 
 
 // extra Small devices (smartphones, 576px and down)
-@media (min-width: 250px) and (max-width: 374px) { 
+@media (min-width: 250px) and (max-width: 576px) { 
     .country-img {
-        width: 75%; 
-        margin-bottom: 2rem;
+       
+        width:100%; 
+        margin-bottom: 0rem;
     }
+
+    .country-flags{
+        display: flex;
+        width: 100%;
+    }
+
 }
 
 
 // Small devices (smartphones, 576px and down)
-@media (min-width: 375px) and (max-width: 576px) { 
+@media (min-width: 400px) and (max-width: 576px) { 
     .country-img {
-        width: 75%; 
-        margin-bottom: 2rem;
+        width: 100%; 
+        margin-bottom: 0rem;
     }
+
+    .country-flags{
+        display: flex;
+        width: 100%;
+    }
+
+   
 }
 
 // Medium devices (tablets, 768px and down)
 @media (min-width: 577px) and (max-width: 768px) {
     .country-img {
         margin: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
     }
+
+    .country-flags{
+        display: flex;
+        width: 100%;
+    }
+
 }
 
 

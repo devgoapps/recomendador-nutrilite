@@ -1,0 +1,25 @@
+[debug] [2024-03-28T22:56:56.290Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T22:56:56.291Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DelicadaPC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-03-28T22:56:56.291Z] CLI Version:   13.6.0
+[debug] [2024-03-28T22:56:56.291Z] Platform:      win32
+[debug] [2024-03-28T22:56:56.292Z] Node Version:  v18.16.0
+[debug] [2024-03-28T22:56:56.292Z] Time:          Thu Mar 28 2024 16:56:56 GMT-0600 (Central Standard Time)
+[debug] [2024-03-28T22:56:56.292Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T22:56:56.330Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T22:56:56.330Z] > authorizing via signed-in user (brenda@ethos.com.mx)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\DelicadaPC\Desktop\GIP 2023\recomendador-nutrilite
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

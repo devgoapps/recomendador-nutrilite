@@ -281,7 +281,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas & 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
       img: 'assets/img/LAS/Daily Plus.png',
       emailImg: 'https://www.amway.com.mx/recomendador/assets/img/LAS/Daily Plus.png',
-      linkBuy:'',
+      linkBuy:'',  // LINKS DE COMPRA PRODUCTOS
       count: 0,
     },
     {
@@ -448,115 +448,7 @@ export class QuestionnaireComponent implements OnInit {
     }
   ];
 
-  /*
-  productsMX: Array<any> = [
 
-    {products: [5, 16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsCO: Array<any> = [
-
-    {products: [16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-
-  productsAR: Array<any> = [
-
-    {products: [5, 16, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-
-  productsCH: Array<any> = [
-
-    {products: [9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-
-  productsUY: Array<any> = [
-
-    {products: [5, 9, 8, 12, 6, 18, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsHO: Array<any> = [
-
-    {products: [5, 16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsGU: Array<any> = [
-
-    {products: [5, 16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsCR: Array<any> = [
-
-    {products: [5, 16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsES: Array<any> = [
-
-    {products: [5, 16, 19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsPA: Array<any> = [
-
-    {products: [5, 16, 19, 8, 11, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  productsVZ: Array<any> = [
-
-    {products: [19, 9, 12, 15, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-
-
-productsBZ: Array<any> = [
-
-    {products: [19, 9, 8, 11, 12, 15, 6, 18, 17, 2, 1, 4, 3, 10, 14, 13, 7] }
-
-  ]
-
-  //  constructor(private utilService: UtilService) { }
-
-  // ngOnInit() {
-  //   this.utilService.getCountryCode.subscribe((countryCode) => {
-
-  //     if (countryCode == 'MX'|| countryCode == 'AR'|| countryCode == 'GT') {
-  //       this.dailyLib = this.dailyLibMX;
-  //       this.encabezado = "ESCOGE LOS DOCUMENTOS QUE DESEAS DESCARGAR";
-  //       this.buttonDownload = "DESCARGAR ARCHIVO";
-  //     } else if (countryCode == 'BR') {
-  //       this.dailyLib = this.dailyLibBR;
-  //       this.encabezado = "SELECIONE OS DOCUMENTOS QUE DESEJA BAIXAR";
-  //       this.buttonDownload = "BAIXE AQUI";
-
-  //     } else {
-  //       this.dailyLib = this.dailyLibLATAM;
-  //       this.encabezado = "ESCOGE LOS DOCUMENTOS QUE DESEAS DESCARGAR";
-  //       this.buttonDownload = "DESCARGAR ARCHIVO";
-  //     }
-  //   });
-
-  //   let utag_data = environment.utagInfo.daily;
-
-  //   window.utag_data = Object.assign(window.utag_data, utag_data);
-  //   setTimeout(() => {
-  //     utag.view(window.utag_data);
-  //   }, 1000);
-  // }
-
-
-  */
 
   recommendedProducts: Array<any> = [];
 

@@ -1,25 +1,55 @@
 <div class="buy">
 
 
-    <img src="assets/img/Compras/Header.png" draggable="false" style="width: 100%;" alt="">
+    <img src="assets/img/Compras/Banner_Compras.png" draggable="false" style="width: 100%;" alt="">
+
+
+
+       
 
     <div class="custom-container">
 
+
+<div>
         <div class="country-flags">
-
-            <h2 class="general-subtitle normal-text">Selecciona la bandera de tu país para poder empezar tu compra</h2>
-
-            <div class="row custom-row" >
-                @for (country of countries; track $index) {
-                    <div class="col-12 col-md-4 col-lg-3">
+    
+                    <div class="row custom-row">
+                    
+                        @for (country of countries; track $index) {
+                    <div class="col-lg-6 col-md-4 col-lg-3">
                         <img [src]="country.img" (click)="openLink(country.link)" draggable="false" class="country-img" alt="">
-                    </div>
-                }
-            </div>
-        </div>
+                    </div> 
 
+                     } 
+                </div>
+                
+
+        </div>
+</div>
 
     </div>
+<div>
+       <img src="assets/img/Compras/Hoja_1.png" draggable="false" style="width: 10%; float: right; margin-top:-300px; flex: 1px;" alt="">
+        <img src="assets/img/Compras/Hoja_2.png" draggable="false" style="width: 15%; float: left; margin-top:-100px;  flex: 1px;" alt="">
+</div>
+     
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
 
     <!--div style="width: 100%; text-align: end;">
         <button (click)="goTo()" class="go-to-top">
