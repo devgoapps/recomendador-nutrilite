@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "amway-2024"
-  }
+    "default": "amway-2024",
+    "demo": "amway-2024"
+  },
+  "targets": {},
+  "etags": {}
 }
