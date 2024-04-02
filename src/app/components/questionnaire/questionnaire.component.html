@@ -82,8 +82,8 @@
     </div>
 
  <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
- <div class="progress" style="height: 40px; width: 100%;" >
-    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 40px; width: 100%;"></div>
+ <div class="progress" style="height: 40px; width: 100%; background: rgba(144, 238, 144, 0.788);" >
+    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 40px; width: 100%;  opacity: 100%;"></div>
 </div>
     <div class="footer-btns">
         <button (click)="prevQuestion()" class="g-text secondary-btn">

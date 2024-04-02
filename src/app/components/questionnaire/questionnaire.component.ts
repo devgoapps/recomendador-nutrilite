@@ -82,7 +82,7 @@ export class QuestionnaireComponent implements OnInit {
       footer: ` <span class="gw-30 g-text text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
     },
     {
-      question: '¿Consumes actualmente un suplemento alimenticio con vitaminas y/o minerales?',
+      question: '¿Consumes actualmente un suplemento alimenticio/dietario con vitaminas y/o minerales?',
       multi: false,
       margin: 60,
       showRequired: false,
@@ -197,7 +197,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: null
     },
     {
-      question: '¿Vives o trabajas en un área de mucha contaminación, con mucho tráfico pesado, industria, humo o aire de mala calidad?',
+      question: '¿Vives o trabajas en un área de mucha contaminación, con mucho tráfico pesado, industrias alrededor, humo o aire de mala calidad?',
       multi: false,
       margin: 30,
       showRequired: false,
@@ -219,7 +219,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: null
     },
     {
-      question: '¿Pasas mucho tiempo frente a la computadora, o se sienten cansados tus ojos al final del día?',
+      question: '¿Pasas mucho tiempo frente a la computadora/ordenador, o se sienten cansados tus ojos al final del día?',
       multi: false,
       margin: 50,
       showRequired: false,
@@ -282,7 +282,7 @@ export class QuestionnaireComponent implements OnInit {
       options: [],
       selected: 'Despedida',
       footer: ` <span class="gw-50 g-text text-center" >
-                  Ahora tenemos todo lo que necesitamos para elegir recomendaciones personalizadas para ti. <br><br>
+                  Ahora tenemos todo lo que necesitamos para elegir recomendaciones personalizadas solo para ti. <br><br>
                   Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorear tu bienestar. Ádemas, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
                 </span>`
     },
