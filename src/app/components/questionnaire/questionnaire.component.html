@@ -1,13 +1,17 @@
 
 
 <div class="questionnaire">
+
     @if (questions[questionIndex]?.isMessage) {
-     <br><br><br><br>   <br><br><br><br>   <br><br><br><br>   
-    } 
-    @else{
-        <img src="assets/img/hoja.png" class="sheet-img" style="position: absolute; z-index: 1; bottom: 10%;" >
-        <img src="assets/img/hoja2.png" class="sheet-img2" alt="">
-    }
+        <br><br><br><br>   <br><br><br><br>   <br><br><br><br>   
+       } 
+       @else{ 
+           <img src="assets/img/Hoja_3.png" class="" alt="" style="position:absolute; bottom: 25%; width: 10%; right: 0; ">
+           <img src="assets/img/Hoja_1.png" class="" alt="" style="position:absolute; z-index: 1; bottom: 13%; width: 13%;">
+           <img src="assets/img/Hoja_2.png" class="" alt="" style="position:absolute; z-index: 1; bottom: 35%; width: 6%;">
+          
+           
+       }
     <div class="question" >
         <div class="container">
          
@@ -31,31 +35,31 @@
         </div>
     </div>
 
+
     <div class="container options">
 
         @if (questions[questionIndex]?.isInput) {
             <div class="form-group gw-30"  >
                 <label class="g-text required" >Nombre</label>
-                <input [(ngModel)]="questions[questionIndex].selected" type="text" maxlength="50" placeholder="Indicanos tu nombre aquí" class="form-control" [ngClass]="{ 'required-error': !questions[questionIndex]?.selected && questions[questionIndex]?.showRequired }">
+                <input [(ngModel)]="questions[questionIndex].selected" type="text" maxlength="50" placeholder="Escribe tu nombre" class="form-control" [ngClass]="{ 'required-error': !questions[questionIndex]?.selected && questions[questionIndex]?.showRequired }">
                 
                 @if (!questions[questionIndex]?.selected && questions[questionIndex]?.showRequired) {
                     <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu nombre</span>
                 }
                 <br>
 
-                <label class="g-text required" >Pais</label>
-                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }">
-                    <option value="MX">Mexico</option>
-                    <option value="CO">Colombia</option>
-                    <option value="BZ">Brasil</option>
-                    <option value="AR">Argentina</option>
-                    <option value="CH">Chile</option>
-                    <option value="UY">Uruguay</option>
-                    <option value="HO">Honduras</option>
-                    <option value="GU">Guatemala</option>
-                    <option value="CR">Costa rica</option>
-                    <option value="ES">El Salvador</option>
-                    <option value="PA">Panama</option>
+                <label class="g-text required" >País</label>
+                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 25px;">
+                    <option value="MX">Argentina</option>
+                    <option value="CO">Chile</option>
+                    <option value="AR">Colombia</option>
+                    <option value="CH">Costa Rica</option>
+                    <option value="UY">El Salvador</option>
+                    <option value="HO">Guatemala</option>
+                    <option value="GU">Honduras</option>
+                    <option value="CR">México</option>
+                    <option value="ES">Panamá</option>
+                    <option value="PA">Uruguay</option>
                     <option value="VZ">Venezuela</option>
                   </select>
                   @if (!questions[questionIndex]?.country && questions[questionIndex]?.showRequired) {
@@ -77,11 +81,10 @@
         <div [innerHTML]="questions[questionIndex]?.footer" class="g-footer"></div>
     </div>
 
-
  <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
- 
-    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" ></div>
-
+ <div class="progress" style="height: 40px; width: 100%;" >
+    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 40px; width: 100%;"></div>
+</div>
     <div class="footer-btns">
         <button (click)="prevQuestion()" class="g-text secondary-btn">
             <i class="fa fa-chevron-left"></i> Regresar

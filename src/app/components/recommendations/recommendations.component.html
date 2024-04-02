@@ -1,6 +1,6 @@
 <div>
 
-    <img src="assets/img/headerResult1.png" draggable="false" style="width: 100%;" alt="">
+    <img src="assets/img/headerResult1_2.png" draggable="false" style="width: 100%;" alt="">
 
     <div class="container" style="padding-bottom: 2rem;">
         <div class="name-section">
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <img src="assets/img/headerResult2.png" draggable="false" style="width: 100%;" alt="">
+    <img src="assets/img/headerResult2_3.png" draggable="false" style="width: 100%;" alt="">
     <div class="vertical-line">
         <span></span>
     </div>
@@ -31,11 +31,10 @@
                             <div>
                                 <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
                                 <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
-                                <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                                <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 800 }}</span>
                                 <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin: 0;">
                                     Comprar ahora
                                 </button>
-                                <small class="g-text-sm" style="margin-top: 2rem;  color: green;">Consulta la disponibilidad de productos en tu país</small>
                             </div>
                         </div>
                     </div>
@@ -59,8 +58,10 @@
         } -->
 
     </div>
-
-    <img src="assets/img/headerResult3_1.png" draggable="false" style="width: 100%;" alt="">
+    <div style="text-align: center;">    
+        <h4 class="g-text-md" style="padding-bottom: 20px; color: green;">Consulta la disponibilidad de productos en tu país</h4>
+</div>
+    <img src="assets/img/headerResult3_4.png" draggable="false" style="width: 100%;" alt="">
     <div class="vertical-line">
         <span></span>
     </div>
@@ -68,7 +69,7 @@
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="row">
 
-            <div class="col-lg-4 col-md-6 col-sm-12"> 
+            <div class="col-lg-4 col-md-6 col-sm-12" > 
                 
                 <div  class="cart-recommendation" >
                    <img src="assets/img/Tip1.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
@@ -76,21 +77,17 @@
                         <span class="g-text" style="margin-bottom: .5rem;"><b>El agua es vital para el organismo</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La sed es una señal de deshidratación. Es indispensable tomar agua antes que aparezca la sed. Después de saciar la sed se recomienda seguir tomando líquidos durante el día.
                         </span>
-                        
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" >
                 <div  class="cart-recommendation">
                     <img src="assets/img/Tip2.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="recommendation-body">
                         <span class="g-text" style="margin-bottom: .5rem;"><b>El sueño de calidad</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Dormir ayuda a mantener el sistema nervioso y el cuerpo en óptimas condiciones. Tener un sueño de calidad y con las horas necesarias, mínimo 7, mejora el estado de ánimo, reduce el estrés y el riesgo de afectaciones físicas.
                         </span>
-                        
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
@@ -102,50 +99,40 @@
                         <span class="g-text" style="margin-bottom: .5rem;"><b>Los beneficios de la salud oral</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Cuidar las encías y los dientes con una buena higiene (cepillado y uso de hilo dental) y consumiendo alimentos fuentes de calcio como lácteos, vegetales y pescados ayuda a mantenerlos sanos y hace que sea más fácil comer y disfrutar de la buena alimentación.
                         </span>
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
 <br>
-            <div class="col-lg-4 col-md-6 col-sm-12" >
+            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
                 <div  class="cart-recommendation">
                     <img src="assets/img/Tip4.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="recommendation-body">                        
                         <span class="g-text" style="margin-bottom: .5rem;"><b>Importancia de cuidar la vista</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Una visión saludable requiere de diversas formas de cuidado como descansar adecuadamente, proteger los ojos de los rayos UV con el uso de gafas de sol, tener una buena iluminación y consumir alimentos fuentes de carotenos como la zanahoria y de vitamina A como los pescados.
                         </span>
-
-                        
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
 <br>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
                 <div  class="cart-recommendation">
                     <img src="assets/img/Tip5.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="recommendation-body">                        
                         <span class="g-text" style="margin-bottom: .5rem;"><b>Técnicas que ayudan a lograr el bienestar</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Hay diversas técnicas que pueden ayudar a disminuir el estrés, a mantener el bienestar físico y emocional. La relajación, la meditación y el ejercicio pueden ayudar a adquirir habilidades para controlar las situaciones difíciles, aumentar la autoconciencia y asumir actitudes de autocuidado.
                         </span>
-                        
-                        
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
 <br>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
                 <div  class="cart-recommendation">
                     <img src="assets/img/Tip6.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="recommendation-body">
                         <span class="g-text" style="margin-bottom: .5rem;"><b>Cuidado y protección de la piel</b></span>
                         <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La protección solar, una alimentación sana que aporte frutas y vegetales, una hidratación adecuada y una limpieza cuidadosa, pueden contribuir en el mantenimiento de una piel radiante e hidratada.
                         </span>
-
-                        
-                        <small class="g-text-sm green-link">Donde comenzar <i class="fas fa-angle-right"></i></small>
                     </div>
                 </div>
             </div>
@@ -154,7 +141,7 @@
         </div>
 
     </div>
-    <img src="assets/img/headerResult2.png" draggable="false" style="width: 100%;" alt="">
+    <img src="assets/img/headerResult2_3.png" draggable="false" style="width: 100%;" alt="">
    <!--  <img src="assets/img/headerResult4.png" draggable="false" style="width: 100%;" alt=""> -->
     <div class="vertical-line">
         <span></span>
@@ -175,7 +162,7 @@
             <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
                 <div class="form-group">
                     <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true" ></p-chips>
+                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta 5 correos "></p-chips>
 
                     @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors['required']) {

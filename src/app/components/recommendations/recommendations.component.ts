@@ -88,7 +88,7 @@ export class RecommendationsComponent implements OnInit {
 
     Email.send({
       SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
-      From: "brenda@ethos.com.mx", // Cambiar ruta de Amway
+      From: "nutrirec@amway.com", // Cambiar ruta de Amway
       To: emails,
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,

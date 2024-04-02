@@ -26,7 +26,7 @@ export class QuestionnaireComponent implements OnInit {
 
   questions: Array<any> = [
     {
-      question: '¿Puedes darnos tu nombre?',
+      question: '¿Puedes darnos tu nombre y país?',
       multi: false,
       margin: 0,
       showRequired: false,
@@ -74,12 +74,12 @@ export class QuestionnaireComponent implements OnInit {
       multi: true,
       margin: 70,
       options: [
-        { label: 'Quiero ser mi mejor versión', value: 1, products: [5] },
+        { label: 'Quiero ser mi mejor versión.', value: 1, products: [5] },
         { label: 'Quiero desarrollar hábitos más saludables.', value: 2, products: [7] },
         { label: 'Estoy buscando algunos consejos para comer sano.', value: 3, products: [3, 6] },
       ],
       selected: [],
-      footer: ` <span class="gw-30 g-text-sm text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
+      footer: ` <span class="gw-30 g-text text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
     },
     {
       question: '¿Consumes actualmente un suplemento alimenticio con vitaminas y/o minerales?',
@@ -102,9 +102,15 @@ export class QuestionnaireComponent implements OnInit {
         { label: 'Óptima', value: 2, products: [2, 4, 5, 6, 8] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text-sm">
-                  <b>Básica:</b> Es complementar la alimentación con suplementos alimenticios/dietarios que se inicia cuando no se han consumido antes estos productos y que sirve como adaptación. <br><br> 
-                  <b>Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/ nutrientes para una complementación más específica según las necesidades.
+      footer: ` <small class="gw-30 g-text">
+                <ul style="list-style-type: circle;">
+                <li>
+                  <b class="field-items"> Básica:</b> Es complementar la alimentación con suplementos alimenticios/dietarios que se inicia cuando no se han consumido antes estos productos y que sirve como adaptación. <br><br> 
+                </li>
+                <li>  
+                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/ nutrientes para una complementación más específica según las necesidades.
+                </li>
+                </ul>
                 </small>`
     },
     {
@@ -114,10 +120,10 @@ export class QuestionnaireComponent implements OnInit {
       showRequired: false,
       options: [
         { label: 'Ninguna (0)', value: 1, products: [1, 6, 8] },
-        { label: '1 a 2 frutas y vegetales al día', value: 2, products: [5, 6, 8] },
-        { label: '3 a 4 frutas y vegetales al día', value: 3, products: [5] },
-        { label: '5 a 6 frutas y vegetales al día', value: 4, products: [1] },
-        { label: '7 o más frutas y vegetales al día', value: 5, products: [1] },
+        { label: '1 a 2 frutas y vegetales al día.', value: 2, products: [5, 6, 8] },
+        { label: '3 a 4 frutas y vegetales al día.', value: 3, products: [5] },
+        { label: '5 a 6 frutas y vegetales al día.', value: 4, products: [1] },
+        { label: '7 o más frutas y vegetales al día.', value: 5, products: [1] },
       ],
       selected: null
     },
@@ -133,12 +139,21 @@ export class QuestionnaireComponent implements OnInit {
         { label: 'Alta en grasa y carbohidratos y baja en proteína.', value: 4, products: [4, 6, 10, 11] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text-sm">
+      footer: ` <small class="gw-30 g-text">
+
                   <b>Algunos ejemplos que te ayudarán a seleccionar la mejor respuesta de acuerdo a tu alimentación.</b><br><br>
+                <ul style="list-style-type: circle;">
+                <li>
                   <b>Carbohidratos:</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br>
+                </li>
+                <li>  
                   <b>Proteína:</b> carne de res, pollo, pescado, mariscos, huevos, leche y derivados, leguminosas como frijol, guisantes y semillas como nueces, avellanas, piñones.<br>
+                </li>
+                <li>  
                   <b>Grasas:</b> aceites, mantequilla, crema de leche, tocino, margarinas.
-                </small>
+                </li>  
+                </ul>          
+                  </small>
               `
     },
     {
@@ -164,8 +179,8 @@ export class QuestionnaireComponent implements OnInit {
         { label: '2 porciones al día', value: 3, products: [2] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text-sm" >
-                  <b>Por ejemplo:</b>  Leche, yogur, queso, bebidas con soya fortificada, entre otros.
+      footer: ` <small class="gw-30 g-text" >
+                  <b>Por ejemplo:</b>  Leche, yogurt, queso, bebidas con soya fortificada, entre otros.
                 </small>`
     },
     {
