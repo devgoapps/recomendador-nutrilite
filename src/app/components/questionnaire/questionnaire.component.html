@@ -49,7 +49,7 @@
                 <br>
 
                 <label class="g-text required" >País</label>
-                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 25px;">
+                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 20px;">
                     <option value="MX">Argentina</option>
                     <option value="CO">Chile</option>
                     <option value="AR">Colombia</option>
@@ -82,8 +82,8 @@
     </div>
 
  <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
- <div class="progress" style="height: 40px; width: 100%; background: rgba(144, 238, 144, 0.788);" >
-    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 40px; width: 100%;  opacity: 100%;"></div>
+ <div class="progress" style="height: 25px; width: 100%; background: rgba(144, 238, 144, 0.788);" >
+    <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 25px; width: 100%;  opacity: 100%;"></div>
 </div>
     <div class="footer-btns">
         <button (click)="prevQuestion()" class="g-text secondary-btn">
