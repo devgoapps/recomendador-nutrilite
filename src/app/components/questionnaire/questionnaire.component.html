@@ -49,17 +49,17 @@
                 <br>
 
                 <label class="g-text required" >País</label>
-                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 20px;">
-                    <option value="MX">Argentina</option>
-                    <option value="CO">Chile</option>
-                    <option value="AR">Colombia</option>
-                    <option value="CH">Costa Rica</option>
-                    <option value="UY">El Salvador</option>
-                    <option value="HO">Guatemala</option>
-                    <option value="GU">Honduras</option>
-                    <option value="CR">México</option>
-                    <option value="ES">Panamá</option>
-                    <option value="PA">Uruguay</option>
+                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 15px;">
+                    <option value="AR">Argentina</option>
+                    <option value="CH">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="ES">El Salvador</option>
+                    <option value="GU">Guatemala</option>
+                    <option value="HO">Honduras</option>
+                    <option value="MX">México</option>
+                    <option value="PA">Panamá</option>
+                    <option value="UY">Uruguay</option>
                     <option value="VZ">Venezuela</option>
                   </select>
                   @if (!questions[questionIndex]?.country && questions[questionIndex]?.showRequired) {

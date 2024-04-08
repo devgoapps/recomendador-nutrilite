@@ -1,10 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-* {
-     font-family: 'GT Walsheim';
-    src: url(assets/fonts/GTWalsheimPro-Regular.ttf) format('truetype');
-
+@font-face {
+    font-family: "GTWalsheimPro-UltraBold";
+    src: url(assets/fonts/GTWalsheimPro-UltraBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "GTWalsheimPro-Bold";
+    src: url(assets/fonts/GTWalsheimPro-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "GTWalsheimPro-Regular";
+    src: url(assets/fonts/GTWalsheimPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "GTWalsheimPro-Light";
+    src: url(assets/fonts/GTWalsheimPro-Light.ttf) format("truetype");
 }
 
 
@@ -116,7 +127,8 @@ label.required::after {
 .g-title-xl {
     display: block;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
+    font-family: "GTWalsheimPro-Regular";
 }
 
 .g-title-lg {
@@ -129,24 +141,40 @@ label.required::after {
     display: block;
     font-weight: 600;
     font-size: 2.5rem;
+    font-family: "GTWalsheimPro-Bold";
 }
 
 .g-subtitle {
     display: block;
     font-weight: 400;
     font-size: 2.2rem;
+    font-family: "GTWalsheimPro-Regular";
 }
 
 .g-text {
     display: block;
     font-weight: 400;
     font-size: 1.4rem;
+    font-family: "GTWalsheimPro-Regular";
+}
+
+.form-control{
+    font-family: "GTWalsheimPro-Regular";
+}
+
+.form-select{
+    font-family: "GTWalsheimPro-Regular";
 }
 
 .g-text-sm {
     display: block;
     font-weight: 400;
     font-size: 1rem;
+    font-family: "GTWalsheimPro-Light";
+}
+
+.g-text-md{
+    font-family: "GTWalsheimPro-Regular";
 }
 
 .gw-30 {
