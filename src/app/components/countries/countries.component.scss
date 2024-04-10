@@ -3,45 +3,46 @@
 .buy {
     background: #F4F4F4; 
     width: 100%;
-    min-height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: url('/assets/img/Compras/imagen-fondo_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4rem 0;
 }
 
+.back-img {
+    background: url('/assets/img/Compras/imagen-fondo_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4rem 0;
+}
+
+.text-img {
+    width: 60%;
+}
 
 .country-img {
     width: 100%;
     height: 100%; 
     cursor: pointer;
-    padding: 25px;
+    padding: 1rem;
     margin: 0rem 10px;
-   
-
 }
 
 .country-flags {
-    
     display: flex; 
     flex-direction: column; 
     align-items: center;
-    margin-top: 30px;
-    width: 50%;
-    height:100%;
-    padding: 20px;
+    width: 80%;
+    padding: 3rem;
+    padding-top: 5rem;
     background-color: rgb(255, 255, 255);
-    border-radius: 10%;
+    border-radius: 25px;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(255, 255, 255);
-    box-shadow: 5px 10px #f1f1f1;
-
-
-margin-left: auto;
-
-margin-right: auto;
-    
+    box-shadow: 5px 10px #f1f1f1; 
 }
 
 .custom-row {
@@ -51,34 +52,43 @@ margin-right: auto;
 
 
 // extra Small devices (smartphones, 576px and down)
-@media (min-width: 250px) and (max-width: 576px) { 
+@media (min-width: 250px) and (max-width: 374px) { 
     .country-img {
        
         width:100%; 
         margin-bottom: 0rem;
     }
 
-    .country-flags{
-        display: flex;
-        width: 100%;
+    .country-flags {
+        width: 80%;
+        padding: 1rem;
+        padding-top: 3rem;
+    }
+
+    .text-img {
+        width: 75%;
     }
 
 }
 
 
 // Small devices (smartphones, 576px and down)
-@media (min-width: 400px) and (max-width: 576px) { 
+@media (min-width: 375px) and (max-width: 576px) { 
     .country-img {
         width: 100%; 
         margin-bottom: 0rem;
     }
 
-    .country-flags{
-        display: flex;
-        width: 100%;
+    .country-flags {
+        width: 80%;
+        padding: 1rem;
+        padding-top: 3rem;
     }
 
-   
+    .text-img {
+        width: 75%;
+    }
+
 }
 
 // Medium devices (tablets, 768px and down)
@@ -88,17 +98,70 @@ margin-right: auto;
         margin-bottom: 0rem;
     }
 
-    .country-flags{
-        display: flex;
+    .country-flags {
         width: 100%;
+        padding: 1rem;
+        padding-top: 3rem;
     }
 
+    .text-img {
+        width: 75%;
+    }
 }
 
+// Large devices (desktops, 992px and dpwn)
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .country-flags {
+        width: 90%;
+        padding: 1rem;
+        padding-top: 3rem;
+    }
 
-
-@media (min-width: 1600px) {
-    .custom-row {
+    .text-img {
         width: 70%;
     }
 }
+
+// X-Large devices (large desktops, 1399px and down)
+@media (min-width: 1025px) and (max-width: 1399px) {
+    .country-flags {
+        width: 80%;
+    }
+
+    .text-img {
+        width: 60%;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1799px) {
+    .country-flags {
+        width: 80%;
+    }
+
+    .text-img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .country-flags {
+        width: 80%;
+    }
+
+    .text-img {
+        width: 60%;
+    }
+}
+
+
+@media (min-width: 2000px) {
+    .country-flags {
+        width: 50%;
+    }
+
+    .text-img {
+        width: 40%;
+    }
+}
+

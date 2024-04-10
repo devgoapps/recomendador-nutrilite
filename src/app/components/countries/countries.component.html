@@ -1,61 +1,45 @@
 <div class="buy">
 
+    <div class="container">
 
-    <img src="assets/img/Compras/HeaderCompras.png" draggable="false" style="width: 100%;" alt="">
+        <div class="row" >
+            <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center" style="position: relative; margin-bottom: 4rem;">
+                <img src="assets/img/Compras/Cuadro.png" draggable="false" class="text-img" alt="">
 
+                <img src="assets/img/Compras/Hoja_2.png" draggable="false" style="width: 20%; position: absolute; bottom: 0%; left: 20%;" alt="">
+            </div>
 
+            <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" style="position: relative;" >
 
-       
-
-    <div class="custom-container">
-
-
-<div>
-        <div class="country-flags">
-    
-                    <div class="row custom-row">
-                    
-                        @for (country of countries; track $index) {
-                    <div class="col-lg-6 col-md-4 col-lg-3">
-                        <img [src]="country.img" (click)="openLink(country.link)" draggable="false" class="country-img" alt="">
-                    </div> 
-
-                     } 
-                </div>
+                <img src="assets/img/Compras/Hoja_1.png" draggable="false" style="width: 15%; position: absolute; top: 0%; right: 5%;" alt="">
                 
+                <div class="country-flags">
+                    <h3 class="g-title mb-4 text-center" style="color: green;">Selecciona tu país para comprar</h3>
 
+                    <div class="row">
+                        @for (country of countries; track $index) {
+                            <div class="col-lg-6 col-md-6 col-lg-3">
+                                <img [src]="country.img" (click)="openLink(country.link)" draggable="false" class="country-img" alt="">
+                            </div> 
+                        } 
+                    </div>
+                </div>
+
+            </div>
         </div>
-</div>
-
     </div>
-<div>
-       <img src="assets/img/Compras/Hoja1.png" draggable="false" style="width: 10%; float: right; margin-top:-300px; flex: 1px;" alt="">
-        <img src="assets/img/Compras/Hoja2.png" draggable="false" style="width: 15%; float: left; margin-top:-100px;  flex: 1px;" alt="">
-</div>
-     
 
 
-
-    
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-    <!--div style="width: 100%; text-align: end;">
-        <button (click)="goTo()" class="go-to-top">
-            <img src="assets/imgs/Por_Que_Naturales/flecha.png" style="width: 40px;" alt="">
-        </button>
-    </div-->
+<!--div>
+    <img src="assets/img/Compras/Hoja_1.png" draggable="false" style="width: 10%; float: right; margin-top:-300px; flex: 1px;" alt="">
+    <img src="assets/img/Compras/Hoja_2.png" draggable="false" style="width: 15%; float: left; margin-top:-100px;  flex: 1px;" alt="">
+</div-->
+ 
+<!--div style="width: 100%; text-align: end;">
+    <button (click)="goTo()" class="go-to-top">
+        <img src="assets/imgs/Por_Que_Naturales/flecha.png" style="width: 40px;" alt="">
+    </button>
+</div-->
 </div>
 
 
