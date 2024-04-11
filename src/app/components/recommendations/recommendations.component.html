@@ -162,7 +162,7 @@
             <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
                 <div class="form-group">
                     <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="3" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta 5 correos "></p-chips>
+                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta 5 correos "></p-chips>
 
                     @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors['required']) {
