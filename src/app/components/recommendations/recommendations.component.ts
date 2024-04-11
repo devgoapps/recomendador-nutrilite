@@ -87,8 +87,8 @@ export class RecommendationsComponent implements OnInit {
     let emails = this.vSend.emails.toString();
 
     Email.send({
-      SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
-      From: "brenda@ethos.com.mx", // Cambiar ruta de Amway
+      SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
+      From: "brendacavazos14@outlook.es", // Cambiar ruta de Amway
       To: emails,
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,
@@ -118,6 +118,27 @@ export class RecommendationsComponent implements OnInit {
   
   Contraseña
   9F7FE47F902F7F5A87321E28C2571FB05BC0
+  
+  Servidor
+  smtp.elasticemail.com
+  
+  Puerto
+  2525
+  */
+
+
+    /*
+  Secure token
+  c646155a-175b-47c7-b135-812a36bc50fc
+  f374c7fd-3795-49cd-b789-67042c1c5e5e
+  3037af90-3a76-4406-84ae-6935e5361872
+  288B302B23A8A6B58CC0297142A99B585ACE2938FBCABE718BC61C7C43C50524DFBC2C4538ED466CBBA65E8823D55FEE
+
+  Nombre de usuario
+nutrirec@amway.com
+  brendacavazos14@outlook.es
+  Contraseña
+DBB6AD785D81E60B33707AD39F5235A97A44
   
   Servidor
   smtp.elasticemail.com
