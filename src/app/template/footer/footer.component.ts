@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  code: string | null = '';
+
+  ngOnInit(){
+    this.code = sessionStorage.getItem('çode');
+  }
 }
