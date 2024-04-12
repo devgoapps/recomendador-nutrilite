@@ -6,13 +6,13 @@
         <div class="name-section">
             <div class="cart-name">
                 @if (clientName) {
-                    <span class="g-title">¡Hola, {{ clientName }}!</span>
+                    <span class="g-title">¡Hola {{ clientName }}!</span>
                 } @else {
                     <span class="g-title">Contesta el questionario</span>
                 }
             </div>
     
-            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a las respuesta a la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino hacia el bienestar.</span>
+            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a tus respuestas de la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino hacia el bienestar.</span>
         </div>
     </div>
 
@@ -27,12 +27,12 @@
                 @if(($index + 1) <= numberProducts) {
                     <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
                         <div class="cart-product">
-                            <img [src]="product.img" draggable="false" alt="">
+                            <img [src]="product.img" draggable="false" alt="" style="border-width: 4px; border: #84c344;">
                             <div>
                                 <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
                                 <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
                                 <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 800 }}</span>
-                                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin: 0;">
+                                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin: 0; background-color: #006d46;">
                                     Comprar ahora
                                 </button>
                             </div>
@@ -59,7 +59,12 @@
 
     </div>
     <div style="text-align: center;">    
-        <h4 class="g-text-md" style="padding-bottom: 20px; color: green;">Consulta la disponibilidad de productos en tu país</h4>
+        <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulta la disponibilidad de productos en tu país.</h4>
+</div>
+<div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+    <span class="g-text-sm">
+        <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+    </span>
 </div>
     <img src="assets/img/headerResult3_4.png" draggable="false" style="width: 100%;" alt="">
     <div class="vertical-line">
@@ -75,7 +80,7 @@
                    <img src="assets/img/Tip1.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
                     <div class="recommendation-body">
                         <span class="g-text" style="margin-bottom: .5rem;"><b>El agua es vital para el organismo</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La sed es una señal de deshidratación. Es indispensable tomar agua antes que aparezca la sed. Después de saciar la sed se recomienda seguir tomando líquidos durante el día.
+                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La sed es una señal de deshidratación. Es indispensable tomar agua antes de que te sientas sediento(a). Después de saciar la sed se recomienda seguir tomando líquidos durante el día.
                         </span>
                     </div>
                 </div>
@@ -153,7 +158,9 @@
 
 
         <div style="margin-bottom: 3rem;">
-            <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: green;">NUTRILITE™</b> y nuestros productos?</span>
+            <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: #006d46;">NUTRILITE™</b> y nuestros productos?</span>
+            <a  class="g-text text-center" href="https://nutrilitetraceability.lat/"> <p style="color: #444; font-size: 1.2rem; ">Visita el sitio de Trazabilidad NUTRILITE™.</p></a>
+            <br>
             <span (click)="startQuestionnaire()" class="g-text text-center" style="cursor: pointer; text-decoration: underline;">Contestar nuevamente la evaluación</span>
         </div>
 
@@ -162,7 +169,7 @@
             <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
                 <div class="form-group">
                     <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta 5 correos "></p-chips>
+                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
 
                     @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors['required']) {
@@ -171,18 +178,16 @@
                     }
                 </div>
 
-                <div class="form-group mb-4">
-                    <label class="g-text" >Nota adicional</label>
-                    <textarea formControlName="aditionalNote" rows="4" class="form-control"></textarea>
-                </div>
+
 
                 <div style="margin-bottom: 2rem;">
+                    <label class="g-text required" >Escribe el texto que se muestra en la imagen</label>
                     <div style="display: flex; gap: 1rem;">
-                        <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control" >
+                        <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
                         
-                        <span class="g-text" style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid green; display: inline;">{{ captcha }}</span>
+                        <span class="g-text" style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid  #84c344; display: inline;">{{ captcha }}</span>
                         
-                        <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text" style="margin: 0;">
+                        <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text" style="margin: 0; color:#006d46;">
                             <i class="fa-solid fa-rotate"></i>
                         </button>
                     </div>
@@ -197,7 +202,7 @@
                 </div>
     
                <div style="display: flex; justify-content: end;">
-                    <button class="primary-btn g-text" style="margin: 0;">
+                    <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;">
                         Enviar <i class="fa-regular fa-envelope"></i>
                     </button>
                </div>
@@ -216,10 +221,12 @@
     <div id="mail" style="display: flex; align-items: center; justify-content: center; background-color: #fff;">
     
         <div style="padding: 2rem;">
-            <h1 style="color: green; text-align: center; font-size: 3rem;">Tus recomendaciones de Nutrilite</h1>
+            <h1 style="color: #006d46; text-align: center; font-size: 3rem;">Tus recomendaciones de NutriliteTH</h1>
     
-            <p style="color: #444; font-size: 1.2rem;">Aqui estan tus recomendaciones de productos Nutrilite personalizadas según tu evaluación de suplementos recientemente completada.</p>
-    
+            <p style="color: #444; font-size: 1.2rem;">Aquí están tus recomendaciones de productos NutriliteTM personalizadas según tu evaluación de suplementos ALIMENTICIOS/DIETARIOS recientemente completada.</p>
+            
+
+
             <p style="color: #444; font-size: 1.2rem; margin-bottom: 2rem;"><b>Notas adicionales:</b> {{ vSend.aditionalNote }}</p>
     
             <div style="border: 1px solid #ccc; padding: 1rem;">
@@ -232,7 +239,7 @@
          
                     <div class="col-lg-6 col-md-12 col-sm-12">
                     <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                        <img [src]="product.emailImg" draggable="false" style="width: 100%;" alt="">
+                        <img [src]="product.emailImg" draggable="false" style="width: 25%;" alt="">
                         <div>
                             <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
                             <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
@@ -240,7 +247,7 @@
                             <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
                                 Comprar ahora
                             </a>
-                            <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                            <small style="margin-top: 2rem; color: #84c344; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
                         </div>
                     </div>
                 </div>
@@ -254,14 +261,9 @@
             <div style="display: flex; justify-content: center; margin-top: 1rem;">
                 <div style="display: flex; gap: 2rem; justify-content: center;">
                     <div style="margin-right: 2rem;">
-                        <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 200px" alt="">
+                        <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 150px" alt="">
                     </div>
-                    <div>
-                        <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
-                        <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
-                        <p style="color: #444;">(Tiempo del centro de México)</p>
-                        <a href="www.amway.com.mx">www.amway.com.mx</a>
-                    </div>
+
                 </div>
             </div>
         </div>

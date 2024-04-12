@@ -64,7 +64,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: '18 a 39 años', value: 1, productsWomen: [2], productsMen: [3], checkSex: true },
         { label: '40 a 49 años', value: 2, productsWomen: [2, 3], productsMen: [4], checkSex: true },
         { label: '50 a 59 años', value: 3, productsWomen: [2, 3], productsMen: [3, 4], checkSex: true },
-        { label: 'Más de 60 años', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
+        { label: '60 o más años', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
       ],
       selected: null
     },
@@ -76,7 +76,7 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'Quiero ser mi mejor versión.', value: 1, products: [5] },
         { label: 'Quiero desarrollar hábitos más saludables.', value: 2, products: [7] },
-        { label: 'Estoy buscando algunos consejos para comer sano.', value: 3, products: [3, 6] },
+        { label: 'Estoy buscando mejorar mi bienestar.', value: 3, products: [3, 6] },
       ],
       selected: [],
       footer: ` <span class="gw-30 g-text text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
@@ -108,7 +108,7 @@ export class QuestionnaireComponent implements OnInit {
                   <b class="field-items"> Básica:</b> Es complementar la alimentación con suplementos alimenticios/dietarios que se inicia cuando no se han consumido antes estos productos y que sirve como adaptación. <br><br> 
                 </li>
                 <li>  
-                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/ nutrientes para una complementación más específica según las necesidades.
+                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/nutrientes para una complementación más específica según las necesidades.
                 </li>
                 </ul>
                 </small>`
@@ -164,7 +164,7 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'Rara vez', value: 1, products: [12, 13] },
         { label: 'Ocasionalmente', value: 2, products: [12] },
-        { label: 'Me levanto muy activo(a)', value: 3, products: [13] },
+        { label: 'Me levanto muy activo(a).', value: 3, products: [13] },
       ],
       selected: null
     },
@@ -175,8 +175,8 @@ export class QuestionnaireComponent implements OnInit {
       showRequired: false,
       options: [
         { label: 'Ninguna (0)', value: 1, products: [1, 2] },
-        { label: '1 porción al día', value: 2, products: [2] },
-        { label: '2 porciones al día', value: 3, products: [2] },
+        { label: '1 porción al día.', value: 2, products: [2] },
+        { label: '2 porciones al día.', value: 3, products: [2] },
       ],
       selected: null,
       footer: ` <small class="gw-30 g-text" >
@@ -191,13 +191,13 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'No hago ejercicios regularmente.', value: 1, products: [] },
         { label: 'Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.', value: 2, products: [8, 9, 15] },
-        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 ó 4 veces a la semana.', value: 3, products: [1, 2, 3] },
+        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.', value: 3, products: [1, 2, 3] },
         { label: 'Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.', value: 4, products: [4, 5, 9, 14] },
       ],
       selected: null
     },
     {
-      question: '¿Vives o trabajas en un área de mucha contaminación, con mucho tráfico pesado, industrias alrededor, humo o aire de mala calidad?',
+      question: '¿Vives o trabajas en un área de mucha contaminación, tráfico pesado, industrias alrededor, humo o aire de mala calidad?',
       multi: false,
       margin: 30,
       showRequired: false,
@@ -257,8 +257,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label: 'Menos de 20 minutos al día', value: 1, products: [1] },
-        { label: 'Más de 20 minutos al día', value: 2, products: [15] },
+        { label: 'Menos de 20 minutos al día.', value: 1, products: [1] },
+        { label: 'Más de 20 minutos al día.', value: 2, products: [15] },
       ],
       selected: null
     },
@@ -274,7 +274,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: null
     },
     {
-      question: 'Buen trabajo. ¡Eso es todo!',
+      question: 'Buen trabajo ¡Eso es todo!',
       multi: false,
       margin: 70,
       showRequired: false,
@@ -283,7 +283,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: 'Despedida',
       footer: ` <span class="gw-50 g-text text-center" >
                   Ahora tenemos todo lo que necesitamos para elegir recomendaciones personalizadas solo para ti. <br><br>
-                  Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorear tu bienestar. Ádemas, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
+                  Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorar tu bienestar. Además, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
                 </span>`
     },
   ]
