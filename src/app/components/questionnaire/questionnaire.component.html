@@ -49,7 +49,7 @@
                 <br>
 
                 <label class="g-text required" >País</label>
-                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }" style="font-size: 15px;">
+                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }">
                     <option value="AR">Argentina</option>
                     <option value="CH">Chile</option>
                     <option value="CO">Colombia</option>
@@ -82,19 +82,19 @@
     </div>
 
  <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
- <div class="progress" style="height: 25px; width: 100%; background:  #e3f3eb;" >
+ <div class="progress" style="height: 25px; width: 100%; background:  #cee7b4;" >
     <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 25px; width: 100%;  opacity: 100%;"></div>
 </div>
     <div class="footer-btns">
-        <button (click)="prevQuestion()" class="g-text secondary-btn">
+        <button (click)="prevQuestion()" class="g-text secondary-btn" style="color:  #006d46;">
             <i class="fa fa-chevron-left"></i> Regresar
         </button>
         @if(questions[questionIndex]?.isFinished){
-            <button (click)="showProducts()" class="g-text primary-btn">
+            <button (click)="showProducts()" class="g-text primary-btn" style="background-color:  #006d46;">
                 Mis resultados <i class="fa fa-chevron-right"></i>
             </button>
         } @else {
-            <button (click)="nextQuestion()" class="g-text primary-btn">
+            <button (click)="nextQuestion()" class="g-text primary-btn" style="background-color:  #006d46;">
                 Continuar <i class="fa fa-chevron-right"></i>
             </button>
         }

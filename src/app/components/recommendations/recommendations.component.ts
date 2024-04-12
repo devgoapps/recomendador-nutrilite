@@ -88,7 +88,7 @@ export class RecommendationsComponent implements OnInit {
 
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
-      From: "brendacavazos14@outlook.es", // Cambiar ruta de Amway
+      From: "brenda@ethos.com.mx", // Cambiar ruta de Amway
       To: emails,
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,
@@ -135,7 +135,7 @@ export class RecommendationsComponent implements OnInit {
   288B302B23A8A6B58CC0297142A99B585ACE2938FBCABE718BC61C7C43C50524DFBC2C4538ED466CBBA65E8823D55FEE
 
   Nombre de usuario
-nutrirec@amway.com
+  nutrirec@amway.com
   brendacavazos14@outlook.es
   Contraseña
 DBB6AD785D81E60B33707AD39F5235A97A44

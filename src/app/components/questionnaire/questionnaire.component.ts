@@ -64,7 +64,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: '18 a 39 años', value: 1, productsWomen: [2], productsMen: [3], checkSex: true },
         { label: '40 a 49 años', value: 2, productsWomen: [2, 3], productsMen: [4], checkSex: true },
         { label: '50 a 59 años', value: 3, productsWomen: [2, 3], productsMen: [3, 4], checkSex: true },
-        { label: 'Más de 60 años', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
+        { label: '60 o más años', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
       ],
       selected: null
     },
@@ -76,7 +76,7 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'Quiero ser mi mejor versión.', value: 1, products: [5] },
         { label: 'Quiero desarrollar hábitos más saludables.', value: 2, products: [7] },
-        { label: 'Estoy buscando algunos consejos para comer sano.', value: 3, products: [3, 6] },
+        { label: 'Estoy buscando mejorar mi bienestar.', value: 3, products: [3, 6] },
       ],
       selected: [],
       footer: ` <span class="gw-30 g-text text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
@@ -108,7 +108,7 @@ export class QuestionnaireComponent implements OnInit {
                   <b class="field-items"> Básica:</b> Es complementar la alimentación con suplementos alimenticios/dietarios que se inicia cuando no se han consumido antes estos productos y que sirve como adaptación. <br><br> 
                 </li>
                 <li>  
-                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/ nutrientes para una complementación más específica según las necesidades.
+                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/nutrientes para una complementación más específica según las necesidades.
                 </li>
                 </ul>
                 </small>`
@@ -164,7 +164,7 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'Rara vez', value: 1, products: [12, 13] },
         { label: 'Ocasionalmente', value: 2, products: [12] },
-        { label: 'Me levanto muy activo(a)', value: 3, products: [13] },
+        { label: 'Me levanto muy activo(a).', value: 3, products: [13] },
       ],
       selected: null
     },
@@ -175,8 +175,8 @@ export class QuestionnaireComponent implements OnInit {
       showRequired: false,
       options: [
         { label: 'Ninguna (0)', value: 1, products: [1, 2] },
-        { label: '1 porción al día', value: 2, products: [2] },
-        { label: '2 porciones al día', value: 3, products: [2] },
+        { label: '1 porción al día.', value: 2, products: [2] },
+        { label: '2 porciones al día.', value: 3, products: [2] },
       ],
       selected: null,
       footer: ` <small class="gw-30 g-text" >
@@ -191,13 +191,13 @@ export class QuestionnaireComponent implements OnInit {
       options: [
         { label: 'No hago ejercicios regularmente.', value: 1, products: [] },
         { label: 'Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.', value: 2, products: [8, 9, 15] },
-        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 ó 4 veces a la semana.', value: 3, products: [1, 2, 3] },
+        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.', value: 3, products: [1, 2, 3] },
         { label: 'Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.', value: 4, products: [4, 5, 9, 14] },
       ],
       selected: null
     },
     {
-      question: '¿Vives o trabajas en un área de mucha contaminación, con mucho tráfico pesado, industrias alrededor, humo o aire de mala calidad?',
+      question: '¿Vives o trabajas en un área de mucha contaminación, tráfico pesado, industrias alrededor, humo o aire de mala calidad?',
       multi: false,
       margin: 30,
       showRequired: false,
@@ -257,8 +257,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label: 'Menos de 20 minutos al día', value: 1, products: [1] },
-        { label: 'Más de 20 minutos al día', value: 2, products: [15] },
+        { label: 'Menos de 20 minutos al día.', value: 1, products: [1] },
+        { label: 'Más de 20 minutos al día.', value: 2, products: [15] },
       ],
       selected: null
     },
@@ -274,7 +274,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: null
     },
     {
-      question: 'Buen trabajo. ¡Eso es todo!',
+      question: 'Buen trabajo ¡Eso es todo!',
       multi: false,
       margin: 70,
       showRequired: false,
@@ -283,7 +283,7 @@ export class QuestionnaireComponent implements OnInit {
       selected: 'Despedida',
       footer: ` <span class="gw-50 g-text text-center" >
                   Ahora tenemos todo lo que necesitamos para elegir recomendaciones personalizadas solo para ti. <br><br>
-                  Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorear tu bienestar. Ádemas, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
+                  Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorar tu bienestar. Además, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
                 </span>`
     },
   ]
@@ -295,7 +295,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas & 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
       img: 'assets/img/LAS/Daily Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily Plus.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=126009&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus',  // LINKS DE COMPRA PRODUCTOS
       count: 0,
     },
@@ -331,7 +331,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Double X',
       whyIsRecommended: 'Suplemento alimenticio/dietario que contiene 12 Vitaminas, 10 Minerales y 22 Concentrados de Plantas (fitonutrientes) que ayudan a complementar tu alimentación, utilizando mejor la energía de los alimentos para mantener las exigencias del ritmo de vida diario.',
       img: 'assets/img/LAS/Double X.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Double X.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Double_X.png',
       linkBuy:'',
       count: 0,
     },
@@ -349,7 +349,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Equilibra tu vida',
       whyIsRecommended: 'Esta solución contribuye en el buen funcionamiento y mantenimiento del sistema circulatorio. Daily Plus aporta vitaminas y minerales como la vitamina B1, B2, B6, ácido fólico, vitamina C, hierro, cobre y zinc que contribuyen a la salud del corazón, apoyan el funcionamiento normal de los vasos sanguíneos, ayudan a formar y mantener las células sanguíneas y a la hemoglobina. Los Omega 3 EPA y DHA, contribuyen al funcionamiento normal del corazón.',
       img: 'assets/img/LAS/Daily+1/Equilibra tu vida.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Equilibra tu vida.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
       linkBuy:'',
       count: 0,
     },
@@ -358,7 +358,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'C Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario que tiene la capacidad de liberar lentamente la vitamina C en el cuerpo, fortaleciendo las defensas y permitiendo que sus propiedades se aprovechen mejor.',
       img: 'assets/img/LAS/C Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/C Plus.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/C_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=109741&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=C_Plus',
       count: 0,
     },
@@ -367,7 +367,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'B Plus',
       whyIsRecommended: 'Aporta 8 vitaminas del complejo B y gracias a su tecnología bicapa de doble acción, libera las vitaminas del complejo B durante 8 horas. Las vitaminas B2 y B12 se liberan de inmediato. Las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas.',
       img: 'assets/img/LAS/B Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/B Plus.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/B_Plus.png',
       linkBuy:'',
       count: 0,
     },
@@ -376,7 +376,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Tri Iron Folic',
       whyIsRecommended: 'Suplemento alimenticio/dietario rico en fitonutrientes. Aporta tres fuentes de hierro, ácido fólico y vitamina C la cual ayuda a una mejor absorción del hierro.',
       img: 'assets/img/LAS/Tri-Iron Folic.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Tri-Iron Folic.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Tri-Iron_Folic.png',
       linkBuy:'',
       count: 0,
     },
@@ -385,7 +385,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Bodykey Shake Plus',
       whyIsRecommended: 'Bebida en polvo baja en grasa y carbohidratos. Proporciona 9 g de proteína, además de vitaminas, minerales y fibra.',
       img: 'assets/img/LAS/Shake Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Shake Plus.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Shake_Plus.png',
       linkBuy:'',
       count: 0,
     },
@@ -394,7 +394,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Prende tu día',
       whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras.',
       img: 'assets/img/LAS/Daily+1/Prende tu dia.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Prende tu dia.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
       linkBuy:'',
       count: 0,
     },
@@ -403,7 +403,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Respuesta Óptima',
       whyIsRecommended: 'Esta combinación de la mano de hábitos saludables como el ejercicio, una alimentación equilibrada y el descanso, aporta variedad de nutrientes como vitamina C, D, E, A, B6, selenio y zinc que pueden contribuir para que el sistema de defensas funcione apropiadamente, protegiendo el organismo de multitud de agresores como virus y bacterias.',
       img: 'assets/img/LAS/Daily+1/Respuesta optima.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Respuesta optima.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
       linkBuy:'',
       count: 0,
     },
@@ -412,7 +412,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Muévete Libre',
       whyIsRecommended: 'Para ayudar a mantener huesos y músculos fuertes y resistentes, que nos permitan movilizarnos con facilidad, realizar trabajos de fuerza y potencia, junto con hábitos saludables, requerimos de nutrientes como proteína, calcio, vitamina C y vitamina D, presentes en esta solución.',
       img: 'assets/img/LAS/Daily+1/Mueevete libre.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Mueevete libre.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
       linkBuy:'',
       count: 0,
     },
@@ -439,7 +439,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Luce Radiante',
       whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales  brillante, suave y resistente y mantener las uñas saludables, es decir, fuertes y resistentes.',
       img: 'assets/img/LAS/Daily+1/Luce radiante.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Luce radiante.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
       linkBuy:'',
       count: 0,
     },
@@ -448,7 +448,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily + 1 Vive Libre',
       whyIsRecommended: 'La función principal del intestino es absorber los nutrientes y el agua; y a la vez eliminar los desechos de la digestión. Cumple otras funciones extraintestinales, relacionadas con la microbiota intestinal. Los prebióticos o fibras vegetales (como la de chicoria/ achicoria), les sirven de alimento a las bacterias buenas, estimula su crecimiento y ayuda a disminuir la absorción de grasas y azúcares de la alimentación. Esta solución apoya el bienestar intestinal aportando vitaminas, minerales y fibra soluble.',
       img: 'assets/img/LAS/Daily+1/Vive libre.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Vive libre.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
       linkBuy:'',
       count: 0,
     },
@@ -457,7 +457,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Ajo Concentrado',
       whyIsRecommended: 'Contiene el ingrediente Alicina y Quercetina. Puede contribuir en la reducción de los niveles altos de grasa en sangre y a prevenir la formación de depósitos de grasa en las arterias. Hipotensor.',
       img: 'assets/img/LAS/Ajo Concentrado.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Ajo Concentrado.png',
+      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Ajo_Concentrado.png',
       linkBuy:'',
       count: 0,
     }
