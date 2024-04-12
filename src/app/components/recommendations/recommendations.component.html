@@ -212,8 +212,10 @@
     <span>Correo enviado correctamente</span>
 </div>
 
-<div style="visibility: hidden; height: 0px; overflow-y: hidden;">
-    <div id="mail" style="display: flex; align-items: center; justify-content: center; background-color: #fff;">
+
+<div style="visibility: hidden; height: 0px; overflow-y: hidden;" >
+
+    <div id="mail" style="background: #fff;">
     
         <div style="padding: 2rem;">
             <h1 style="color: green; text-align: center; font-size: 3rem;">Tus recomendaciones de Nutrilite</h1>
@@ -224,48 +226,100 @@
     
             <div style="border: 1px solid #ccc; padding: 1rem;">
 
-               
+                <table>
+                    <tbody>
+                        @for (product of recommendedProducts; track $index) {
+                            @if(($index + 1) <= numberProducts) {
+                                <tr>
+                                    <td style="width: 50%">
+        
+                                        <table>
+                                            <tbody>
+                                                <tr style="padding: 1rem; border-bottom: 1px solid #ccc; border-radius: 10px; margin-bottom: 1rem;">
+                                                    <td style="width: 30%;">
+                                                        <img [src]="product.emailImg" draggable="false" style="width: 100%; object-fit: cover;" alt="">
+                                                    </td>
+                                                    <td style="width: 70%;">
+                                                        <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
+                                                        <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
+                                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
+                                                            Comprar ahora
+                                                        </a>
+                                                        <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    
+                                    </td>
+                                </tr>
+                            } 
+                        }
+                    </tbody>
+                </table>
          
-            <div class="row">
+                <!--div class="row">
                     @for (product of recommendedProducts; track $index) {
-                    @if(($index + 1) <= numberProducts) {
-         
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                        <img [src]="product.emailImg" draggable="false" style="width: 100%;" alt="">
+                        @if(($index + 1) <= numberProducts) {
+            
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+                                    <img [src]="product.emailImg" draggable="false" style="width: 100%;" alt="">
+                                    <div>
+                                        <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
+                                        <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
+                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
+                                            Comprar ahora
+                                        </a>
+                                        <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                
+                </div-->
+
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 30%; text-align: center;">
+                                <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 60%" alt="">
+                            </td>
+                            <td style="width: 70%; padding: 2rem 0;">
+                                <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
+                                <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
+                                <p style="color: #444;">(Tiempo del centro de México)</p>
+                                <a href="www.amway.com.mx">www.amway.com.mx</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <!--div style="display: flex; justify-content: center; margin-top: 1rem;">
+                    <div style="display: flex; gap: 2rem; justify-content: center;">
+                        <div style="margin-right: 2rem;">
+                            <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 200px" alt="">
+                        </div>
                         <div>
-                            <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
-                            <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
-                            <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                            <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
-                                Comprar ahora
-                            </a>
-                            <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                            <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
+                            <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
+                            <p style="color: #444;">(Tiempo del centro de México)</p>
+                            <a href="www.amway.com.mx">www.amway.com.mx</a>
                         </div>
                     </div>
-                </div>
-                }
-
-                    
-                }
-            </div>
-            </div>
-           
-            <div style="display: flex; justify-content: center; margin-top: 1rem;">
-                <div style="display: flex; gap: 2rem; justify-content: center;">
-                    <div style="margin-right: 2rem;">
-                        <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 200px" alt="">
-                    </div>
-                    <div>
-                        <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
-                        <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
-                        <p style="color: #444;">(Tiempo del centro de México)</p>
-                        <a href="www.amway.com.mx">www.amway.com.mx</a>
-                    </div>
-                </div>
+                </div-->
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
 
 <app-footer></app-footer>
