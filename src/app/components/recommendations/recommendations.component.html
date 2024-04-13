@@ -169,7 +169,7 @@
             <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
                 <div class="form-group">
                     <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
+                    <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
 
                     @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors['required']) {
@@ -226,10 +226,6 @@
             <h1 style="color: #006d46; text-align: center; font-size: 3rem;">Tus recomendaciones de NUTRILITE™</h1>
     
             <p style="color: #444; font-size: 1.2rem;">Aquí están tus recomendaciones de productos NUTRILITE™ personalizadas según tu evaluación de suplementos alimenticios/dietarios recientemente completada.</p>
-            
-
-
-            <p style="color: #444; font-size: 1.2rem; margin-bottom: 2rem;"><b>Notas adicionales:</b> {{ vSend.aditionalNote }}</p>
     
             <div style="border: 1px solid #ccc; padding: 1rem;">
 
@@ -250,10 +246,10 @@
                                                         <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
                                                         <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
                                                         <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 1000 }}</span>
-                                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
+                                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: #006d46; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
                                                             Comprar ahora
                                                         </a>
-                                                        <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                                                        <small style="margin-top: 2rem; color: #84c344; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
                                                     </td>
                                                 </tr>
                                             </tbody>
