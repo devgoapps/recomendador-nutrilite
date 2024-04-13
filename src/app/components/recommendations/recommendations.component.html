@@ -223,9 +223,9 @@
     <div id="mail" style="background: #fff;">
     
         <div style="padding: 2rem;">
-            <h1 style="color: #006d46; text-align: center; font-size: 3rem;">Tus recomendaciones de NutriliteTH</h1>
+            <h1 style="color: #006d46; text-align: center; font-size: 3rem;">Tus recomendaciones de NUTRILITE™</h1>
     
-            <p style="color: #444; font-size: 1.2rem;">Aquí están tus recomendaciones de productos NutriliteTM personalizadas según tu evaluación de suplementos ALIMENTICIOS/DIETARIOS recientemente completada.</p>
+            <p style="color: #444; font-size: 1.2rem;">Aquí están tus recomendaciones de productos NUTRILITE™ personalizadas según tu evaluación de suplementos alimenticios/dietarios recientemente completada.</p>
             
 
 
@@ -249,7 +249,7 @@
                                                     <td style="width: 70%;">
                                                         <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
                                                         <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
-                                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
+                                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 1000 }}</span>
                                                         <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
                                                             Comprar ahora
                                                         </a>
@@ -293,14 +293,9 @@
                     <tbody>
                         <tr>
                             <td style="width: 30%; text-align: center;">
-                                <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 60%" alt="">
+                                <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 10%" alt="">
                             </td>
-                            <td style="width: 70%; padding: 2rem 0;">
-                                <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
-                                <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
-                                <p style="color: #444;">(Tiempo del centro de México)</p>
-                                <a href="www.amway.com.mx">www.amway.com.mx</a>
-                            </td>
+
                         </tr>
                     </tbody>
                 </table>
