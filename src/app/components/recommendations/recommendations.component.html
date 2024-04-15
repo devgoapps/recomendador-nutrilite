@@ -6,13 +6,15 @@
         <div class="name-section">
             <div class="cart-name">
                 @if (clientName) {
-                    <span class="g-title">¡Hola {{ clientName }}!</span>
+                <span class="g-title">¡Hola {{ clientName }}!</span>
                 } @else {
-                    <span class="g-title">Contesta el questionario</span>
+                <span class="g-title">Contesta el questionario</span>
                 }
             </div>
-    
-            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a tus respuestas de la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino hacia el bienestar.</span>
+
+            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a tus
+                respuestas de la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino
+                hacia el bienestar.</span>
         </div>
     </div>
 
@@ -20,36 +22,39 @@
     <div class="vertical-line">
         <span></span>
     </div>
-    
+
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="row">
             @for (product of recommendedProducts; track $index) {
-                @if(($index + 1) <= numberProducts) {
-                    <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
-                        <div class="cart-product">
-                            <img [src]="product.img" draggable="false" alt="" style="border-width: 4px; border: #84c344;">
-                            <div>
-                                <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
-                                <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
-                                <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 800 }}</span>
-                                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin: 0; background-color: #006d46;">
-                                    Comprar ahora
-                                </button>
-                            </div>
-                        </div>
+            @if(($index + 1) <= numberProducts) { <div class="col-lg-6 col-md-12 col-sm-12"
+                style="margin-bottom: 1rem;">
+                <div class="cart-product">
+                    <img [src]="product.img" draggable="false" alt="" style="border-width: 4px; border: #84c344;">
+                    <div>
+                        <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
+                        <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
+                        <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 800
+                            }}</span>
+                        <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm"
+                            style="margin: 0; background-color: #006d46;">
+                            Comprar ahora
+                        </button>
                     </div>
-                }
-            } @empty {
-                <div style="display: flex; align-items: center; flex-direction: column;">
-                    <span class="g-subtitle text-center mb-4">Lo sentimos, no tenemos ninguna recomendación de productos aquí, debido a algunas de tus respuestas</span>
-                    <button class="primary-btn g-subtitle" (click)="startQuestionnaire()"  style="margin: 0;">
-                        Comenzar cuestionario
-                    </button>
                 </div>
-            }
         </div>
+        }
+        } @empty {
+        <div style="display: flex; align-items: center; flex-direction: column;">
+            <span class="g-subtitle text-center mb-4">Lo sentimos, no tenemos ninguna recomendación de productos aquí,
+                debido a algunas de tus respuestas</span>
+            <button class="primary-btn g-subtitle" (click)="startQuestionnaire()" style="margin: 0;">
+                Comenzar cuestionario
+            </button>
+        </div>
+        }
+    </div>
 
-        <!-- @if (recommendedProducts && recommendedProducts.length > 0) {
+    <!-- @if (recommendedProducts && recommendedProducts.length > 0) {
             @if (numberProducts == 4) {
                 <p  (click)="numberProducts = 4;" class="g-text text-center green" style="cursor: pointer;"></p>
             }@else {
@@ -57,158 +62,191 @@
             }
         } -->
 
-    </div>
-    <div style="text-align: center;">    
-        <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulta la disponibilidad de productos en tu país.</h4>
+</div>
+<div style="text-align: center;">
+    <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulta la disponibilidad de productos en tu
+        país.</h4>
 </div>
 <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
     <span class="g-text-sm">
         <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
     </span>
 </div>
-    <img src="assets/img/headerResult3_4.png" draggable="false" style="width: 100%;" alt="">
-    <div class="vertical-line">
-        <span></span>
-    </div>
+<img src="assets/img/headerResult3_4.png" draggable="false" style="width: 100%;" alt="">
+<div class="vertical-line">
+    <span></span>
+</div>
 
-    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
-        <div class="row">
+<div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="row">
 
-            <div class="col-lg-4 col-md-6 col-sm-12" > 
-                
-                <div  class="cart-recommendation" >
-                   <img src="assets/img/Tip1.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>El agua es vital para el organismo</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La sed es una señal de deshidratación. Es indispensable tomar agua antes de que te sientas sediento(a). Después de saciar la sed se recomienda seguir tomando líquidos durante el día.
-                        </span>
-                    </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip1.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>El agua es vital para el organismo</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La sed es una señal de
+                        deshidratación. Es indispensable tomar agua antes de que te sientas sediento(a). Después de
+                        saciar la sed se recomienda seguir tomando líquidos durante el día.
+                    </span>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12" >
-                <div  class="cart-recommendation">
-                    <img src="assets/img/Tip2.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>El sueño de calidad</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Dormir ayuda a mantener el sistema nervioso y el cuerpo en óptimas condiciones. Tener un sueño de calidad y con las horas necesarias, mínimo 7, mejora el estado de ánimo, reduce el estrés y el riesgo de afectaciones físicas.
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div  class="cart-recommendation">
-                    <img src="assets/img/Tip3.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>Los beneficios de la salud oral</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Cuidar las encías y los dientes con una buena higiene (cepillado y uso de hilo dental) y consumiendo alimentos fuentes de calcio como lácteos, vegetales y pescados ayuda a mantenerlos sanos y hace que sea más fácil comer y disfrutar de la buena alimentación.
-                        </span>
-                    </div>
-                </div>
-            </div>
-<br>
-            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
-                <div  class="cart-recommendation">
-                    <img src="assets/img/Tip4.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">                        
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>Importancia de cuidar la vista</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Una visión saludable requiere de diversas formas de cuidado como descansar adecuadamente, proteger los ojos de los rayos UV con el uso de gafas de sol, tener una buena iluminación y consumir alimentos fuentes de carotenos como la zanahoria y de vitamina A como los pescados.
-                        </span>
-                    </div>
-                </div>
-            </div>
-<br>
-            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
-                <div  class="cart-recommendation">
-                    <img src="assets/img/Tip5.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">                        
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>Técnicas que ayudan a lograr el bienestar</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Hay diversas técnicas que pueden ayudar a disminuir el estrés, a mantener el bienestar físico y emocional. La relajación, la meditación y el ejercicio pueden ayudar a adquirir habilidades para controlar las situaciones difíciles, aumentar la autoconciencia y asumir actitudes de autocuidado.
-                        </span>
-                    </div>
-                </div>
-            </div>
-<br>
-
-            <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
-                <div  class="cart-recommendation">
-                    <img src="assets/img/Tip6.png" draggable="false" alt="" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                    <div class="recommendation-body">
-                        <span class="g-text" style="margin-bottom: .5rem;"><b>Cuidado y protección de la piel</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La protección solar, una alimentación sana que aporte frutas y vegetales, una hidratación adecuada y una limpieza cuidadosa, pueden contribuir en el mantenimiento de una piel radiante e hidratada.
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
 
-    </div>
-    <img src="assets/img/headerResult2_3.png" draggable="false" style="width: 100%;" alt="">
-   <!--  <img src="assets/img/headerResult4.png" draggable="false" style="width: 100%;" alt=""> -->
-    <div class="vertical-line">
-        <span></span>
-    </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip2.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>El sueño de calidad</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Dormir ayuda a mantener el
+                        sistema nervioso y el cuerpo en óptimas condiciones. Tener un sueño de calidad y con las horas
+                        necesarias, mínimo 7, mejora el estado de ánimo, reduce el estrés y el riesgo de afectaciones
+                        físicas.
+                    </span>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip3.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>Los beneficios de la salud oral</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Cuidar las encías y los dientes
+                        con una buena higiene (cepillado y uso de hilo dental) y consumiendo alimentos fuentes de calcio
+                        como lácteos, vegetales y pescados ayuda a mantenerlos sanos y hace que sea más fácil comer y
+                        disfrutar de la buena alimentación.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip4.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>Importancia de cuidar la vista</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Una visión saludable requiere de
+                        diversas formas de cuidado como descansar adecuadamente, proteger los ojos de los rayos UV con
+                        el uso de gafas de sol, tener una buena iluminación y consumir alimentos fuentes de carotenos
+                        como la zanahoria y de vitamina A como los pescados.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip5.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>Técnicas que ayudan a lograr el
+                            bienestar</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">Hay diversas técnicas que pueden
+                        ayudar a disminuir el estrés, a mantener el bienestar físico y emocional. La relajación, la
+                        meditación y el ejercicio pueden ayudar a adquirir habilidades para controlar las situaciones
+                        difíciles, aumentar la autoconciencia y asumir actitudes de autocuidado.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
 
-
-    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
-
-
-        <div style="margin-bottom: 3rem;">
-            <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: #006d46;">NUTRILITE™</b> y nuestros productos?</span>
-            <a  class="g-text text-center" href="https://nutrilitetraceability.lat/"> <p style="color: #444; font-size: 1.2rem; ">Visita el sitio de Trazabilidad NUTRILITE™.</p></a>
-            <br>
-            <span (click)="startQuestionnaire()" class="g-text text-center" style="cursor: pointer; text-decoration: underline;">Contestar nuevamente la evaluación</span>
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
+            <div class="cart-recommendation">
+                <img src="assets/img/Tip6.png" draggable="false" alt=""
+                    style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+                <div class="recommendation-body">
+                    <span class="g-text" style="margin-bottom: .5rem;"><b>Cuidado y protección de la piel</b></span>
+                    <span class="g-text-sm" style="margin-bottom: 2rem; height:150px;">La protección solar, una
+                        alimentación sana que aporte frutas y vegetales, una hidratación adecuada y una limpieza
+                        cuidadosa, pueden contribuir en el mantenimiento de una piel radiante e hidratada.
+                    </span>
+                </div>
+            </div>
         </div>
 
 
-        <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-            <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50" >
-                <div class="form-group">
-                    <label class="g-text required" >Dirección de correo electrónico</label>
-                    <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5" [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"  placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
+    </div>
 
-                    @if (cSend['emails'].errors && isFormSubmitted) {
-                        @if (cSend['emails'].errors['required']) {
-                            <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
-                        }
-                    }
-                </div>
+</div>
+<img src="assets/img/headerResult2_3.png" draggable="false" style="width: 100%;" alt="">
+<!--  <img src="assets/img/headerResult4.png" draggable="false" style="width: 100%;" alt=""> -->
+<div class="vertical-line">
+    <span></span>
+</div>
 
 
 
-                <div style="margin-bottom: 2rem;">
-                    <label class="g-text required" >Escribe el texto que se muestra en la imagen</label>
-                    <div style="display: flex; gap: 1rem;">
-                        <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
-                        
-                        <span class="g-text" style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid  #84c344; display: inline;">{{ captcha }}</span>
-                        
-                        <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text" style="margin: 0; color:#006d46;">
-                            <i class="fa-solid fa-rotate"></i>
-                        </button>
-                    </div>
-    
-                    @if (cSend['captcha'].errors && isFormSubmitted) {
-                        @if (cSend['captcha'].errors['required']) {
-                            <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
-                        }
-                    }@else if (!captchaIsValid && isFormSubmitted) {
-                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
-                    }
-                </div>
-    
-               <div style="display: flex; justify-content: end;">
-                    <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;">
-                        Enviar <i class="fa-regular fa-envelope"></i>
+<div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+
+
+    <div style="margin-bottom: 3rem;">
+        <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: #006d46;">NUTRILITE™</b> y nuestros
+            productos?</span>
+        <a class="g-text text-center" href="https://nutrilitetraceability.lat/">
+            <p style="color: #444; font-size: 1.2rem; ">Visita el sitio de Trazabilidad NUTRILITE™.</p>
+        </a>
+        <br>
+        <span (click)="startQuestionnaire()" class="g-text text-center"
+            style="cursor: pointer; text-decoration: underline;">Contestar nuevamente la evaluación</span>
+    </div>
+
+
+    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+        <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50">
+            <div class="form-group">
+                <label class="g-text required">Dirección de correo electrónico</label>
+                <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
+                    [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"
+                    placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
+
+                @if (cSend['emails'].errors && isFormSubmitted) {
+                @if (cSend['emails'].errors['required']) {
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                }
+                }
+            </div>
+
+
+
+            <div style="margin-bottom: 2rem;">
+                <label class="g-text required">Escribe el texto que se muestra en la imagen</label>
+                <div style="display: flex; gap: 1rem;">
+                    <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
+
+                    <span class="g-text"
+                        style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid  #84c344; display: inline;">{{
+                        captcha }}</span>
+
+                    <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text"
+                        style="margin: 0; color:#006d46;">
+                        <i class="fa-solid fa-rotate"></i>
                     </button>
-               </div>
-            </form>
-        </div>
+                </div>
+
+                @if (cSend['captcha'].errors && isFormSubmitted) {
+                @if (cSend['captcha'].errors['required']) {
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                }
+                }@else if (!captchaIsValid && isFormSubmitted) {
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
+                }
+            </div>
+
+            <div style="display: flex; justify-content: end;">
+                <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;">
+                    Enviar <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 
 </div>
 
@@ -217,105 +255,666 @@
     <span>Correo enviado correctamente</span>
 </div>
 
+<!-- style="visibility: hidden; height: 0px; overflow-y: hidden;" -->
+
+
+
 
 <div style="visibility: hidden; height: 0px; overflow-y: hidden;" >
+    <div id="mail2">
 
-    <div id="mail" style="background: #fff;">
+        <head>
+            <style>
+                :root {
+                    color-scheme: light;
+                }
     
-        <div style="padding: 2rem;">
-            <h1 style="color: #006d46; text-align: center; font-size: 3rem;">Tus recomendaciones de NUTRILITE™</h1>
+                html,
+                body {
+                    margin: 0 auto !important;
+                    padding: 0 !important;
+                    height: 100% !important;
+                    width: 100% !important;
     
-            <p style="color: #444; font-size: 1.2rem;">Aquí están tus recomendaciones de productos NUTRILITE™ personalizadas según tu evaluación de suplementos alimenticios/dietarios recientemente completada.</p>
+                    overflow-wrap: break-word;
+                    -ms-word-break: break-all;
+                    -ms-word-break: break-word;
+                    word-break: break-all;
+                    word-break: break-word;
+                }
     
-            <div style="border: 1px solid #ccc; padding: 1rem;">
-
-                <table>
-                    <tbody>
-                        @for (product of recommendedProducts; track $index) {
-                            @if(($index + 1) <= numberProducts) {
-                                <tr>
-                                    <td style="width: 50%">
-        
-                                        <table>
+                center,
+                #body_table {}
+    
+                ul,
+                ol {
+                    padding: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+    
+                li {
+                    margin-bottom: 0;
+                }
+    
+    
+    
+                .list-block-list-outside-left li {
+                    margin-left: 20px !important;
+                }
+    
+                .list-block-list-outside-right li {
+                    margin-right: 20px !important;
+                }
+    
+    
+                .paragraph {
+                    font-size: 15px;
+                    font-family: Open Sans, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: start;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #5f5f5f;
+    
+                }
+    
+    
+                .heading1 {
+                    font-size: 32px;
+                    font-family: Open Sans, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: start;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #000000;
+    
+                }
+    
+    
+                .heading2 {
+                    font-size: 26px;
+                    font-family: Open Sans, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: start;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #000000;
+    
+                }
+    
+    
+                .heading3 {
+                    font-size: 19px;
+                    font-family: Open Sans, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: start;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #000000;
+    
+                }
+    
+    
+                .list {
+                    font-size: 15px;
+                    font-family: Open Sans, sans-serif;
+                    font-weight: normal;
+                    font-style: normal;
+                    text-align: start;
+                    line-height: 1;
+                    text-decoration: none;
+                    color: #5f5f5f;
+    
+                }
+    
+    
+                p a,
+                li a {
+    
+                    display: inline-block;
+                    color: #5457FF;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: normal;
+    
+                }
+    
+                .button-table a {
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: normal;
+                }
+    
+                .paragraph>span {
+                    text-decoration: none;
+                }
+    
+                .heading1>span {
+                    text-decoration: none;
+                }
+    
+                .heading2>span {
+                    text-decoration: none;
+                }
+    
+                .heading3>span {
+                    text-decoration: none;
+                }
+    
+                .list>span {
+                    text-decoration: none;
+                }
+    
+    
+                * {
+                    -ms-text-size-adjust: 100%;
+                    -webkit-text-size-adjust: 100%;
+                }
+    
+                div[style*="margin: 16px 0"] {
+                    margin: 0 !important;
+                }
+    
+                #MessageViewBody,
+                #MessageWebViewDiv {
+                    width: 100% !important;
+                }
+    
+                table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    mso-table-lspace: 0pt !important;
+                    mso-table-rspace: 0pt !important;
+                }
+    
+                table:not(.button-table) {
+                    border-spacing: 0 !important;
+                    border-collapse: collapse !important;
+                    table-layout: fixed !important;
+                    margin: 0 auto !important;
+                }
+    
+                th {
+                    font-weight: normal;
+                }
+    
+                tr td p {
+                    margin: 0;
+                }
+    
+                img {
+                    -ms-interpolation-mode: bicubic;
+                }
+    
+                a[x-apple-data-detectors],
+    
+                .unstyle-auto-detected-links a,
+                .aBn {
+                    border-bottom: 0 !important;
+                    cursor: default !important;
+                    color: inherit !important;
+                    text-decoration: none !important;
+                    font-size: inherit !important;
+                    font-family: inherit !important;
+                    font-weight: inherit !important;
+                    line-height: inherit !important;
+                }
+    
+                .im {
+                    color: inherit !important;
+                }
+    
+                .a6S {
+                    display: none !important;
+                    opacity: 0.01 !important;
+                }
+    
+                img.g-img+div {
+                    display: none !important;
+                }
+    
+                @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+                    u~div .contentMainTable {
+                        min-width: 320px !important;
+                    }
+                }
+    
+                @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+                    u~div .contentMainTable {
+                        min-width: 375px !important;
+                    }
+                }
+    
+                @media only screen and (min-device-width: 414px) {
+                    u~div .contentMainTable {
+                        min-width: 414px !important;
+                    }
+                }
+            </style>
+    
+            <style>
+                @media only screen and (max-device-width: 640px) {
+                    .contentMainTable {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .single-column {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .multi-column {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .imageBlockWrapper {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+                }
+    
+                @media only screen and (max-width: 640px) {
+                    .contentMainTable {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .single-column {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .multi-column {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+    
+                    .imageBlockWrapper {
+                        width: 100% !important;
+                        margin: auto !important;
+                    }
+                }
+            </style>
+    
+        </head>
+    
+        <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F6F8;">
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="640"
+                style="margin: auto;" class="contentMainTable">
+                <tr class="wp-block-editor-spacerblock-v1">
+                    <td style="background-color:#F5F6F8;line-height:50px;font-size:50px;width:100%;min-width:100%">&nbsp;
+                    </td>
+                </tr>
+                <tr class="wp-block-editor-headingblock-v1">
+                    <td valign="top"
+                        style="background-color:#ffffff;display:block;padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px;text-align:center">
+                        <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:36.80px;font-size:32px;background-color:#ffffff;color:#000000;margin:0;word-break:normal"
+                            class="heading1"><span style="color:#006d46">Tus recomendaciones de NUTRILITE™</span></p>
+                    </td>
+                </tr>
+                <tr class="wp-block-editor-paragraphblock-v1">
+                    <td valign="top" style="padding:0px 32px 32px 32px;background-color:#ffffff">
+                        <p class="paragraph"
+                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:30.00px;font-size:15px;margin:0;color:#5f5f5f;word-break:normal">
+                            Aquí están tus recomendaciones de productos NUTRILITE™ personalizadas según tu evaluación de
+                            suplementos alimenticios/dietarios recientemente completada.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:0;padding-left:0;padding-right:0;padding-bottom:40px;background-color:#F9FAFB">
+                        <table role="presentation" class="multi-column"
+                            style="width:640px;border-collapse:collapse !important" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr style="padding-top:0;padding-left:0;padding-right:0;padding-bottom:40px"
+                                    class="wp-block-editor-twocolumnsfiftyfiftyblock-v1">
+                                    <td style="width:320px;float:left" class="wp-block-editor-column single-column">
+                                        <table role="presentation" align="left" border="0" class="single-column" width="320"
+                                            style="width:320px;float:left;border-collapse:collapse !important"
+                                            cellspacing="0" cellpadding="0">
                                             <tbody>
-                                                <tr style="padding: 1rem; border-bottom: 1px solid #ccc; border-radius: 10px; margin-bottom: 1rem;">
-                                                    <td style="width: 30%;">
-                                                        <img [src]="product.emailImg" draggable="false" style="width: 100%; object-fit: cover;" alt="">
+                                                <tr class="wp-block-editor-imageblock-v1">
+                                                    <td style="background-color:#F9FAFB;padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px"
+                                                        align="center">
+                                                        <table align="center" width="272" class="imageBlockWrapper"
+                                                            style="width:272px" role="presentation">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0"><img
+                                                                            [src]="recommendedProducts[0].emailImg"
+                                                                            width="272" height="" alt=""
+                                                                            style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
+                                                                            class="g-img"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </td>
-                                                    <td style="width: 70%;">
-                                                        <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
-                                                        <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
-                                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 1000 }}</span>
-                                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: #006d46; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
-                                                            Comprar ahora
-                                                        </a>
-                                                        <small style="margin-top: 2rem; color: #84c344; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
+                                                </tr>
+                                                <tr class="wp-block-editor-headingblock-v1">
+                                                    <td valign="top"
+                                                        style="background-color:#F9FAFB;display:block;padding-top:20px;padding-right:20px;padding-bottom:4px;padding-left:20px;text-align:center">
+                                                        <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:29.90px;font-size:26px;background-color:#F9FAFB;color:#000000;margin:0;word-break:normal"
+                                                            class="heading2">{{ recommendedProducts[0].name }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 5px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;word-break:normal">
+                                                            <span style="font-weight: bold" class="bold">¿Por qué
+                                                                recomendamos esto?</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 24px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            {{ recommendedProducts[0].whyIsRecommended | slice: 0: 200 }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-buttonblock-v1" align="center">
+                                                    <td style="background-color:#F9FAFB;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;width:100%"
+                                                        valign="top">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0"
+                                                            class="button-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top"
+                                                                        class="button-2KdekfNcJ72dBJuy2k4-x button-td button-td-primary"
+                                                                        style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                        <a   [href]="recommendedProducts[0].linkBuy"
+                                                                            style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
+                                                                            ahora</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:20px 20px 20px 20px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:NaNpx;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="color:#008000">Consulta la disponibilidad de los
+                                                                productos en tu país</span></p>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    
+                                    </td>
+                                    <td style="width:320px;float:left" class="wp-block-editor-column single-column">
+                                        <table role="presentation" align="right" border="0" class="single-column"
+                                            width="320" style="width:320px;float:left;border-collapse:collapse !important"
+                                            cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr class="wp-block-editor-imageblock-v1">
+                                                    <td style="background-color:#F9FAFB;padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px"
+                                                        align="center">
+                                                        <table align="center" width="272" class="imageBlockWrapper"
+                                                            style="width:272px" role="presentation">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0"><img
+                                                                            [src]="recommendedProducts[1].emailImg"
+                                                                            width="272" height="" alt=""
+                                                                            style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
+                                                                            class="g-img"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-headingblock-v1">
+                                                    <td valign="top"
+                                                        style="background-color:#F9FAFB;display:block;padding-top:20px;padding-right:20px;padding-bottom:4px;padding-left:20px;text-align:center">
+                                                        <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:29.90px;font-size:26px;background-color:#F9FAFB;color:#000000;margin:0;word-break:normal"
+                                                            class="heading2">{{ recommendedProducts[1].name }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 5px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="font-weight: bold" class="bold">¿Por qué
+                                                                recomendamos esto?</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 24px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;word-break:normal">
+                                                            {{ recommendedProducts[1].whyIsRecommended | slice: 0: 200 }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-buttonblock-v1" align="center">
+                                                    <td style="background-color:#F9FAFB;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;width:100%"
+                                                        valign="top">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0"
+                                                            class="button-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top"
+                                                                        class="button-zg1E5YmQbyWOMo1JL_D1R button-td button-td-primary"
+                                                                        style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                        <a [href]="recommendedProducts[1].linkBuy"
+                                                                            style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
+                                                                            ahora</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:20px 20px 20px 20px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:NaNpx;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="color:#008000">Consulta la disponibilidad de los
+                                                                productos en tu país</span></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </td>
                                 </tr>
-                            } 
-                        }
-                    </tbody>
-                </table>
-         
-                <!--div class="row">
-                    @for (product of recommendedProducts; track $index) {
-                        @if(($index + 1) <= numberProducts) {
-            
-                            <div class="col-lg-6 col-md-12 col-sm-12">
-                                <div style="padding: 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                                    <img [src]="product.emailImg" draggable="false" style="width: 100%;" alt="">
-                                    <div>
-                                        <span style="margin-bottom: .5rem; font-size: 2.2rem; display: block;"><b>{{ product.name }}</b></span>
-                                        <span style="font-size: 1rem; display: block;"><b>¿Por qué recomendamos esto?</b></span>
-                                        <span style="font-size: 1rem; margin-bottom: 2rem; display: block;" >{{ product.whyIsRecommended | slice: 0: 200 }}</span>
-                                        <a [href]="product.linkBuy" style="margin: 1rem 0; padding: 0.5rem 2.5rem; background-color: green; color: #fff; border-radius: 50px; outline: none; border: none; display: block;  width: fit-content; cursor: pointer;">
-                                            Comprar ahora
-                                        </a>
-                                        <small style="margin-top: 2rem; color: green; font-size: 1rem;">Consulta la disponibilidad de productos en tu país</small>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                
-                </div-->
-
-                <table style="width: 100%;">
-                    <tbody>
-                        <tr>
-                            <td style="width: 30%; text-align: center;">
-                                <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 10%" alt="">
-                            </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            
-                <!--div style="display: flex; justify-content: center; margin-top: 1rem;">
-                    <div style="display: flex; gap: 2rem; justify-content: center;">
-                        <div style="margin-right: 2rem;">
-                            <img src="https://seeklogo.com/images/A/amway-logo-4F4A71602F-seeklogo.com.png" style="width: 200px" alt="">
-                        </div>
-                        <div>
-                            <p style="color: #444;">Si deseas comunicarte con un representante de servicio al cliente, llama a 01-800-833-8300</p>
-                            <p style="color: #444;">Horario de atención de 9 am. a 10 pm.</p>
-                            <p style="color: #444;">(Tiempo del centro de México)</p>
-                            <a href="www.amway.com.mx">www.amway.com.mx</a>
-                        </div>
-                    </div>
-                </div-->
-            </div>
-        </div>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:0;padding-left:0;padding-right:0;padding-bottom:40px;background-color:#F9FAFB">
+                        <table role="presentation" class="multi-column"
+                            style="width:640px;border-collapse:collapse !important" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr style="padding-top:0;padding-left:0;padding-right:0;padding-bottom:40px"
+                                    class="wp-block-editor-twocolumnsfiftyfiftyblock-v1">
+                                    <td style="width:320px;float:left" class="wp-block-editor-column single-column">
+                                        <table role="presentation" align="left" border="0" class="single-column" width="320"
+                                            style="width:320px;float:left;border-collapse:collapse !important"
+                                            cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr class="wp-block-editor-imageblock-v1">
+                                                    <td style="background-color:#F9FAFB;padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px"
+                                                        align="center">
+                                                        <table align="center" width="272" class="imageBlockWrapper"
+                                                            style="width:272px" role="presentation">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0"><img
+                                                                            [src]="recommendedProducts[2].emailImg"
+                                                                            width="272" height="" alt=""
+                                                                            style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
+                                                                            class="g-img"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-headingblock-v1">
+                                                    <td valign="top"
+                                                        style="background-color:#F9FAFB;display:block;padding-top:20px;padding-right:20px;padding-bottom:4px;padding-left:20px;text-align:center">
+                                                        <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:29.90px;letter-spacing:0;font-size:26px;background-color:#F9FAFB;color:#000000;margin:0;word-break:normal"
+                                                            class="heading2">{{ recommendedProducts[2].name }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 5px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="font-weight: bold" class="bold">¿Por qué
+                                                                recomendamos esto?</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 24px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            {{ recommendedProducts[2].whyIsRecommended | slice: 0: 200 }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-buttonblock-v1" align="center">
+                                                    <td style="background-color:#F9FAFB;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;width:100%"
+                                                        valign="top">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0"
+                                                            class="button-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top"
+                                                                        class="button-rxVx6xkfAQlgW3xprHtOx button-td button-td-primary"
+                                                                        style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                        <a  [href]="recommendedProducts[2].linkBuy"
+                                                                            style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
+                                                                            ahora</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:20px 20px 20px 20px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:NaNpx;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="color:#008000">Consulta la disponibilidad de los
+                                                                productos en tu país</span></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="width:320px;float:left" class="wp-block-editor-column single-column">
+                                        <table role="presentation" align="right" border="0" class="single-column"
+                                            width="320" style="width:320px;float:left;border-collapse:collapse !important"
+                                            cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr class="wp-block-editor-imageblock-v1">
+                                                    <td style="background-color:#F9FAFB;padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px"
+                                                        align="center">
+                                                        <table align="center" width="272" class="imageBlockWrapper"
+                                                            style="width:272px" role="presentation">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0"><img
+                                                                            [src]="recommendedProducts[3].emailImg"
+                                                                            width="272" height="" alt=""
+                                                                            style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
+                                                                            class="g-img"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-headingblock-v1">
+                                                    <td valign="top"
+                                                        style="background-color:#F9FAFB;display:block;padding-top:20px;padding-right:20px;padding-bottom:4px;padding-left:20px;text-align:center">
+                                                        <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:29.90px;letter-spacing:0;font-size:26px;background-color:#F9FAFB;color:#000000;margin:0;word-break:normal"
+                                                            class="heading2">{{ recommendedProducts[3].name }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 5px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="font-weight: bold" class="bold">¿Por qué
+                                                                recomendamos esto?</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:0px 24px 24px 24px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:22.50px;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            {{ recommendedProducts[3].whyIsRecommended | slice: 0: 200 }}</p>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-buttonblock-v1" align="center">
+                                                    <td style="background-color:#F9FAFB;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;width:100%"
+                                                        valign="top">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0"
+                                                            class="button-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top"
+                                                                        class="button-UypR3rHggZEGTjrdyiTYX button-td button-td-primary"
+                                                                        style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                        <a  [href]="recommendedProducts[3].linkBuy"
+                                                                            style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
+                                                                            ahora</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="wp-block-editor-paragraphblock-v1">
+                                                    <td valign="top"
+                                                        style="padding:20px 20px 20px 20px;background-color:#F9FAFB">
+                                                        <p class="paragraph"
+                                                            style="font-family:Open Sans, sans-serif;text-align:center;line-height:NaNpx;font-size:15px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
+                                                            <span style="color:#008000">Consulta la disponibilidad de los
+                                                                productos en tu país</span></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="wp-block-editor-imageblock-v1">
+                    <td style="background-color:#ffffff;padding-top:24px;padding-bottom:24px;padding-left:24px;padding-right:24px"
+                        align="center">
+                        <table align="center" width="148" class="imageBlockWrapper" style="width:148px" role="presentation">
+                            <tbody>
+                                <tr>
+                                    <td style="padding:0"><img
+                                            src="https://api.smtprelay.co/userfile/5f279ec5-b1c3-40cf-ad77-f1e6b36e8329/amway.png"
+                                            width="148" height="" alt=""
+                                            style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
+                                            class="g-img"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
     </div>
 </div>
-
-
-
 
 
 

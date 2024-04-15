@@ -82,13 +82,17 @@ export class RecommendationsComponent implements OnInit {
 
   sendEmail(){
     let toast = document.getElementById('toast');
-    let mailBody = document.getElementById('mail');
+    let mailBody = document.getElementById('mail2');
 
     let emails = this.vSend.emails.toString();
 
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
       From: "brenda@ethos.com.mx", // Cambiar ruta de Amway
+
+      //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
+      //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
+
       To: emails,
       Subject: "Tus recomendaciones Nutrilite",
       Body: mailBody?.outerHTML,
