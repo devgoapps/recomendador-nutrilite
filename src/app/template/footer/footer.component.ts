@@ -12,6 +12,7 @@ export class FooterComponent {
   code: string | null = '';
 
   ngOnInit(){
-    this.code = sessionStorage.getItem('çode');
+    this.code = sessionStorage.getItem('code');
+    console.log(this.code)
   }
 }
