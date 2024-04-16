@@ -33,6 +33,8 @@ export class RecommendationsComponent implements OnInit {
 
   numberProducts: number = 4;
 
+  code: string | null = '';
+
   values = [];
 
   sendForm!: FormGroup;
@@ -45,6 +47,9 @@ export class RecommendationsComponent implements OnInit {
 
   ngOnInit(): void {
     let utag_data = environment.utagInfo.home;
+
+    this.code = sessionStorage.getItem('code');
+    console.log(this.code);
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
     setTimeout(() => {

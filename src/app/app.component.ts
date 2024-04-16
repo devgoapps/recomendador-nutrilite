@@ -21,7 +21,7 @@ export class AppComponent {
     let hostSplit = hostname.split('.');
     let code = hostSplit[hostSplit.length - 1];
 
-    sessionStorage.setItem('code', 'co');
+    sessionStorage.setItem('code', 'mx');
 
     window.utag_data.site_webProperty_mod = hostname + ' | ecommerce';
     window.utag_data.site_country = code;

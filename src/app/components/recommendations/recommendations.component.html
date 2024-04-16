@@ -67,11 +67,143 @@
     <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulta la disponibilidad de productos en tu
         país.</h4>
 </div>
-<div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-    <span class="g-text-sm">
-        <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
-    </span>
-</div>
+
+@if (code == 'mx') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>ESTE PRODUCTO NO ES UN MEDICAMENTO. EL CONSUMO DE ESTE PRODUCTO ES RESPONSABILIDAD DE QUIEN LO RECOMIENDA Y DE QUIEN LO USA.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'gt') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
+                <br>
+                <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
+                <br>
+                <b>NO USAR EN NIÑOS.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'sv') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
+                <br>
+                <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
+                <br>
+                <b>NO USAR EN NIÑOS.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'hn') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'pa') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'cr') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
+                <br>
+                <b>NO USAR EN NIÑOS.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'ar') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'cl') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>"Su uso no es recomendable para consumo por menores de 8 años, embarazadas y nodrizas, salvo indicación profesional competente y no reemplaza a una alimentación balanceada".</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'uy') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 'co') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>ESTE PRODUCTO NO SIRVE PARA EL DIAGNOSTICO, TRATAMIENTO, CURA</b>
+                <br>
+                <b>O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN</b>
+                <br>
+                <b>EQUILIBRADA. MANTÉNGASE FUERA DEL ALCANCE DE LOS NIÑOS.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+@else if (code == 've') {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+            </span>
+        </div>
+
+    </footer>    
+}@else {
+    <footer>
+        <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
+            <span class="g-text-sm">
+                <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+            </span>
+        </div>
+
+    </footer>    
+}
+
+
+
 <img src="assets/img/headerResult3_4.png" draggable="false" style="width: 100%;" alt="">
 <div class="vertical-line">
     <span></span>
@@ -260,7 +392,7 @@
 
 
 
-<div >
+<div  style="visibility: hidden; height: 0px; overflow-y: hidden;">
     <div id="mail2">
 
         <head>
@@ -559,7 +691,7 @@
                                 <td valign="top"
                                     style="background-color:#ffffff;display:block;padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px;text-align:center">
                                     <p style="font-family:Open Sans, sans-serif;text-align:center;line-height:36.80px;font-size:32px;background-color:#ffffff;color:#000000;margin:0;word-break:normal"
-                                        class="heading1"><span style="color:#008000">Tus recomendaciones de NUTRILITE™</span>
+                                        class="heading1"><span style="color:#006d46">Tus recomendaciones de NUTRILITE™</span>
                                     </p>
                                 </td>
                             </tr>
@@ -646,7 +778,7 @@
                                                                             <tr>
                                                                                 <td valign="top"
                                                                                     class="button-aZyBhWgqSymMUXOxXk1aC button-td button-td-primary"
-                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#006d46;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
                                                                                     <a  [href]="recommendedProducts[0].linkBuy"
                                                                                         style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
                                                                                         ahora</a></td>
@@ -660,7 +792,7 @@
                                                                     style="padding:10px 32px 10px 32px;background-color:#ffffff">
                                                                     <p class="paragraph"
                                                                         style="font-family:Open Sans, sans-serif;text-align:center;line-height:18.00px;font-size:12px;margin:0;color:#5f5f5f;word-break:normal">
-                                                                        <span style="color:#008000">Consulta la disponibilidad
+                                                                        <span style="color:#84c344">Consulta la disponibilidad
                                                                             de los productos en tu país</span></p>
                                                                 </td>
                                                             </tr>
@@ -747,7 +879,7 @@
                                                                             <tr>
                                                                                 <td valign="top"
                                                                                     class="button-5jD-qAHvJU4BH_DqV38Jm button-td button-td-primary"
-                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#006d46;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
                                                                                     <a  [href]="recommendedProducts[1].linkBuy"
                                                                                         style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
                                                                                         ahora</a></td>
@@ -761,7 +893,7 @@
                                                                     style="padding:10px 32px 10px 32px;background-color:#ffffff">
                                                                     <p class="paragraph"
                                                                         style="font-family:Open Sans, sans-serif;text-align:center;line-height:18.00px;font-size:12px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
-                                                                        <span style="color:#008000">Consulta la disponibilidad
+                                                                        <span style="color:#84c344">Consulta la disponibilidad
                                                                             de los productos en tu país</span></p>
                                                                 </td>
                                                             </tr>
@@ -848,7 +980,7 @@
                                                                             <tr>
                                                                                 <td valign="top"
                                                                                     class="button-xVDVXgk0F86PLPe51WQxI button-td button-td-primary"
-                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#006d46;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
                                                                                     <a  [href]="recommendedProducts[2].linkBuy"
                                                                                         style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
                                                                                         ahora</a></td>
@@ -862,7 +994,7 @@
                                                                     style="padding:10px 32px 10px 32px;background-color:#ffffff">
                                                                     <p class="paragraph"
                                                                         style="font-family:Open Sans, sans-serif;text-align:center;line-height:18.00px;font-size:12px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
-                                                                        <span style="color:#008000">Consulta la disponibilidad
+                                                                        <span style="color:#84c344">Consulta la disponibilidad
                                                                             de los productos en tu país</span></p>
                                                                 </td>
                                                             </tr>
@@ -949,7 +1081,7 @@
                                                                             <tr>
                                                                                 <td valign="top"
                                                                                     class="button-sN4miQa2gbJZIz6BQqML5 button-td button-td-primary"
-                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#008000;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
+                                                                                    style="cursor:pointer;border:none;border-radius:50px;background-color:#006d46;font-size:16px;font-family:Open Sans, sans-serif;width:fit-content;text-decoration:none;letter-spacing:0;color:#ffffff;overflow:hidden">
                                                                                     <a  [href]="recommendedProducts[3].linkBuy"
                                                                                         style="color:#ffffff;display:block;padding:10px 24px 10px 24px">Comprar
                                                                                         ahora</a></td>
@@ -963,7 +1095,7 @@
                                                                     style="padding:10px 32px 10px 32px;background-color:#ffffff">
                                                                     <p class="paragraph"
                                                                         style="font-family:Open Sans, sans-serif;text-align:center;line-height:18.00px;font-size:12px;margin:0;color:#5f5f5f;letter-spacing:0;word-break:normal">
-                                                                        <span style="color:#008000">Consulta la disponibilidad
+                                                                        <span style="color:#84c344">Consulta la disponibilidad
                                                                             de los productos en tu país</span></p>
                                                                 </td>
                                                             </tr>
