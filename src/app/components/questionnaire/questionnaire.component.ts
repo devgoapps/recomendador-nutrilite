@@ -293,7 +293,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 1,
       name: 'Daily Plus',
-      whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas & 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
+      whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas y 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
       img: 'assets/img/LAS/Daily_Plus.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=126009&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus',  // LINKS DE COMPRA PRODUCTOS
@@ -302,7 +302,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 2,
       name: 'Cal Mag D',
-      whyIsRecommended: 'Cal Mag D aporta dos fuentes naturales de calcio: carbonato de calcio (piedra caliza) y algas marinas calcificadas, además contiene vitamina D y magnesio que promueven y ayudan al organismo con la absorción, retención y utilización del calcio para el desarrollo de huesos y dientes fuertes.',
+      whyIsRecommended: 'Aporta dos fuentes naturales de calcio: carbonato de calcio (piedra caliza) y algas marinas calcificadas, además contiene vitamina D y magnesio que promueven y ayudan al organismo con la absorción, retención y utilización del calcio para el desarrollo de huesos y dientes fuertes.',
       img: 'assets/img/LAS/CalMagD.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/CalMagD.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110609&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Calmag_D',
@@ -338,7 +338,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 6,
       name: 'Fibra en Polvo',
-      whyIsRecommended: 'Suplemento alimenticio/dietario/alimento a base de tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
+      whyIsRecommended: ' Combina tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
       img: 'assets/img/LAS/Fibra.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Fibra.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&line=G&NavM=N&BC=102736&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=fibra_polvo',
@@ -365,7 +365,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 9,
       name: 'B Plus',
-      whyIsRecommended: 'Aporta 8 vitaminas del complejo B y gracias a su tecnología bicapa de doble acción, libera las vitaminas del complejo B durante 8 horas. Las vitaminas B2 y B12 se liberan de inmediato. Las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas.',
+      whyIsRecommended: 'Aporta 8 vitaminas del complejo B que se liberan de forma gradual durante 8 horas gracias a su tecnología bicapa de doble acción. Las vitaminas B2 y B12 se liberan de inmediato, mientras que las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas.',
       img: 'assets/img/LAS/B_Plus.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/B_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110170&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=B_Plus',
@@ -419,7 +419,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 15,
       name: 'Lecitina E',
-      whyIsRecommended: 'Suplemento alimenticio masticable con vitamina E y lecitina, tiene un agradable sabor a miel y nuez de arce. La Vitamina E es antioxidante, ayuda a disminuir el daño celular ocasionado por los radicales libres.',
+      whyIsRecommended: 'Suplemento alimenticio/dietario masticable con vitamina E y lecitina, tiene un agradable sabor a miel y nuez de arce. La Vitamina E es antioxidante, ayuda a disminuir el daño celular ocasionado por los radicales libres.',
       img: 'assets/img/LAS/LecithinE.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/LecithinE.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=122174&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=lecitina',
@@ -437,7 +437,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 17,
       name: 'Daily +1 Luce Radiante',
-      whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales  brillante, suave y resistente y mantener las uñas saludables, es decir, fuertes y resistentes.',
+      whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales, brillante, suave y resistente, así como mantener las uñas saludables, es decir, fuertes y resistentes.',
       img: 'assets/img/LAS/Daily+1/Luce_radiante.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321280&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=lecitina_daily1',
