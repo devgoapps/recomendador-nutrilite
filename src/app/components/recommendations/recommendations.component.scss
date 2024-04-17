@@ -35,10 +35,161 @@
         width: 250px; 
         flex-grow: 0; 
         flex-shrink: 0;
-        border-color: #84c344;
-        border-width: 10px;
     }
 }
+
+
+.card{
+    padding: 2rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 650px;
+
+    img {
+        width: 500px; 
+        flex-grow: 0; 
+        flex-shrink: 0;
+    }
+}
+
+.card div{
+    position:absolute;
+    padding: 5rem;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    background-color: transparent;
+}
+
+.card  button{
+    position: absolute;
+    margin: 15px; 
+    bottom: 0;
+    background-color: #006d46; 
+
+}
+
+.buttonClick-text{
+    display: block;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    font-family: "GTWalsheimPro-Light";
+    color: #84c344;
+    cursor: pointer; 
+    bottom: 0; 
+    position: absolute; 
+    margin-top: 55px;
+}
+
+.card .front{
+    
+transform: perspective(900px) rotateY(0deg);
+
+}
+
+.card .back{
+
+transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card:hover .front{
+
+transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card:hover .back{
+
+transform: perspective(900px) rotateY(360deg);
+
+}
+
+
+
+
+.card2{
+    padding: .5rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    position: relative;
+    width:100%;
+    height: 650px;
+
+    img {
+        width: 500px; 
+        flex-grow: 0; 
+        flex-shrink: 0;
+    }
+}
+
+.card2 div{
+    position:absolute;
+    padding: 5rem;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    background-color: transparent;
+}
+
+.card2  button{
+    position: absolute;
+    margin: 15px; 
+    bottom: 0;
+
+    background-color: #006d46; 
+
+}
+
+.card2 .front{
+    
+    transform: perspective(900px) rotateY(0deg);
+
+}
+
+.card2 .back{
+
+    transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card2:hover .front{
+    transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card2:hover .back{
+    transform: perspective(900px) rotateY(360deg);
+
+}
+
+
+
+
+.whyIsRecommended-Text{
+    display: block;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: "GTWalsheimPro-Light";
+}
+
 
 .cart-recommendation {
     border: 1px solid #ccc; 
@@ -122,6 +273,26 @@ p-chips{
             width: 100px; 
         }
     }
+
+    .card{
+        img {
+            width: 300px; 
+        }
+
+    }
+
+    .card2{
+        img {
+            width: 300px; 
+        }
+
+    }
+
+    .whyIsRecommended-Text{
+        
+        font-size: .9rem;
+    }
+
 }
 
 
@@ -136,6 +307,29 @@ p-chips{
         img {
             width: 100px; 
         }
+    }
+
+    .card{
+        img {
+            width: 300px; 
+        }
+    }
+
+    .card2{
+        img {
+            width: 300px; 
+        }
+
+    }
+
+    .card div{
+
+padding: 25px;
+    }
+
+    .whyIsRecommended-Text{
+        
+        font-size: .9rem;
     }
 }
 

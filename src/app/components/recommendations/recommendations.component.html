@@ -25,34 +25,91 @@
 
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="row">
-            @for (product of recommendedProducts; track $index) {
-            @if(($index + 1) <= numberProducts) { <div class="col-lg-6 col-md-12 col-sm-12"
-                style="margin-bottom: 1rem;">
-                <div class="cart-product">
-                    <img [src]="product.img" draggable="false" alt="" style="border-width: 4px; border: #84c344;">
-                    <div>
-                        <span class="g-subtitle" style="margin-bottom: .5rem;"><b>{{ product.name }}</b></span>
-                        <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>
-                        <span class="g-text-sm" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 800
-                            }}</span>
-                        <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm"
-                            style="margin: 0; background-color: #006d46;">
-                            Comprar ahora
-                        </button>
-                    </div>
-                </div>
-        </div>
-        }
-        } @empty {
-        <div style="display: flex; align-items: center; flex-direction: column;">
-            <span class="g-subtitle text-center mb-4">Lo sentimos, no tenemos ninguna recomendación de productos aquí,
-                debido a algunas de tus respuestas</span>
-            <button class="primary-btn g-subtitle" (click)="startQuestionnaire()" style="margin: 0;">
-                Comenzar cuestionario
-            </button>
-        </div>
-        }
+
+@for (product of recommendedProducts; track $index) {
+    @if(($index + 1) <= numberProducts) { 
+<div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
+    <div class="card"> 
+<!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
+<div class="front">
+    <div> 
+        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:50px;"><b> {{ product.name }} </b></span> 
+         
+         <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 8rem;">
+         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:50px;"><b>¿Por qué recomendamos esto?</b></span> 
+         <p class="buttonClick-text">Haz click aqui</p>
+    </div>                         
+
+</div>
+
+<div class="back"> 
+    <div> 
+        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{ product.name }} </b></span> 
+        <span class="g-text-sm" style="margin-top: -300px; position: absolute;"><b>¿Por qué recomendamos esto?</b></span>     
+        <span class="whyIsRecommended-Text" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 1000
+            }}</span>
+                        <p class="buttonClick-text">Regresar</p>
     </div>
+</div>  
+
+<!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
+<button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm">
+Comprar ahora
+</button>
+</div>  
+
+
+
+
+</div>
+}
+}
+    </div>
+
+
+    <!-- <div class="container2" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="row">
+
+@for (product of recommendedProducts; track $index) {
+    @if(($index + 1) <= numberProducts) { 
+<div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
+    <div class="card2"> 
+
+<div class="front">
+    <div> 
+         <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 2rem; margin-top: -200px; position: absolute;">
+         <span class="g-subtitle" style="bottom: 0; position: absolute; margin-bottom:80px;"><b> {{ product.name }} </b></span> 
+         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:50px;"><b>¿Por qué recomendamos esto?</b></span> 
+         <p class="buttonClick-text">Haz click aqui</p>    
+    </div>                         
+
+</div>
+
+<div class="back"> 
+    <div>  
+        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{ product.name }} </b></span> 
+        <span class="g-text-sm" style="margin-top: -300px; position: absolute;"><b>¿Por qué recomendamos esto?</b></span>     
+        <span class="whyIsRecommended-Text" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 1000
+            }}</span>
+            <p class="buttonClick-text">Regresar</p>  
+        
+    </div>
+</div>  
+      
+<button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm text">
+Comprar ahora
+</button>
+</div>  
+
+
+
+
+</div>
+}
+}
+    </div> -->
+
+    
 
     <!-- @if (recommendedProducts && recommendedProducts.length > 0) {
             @if (numberProducts == 4) {
