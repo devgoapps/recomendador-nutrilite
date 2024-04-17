@@ -173,6 +173,13 @@ label.required::after {
     font-family: "GTWalsheimPro-Light";
 }
 
+.g-text-sm-footer{
+    display: block;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: "GTWalsheimPro-Light";
+}
+
 .g-text-md{
     font-family: "GTWalsheimPro-Regular";
 }
@@ -221,7 +228,11 @@ label.required::after {
     }
 
     .g-text-sm {
-        font-size: .7rem;
+        font-size: 1rem;
+    }
+
+    .g-text-sm-footer{
+        font-size: .8rem;
     }
 
     .g-text-md{
@@ -277,7 +288,11 @@ label.required::after {
     }
 
     .g-text-sm {
-        font-size: .7rem;
+        font-size: 1rem;
+    }
+
+    .g-text-sm-footer{
+        font-size: .8rem;
     }
 
     .g-text-md{
@@ -335,6 +350,10 @@ label.required::after {
         font-size: 1rem;
     }
 
+    .g-text-sm-footer{
+        font-size: .8rem;
+    }
+
     .sheet-img {
         width: 20%;
     }
@@ -380,6 +399,10 @@ label.required::after {
     }
 
     .g-text-sm {
+        font-size: 1rem;
+    }
+
+    .g-text-sm-footer{
         font-size: .8rem;
     }
 
@@ -413,6 +436,10 @@ label.required::after {
     }
 
     .g-text-sm {
+        font-size: 1rem;
+    }
+
+    .g-text-sm-footer{
         font-size: .8rem;
     }
 
@@ -445,6 +472,10 @@ label.required::after {
     }
 
     .g-text-sm {
+        font-size: 1rem;
+    }
+
+    .g-text-sm-footer{
         font-size: .8rem;
     }
 

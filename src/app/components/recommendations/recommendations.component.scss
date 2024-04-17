@@ -49,6 +49,7 @@
     position: relative;
     width: 100%;
     height: 650px;
+    flex-direction: column;
 
     img {
         width: 500px; 
@@ -98,7 +99,12 @@ transform: perspective(900px) rotateY(0deg);
 }
 
 .card .back{
-
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: auto;
 transform: perspective(900px) rotateY(180deg);
 
 }
@@ -115,78 +121,11 @@ transform: perspective(900px) rotateY(360deg);
 
 }
 
-
-
-
-.card2{
-    padding: .5rem; 
-    display: flex; 
-    align-items: center; 
-    gap: 1rem; 
-    border: 1px solid #ccc; 
-    border-radius: 10px;
-    position: relative;
-    width:100%;
-    height: 650px;
-
-    img {
-        width: 500px; 
-        flex-grow: 0; 
-        flex-shrink: 0;
-    }
-}
-
-.card2 div{
-    position:absolute;
-    padding: 5rem;
-    width: 600px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    transition: 1s;
-    background-color: transparent;
-}
-
-.card2  button{
-    position: absolute;
-    margin: 15px; 
-    bottom: 0;
-
-    background-color: #006d46; 
-
-}
-
-.card2 .front{
-    
-    transform: perspective(900px) rotateY(0deg);
-
-}
-
-.card2 .back{
-
-    transform: perspective(900px) rotateY(180deg);
-
-}
-
-.card2:hover .front{
-    transform: perspective(900px) rotateY(180deg);
-
-}
-
-.card2:hover .back{
-    transform: perspective(900px) rotateY(360deg);
-
-}
-
-
-
-
 .whyIsRecommended-Text{
     display: block;
     font-weight: 400;
     font-size: 1.1rem;
+    text-align: center;
     font-family: "GTWalsheimPro-Light";
 }
 
@@ -276,14 +215,7 @@ p-chips{
 
     .card{
         img {
-            width: 300px; 
-        }
-
-    }
-
-    .card2{
-        img {
-            width: 300px; 
+            width: 100%;
         }
 
     }
@@ -311,26 +243,15 @@ p-chips{
 
     .card{
         img {
-            width: 300px; 
+            width: 100%; 
         }
-    }
-
-    .card2{
-        img {
-            width: 300px; 
-        }
-
-    }
-
-    .card div{
-
-padding: 25px;
     }
 
     .whyIsRecommended-Text{
-        
         font-size: .9rem;
+
     }
+
 }
 
 // Medium devices (tablets, 768px and down)
@@ -344,6 +265,17 @@ padding: 25px;
         img {
             width: 100px; 
         }
+    }
+
+    .card{
+        img {
+            width: 100%;
+        }
+    }
+
+    .whyIsRecommended-Text{
+        font-size: .9rem;
+
     }
 }
 
@@ -359,6 +291,17 @@ padding: 25px;
             width: 100px; 
         }
     }
+
+    .card{
+        img {
+            width: 100%;
+        }
+    }
+
+    .whyIsRecommended-Text{
+        font-size: .9rem;
+
+    }
 }
 
 // X-Large devices (large desktops, 1399px and down)
@@ -372,6 +315,24 @@ padding: 25px;
         img {
             width: 100px; 
         }
+    }
+
+    .card{
+        img {
+            width: 100%;
+        }
+    }
+
+    .card2{
+        img {
+            width: 500px; 
+        }
+
+    }
+
+    .whyIsRecommended-Text{
+        font-size: .9rem;
+
     }
 }
 

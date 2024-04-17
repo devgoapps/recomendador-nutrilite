@@ -33,11 +33,11 @@
 <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
 <div class="front">
     <div> 
-        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:50px;"><b> {{ product.name }} </b></span> 
+        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{ product.name }} </b></span> 
          
-         <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 8rem;">
-         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:50px;"><b>¿Por qué recomendamos esto?</b></span> 
-         <p class="buttonClick-text">Haz click aqui</p>
+         <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 5rem;">
+         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;"><b>¿Por qué recomendamos esto?</b></span> 
+         <p class="buttonClick-text" style="margin-bottom: -20px;">Haz clic aquí</p>
     </div>                         
 
 </div>
@@ -53,63 +53,15 @@
 </div>  
 
 <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
-<button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm">
+<button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" style="margin-bottom: 25px;">
 Comprar ahora
 </button>
 </div>  
-
-
-
 
 </div>
 }
 }
     </div>
-
-
-    <!-- <div class="container2" style="padding-top: 2rem; padding-bottom: 2rem;">
-        <div class="row">
-
-@for (product of recommendedProducts; track $index) {
-    @if(($index + 1) <= numberProducts) { 
-<div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
-    <div class="card2"> 
-
-<div class="front">
-    <div> 
-         <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 2rem; margin-top: -200px; position: absolute;">
-         <span class="g-subtitle" style="bottom: 0; position: absolute; margin-bottom:80px;"><b> {{ product.name }} </b></span> 
-         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:50px;"><b>¿Por qué recomendamos esto?</b></span> 
-         <p class="buttonClick-text">Haz click aqui</p>    
-    </div>                         
-
-</div>
-
-<div class="back"> 
-    <div>  
-        <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{ product.name }} </b></span> 
-        <span class="g-text-sm" style="margin-top: -300px; position: absolute;"><b>¿Por qué recomendamos esto?</b></span>     
-        <span class="whyIsRecommended-Text" style="margin-bottom: 2rem;">{{ product.whyIsRecommended | slice: 0: 1000
-            }}</span>
-            <p class="buttonClick-text">Regresar</p>  
-        
-    </div>
-</div>  
-      
-<button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm text">
-Comprar ahora
-</button>
-</div>  
-
-
-
-
-</div>
-}
-}
-    </div> -->
-
-    
 
     <!-- @if (recommendedProducts && recommendedProducts.length > 0) {
             @if (numberProducts == 4) {
@@ -128,7 +80,7 @@ Comprar ahora
 @if (code == 'mx') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>ESTE PRODUCTO NO ES UN MEDICAMENTO. EL CONSUMO DE ESTE PRODUCTO ES RESPONSABILIDAD DE QUIEN LO RECOMIENDA Y DE QUIEN LO USA.</b>
             </span>
         </div>
@@ -138,7 +90,7 @@ Comprar ahora
 @else if (code == 'gt') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
                 <br>
                 <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
@@ -152,7 +104,7 @@ Comprar ahora
 @else if (code == 'sv') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
                 <br>
                 <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
@@ -166,7 +118,7 @@ Comprar ahora
 @else if (code == 'hn') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
             </span>
         </div>
@@ -176,7 +128,7 @@ Comprar ahora
 @else if (code == 'pa') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
             </span>
         </div>
@@ -186,7 +138,7 @@ Comprar ahora
 @else if (code == 'cr') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
                 <br>
                 <b>NO USAR EN NIÑOS.</b>
@@ -198,7 +150,7 @@ Comprar ahora
 @else if (code == 'ar') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
             </span>
         </div>
@@ -208,7 +160,7 @@ Comprar ahora
 @else if (code == 'cl') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>"Su uso no es recomendable para consumo por menores de 8 años, embarazadas y nodrizas, salvo indicación profesional competente y no reemplaza a una alimentación balanceada".</b>
             </span>
         </div>
@@ -218,7 +170,7 @@ Comprar ahora
 @else if (code == 'uy') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
             </span>
         </div>
@@ -228,7 +180,7 @@ Comprar ahora
 @else if (code == 'co') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>ESTE PRODUCTO NO SIRVE PARA EL DIAGNOSTICO, TRATAMIENTO, CURA</b>
                 <br>
                 <b>O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN</b>
@@ -242,7 +194,7 @@ Comprar ahora
 @else if (code == 've') {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
+            <span class="g-text-sm-footer">
                 <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
             </span>
         </div>
@@ -251,8 +203,8 @@ Comprar ahora
 }@else {
     <footer>
         <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-            <span class="g-text-sm">
-                <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
+            <span class="g-text-sm-footer">
+                <b>ESTE PRODUCTO NO ES UN MEDICAMENTO. EL CONSUMO DE ESTE PRODUCTO ES RESPONSABILIDAD DE QUIEN LO RECOMIENDA Y DE QUIEN LO USA.</b>
             </span>
         </div>
 
