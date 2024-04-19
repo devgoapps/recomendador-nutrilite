@@ -60,8 +60,13 @@ export class RecommendationsComponent implements OnInit {
     this.clientCountry = sessionStorage.getItem('clientCountry');
 
     let products = sessionStorage.getItem('recommendedProducts');
-    if(products)
+    if(products){
       this.recommendedProducts = JSON.parse(products);
+      this.recommendedProducts = this.recommendedProducts.map((item) => {
+        item.active = false;
+        return item;
+      });
+    }
 
     this.buildForm();
     this.makeCaptcha();
