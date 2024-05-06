@@ -49,6 +49,7 @@
                 <br>
 
                 <label class="g-text required" >País</label>
+                <div class="item">
                 <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }">
                     <option value="AR">Argentina</option>
                     <option value="CH">Chile</option>
@@ -61,7 +62,9 @@
                     <option value="PA">Panamá</option>
                     <option value="UY">Uruguay</option>
                     <option value="VZ">Venezuela</option>
-                  </select>
+                  </select>                    
+                </div>
+
                   @if (!questions[questionIndex]?.country && questions[questionIndex]?.showRequired) {
                       <span class="g-text-sm gw-30" style="color: red;">¡Espera! ingresa aquí tu país</span>
                   }
@@ -81,8 +84,8 @@
         <div [innerHTML]="questions[questionIndex]?.footer" class="g-footer"></div>
     </div>
 
- <!--    style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
- <div class="progress" style="height: 25px; width: 100%; background:  #cee7b4;" >
+ <!--  #cee7b4  style="position: absolute; z-index: 1; bottom: 10%;" [style.margin-left]="questions[questionIndex]?.margin + '%'" alt="" -->
+ <div class="progress" style="height: 25px; width: 100%; background:  #84c344;" >
     <div class="progress-line" [style.width]="((questionIndex + 1) * 5) + '%'" style="height: 25px; width: 100%;  opacity: 100%; background:  #006d46;"></div>
 </div>
     <div class="footer-btns">

@@ -33,7 +33,7 @@
                         <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
                         <div class="front">
                             <div>
-                                <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                                <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                         product.name }} </b></span>
 
                                 <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 5rem;">
@@ -44,19 +44,21 @@
 
                         </div>
 
-                        <div class="back">
+                        <div class="back" style="height: 520px;">
                             <div>
-                                <span class="g-subtitle" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
+                                <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
                                         product.name }} </b></span>
                                 <span class="g-text-sm" style="margin-top: -300px; position: absolute;"><b>¿Por qué
                                         recomendamos esto?</b></span>
-                                <span class="whyIsRecommended-Text" style="margin-bottom: 2rem;">{{ product.whyIsRecommended
-                                    | slice: 0: 1000
-                                    }}</span>
+                                        <br>
+                                <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
+                                    {{ product.whyIsRecommended | slice: 0: 2000 }} </span>
+
                                 <p class="buttonClick-text" (click)="product.active = false">Regresar</p>
                             </div>
                         </div>
 
+                        <br>
                         <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
                         <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm"
                             style="margin-bottom: 25px;">
@@ -342,12 +344,12 @@
     <div style="margin-bottom: 3rem;">
         <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: #006d46;">NUTRILITE™</b> y nuestros
             productos?</span>
-        <a class="g-text text-center" href="https://nutrilitetraceability.lat/">
+        <a class="g-text text-center" href="https://nutrilitetraceability.lat/" style="text-decoration: underline #84c344; cursor: pointer;">
             <p style="color: #444; font-size: 1.2rem; ">Visita el sitio de Trazabilidad NUTRILITE™.</p>
         </a>
         <br>
         <span (click)="startQuestionnaire()" class="g-text text-center"
-            style="cursor: pointer; text-decoration: underline;">Contestar nuevamente la evaluación</span>
+            style="cursor: pointer; text-decoration: underline #84c344;">Contestar nuevamente la evaluación</span>
     </div>
 
 
@@ -355,9 +357,11 @@
         <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50">
             <div class="form-group">
                 <label class="g-text required">Dirección de correo electrónico</label>
+                <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Puedes enviar estas recomendaciones hasta 5 correos)</b>
                 <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
                     [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"
-                    placeholder="Puedes enviar estas recomendaciones hasta a 5 correos "></p-chips>
+                    placeholder=" "></p-chips>
+                    <b></b>
 
                 @if (cSend['emails'].errors && isFormSubmitted) {
                 @if (cSend['emails'].errors['required']) {

@@ -1767,7 +1767,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
-    });
+    });+
 
     console.warn([...this.recommendedProducts]);
 

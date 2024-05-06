@@ -52,7 +52,8 @@
     flex-direction: column;
 
     img {
-        width: 500px; 
+        max-width: 500px;
+        max-height: 500px; 
         flex-grow: 0; 
         flex-shrink: 0;
     }
@@ -89,7 +90,7 @@
     cursor: pointer; 
     bottom: 0; 
     position: absolute; 
-    margin-top: 55px;
+    margin-bottom: -5px;
 }
 
 .card .front{
@@ -129,6 +130,12 @@ transform: perspective(900px) rotateY(360deg);
     font-family: "GTWalsheimPro-Light";
 }
 
+.product-name{
+    display: block;
+    font-weight: 400;
+    font-size: 2.3rem;
+    font-family: "GTWalsheimPro-Regular";
+}
 
 .cart-recommendation {
     border: 1px solid #ccc; 
@@ -224,6 +231,10 @@ p-chips{
 
     }
 
+    .product-name{
+        font-size: 2rem;
+    }
+
     .whyIsRecommended-Text{
         
         font-size: .9rem;
@@ -256,8 +267,13 @@ p-chips{
         }
     }
 
+    .product-name{
+        font-size: 2rem;
+    }
+
     .whyIsRecommended-Text{
         font-size: .9rem;
+        width: 320px;
 
     }
 
@@ -287,6 +303,10 @@ p-chips{
         }
     }
 
+    .product-name{
+        font-size: 2.1rem;
+    }
+
     .whyIsRecommended-Text{
         font-size: .9rem;
 
@@ -310,6 +330,10 @@ p-chips{
         img {
             width: 100%;
         }
+    }
+
+    .product-name{
+        font-size: 2.1rem;
     }
 
     .whyIsRecommended-Text{
@@ -342,6 +366,10 @@ p-chips{
             width: 500px; 
         }
 
+    }
+
+    .product-name{
+        font-size: 2.3rem;
     }
 
     .whyIsRecommended-Text{

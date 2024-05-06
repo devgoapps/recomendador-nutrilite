@@ -67,14 +67,9 @@
 .g-img {
     width: 100px;
     height: 100px;
-    border: 2px solid green;
+    border: 2px solid #006d46;
     border-radius: 50%;
 }
-
-.form-select{
-    font-size: 25px;
-}
-
 
 .g-footer {
     width: 100%; 
@@ -83,41 +78,72 @@
     margin-top: 2rem;
 }
 
+.form-select{
+    font-family: "GTWalsheimPro-Regular";
+    font-size: 20px;
+}
+
+
+.form-select:focus {
+    border-color: #006d46;
+    box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
+}
+
+
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) {
+
     .form-select{
-        font-size: 15px;
+        font-size: 18px;
     }
+
 }
 
 
 // Small devices (smartphones, 576px and down)
 @media (min-width: 375px) and (max-width: 576px) {
+
     .form-select{
-        font-size: 15px;
+        font-size: 18px;
     }
+
+
+
 }
 
 // Medium devices (tablets, 768px and down)
 @media (min-width: 577px) and (max-width: 768px) {
+
     .form-select{
-        font-size: 25px;
+        font-size: 20px;
     }
+
 }
 
 // Large devices (desktops, 992px and dpwn)
 @media (min-width: 769px) and (max-width: 1024px) {
 
+    .form-select{
+        font-size: 20px;
+    }
 
 }
 
 // X-Large devices (large desktops, 1399px and down)
 @media (min-width: 1025px) and (max-width: 1399px) {
 
+    .form-select{
+        font-size: 20px;
+    }
+
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) and (max-width: 1799px) {
+
+    .form-select{
+        font-size: 20px;
+    }
  
 }
 
