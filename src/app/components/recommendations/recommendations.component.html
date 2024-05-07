@@ -36,7 +36,7 @@
                                 <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                         product.name }} </b></span>
 
-                                <img src="assets/img/LAS/Double_X.png" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                                <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                                 <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                                     <b>¿Por qué recomendamos esto?</b></span>
                                 <p class="buttonClick-text" (click)="product.active = true" style="margin-bottom: -20px;">Haz clic aquí</p>
