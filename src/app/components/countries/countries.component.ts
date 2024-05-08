@@ -22,7 +22,7 @@ export class CountriesComponent implements OnInit {
         link: 'https://www.amway.com.ar/Store/Catalogue.aspx?show=PrdsList&IC=4&C=PO&line=P&NavM=N&utm_source=site&utm_medium=home&utm_campaign=ar_es&utm_content=cta_compra&utm_term=boton_comprar'
     },     
     {
-        img: 'assets/img/Compras/Colombia2.png',
+        img: 'assets/img/Compras/Colombia2_2.png',
         link: 'https://www.amway.com.co/Store/Catalogue.aspx?show=PrdsList&IC=5&C=CA&line=C&NavM=N&utm_source=site&utm_medium=home&utm_campaign=co_es&utm_content=cta_compra&utm_term=boton_comprar'
     },    
 
@@ -64,7 +64,7 @@ export class CountriesComponent implements OnInit {
         link: 'https://www.amway.com.pa/Store/Catalogue.aspx?show=PrdsList&IC=5&C=BO&line=B&NavM=N&utm_source=site&utm_medium=home&utm_campaign=pa_es&utm_content=cta_compra&utm_term=boton_comprar'
     },    
     {
-        img: 'assets/img/Compras/Uruguay2.png',
+        img: 'assets/img/Compras/Uruguay2_2.png',
         link: 'https://www.amway.com.uy/Store/Catalogue.aspx?show=PrdsList&IC=2&C=FV&line=F&NavM=N&utm_source=site&utm_medium=home&utm_campaign=uy_es&utm_content=cta_compra&utm_term=boton_comprar'
     },    
     {

@@ -6,19 +6,17 @@
         <div class="name-section">
             <div class="cart-name">
                 @if (clientName) {
-                <span class="g-title">¡Hola {{ clientName }}!</span>
+                <span class="g-title">Olá, {{ clientName }}!</span>
                 } @else {
                 <span class="g-title">Contesta el questionario</span>
                 }
             </div>
 
-            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Con base a tus
-                respuestas de la evaluación, hemos reunido estas recomendaciones de productos para apoyar tu camino
-                hacia el bienestar.</span>
+            <span class="g-subtitle gw-50 text-center" style="font-weight: 600; margin-top: 180px;">Com base nas suas respostas à avaliação, reunimos estas recomendações de produtos para apoiar o seu caminho rumo ao bem-estar.</span>
         </div>
     </div>
 
-    <img src="assets/img/headerResult2_3.png" draggable="false" alt="" class="headers">
+    <img src="assets/img/headerResult2_3_BZ.png" draggable="false" alt="" class="headers">
     <div class="vertical-line">
         <span></span>
     </div>
@@ -36,10 +34,10 @@
                                 <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                         product.name }} </b></span>
 
-                                <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 5rem;">
+                                <img [src]="product.img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                                 <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
-                                    <b>¿Por qué recomendamos esto?</b></span>
-                                <p class="buttonClick-text" (click)="product.active = true" style="margin-bottom: -20px;">Haz clic aquí</p>
+                                    <b>Por que recomendamos isso?</b></span>
+                                <p class="buttonClick-text" (click)="product.active = true" style="margin-bottom: -20px;">Clique aqui.</p>
                             </div>
 
                         </div>
@@ -48,13 +46,13 @@
                             <div>
                                 <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
                                         product.name }} </b></span>
-                                <span class="g-text-sm" style="margin-top: -300px; position: absolute;"><b>¿Por qué
-                                        recomendamos esto?</b></span>
+                                <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
+                                    <b>Por que recomendamos isso?</b></span>
                                         <br>
                                 <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                                     {{ product.whyIsRecommended | slice: 0: 2000 }} </span>
 
-                                <p class="buttonClick-text" (click)="product.active = false">Regresar</p>
+                                <p class="buttonClick-text" (click)="product.active = false">Voltar</p>
                             </div>
                         </div>
 
@@ -62,7 +60,7 @@
                         <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
                         <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm"
                             style="margin-bottom: 25px;">
-                            Comprar ahora
+                            Compre agora.
                         </button>
                     </div>
 
@@ -81,153 +79,23 @@
 
 </div>
 <div style="text-align: center;">
-    <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulta la disponibilidad de productos en tu
-        país.</h4>
+    <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulte a disponibilidade dos produtos no seu país.</h4>
 </div>
 
-@if (code == 'mx') {
+
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO ES UN MEDICAMENTO. EL CONSUMO DE ESTE PRODUCTO ES RESPONSABILIDAD DE QUIEN LO RECOMIENDA
-                Y DE QUIEN LO USA.</b>
+            <b>Este produto não tem o objetivo de diagnosticar, tratar, curar nem prevenir qualquer tipo de doença.</b>
         </span>
     </div>
 
 </footer>
-}
-@else if (code == 'gt') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y
-                NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
-            <br>
-            <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
-            <br>
-            <b>NO USAR EN NIÑOS.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'sv') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y
-                NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
-            <br>
-            <b>VENTA LIBRE. VÍA DE ADMINISTRACIÓN ORAL.</b>
-            <br>
-            <b>NO USAR EN NIÑOS.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'hn') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'pa') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'cr') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO DEBE USARSE PARA EL DIAGNÓSTICO, TRATAMIENTO, CURA O PREVENCIÓN DE ALGUNA ENFERMEDAD Y
-                NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA.</b>
-            <br>
-            <b>NO USAR EN NIÑOS.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'ar') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'cl') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>"Su uso no es recomendable para consumo por menores de 8 años, embarazadas y nodrizas, salvo indicación
-                profesional competente y no reemplaza a una alimentación balanceada".</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'uy') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>“SUPLEMENTA DIETAS INSUFICIENTES. CONSULTE A SU MÉDICO Y/ O FARMACÉUTICO".</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 'co') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO SIRVE PARA EL DIAGNOSTICO, TRATAMIENTO, CURA</b>
-            <br>
-            <b>O PREVENCIÓN DE ALGUNA ENFERMEDAD Y NO SUPLE UNA ALIMENTACIÓN</b>
-            <br>
-            <b>EQUILIBRADA. MANTÉNGASE FUERA DEL ALCANCE DE LOS NIÑOS.</b>
-        </span>
-    </div>
-
-</footer>
-}
-@else if (code == 've') {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>Este producto no pretende diagnosticar, tratar, curar ni prevenir ninguna enfermedad.</b>
-        </span>
-    </div>
-
-</footer>
-}@else {
-<footer>
-    <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
-        <span class="g-text-sm-footer">
-            <b>ESTE PRODUCTO NO ES UN MEDICAMENTO. EL CONSUMO DE ESTE PRODUCTO ES RESPONSABILIDAD DE QUIEN LO RECOMIENDA
-                Y DE QUIEN LO USA.</b>
-        </span>
-    </div>
-
-</footer>
-}
 
 
 
-<img src="assets/img/headerResult3_4.png" draggable="false" alt="" class="headers">
+
+<img src="assets/img/headerResult3_4_BZ.png" draggable="false" alt="" class="headers">
 <div class="vertical-line">
     <span></span>
 </div>
@@ -347,7 +215,7 @@
     </div>
 
 </div>
-<img src="assets/img/headerResult2_3.png" draggable="false" alt="" class="headers">
+<img src="assets/img/headerResult2_3_BZ.png" draggable="false" alt="" class="headers">
 <!--  <img src="assets/img/headerResult4.png" draggable="false" style="width: 100%;" alt=""> -->
 <div class="vertical-line">
     <span></span>
@@ -359,22 +227,21 @@
 
 
     <div style="margin-bottom: 3rem;">
-        <span class="g-text text-center">¿Deseas conocer más sobre <b style="color: #006d46;">NUTRILITE™</b> y nuestros
-            productos?</span>
+        <span class="g-text text-center">Quer saber mais sobre a <b style="color: #006d46;">NUTRILITE™</b> e nossos produtos?</span>
         <a class="g-text text-center" href="https://nutrilitetraceability.lat/" style="text-decoration: underline #84c344; cursor: pointer;">
-            <p style="color: #444; font-size: 1.2rem; ">Visita el sitio de Trazabilidad NUTRILITE™.</p>
+            <p style="color: #444; font-size: 1.2rem; ">Acesse o site de rastreabilidade NUTRILITE™.</p>
         </a>
         <br>
         <span (click)="startQuestionnaire()" class="g-text text-center"
-            style="cursor: pointer; text-decoration: underline #84c344;">Contestar nuevamente la evaluación</span>
+            style="cursor: pointer; text-decoration: underline #84c344;">Responder novamente à avaliação</span>
     </div>
 
 
     <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
         <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50">
             <div class="form-group">
-                <label class="g-text required">Dirección de correo electrónico</label>
-                <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Puedes enviar estas recomendaciones hasta 5 correos)</b>
+                <label class="g-text required">Endereço de e-mail</label>
+                <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Você pode enviar essas recomendações para até 5 e-mails.)</b>
                 <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
                     [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"
                     placeholder=" "></p-chips>
@@ -382,7 +249,7 @@
 
                 @if (cSend['emails'].errors && isFormSubmitted) {
                 @if (cSend['emails'].errors['required']) {
-                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo obrigatório</span>
                 }
                 }
             </div>
@@ -390,7 +257,7 @@
 
 
             <div style="margin-bottom: 2rem;">
-                <label class="g-text required">Escribe el texto que se muestra en la imagen</label>
+                <label class="g-text required">Digite o texto que aparece na imagem</label>
                 <div style="display: flex; gap: 1rem;">
                     <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
 
@@ -406,10 +273,10 @@
 
                 @if (cSend['captcha'].errors && isFormSubmitted) {
                 @if (cSend['captcha'].errors['required']) {
-                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo obrigatório</span>
                 }
                 }@else if (!captchaIsValid && isFormSubmitted) {
-                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
+                <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Captcha inválido</span>
                 }
             </div>
 
@@ -426,7 +293,7 @@
 
 <div id="toast" class="toast">
     <i class="fa fa-check"></i>
-    <span>Correo enviado correctamente</span>
+    <span>E-mail enviado com sucesso</span>
 </div>
 
 <!-- style="visibility: hidden; height: 0px; overflow-y: hidden;" -->
