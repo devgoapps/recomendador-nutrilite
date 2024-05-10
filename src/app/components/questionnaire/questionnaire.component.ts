@@ -26,7 +26,7 @@ export class QuestionnaireComponent implements OnInit {
 
   questions: Array<any> = [
     {
-      question: 'Que tal nos contar o seu nome e o país em que você mora?',
+      question: 'Que tal nos contar o seu nome?',
       multi: false,
       margin: 0,
       showRequired: false,
