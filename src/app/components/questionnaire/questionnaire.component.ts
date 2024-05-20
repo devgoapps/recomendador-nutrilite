@@ -22,8 +22,8 @@ declare var window: any;
 })
 export class QuestionnaireComponent implements OnInit {
 
+  utag_data: Array<any> = [];
   questionIndex: number = 0;
-
   questions: Array<any> = [
     {
       question: '¿Puedes darnos tu nombre y país?',
@@ -470,9 +470,9 @@ export class QuestionnaireComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.home;
+    this.utag_data = environment.utagInfo.questionnaire;
         
-    window.utag_data = Object.assign(window.utag_data, utag_data);
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
@@ -1806,6 +1806,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
 
     this.questionIndex -= 1;
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    setTimeout(() => {
+      //utag.view(window.utag_data);
+    }, 500);
   }
 
   nextQuestion() {
@@ -1822,5 +1826,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
 
     this.questionIndex += 1;
+
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    setTimeout(() => {
+      //utag.view(window.utag_data);
+    }, 500);
   }
 }
