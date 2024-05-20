@@ -98,7 +98,7 @@ export class RecommendationsComponent implements OnInit {
 
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
-      From: "brenda@ethos.com.mx", // Cambiar ruta de Amway
+      From: "brenda@ethos.com.mx", // nutrirec@amway.com  Cambiar ruta de Amway
 
       //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
       //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
