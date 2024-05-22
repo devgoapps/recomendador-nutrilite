@@ -46,7 +46,7 @@ export class RecommendationsComponent implements OnInit {
               private fb: FormBuilder){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.home;
+    let utag_data = environment.utagInfo.startQuestionnaire;
 
     this.code = sessionStorage.getItem('code');
     console.log(this.code);
