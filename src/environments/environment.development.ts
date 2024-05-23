@@ -1,21 +1,5 @@
 export const environment = {
     utagInfo: {
-        home: {
-            page_category: 'inicio | Recomendador',  
-            page_name: 'inicio',
-            page_section: 'inicio',
-            page_subCategory: 'inicio',
-            //site_country: '',
-            //site_currencyCode: '',  
-            site_language: 'es',  
-            site_prefix: 'amway',
-            site_region: 'americas', 
-            site_subRegion: 'latam', 
-            site_type: 'desktop',  
-            site_type_short: 'web', 
-            site_webProperty: 'ecommerce',  
-            site_webProperty_mod: 'www.amway.com.mx | ecommerce', 
-        },
         startQuestionnaire: {
             page_category: 'iniciar cuestionario | Recomendador',  
             page_name: 'iniciar cuestionario',

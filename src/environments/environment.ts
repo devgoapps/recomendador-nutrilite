@@ -24,7 +24,7 @@ export const environment = {
             //site_country: '',
             //site_currencyCode: '',  
             site_language: 'es',  
-            site_prefix: 'amway',
+            site_prefix: 'amway', 
             site_region: 'americas', 
             site_subRegion: 'latam', 
             site_type: 'desktop',  
