@@ -1,10 +1,9 @@
 {
   "projects": {
-    "default": "amway-2024",
-    "brasil": "amway-2024",
-    "brasil2": "amway-2024",
-    "b": "amway-2024"
+    "default": "amway2024-br",
+    "brasil": "amway2024-br"
   },
   "targets": {},
-  "etags": {}
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
