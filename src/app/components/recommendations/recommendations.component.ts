@@ -20,7 +20,7 @@ declare var Email: any;
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ChipsModule
+    ChipsModule,
   ],
   templateUrl: './recommendations.component.html',
   styleUrl: './recommendations.component.scss'
@@ -118,6 +118,22 @@ export class RecommendationsComponent implements OnInit {
         toast?.classList.remove("show");
       }, 2000)
     });
+  }
+
+  sendWhatsapp(){
+      var message = encodeURIComponent('Tus recomendaciones de NUTRILITE™') + encodeURI('\n') +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
+      var whatsapp_url = "whatsapp://send?text=" + message;
+      
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = whatsapp_url;
+      }else{
+        window.open('https://web.whatsapp.com://send?text=' + message);
+      }
   }
   
   openLink(link: string){
