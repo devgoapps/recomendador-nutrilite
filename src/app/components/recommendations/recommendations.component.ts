@@ -46,7 +46,7 @@ export class RecommendationsComponent implements OnInit {
               private fb: FormBuilder){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.home;
+    let utag_data = environment.utagInfo.startQuestionnaire;
 
     this.code = sessionStorage.getItem('code');
     console.log(this.code);
@@ -119,6 +119,36 @@ export class RecommendationsComponent implements OnInit {
       }, 2000)
     });
   }
+
+
+  sendMail(){
+
+  }
+
+  sendWhatsapp(){
+      var message = encodeURIComponent('Tus recomendaciones de NUTRILITE™') + encodeURI('\n') +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
+      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
+      var whatsapp_url = "whatsapp://send?text=" + message;
+      
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = whatsapp_url;
+      }else{
+        window.open('https://web.whatsapp.com://send?text=' + message);
+      }
+  }
+
+  CopyLink(){
+
+
+  }
+
+  printToPDF(){
+
+}
   
   openLink(link: string){
     window.open(link, '_blank')

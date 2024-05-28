@@ -20,7 +20,7 @@ export class StartQuestionnaireComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.home;
+    let utag_data = environment.utagInfo.startQuestionnaire;
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
     setTimeout(() => {

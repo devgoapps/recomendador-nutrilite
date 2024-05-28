@@ -22,8 +22,8 @@ declare var window: any;
 })
 export class QuestionnaireComponent implements OnInit {
 
+  utag_data: Array<any> = [];
   questionIndex: number = 0;
-
   questions: Array<any> = [
     {
       question: 'Que tal nos contar o seu nome?',
@@ -470,9 +470,9 @@ export class QuestionnaireComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.home;
+    this.utag_data = environment.utagInfo.questionnaire;
         
-    window.utag_data = Object.assign(window.utag_data, utag_data);
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
@@ -702,6 +702,14 @@ export class QuestionnaireComponent implements OnInit {
     }
 
     this.questionIndex -= 1;
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    setTimeout(() => {
+      //utag.view(window.utag_data);
+    }, 500);
+
+    console.log(this.utag_data);
+    console.log(this.questionIndex);
+    console.log(this.questions[this.questionIndex]);
   }
 
   nextQuestion() {
@@ -712,11 +720,21 @@ export class QuestionnaireComponent implements OnInit {
       return;
     }
 
+    
+
     // if(!this.questions[0].country || this.questions[0].country.length == 0){
     //   this.questions[0].showRequired = true;
     //   return;
     // }
 
     this.questionIndex += 1;
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    setTimeout(() => {
+      //utag.view(window.utag_data);
+    }, 500);    
+    
+    console.log(this.utag_data);
+    console.log(this.questionIndex);
+    console.log(this.questions[this.questionIndex]);
   }
 }
