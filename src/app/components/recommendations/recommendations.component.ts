@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../../template/footer/footer.component';
+import {NgxPrintModule} from 'ngx-print'
 
 import { ChipsModule } from 'primeng/chips';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -21,6 +22,7 @@ declare var Email: any;
     FormsModule,
     ReactiveFormsModule,
     ChipsModule,
+    NgxPrintModule,
   ],
   templateUrl: './recommendations.component.html',
   styleUrl: './recommendations.component.scss'
@@ -140,14 +142,25 @@ export class RecommendationsComponent implements OnInit {
       }
   }
 
-  CopyLink(){
+ CopyLink(){
 
+    var copyHref = window.location.href;
+    
+    try{
+      navigator.clipboard.writeText(copyHref); 
+      alert("El enlace a sido copiado");
+    }
+    catch{
+      alert("El enlace NO se copio correctamente");
+    }
+   
+    console.log(window.location.href);
 
   }
 
-  printToPDF(){
+  printToPDF(){   
 
-}
+  }
   
   openLink(link: string){
     window.open(link, '_blank')
