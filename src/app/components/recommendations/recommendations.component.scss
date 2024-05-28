@@ -211,6 +211,26 @@ p-chips{
     width: 100%;
 }
 
+///Share buttons
+/// 
+.btn-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 35px;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    font-size: 35px;
+    background-color: #222;
+    border: none;
+}
+
+.share-button{
+    padding: 15px; 
+    text-align: center; 
+    width: 12%;
+}
+
+
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
     .cart-name {
@@ -245,6 +265,16 @@ p-chips{
         margin-left: -100px;
     }
 
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+
+    }
+
+    .share-button{
+        width: 15%;
+    }
 }
 
 
@@ -282,6 +312,17 @@ p-chips{
         margin-left: -100px;
     }
 
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+
+    }
+
+    .share-button{
+        width: 15%;
+    }
+
 }
 
 // Medium devices (tablets, 768px and down)
@@ -311,6 +352,17 @@ p-chips{
         font-size: .9rem;
 
     }
+
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+
+    }
+
+    .share-button{
+        width: 15%;
+    }
 }
 
 // Large devices (desktops, 992px and dpwn)
@@ -339,6 +391,17 @@ p-chips{
     .whyIsRecommended-Text{
         font-size: .9rem;
 
+    }
+
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+
+    }
+
+    .share-button{
+        width: 15%;
     }
 }
 
@@ -376,6 +439,8 @@ p-chips{
         font-size: .9rem;
 
     }
+
+
 }
 
 // XX-Large devices (larger desktops, 1400px and up)

@@ -400,14 +400,51 @@
 
             <div style="display: flex; justify-content: end;">
                 
-                <button (click)="sendWhatsapp()" type="button" class="primary-btn g-text-sm" style="background-color: #25d366;">
-                    Whatsapp <i class="fab fa-whatsapp"></i>
-                </button>
+
 
                 <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;">
                     Enviar <i class="fa-regular fa-envelope"></i>
                 </button>
             </div>
+
+             <label class="g-text mb0">Compartir</label>
+            <div class="row" style="width: 100%;"> 
+            
+            <div class="col-sm-1 share-button">
+
+                    <button (click)="sendMail()" type="button" class="btn btn-success btn-circle btn-lg" title="Correo">
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>  
+          
+            </div>    
+            <div class="col-sm-1 share-button">
+
+                <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </button>  
+      
+            </div>
+            <div class="col-sm-1 share-button">
+
+                <button (click)="CopyLink()" type="button" class="btn btn-success btn-circle btn-lg" title="Copiar Enlace">
+                    <i class="fas fa-link"></i>
+                </button> 
+      
+            </div>
+            <div class="col-sm-1 share-button">
+
+                <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" title="Imprimir">
+                    <i class="fas fa-print"></i>
+                </button>  
+      
+            </div>
+
+            </div>
+
+
+
+
+
         </form>
     </div>
 </div>

@@ -1828,6 +1828,8 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     this.questionIndex += 1;
 
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    console.log(this.questionIndex);
+    console.log(this.questions[this.questionIndex]);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
