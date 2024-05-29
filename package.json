@@ -24,6 +24,7 @@
     "enviroment": "^1.0.0",
     "environments": "^1.2.7",
     "jquery": "^3.7.1",
+    "ngx-print": "^1.5.1",
     "primeng": "^17.9.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

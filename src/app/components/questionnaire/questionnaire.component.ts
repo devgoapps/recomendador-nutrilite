@@ -79,7 +79,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: 'Quero melhorar meu bem-estar.', value: 3, products: [3, 6] },
       ],
       selected: [],
-      footer: ` <span class="gw-30 g-text text-center">Compreender por que você está aqui é importante para nós e para a precisão dos seus resultados!</span>`
+      footer: ` <span class="gw-20 g-text text-center">Compreender por que você está aqui é importante para nós e para a precisão dos seus resultados!</span>`
     },
     {
       question: 'Você consome atualmente algum suplemento alimentar com vitaminas ou minerais?',
@@ -102,7 +102,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: 'Avançada', value: 2, products: [2, 4, 5, 6, 8] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text">
+      footer: ` <small class="gw-20 g-text">
                 <ul style="list-style-type: circle;">
                 <li>
                   <b class="field-items"> Básica:</b> trata-se da suplementação alimentar quando a pessoa nunca consumiu nenhum produto deste tipo e que serve como adaptação.<br><br> 
@@ -139,7 +139,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: 'Com alto teor de gordura e carboidratos e pouca proteína.', value: 4, products: [4, 6, 10, 11] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text">
+      footer: ` <small class="gw-20 g-text">
 
                   <b>Alguns exemplos que vão ajudar a selecionar a melhor resposta de acordo com a sua alimentação.</b><br><br>
                 <ul style="list-style-type: circle;">
@@ -179,7 +179,7 @@ export class QuestionnaireComponent implements OnInit {
         { label: '2 porções por dia.', value: 3, products: [2] },
       ],
       selected: null,
-      footer: ` <small class="gw-30 g-text" >
+      footer: ` <small class="gw-20 g-text" >
                   <b>Por exemplo:</b>  Leite, iogurte, queijo, bebidas com soja enriquecida, entre outros.
                 </small>`
     },
