@@ -122,10 +122,6 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
-  sendMail(){
-
-  }
-
   sendWhatsapp(){
       var message = encodeURIComponent('Tus recomendaciones de NUTRILITE™') + encodeURI('\n') +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
@@ -138,7 +134,9 @@ export class RecommendationsComponent implements OnInit {
       if (isMobile) {
         window.location.href = whatsapp_url;
       }else{
-        window.open('https://web.whatsapp.com://send?text=' + message);
+        
+        const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
+        window.open(whatsappWebUrl , '_blank');
       }
   }
 
