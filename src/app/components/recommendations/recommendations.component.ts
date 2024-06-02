@@ -124,7 +124,7 @@ export class RecommendationsComponent implements OnInit {
 
 
   sendWhatsapp(){
-      var message = encodeURIComponent('Tus recomendaciones de NUTRILITE™') + encodeURI('\n') +
+      var message = encodeURIComponent('As suas recomendações NUTRILITE™') + encodeURI('\n') +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
@@ -136,8 +136,9 @@ export class RecommendationsComponent implements OnInit {
         window.location.href = whatsapp_url;
       }else{
 
-        window.open('https://web.whatsapp.com://send?text=' + message);
-        window.location.href = whatsapp_url;
+        const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
+        window.open(whatsappWebUrl , '_blank');
+        
       }
   }
 
