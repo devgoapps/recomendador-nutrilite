@@ -29,17 +29,7 @@ export class AppComponent {
   }
 
   getCurrencyCode(code: string) {
-    if (code == 'mx') return 'mxn';
-    else if (code == 'gt') return 'gtq';
-    else if (code == 'sv') return 'svc';
-    else if (code == 'hn') return 'hnl';
-    else if (code == 'pa') return 'pab';
-    else if (code == 'cr') return 'crc';
-    else if (code == 'ar') return 'ars';
-    else if (code == 'cl') return 'clp';
-    else if (code == 'uy') return 'uyu';
-    else if (code == 'co') return 'cop';
-    else if (code == 've') return 'vef';
-    else return '';
+    if (code == 'br') {return 'brl';}
+    else {return '';}
   }
 }

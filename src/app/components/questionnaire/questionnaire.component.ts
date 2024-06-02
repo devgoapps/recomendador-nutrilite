@@ -50,7 +50,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Mulher', value: 1, products: [2] },
+        { label: 'Mulher', value: 1, products: [] },
         { label: 'Homem', value: 2, products: [] }
       ],
       selected: null,
@@ -61,10 +61,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: '18 a 39 anos', value: 1, productsWomen: [2], productsMen: [3], checkSex: true },
-        { label: '40 a 49 anos', value: 2, productsWomen: [2, 3], productsMen: [4], checkSex: true },
-        { label: '50 a 59 anos', value: 3, productsWomen: [2, 3], productsMen: [3, 4], checkSex: true },
-        { label: '60 anos ou mais', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
+        { label: '18 a 39 anos', value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label: '40 a 49 anos', value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
+        { label: '50 a 59 anos', value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
+        { label: '60 anos ou mais', value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
       ],
       selected: null
     },
@@ -74,7 +74,7 @@ export class QuestionnaireComponent implements OnInit {
       multi: true,
       margin: 70,
       options: [
-        { label: 'Quero ser a minha melhor versão.', value: 1, products: [5] },
+        { label: 'Quero ser a minha melhor versão.', value: 1, products: [14] },
         { label: 'Quero desenvolver hábitos mais saudáveis.', value: 2, products: [7] },
         { label: 'Quero melhorar meu bem-estar.', value: 3, products: [3, 6] },
       ],
@@ -87,8 +87,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Sim', value: 1, products: [4, 5, 6] },
-        { label: 'Não', value: 2, products: [1, 2, 4, 6, 8] },
+        { label: 'Sim', value: 1, products: [] },
+        { label: 'Não', value: 2, products: [1] },
       ],
       selected: null
     },
@@ -98,8 +98,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 20,
       showRequired: false,
       options: [
-        { label: 'Básica', value: 1, products: [1, 4, 6] },
-        { label: 'Avançada', value: 2, products: [2, 4, 5, 6, 8] },
+        { label: 'Básica', value: 1, products: [1] },
+        { label: 'Avançada', value: 2, products: [5, 12] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text">
@@ -119,11 +119,11 @@ export class QuestionnaireComponent implements OnInit {
       margin: 40,
       showRequired: false,
       options: [
-        { label: 'Nenhuma (0)', value: 1, products: [1, 6, 8] },
-        { label: '1 a 2 frutas e verduras por dia.', value: 2, products: [5, 6, 8] },
-        { label: '3 a 4 frutas e verduras por dia.', value: 3, products: [5] },
-        { label: '5 a 6 frutas e verduras por dia.', value: 4, products: [1] },
-        { label: '7 ou mais frutas e verduras por dia.', value: 5, products: [1] },
+        { label: 'Nenhuma (0)', value: 1, products: [6, 13] },
+        { label: '1 a 2 frutas e verduras por dia.', value: 2, products: [8, 16] },
+        { label: '3 a 4 frutas e verduras por dia.', value: 3, products: [] },
+        { label: '5 a 6 frutas e verduras por dia.', value: 4, products: [] },
+        { label: '7 ou mais frutas e verduras por dia.', value: 5, products: [] },
       ],
       selected: null
     },
@@ -133,10 +133,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Com baixo teor de carboidratos e uma maior proporção de proteínas e gorduras.', value: 1, products: [4, 6, 9] },
-        { label: 'Equilibrada, com uma combinação equilibrada de carboidratos, proteínas e gorduras.', value: 2, products: [1, 4] },
-        { label: 'Com baixo teor de gorduras e poucos ingredientes com alto teor de gordura animal ou fritura.', value: 3, products: [8] },
-        { label: 'Com alto teor de gordura e carboidratos e pouca proteína.', value: 4, products: [4, 6, 10, 11] },
+        { label: 'Com baixo teor de carboidratos e uma maior proporção de proteínas e gorduras.', value: 1, products: [18] },
+        { label: 'Equilibrada, com uma combinação equilibrada de carboidratos, proteínas e gorduras.', value: 2, products: [1] },
+        { label: 'Com baixo teor de gorduras e poucos ingredientes com alto teor de gordura animal ou fritura.', value: 3, products: [7] },
+        { label: 'Com alto teor de gordura e carboidratos e pouca proteína.', value: 4, products: [7, 18] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text">
@@ -162,9 +162,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Raramente', value: 1, products: [12, 13] },
-        { label: 'De vez em quando', value: 2, products: [12] },
-        { label: 'Acordo muito ativo(a).', value: 3, products: [13] },
+        { label: 'Raramente', value: 1, products: [12] },
+        { label: 'De vez em quando', value: 2, products: [9] },
+        { label: 'Acordo muito ativo(a).', value: 3, products: [] },
       ],
       selected: null
     },
@@ -174,9 +174,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Nenhuma (0)', value: 1, products: [1, 2] },
+        { label: 'Nenhuma (0)', value: 1, products: [2] },
         { label: '1 porção por dia.', value: 2, products: [2] },
-        { label: '2 porções por dia.', value: 3, products: [2] },
+        { label: '2 porções por dia.', value: 3, products: [] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text" >
@@ -189,10 +189,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Não pratico exercícios físicos regularmente.', value: 1, products: [] },
-        { label: 'Faço exercícios físicos leves (caminhadas, atividades cotidianas), 1 ou 2 vezes por semana.', value: 2, products: [8, 9, 15] },
-        { label: 'Faço atividades físicas moderadas (corrida leve, exercícios de força moderados), de 3 a 4 vezes por semana.', value: 3, products: [1, 2, 3] },
-        { label: 'Tenho uma rotina de exercícios de moderados a vigorosos (corrida, ciclismo, natação, exercícios de força intensos), pelo menos, 5 vezes por semana.', value: 4, products: [4, 5, 9, 14] },
+        { label: 'Não pratico exercícios físicos regularmente.', value: 1, products: [1] },
+        { label: 'Faço exercícios físicos leves (caminhadas, atividades cotidianas), 1 ou 2 vezes por semana.', value: 2, products: [8, 9] },
+        { label: 'Faço atividades físicas moderadas (corrida leve, exercícios de força moderados), de 3 a 4 vezes por semana.', value: 3, products: [3, 10] },
+        { label: 'Tenho uma rotina de exercícios de moderados a vigorosos (corrida, ciclismo, natação, exercícios de força intensos), pelo menos, 5 vezes por semana.', value: 4, products: [9, 10, 14] },
       ],
       selected: null
     },
@@ -202,7 +202,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: 'Sim', value: 1, products: [13, 16, 17] },
+        { label: 'Sim', value: 1, products: [13, 17] },
         { label: 'Não', value: 2, products: [] },
       ],
       selected: null
@@ -224,7 +224,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Sim', value: 1, products: [16] },
+        { label: 'Sim', value: 1, products: [15, 16] },
         { label: 'Não', value: 2, products: [] },
       ],
       selected: null
@@ -246,7 +246,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Sim', value: 1, products: [6,  7, 19] },
+        { label: 'Sim', value: 1, products: [7, 19] },
         { label: 'Não', value: 2, products: [] },
       ],
       selected: null
@@ -257,7 +257,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label: 'Menos de 20 minutos por dia.', value: 1, products: [1] },
+        { label: 'Menos de 20 minutos por dia.', value: 1, products: [16] },
         { label: 'Mais de 20 minutos por dia.', value: 2, products: [15] },
       ],
       selected: null
@@ -557,65 +557,7 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   validateSpecialConditions(){
-    console.warn([...this.recommendedProducts]);
 
-    let hasDaily1 = false;
-    let daily1Index = null;
-
-    let hasDailyPlus = false;
-    let dailyPlusIndex = null;
-
-    let hasDoubleX = false;
-    let doubleXIndex = null;
-
-    let bPlusIndex = null;
-    let multicarotenoIndex = null;
-
-    for (let i = 0; i < this.recommendedProducts.length; i++) {
-      if(this.recommendedProducts[i].name == 'Daily Plus'){
-        hasDailyPlus = true;
-        dailyPlusIndex = i;
-      }else if(this.recommendedProducts[i].name.includes('Daily +1')){
-        hasDaily1 = true;
-        daily1Index = i;
-      }else if(this.recommendedProducts[i].name == 'Double X'){
-        hasDoubleX = true;
-        doubleXIndex = i;
-      }else if(this.recommendedProducts[i].name == 'B Plus'){
-        bPlusIndex = i;
-      }else if(this.recommendedProducts[i].name == 'Multicaroteno'){
-        multicarotenoIndex = i;
-      }
-    }
-
-    console.log(hasDaily1, hasDailyPlus, hasDoubleX)
-    console.log(daily1Index, dailyPlusIndex, doubleXIndex)
-
-    // if(hasDailyPlus && hasDoubleX){
-    //   if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex < doubleXIndex)) {
-    //     this.recommendedProducts[doubleXIndex] = null;
-
-        /*if(bPlusIndex)
-          this.recommendedProducts[bPlusIndex] == null;
-        if(multicarotenoIndex)
-          this.recommendedProducts[multicarotenoIndex] == null;*/
-    //   }else if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex > doubleXIndex)) {
-    //     this.recommendedProducts[dailyPlusIndex] = null;
-    //   }
-    // }else if(hasDaily1 && hasDoubleX){
-    //   if(doubleXIndex)
-    //     this.recommendedProducts[doubleXIndex] = null;
-
-      /*if(bPlusIndex)
-        this.recommendedProducts[bPlusIndex] == null;
-      if(multicarotenoIndex)
-        this.recommendedProducts[multicarotenoIndex] == null;*/
-    // }else if(hasDoubleX && !hasDaily1 && !hasDailyPlus){
-    //   if(bPlusIndex !== null)
-    //     this.recommendedProducts[bPlusIndex] = null;
-    //   if(multicarotenoIndex !== null)
-    //     this.recommendedProducts[multicarotenoIndex] = null;
-    // }
 
     console.log([...this.recommendedProducts]);
 
@@ -629,9 +571,6 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   validateCountryConditions(){
-    let country = this.questions[0].country;
-
-    // console.log(country);
 
     for (let i = 0; i < this.recommendedProducts.length; i++) {
       
@@ -644,6 +583,7 @@ export class QuestionnaireComponent implements OnInit {
         // eliminar Multicaroteno
         // eliminar B Plus
         // eliminar daily+1 prende tu dia
+        // eliminar Tri Iron Folic
         this.recommendedProducts[i].img = this.recommendedProducts[i].img.replaceAll(/LAS/gi, "BZ");
         this.recommendedProducts[i].emailImg = this.recommendedProducts[i].emailImg.replaceAll(/LAS/gi, "BZ");
 
@@ -653,7 +593,8 @@ export class QuestionnaireComponent implements OnInit {
         if(this.recommendedProducts[i].name == 'Double X' || 
           this.recommendedProducts[i].name == 'Multicaroteno' ||
           this.recommendedProducts[i].name == 'B Plus' ||
-          this.recommendedProducts[i].name == 'Daily +1 Prende tu día')
+          this.recommendedProducts[i].name == 'Daily +1 Prende tu día' ||
+          this.recommendedProducts[i].name == 'Tri Iron Folic')
           this.recommendedProducts[i] = null;
 
       
@@ -668,7 +609,7 @@ export class QuestionnaireComponent implements OnInit {
     console.warn([...this.recommendedProducts]);
 
     sessionStorage.setItem('clientName', this.questions[0].selected);
-    // sessionStorage.setItem('clientCountry', this.questions[0].country);
+    sessionStorage.setItem('clientCountry', this.questions[0].country);
     sessionStorage.setItem('recommendedProducts', JSON.stringify(this.recommendedProducts));
 
     this.router.navigate(['recommendations']);
@@ -720,12 +661,6 @@ export class QuestionnaireComponent implements OnInit {
       return;
     }
 
-    
-
-    // if(!this.questions[0].country || this.questions[0].country.length == 0){
-    //   this.questions[0].showRequired = true;
-    //   return;
-    // }
 
     this.questionIndex += 1;
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);

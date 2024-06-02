@@ -51,7 +51,7 @@ export class RecommendationsComponent implements OnInit {
     let utag_data = environment.utagInfo.startQuestionnaire;
 
     this.code = sessionStorage.getItem('code');
-    console.log(this.code);
+
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
     setTimeout(() => {
@@ -138,12 +138,17 @@ export class RecommendationsComponent implements OnInit {
 
         const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
         window.open(whatsappWebUrl , '_blank');
-        
+
       }
   }
 
   CopyLink(){
-    
+    var message =
+    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
+    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
+    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
+    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
+
     var copyHref = window.location.href;
 
     try{

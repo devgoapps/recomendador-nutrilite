@@ -13,6 +13,5 @@ export class FooterComponent {
 
   ngOnInit(){
     this.code = sessionStorage.getItem('code');
-    console.log(this.code)
   }
 }
