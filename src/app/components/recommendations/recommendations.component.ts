@@ -51,7 +51,6 @@ export class RecommendationsComponent implements OnInit {
     let utag_data = environment.utagInfo.startQuestionnaire;
 
     this.code = sessionStorage.getItem('code');
-    console.log(this.code);
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
     setTimeout(() => {

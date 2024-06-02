@@ -50,7 +50,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Mujer', value: 1, products: [2] },
+        { label: 'Mujer', value: 1, products: [] },
         { label: 'Hombre', value: 2, products: [] }
       ],
       selected: null,
@@ -61,10 +61,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: '18 a 39 años', value: 1, productsWomen: [2], productsMen: [3], checkSex: true },
-        { label: '40 a 49 años', value: 2, productsWomen: [2, 3], productsMen: [4], checkSex: true },
-        { label: '50 a 59 años', value: 3, productsWomen: [2, 3], productsMen: [3, 4], checkSex: true },
-        { label: '60 o más años', value: 4, productsWomen: [3], productsMen: [3], checkSex: true },
+        { label: '18 a 39 años', value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label: '40 a 49 años', value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
+        { label: '50 a 59 años', value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
+        { label: '60 o más años', value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
       ],
       selected: null
     },
@@ -74,7 +74,7 @@ export class QuestionnaireComponent implements OnInit {
       multi: true,
       margin: 70,
       options: [
-        { label: 'Quiero ser mi mejor versión.', value: 1, products: [5] },
+        { label: 'Quiero ser mi mejor versión.', value: 1, products: [14] },
         { label: 'Quiero desarrollar hábitos más saludables.', value: 2, products: [7] },
         { label: 'Estoy buscando mejorar mi bienestar.', value: 3, products: [3, 6] },
       ],
@@ -87,8 +87,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [4, 5, 6] },
-        { label: 'No', value: 2, products: [1, 2, 4, 6, 8] },
+        { label: 'Si', value: 1, products: [] },
+        { label: 'No', value: 2, products: [1] },
       ],
       selected: null
     },
@@ -98,8 +98,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 20,
       showRequired: false,
       options: [
-        { label: 'Básica', value: 1, products: [1, 4, 6] },
-        { label: 'Óptima', value: 2, products: [2, 4, 5, 6, 8] },
+        { label: 'De inicio', value: 1, products: [1] },
+        { label: 'Avanzada', value: 2, products: [5, 12] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text">
@@ -119,11 +119,11 @@ export class QuestionnaireComponent implements OnInit {
       margin: 40,
       showRequired: false,
       options: [
-        { label: 'Ninguna (0)', value: 1, products: [1, 6, 8] },
-        { label: '1 a 2 frutas y vegetales al día.', value: 2, products: [5, 6, 8] },
-        { label: '3 a 4 frutas y vegetales al día.', value: 3, products: [5] },
-        { label: '5 a 6 frutas y vegetales al día.', value: 4, products: [1] },
-        { label: '7 o más frutas y vegetales al día.', value: 5, products: [1] },
+        { label: 'Ninguna (0)', value: 1, products: [6, 13] },
+        { label: '1 a 2 frutas y vegetales al día.', value: 2, products: [8, 16] },
+        { label: '3 a 4 frutas y vegetales al día.', value: 3, products: [] },
+        { label: '5 a 6 frutas y vegetales al día.', value: 4, products: [] },
+        { label: '7 o más frutas y vegetales al día.', value: 5, products: [] },
       ],
       selected: null
     },
@@ -133,10 +133,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Baja en carbohidratos, con mayor proporción de proteínas y grasa.', value: 1, products: [4, 6, 9] },
-        { label: 'Balanceada, con una mezcla equilibrada  de carbohidratos, proteínas y grasa.', value: 2, products: [1, 4] },
-        { label: 'Baja en grasa, con pocos productos altos en grasa animal o alimentos fritos.', value: 3, products: [8] },
-        { label: 'Alta en grasa y carbohidratos y baja en proteína.', value: 4, products: [4, 6, 10, 11] },
+        { label: 'Baja en carbohidratos (harina y azúcares), con mayor cantidad de proteínas y grasa.', value: 1, products: [18] },
+        { label: 'Balanceada, con una mezcla equilibrada  de carbohidratos (harina y azúcares), proteínas y grasa.', value: 2, products: [1] },
+        { label: 'Baja en grasa, con mayor cantidad de proteína y carbohidratos (harina y azúcares).', value: 3, products: [7] },
+        { label: 'Alta en grasa y carbohidratos (harina y azúcares) y baja en proteína.', value: 4, products: [7, 18] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text">
@@ -144,7 +144,7 @@ export class QuestionnaireComponent implements OnInit {
                   <b>Algunos ejemplos que te ayudarán a seleccionar la mejor respuesta de acuerdo a tu alimentación.</b><br><br>
                 <ul style="list-style-type: circle;">
                 <li>
-                  <b>Carbohidratos:</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br>
+                  <b>Carbohidratos (harinas y azúcares):</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br>
                 </li>
                 <li>  
                   <b>Proteína:</b> carne de res, pollo, pescado, mariscos, huevos, leche y derivados, leguminosas como frijol, guisantes y semillas como nueces, avellanas, piñones.<br>
@@ -162,9 +162,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Rara vez', value: 1, products: [12, 13] },
-        { label: 'Ocasionalmente', value: 2, products: [12] },
-        { label: 'Me levanto muy activo(a).', value: 3, products: [13] },
+        { label: 'Rara vez', value: 1, products: [12] },
+        { label: 'Ocasionalmente', value: 2, products: [9] },
+        { label: 'Me levanto muy activo(a).', value: 3, products: [] },
       ],
       selected: null
     },
@@ -174,9 +174,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Ninguna (0)', value: 1, products: [1, 2] },
+        { label: 'Ninguna (0)', value: 1, products: [2] },
         { label: '1 porción al día.', value: 2, products: [2] },
-        { label: '2 porciones al día.', value: 3, products: [2] },
+        { label: '2 porciones al día.', value: 3, products: [] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text" >
@@ -189,10 +189,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'No hago ejercicios regularmente.', value: 1, products: [] },
-        { label: 'Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.', value: 2, products: [8, 9, 15] },
-        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.', value: 3, products: [1, 2, 3] },
-        { label: 'Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.', value: 4, products: [4, 5, 9, 14] },
+        { label: 'No hago ejercicios regularmente.', value: 1, products: [1] },
+        { label: 'Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.', value: 2, products: [8, 9] },
+        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.', value: 3, products: [3, 10] },
+        { label: 'Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.', value: 4, products: [9, 10, 14] },
       ],
       selected: null
     },
@@ -202,7 +202,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [13, 16, 17] },
+        { label: 'Si', value: 1, products: [13, 17] },
         { label: 'No', value: 2, products: [] },
       ],
       selected: null
@@ -224,7 +224,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [16] },
+        { label: 'Si', value: 1, products: [15, 16] },
         { label: 'No', value: 2, products: [] },
       ],
       selected: null
@@ -246,7 +246,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [6,  7, 19] },
+        { label: 'Si', value: 1, products: [7, 19] },
         { label: 'No', value: 2, products: [] },
       ],
       selected: null
@@ -257,7 +257,7 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label: 'Menos de 20 minutos al día.', value: 1, products: [1] },
+        { label: 'Menos de 20 minutos al día.', value: 1, products: [16] },
         { label: 'Más de 20 minutos al día.', value: 2, products: [15] },
       ],
       selected: null
@@ -338,7 +338,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 6,
       name: 'Fibra en Polvo',
-      whyIsRecommended: ' Combina tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
+      whyIsRecommended: 'Suplemento alimenticio/dietario/alimento a base de tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
       img: 'assets/img/LAS/Fibra.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Fibra.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&line=G&NavM=N&BC=102736&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=fibra_polvo',
@@ -365,7 +365,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 9,
       name: 'B Plus',
-      whyIsRecommended: 'Aporta 8 vitaminas del complejo B que se liberan de forma gradual durante 8 horas gracias a su tecnología bicapa de doble acción. Las vitaminas B2 y B12 se liberan de inmediato, mientras que las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas.',
+      whyIsRecommended: 'Aporta 8 vitaminas del complejo B que se liberan de forma gradual durante 8 horas gracias a su tecnología bicapa de doble acción. Las vitaminas B2 y B12 se liberan de inmediato, mientras que las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas. Las vitaminas del complejo B  ayudan a obtener la energía a partir de los alimentos. Si consume  B Plus y Daily Plus el mismo día, deje una ventana de 8 horas. Ej: Desayuno: Daily Plus y Cena: B Plus.',
       img: 'assets/img/LAS/B_Plus.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/B_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110170&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=B_Plus',
@@ -392,7 +392,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 12,
       name: 'Daily +1 Prende tu día',
-      whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras.',
+      whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras. Se recomienda consumir ambos suplementos con una diferencia de 8 horas. Ej: Desayuno: Daily Plus y Cena: B Plus.',
       img: 'assets/img/LAS/Daily+1/Prende_tu_dia.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321276&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Bplus_daily1',
@@ -428,7 +428,7 @@ export class QuestionnaireComponent implements OnInit {
     {
       id: 16,
       name: 'Multicaroteno',
-      whyIsRecommended: 'Suplemento alimenticio/dietario aporta alfa y betacarotenos, luteína y zeaxantina. Los alfa y betacarotenos se transforman en vitamina A en el organismo después de ser consumidos. Importante para la protección de las células contra el daño ocasionado por los radicales libres y para el mantenimiento de la visión.',
+      whyIsRecommended: 'Suplemento alimenticio/dietario aporta alfa y betacarotenos, luteína y zeaxantina. Los alfa y betacarotenos se transforman en vitamina A en el organismo después de ser consumidos. Importante para la protección de las células contra el daño ocasionado por los radicales libres y para el mantenimiento de la visión.Si consume Multicaroteno y Daily Plus el mismo día, deje una ventana de 8 horas. Ej: Desayuno: Daily  y Cena: Multicaroteno.',
       img: 'assets/img/LAS/Multicaroteno.png',
       emailImg: 'https://amway-2024.web.app/assets/img/LAS/Multicaroteno.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&line=G&NavM=N&BC=109536&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Multicaroteno',
@@ -479,7 +479,7 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   selectOption(indexQuestion: number, value: number, isMulti: boolean){
-    if(isMulti){
+      if(isMulti){
       let index = this.questions[indexQuestion].selected.indexOf(value);
       if(index == -1){
         this.questions[indexQuestion].selected.push(value);
@@ -557,73 +557,11 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   validateSpecialConditions(){
-    console.warn([...this.recommendedProducts]);
 
-    let hasDaily1 = false;
-    let daily1Index = null;
-
-    let hasDailyPlus = false;
-    let dailyPlusIndex = null;
-
-    let hasDoubleX = false;
-    let doubleXIndex = null;
-
-    let bPlusIndex = null;
-    let multicarotenoIndex = null;
-
-    for (let i = 0; i < this.recommendedProducts.length; i++) {
-      if(this.recommendedProducts[i].name == 'Daily Plus'){
-        hasDailyPlus = true;
-        dailyPlusIndex = i;
-      }else if(this.recommendedProducts[i].name.includes('Daily +1')){
-        hasDaily1 = true;
-        daily1Index = i;
-      }else if(this.recommendedProducts[i].name == 'Double X'){
-        hasDoubleX = true;
-        doubleXIndex = i;
-      }else if(this.recommendedProducts[i].name == 'B Plus'){
-        bPlusIndex = i;
-      }else if(this.recommendedProducts[i].name == 'Multicaroteno'){
-        multicarotenoIndex = i;
-      }
-    }
-
-    console.log(hasDaily1, hasDailyPlus, hasDoubleX)
-    console.log(daily1Index, dailyPlusIndex, doubleXIndex)
-
-    if(hasDailyPlus && hasDoubleX){
-      if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex < doubleXIndex)) {
-        this.recommendedProducts[doubleXIndex] = null;
-
-        /*if(bPlusIndex)
-          this.recommendedProducts[bPlusIndex] == null;
-        if(multicarotenoIndex)
-          this.recommendedProducts[multicarotenoIndex] == null;*/
-      }else if(dailyPlusIndex !== null && doubleXIndex !== null && (dailyPlusIndex > doubleXIndex)) {
-        this.recommendedProducts[dailyPlusIndex] = null;
-      }
-    }else if(hasDaily1 && hasDoubleX){
-      if(doubleXIndex)
-        this.recommendedProducts[doubleXIndex] = null;
-
-      /*if(bPlusIndex)
-        this.recommendedProducts[bPlusIndex] == null;
-      if(multicarotenoIndex)
-        this.recommendedProducts[multicarotenoIndex] == null;*/
-    }else if(hasDoubleX && !hasDaily1 && !hasDailyPlus){
-      if(bPlusIndex !== null)
-        this.recommendedProducts[bPlusIndex] = null;
-      if(multicarotenoIndex !== null)
-        this.recommendedProducts[multicarotenoIndex] = null;
-    }
-
-    console.log([...this.recommendedProducts]);
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
     });
-
-    console.warn([...this.recommendedProducts]);
 
     this.validateCountryConditions();
   }
@@ -634,8 +572,20 @@ export class QuestionnaireComponent implements OnInit {
     console.log(country);
 
     for (let i = 0; i < this.recommendedProducts.length; i++) {
+
+      if(country == 'MX'){
+
+        if(this.recommendedProducts[i].name == 'Double X'){
+
+          let aux = this.recommendedProducts[5];
+
+          this.recommendedProducts[5] = this.recommendedProducts[i];
+          this.recommendedProducts[i] = aux;  
+       }  
+        
+      }
       
-      if(country == 'CO'){
+      else if(country == 'CO'){
         // LinkBuy DailyPlus
         if(this.recommendedProducts[i].name == 'Daily Plus'){
            this.recommendedProducts[i].linkBuy = 'https://www.amway.com.co/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=117548&C=CB&Brand=&utm_source=site&utm_medium=home&utm_campaign=co_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -833,6 +783,14 @@ export class QuestionnaireComponent implements OnInit {
         if(this.recommendedProducts[i].name == 'Ajo Concentrado')
           this.recommendedProducts[i] = null;
 
+        if(this.recommendedProducts[i].name == 'Double X'){
+
+          let aux = this.recommendedProducts[5];
+
+          this.recommendedProducts[5] = this.recommendedProducts[i];
+          this.recommendedProducts[i] = aux;  
+       }  
+
       }else if(country == 'CR'){
               // LinkBuy DailyPlus
         if(this.recommendedProducts[i].name == 'Daily Plus'){
@@ -928,6 +886,14 @@ export class QuestionnaireComponent implements OnInit {
           this.recommendedProducts[i].linkBuy = 'https://www.amway.co.cr/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=321299&C=BY&Brand=&utm_source=site&utm_medium=home&utm_campaign=cr_es_site_trazabilidad&utm_content=cta_comprar&utm_term=equilibra_tu_vida';
        
           }
+
+          if(this.recommendedProducts[i].name == 'Double X'){
+
+            let aux = this.recommendedProducts[5];
+  
+            this.recommendedProducts[5] = this.recommendedProducts[i];
+            this.recommendedProducts[i] = aux;  
+         }  
 
 
 
@@ -1027,6 +993,14 @@ if(this.recommendedProducts[i].name == 'B Plus'){
        
           }
 
+          if(this.recommendedProducts[i].name == 'Double X'){
+
+            let aux = this.recommendedProducts[5];
+  
+            this.recommendedProducts[5] = this.recommendedProducts[i];
+            this.recommendedProducts[i] = aux;  
+         }  
+
 
 }else if(country == 'HO'){
 // LinkBuy DailyPlus
@@ -1123,6 +1097,14 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           this.recommendedProducts[i].linkBuy = 'https://www.amway.com.hn/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=321299&C=CA&Brand=&utm_source=site&utm_medium=home&utm_campaign=hn_es_site_trazabilidad&utm_content=cta_comprar&utm_term=equilibra_tu_vida';
        
           }
+
+          if(this.recommendedProducts[i].name == 'Double X'){
+
+            let aux = this.recommendedProducts[5];
+  
+            this.recommendedProducts[5] = this.recommendedProducts[i];
+            this.recommendedProducts[i] = aux;  
+         }    
 
 }else if(country == 'ES'){
 // LinkBuy DailyPlus
@@ -1221,6 +1203,14 @@ if(this.recommendedProducts[i].name == 'B Plus'){
        
           }
 
+          if(this.recommendedProducts[i].name == 'Double X'){
+
+            let aux = this.recommendedProducts[5];
+  
+            this.recommendedProducts[5] = this.recommendedProducts[i];
+            this.recommendedProducts[i] = aux;  
+         }    
+
 
 }else if(country == 'PA'){
 // LinkBuy DailyPlus
@@ -1247,11 +1237,12 @@ if(this.recommendedProducts[i].name == 'Cal Mag D'){
  this.recommendedProducts[i].linkBuy = 'https://www.amway.com.pa/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=110609&C=BB&Brand=&utm_source=site&utm_medium=home&utm_campaign=pa_es_site_trazabilidad&utm_content=cta_ver&utm_term=Calmag_D';
 
 }
-// LinkBuy Double X
-if(this.recommendedProducts[i].name == 'Double X'){
- this.recommendedProducts[i].linkBuy = 'https://www.amway.com.pa/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=120843&C=BB&Brand=&utm_source=site&utm_medium=home&utm_campaign=pa_es_site_trazabilidad&utm_content=cta_ver&utm_term=Double_X';
 
-}
+// LinkBuy Double X
+  if(this.recommendedProducts[i].name == 'Double X'){
+  this.recommendedProducts[i].linkBuy = 'https://www.amway.com.pa/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=120843&C=BB&Brand=&utm_source=site&utm_medium=home&utm_campaign=pa_es_site_trazabilidad&utm_content=cta_ver&utm_term=Double_X';
+ }
+
 // LinkBuy B Plus
 if(this.recommendedProducts[i].name == 'B Plus'){
  this.recommendedProducts[i].linkBuy = '';
@@ -1319,11 +1310,25 @@ if(this.recommendedProducts[i].name == 'B Plus'){
        
           }
 
+        if(this.recommendedProducts[i].name == 'Double X'){
+
+        let aux = this.recommendedProducts[5];
+  
+         this.recommendedProducts[5] = this.recommendedProducts[i];
+         this.recommendedProducts[i] = aux;  
+       
+        }  
         // eliminar B Plus
         // eliminar daily+1 prende tu dia
-        if(this.recommendedProducts[i].name == 'B Plus' || 
-          this.recommendedProducts[i].name == 'Daily +1 Prende tu día')
-          this.recommendedProducts[i] = null;
+         if(this.recommendedProducts[i].name == 'B Plus' || 
+         this.recommendedProducts[i].name == 'Daily +1 Prende tu día'){
+         this.recommendedProducts[i] = null;
+
+
+         }
+          
+
+
 
       }else if(country == 'CH'){
 // LinkBuy DailyPlus
@@ -1456,7 +1461,6 @@ if(this.recommendedProducts[i].name == 'Cal Mag D'){
 // LinkBuy Double X
 if(this.recommendedProducts[i].name == 'Double X'){
  this.recommendedProducts[i].linkBuy = 'https://www.amway.com.uy/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=F&BC=120843&C=FR&Brand=&utm_source=site&utm_medium=home&utm_campaign=uy_es_site_trazabilidad&utm_content=cta_ver&utm_term=Double_X';
-
 }
 // LinkBuy B Plus
 if(this.recommendedProducts[i].name == 'B Plus'){
@@ -1525,6 +1529,16 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           }
 
 
+          if(this.recommendedProducts[i].name == 'Double X'){
+
+            let aux = this.recommendedProducts[5];
+      
+             this.recommendedProducts[5] = this.recommendedProducts[i];
+             this.recommendedProducts[i] = aux;  
+           
+            }    
+
+
         // eliminar multicaroteno
         // eliminar Ajo concentrado
         // eliminar shake plus
@@ -1534,8 +1548,11 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           this.recommendedProducts[i].name == 'Ajo Concentrado' ||
           this.recommendedProducts[i].name == 'Bodykey Shake Plus' || 
           this.recommendedProducts[i].name == 'Lecitina E' ||
-          this.recommendedProducts[i].name == 'Daily +1 Luce Radiante')
-          this.recommendedProducts[i] = null;
+          this.recommendedProducts[i].name == 'Daily +1 Luce Radiante'){
+            this.recommendedProducts[i] = null;
+          }
+
+         
 
       }else if(country == 'VZ'){
 // LinkBuy DailyPlus
@@ -1769,7 +1786,6 @@ if(this.recommendedProducts[i].name == 'B Plus'){
       if(product != null) return product;
     });+
 
-    console.warn([...this.recommendedProducts]);
 
     sessionStorage.setItem('clientName', this.questions[0].selected);
     sessionStorage.setItem('clientCountry', this.questions[0].country);
@@ -1827,9 +1843,12 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
     this.questionIndex += 1;
 
+    console.log(...this.recommendedProducts);
+
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
     console.log(this.questionIndex);
-    console.log(this.questions[this.questionIndex]);
+    console.log(this.utag_data[this.questionIndex]);
+    console.log(this.questions[this.questionIndex].options);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
