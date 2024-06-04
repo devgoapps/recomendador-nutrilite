@@ -48,6 +48,11 @@ export class RecommendationsComponent implements OnInit {
               private fb: FormBuilder){}
 
   ngOnInit(): void {
+
+
+
+
+
     let utag_data = environment.utagInfo.startQuestionnaire;
 
     this.code = sessionStorage.getItem('code');
@@ -68,10 +73,51 @@ export class RecommendationsComponent implements OnInit {
         return item;
       });
     }
-
+    this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
+    
   }
+
+  funtionAtribute(){
+    try {
+      var nodo0 = document.getElementById("comprar0");
+      var nodo1 = document.getElementById("comprar1");
+      var nodo2 = document.getElementById("comprar2");
+      var nodo3 = document.getElementById("comprar3");
+      var nodo4 = document.getElementById("comprar4");
+      var nodo5 = document.getElementById("comprar5");
+    
+    var valor0 = document.createAttribute("item-name");
+    var valor1 = document.createAttribute("item-name");
+    var valor2 = document.createAttribute("item-name");
+    var valor3 = document.createAttribute("item-name");
+    var valor4 = document.createAttribute("item-name");
+    var valor5 = document.createAttribute("item-name");
+
+    valor0.value = this.recommendedProducts[0].name;
+    valor1.value = this.recommendedProducts[1].name;
+    valor2.value = this.recommendedProducts[2].name;
+    valor3.value = this.recommendedProducts[3].name;
+    valor4.value = this.recommendedProducts[4].name;
+    valor5.value = this.recommendedProducts[5].name;
+
+    nodo0?.setAttributeNode(valor0);
+    nodo1?.setAttributeNode(valor1);
+    nodo2?.setAttributeNode(valor2);
+    nodo3?.setAttributeNode(valor3);
+    nodo4?.setAttributeNode(valor4);
+    nodo5?.setAttributeNode(valor5);
+
+    console.log(nodo0?.getAttribute("item-name"));
+    console.log(nodo4?.getAttribute("item-name"));
+    console.log(nodo5?.getAttribute("item-name"));
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
 
   buildForm(){
     this.sendForm = this.fb.group({
@@ -99,7 +145,7 @@ export class RecommendationsComponent implements OnInit {
 
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
-      From: "brenda@ethos.com.mx", // Cambiar ruta de Amway   nutrirec@amway.com
+      From: "nutrirec@amway.com", // Cambiar ruta de Amway   nutrirec@amway.com
 
       //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
       //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
@@ -199,6 +245,8 @@ DBB6AD785D81E60B33707AD39F5235A97A44
   Puerto
   2525
   */
+
+
 
   validateCaptcha(){
     if(this.vSend.captcha == this.captcha){

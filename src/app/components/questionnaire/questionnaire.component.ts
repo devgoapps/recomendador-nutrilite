@@ -24,6 +24,7 @@ export class QuestionnaireComponent implements OnInit {
 
   utag_data: Array<any> = [];
   questionIndex: number = 0;
+  answer: number = 0;
   questions: Array<any> = [
     {
       question: '¿Puedes darnos tu nombre y país?',
@@ -473,6 +474,7 @@ export class QuestionnaireComponent implements OnInit {
     this.utag_data = environment.utagInfo.questionnaire;
         
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
@@ -482,13 +484,23 @@ export class QuestionnaireComponent implements OnInit {
       if(isMulti){
       let index = this.questions[indexQuestion].selected.indexOf(value);
       if(index == -1){
-        this.questions[indexQuestion].selected.push(value);
+        this.questions[indexQuestion].selected.push(value); 
+        
+        
       }else { 
-        this.questions[indexQuestion].selected.splice(index, 1);
+        this.questions[indexQuestion].selected.splice(index, 1); 
+       
       }
     }else{
       this.questions[indexQuestion].selected = value; 
+     
     }
+
+    
+    
+    
+
+    
   }
   
   showProducts(){
@@ -573,7 +585,7 @@ export class QuestionnaireComponent implements OnInit {
 
     for (let i = 0; i < this.recommendedProducts.length; i++) {
 
-      if(country == 'MX'){
+      if(country == 'mx'){
 
         if(this.recommendedProducts[i].name == 'Double X'){
 
@@ -585,7 +597,7 @@ export class QuestionnaireComponent implements OnInit {
         
       }
       
-      else if(country == 'CO'){
+       else if(country == 'co'){
         // LinkBuy DailyPlus
         if(this.recommendedProducts[i].name == 'Daily Plus'){
            this.recommendedProducts[i].linkBuy = 'https://www.amway.com.co/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=117548&C=CB&Brand=&utm_source=site&utm_medium=home&utm_campaign=co_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -688,7 +700,7 @@ export class QuestionnaireComponent implements OnInit {
         if(this.recommendedProducts[i].name == 'Double X')
           this.recommendedProducts[i] = null;
 
-      }else if(country == 'AR'){
+      }else if(country == 'ar'){
                 // LinkBuy DailyPlus
         if(this.recommendedProducts[i].name == 'Daily Plus'){
           this.recommendedProducts[i].linkBuy = 'https://www.amway.com.ar/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=P&BC=126009&C=PE&Brand=&utm_source=site&utm_medium=home&utm_campaign=ar_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -791,7 +803,7 @@ export class QuestionnaireComponent implements OnInit {
           this.recommendedProducts[i] = aux;  
        }  
 
-      }else if(country == 'CR'){
+      }else if(country == 'cr'){
               // LinkBuy DailyPlus
         if(this.recommendedProducts[i].name == 'Daily Plus'){
           this.recommendedProducts[i].linkBuy = 'https://www.amway.co.cr/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=126010&C=BS&Brand=&utm_source=site&utm_medium=home&utm_campaign=cr_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -897,7 +909,7 @@ export class QuestionnaireComponent implements OnInit {
 
 
 
-      }else if(country == 'GU'){
+      }else if(country == 'gt'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.gt/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=126009&C=CX&Brand=&utm_source=site&utm_medium=home&utm_campaign=gt_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1002,7 +1014,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
          }  
 
 
-}else if(country == 'HO'){
+      }else if(country == 'hn'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.hn/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=126009&C=CY&Brand=&utm_source=site&utm_medium=home&utm_campaign=hn_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1106,7 +1118,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
             this.recommendedProducts[i] = aux;  
          }    
 
-}else if(country == 'ES'){
+      }else if(country == 'sv'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.sv/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=O&BC=117548&C=OY&Brand=&utm_source=site&utm_medium=home&utm_campaign=sv_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1212,7 +1224,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
          }    
 
 
-}else if(country == 'PA'){
+      }else if(country == 'pa'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.pa/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=B&BC=117548&C=BB&Brand=&utm_source=site&utm_medium=home&utm_campaign=pa_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1330,7 +1342,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
 
 
-      }else if(country == 'CH'){
+      }else if(country == 'cl'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.cl/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=117548&C=CO&Brand=&utm_source=site&utm_medium=home&utm_campaign=cl_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1433,7 +1445,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           this.recommendedProducts[i].name == 'Ajo Concentrado')
           this.recommendedProducts[i] = null;
 
-      }else if(country == 'UY'){
+      }else if(country == 'uy'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.uy/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=F&BC=117548&C=FR&Brand=&utm_source=site&utm_medium=home&utm_campaign=uy_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1554,7 +1566,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
          
 
-      }else if(country == 'VZ'){
+      }else if(country == 've'){
 // LinkBuy DailyPlus
 if(this.recommendedProducts[i].name == 'Daily Plus'){
   this.recommendedProducts[i].linkBuy = 'https://www.amway.com.ve/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=A&BC=117549&C=AG&Brand=&utm_source=site&utm_medium=home&utm_campaign=v_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus';
@@ -1663,120 +1675,6 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           this.recommendedProducts[i].name == 'Daily + 1 Vive Libre')
           this.recommendedProducts[i] = null;
 
-      }else if(country == 'BZ'){
-// LinkBuy DailyPlus
-if(this.recommendedProducts[i].name == 'Daily Plus'){
-  this.recommendedProducts[i].linkBuy = '';
-
-}
-// LinkBuy Omega 3 Plus
-if(this.recommendedProducts[i].name == 'Omega 3 Plus'){
-  this.recommendedProducts[i].linkBuy = '';
- 
- }
-// LinkBuy C Plus
-if(this.recommendedProducts[i].name == 'C Plus'){
-this.recommendedProducts[i].linkBuy = '';
-} 
-// LinkBuy Proteina
-if(this.recommendedProducts[i].name == 'Proteína Vegetal en polvo'){
-this.recommendedProducts[i].linkBuy = '';
-
-}         
-// LinkBuy CalMag D
-if(this.recommendedProducts[i].name == 'Cal Mag D'){
- this.recommendedProducts[i].linkBuy = '';
-
-}
-// LinkBuy Double X
-if(this.recommendedProducts[i].name == 'Double X'){
- this.recommendedProducts[i].linkBuy = '';
-
-}
-// LinkBuy B Plus
-if(this.recommendedProducts[i].name == 'B Plus'){
- this.recommendedProducts[i].linkBuy = '';
-
-}
-        // LinkBuy Multicaroteno
-        if(this.recommendedProducts[i].name == 'Multicaroteno'){
-          this.recommendedProducts[i].linkBuy = '';
-       
-          }
-        // LinkBuy Ajo Concentrado
-        if(this.recommendedProducts[i].name == 'Ajo Concentrado'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Garlic-Plus-Nutrilite/p/125618?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Garlic';
-       
-          }
-        // LinkBuy BodyKey Shake Plus
-        if(this.recommendedProducts[i].name == 'Bodykey Shake Plus'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Nutri%C3%A7%C3%A3o/c/nutricao?q=%3Arelevance%3Abrand%3ABodyKey&view=&utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Bodykey';
-       
-          }
-        // LinkBuy Lecitina E
-        if(this.recommendedProducts[i].name == 'Lecitina E'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Suplemento-de-Vitamina-E---Nutrilite/p/A4309?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=vitaminaE';
-       
-          }
-        // LinkBuy Fibra en polvo
-        if(this.recommendedProducts[i].name == 'Fibra en Polvo'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Fibras-em-Po-Nutrilite/p/102736?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=fibras_po';
-       
-          }
-        // LinkBuy Tri Iron Folic
-        if(this.recommendedProducts[i].name == 'Tri Iron Folic'){
-          this.recommendedProducts[i].linkBuy = '';
-       
-          }
-        // LinkBuy Daily+1 Prende tu día
-        if(this.recommendedProducts[i].name == 'Daily +1 Prende tu día'){
-          this.recommendedProducts[i].linkBuy = '';
-       
-          }
-        // LinkBuy Daily+1 Vive libre
-        if(this.recommendedProducts[i].name == 'Daily + 1 Vive Libre'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Daily%2B1-EQUILIBRIO-INTESTINAL-D90/p/321611?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=equilibrio_intestinal';
-       
-          }
-        // LinkBuy Daily+1 Luce radiante
-        if(this.recommendedProducts[i].name == 'Daily +1 Luce Radiante'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/321236?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_beleza';
-       
-          }
-        // LinkBuy Daily+1 Muévete libre
-        if(this.recommendedProducts[i].name == 'Daily +1 Muévete Libre'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Daily%2B1-MOVIMENTO-D90/p/321628?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_movimento';
-       
-          }
-        // LinkBuy Daily+1 Respuesta óptima
-        if(this.recommendedProducts[i].name == 'Daily +1 Respuesta Óptima'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/321240?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_imunidade';
-       
-          }
-        // LinkBuy Daily+1 Equilibra tu vida
-        if(this.recommendedProducts[i].name == 'Daily +1 Equilibra tu vida'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/321304?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_bem_estar';
-       
-          }
-        // Cambiar imagen
-        // Cambiar nombre de C Plus a Acerola masticable
-
-        // eliminar Double X
-        // eliminar Multicaroteno
-        // eliminar B Plus
-        // eliminar daily+1 prende tu dia
-        this.recommendedProducts[i].img = this.recommendedProducts[i].img.replaceAll(/LAS/gi, "BZ");
-        this.recommendedProducts[i].emailImg = this.recommendedProducts[i].emailImg.replaceAll(/LAS/gi, "BZ");
-
-        if(this.recommendedProducts[i].name == 'C Plus')
-          this.recommendedProducts[i].name = 'Acerola Masticable';
-
-        if(this.recommendedProducts[i].name == 'Double X' || 
-          this.recommendedProducts[i].name == 'Multicaroteno' ||
-          this.recommendedProducts[i].name == 'B Plus' ||
-          this.recommendedProducts[i].name == 'Daily +1 Prende tu día')
-          this.recommendedProducts[i] = null;
-
       }
     }
 
@@ -1841,16 +1739,44 @@ if(this.recommendedProducts[i].name == 'B Plus'){
       return;
     }
 
-    this.questionIndex += 1;
 
+    this.questionIndex += 1;
     console.log(...this.recommendedProducts);
 
+    let country = this.questions[0].country;
+
+    this.utag_data[this.questionIndex].site_country = this.questions[0].country;
+    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(country);
+
+
+
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    // utag.view(window.utag_data);
+    // console.log(utag.view(window.utag_data));
     console.log(this.questionIndex);
+    console.log(country);
     console.log(this.utag_data[this.questionIndex]);
-    console.log(this.questions[this.questionIndex].options);
+  
+
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
   }
+
+  getCurrencyCode(country: string) {
+    if (country == 'mx') return 'mxn';
+    else if (country == 'gt') return 'gtq';  //guatemala
+    else if (country == 'sv') return 'svc';  //el salvador
+    else if (country == 'hn') return 'hnl';  //honduras
+    else if (country == 'pa') return 'pab';  //panama
+    else if (country == 'cr') return 'crc';  //costa rica
+    else if (country == 'ar') return 'ars';  //argentina
+    else if (country == 'cl') return 'clp';  //chile
+    else if (country == 'uy') return 'uyu';  //uruguay
+    else if (country == 'co') return 'cop';  //colombia
+    else if (country == 've') return 'vef';  //venezuela
+    else return '';
+  }
+
+
 }
