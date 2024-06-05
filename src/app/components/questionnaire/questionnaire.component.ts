@@ -24,11 +24,14 @@ export class QuestionnaireComponent implements OnInit {
 
 
   utag_data: Array<any> = [];
+  utag_dataAnwers: Array<any> = [];
   questionIndex: number = 0;
   value: number = 0;
   answer: string | null = '';
   question: string | null = '';
+  clientQuestions: Array<any> = [];
   multiples: Array<any> = [];
+  country: string = '';
 
   questions: Array<any> = [
     {
@@ -477,7 +480,9 @@ export class QuestionnaireComponent implements OnInit {
 
   ngOnInit(): void {
     this.utag_data = environment.utagInfo.questionnaire;
-        
+
+
+
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
 
     setTimeout(() => {
@@ -1759,19 +1764,41 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     console.log(this.question);
     console.log(this.answer);
 
-    let country = this.questions[0].country;
+
+    let utag_dataanwers =environment.utagInfo.QuestionnarieContinue;
+
+    this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
+
+    this.utag_dataAnwers[this.questionIndex].page_section = this.question;
+    this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
+
+    utag.link(this.utag_dataAnwers[this.questionIndex]);
+
+
+
+
+
+    this.country = this.questions[0].country;
+
+    this.clientQuestions = this.questions;
 
     this.utag_data[this.questionIndex].site_country = this.questions[0].country;
-    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(country);
+    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.country);
 
 
 
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+
+
+
+console.log(window.utag_data);
     // utag.view(window.utag_data);
     // console.log(utag.view(window.utag_data));
     console.log(this.questionIndex);
-    console.log(country);
-    console.log(this.utag_data[this.questionIndex]);
+    console.log(this.utag_dataAnwers[this.questionIndex]);
+    console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
+
+    
   
 
     setTimeout(() => {

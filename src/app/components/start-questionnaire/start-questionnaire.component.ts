@@ -23,6 +23,8 @@ export class StartQuestionnaireComponent implements OnInit {
     let utag_data = environment.utagInfo.startQuestionnaire;
 
     window.utag_data = Object.assign(window.utag_data, utag_data);
+
+    console.log(window.utag_data);
   
     setTimeout(() => {
       //utag.view(window.utag_data);

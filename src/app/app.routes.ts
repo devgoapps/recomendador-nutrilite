@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadComponent: () => import('./components/recommendations/recommendations.component').then(c => c.RecommendationsComponent)
     },
     {
+        path: 'recommendations-share',
+        loadComponent: () => import('./components/recommendationsShare/recommendations-share.component').then(c => c.RecommendationsShareComponent)
+    },
+    {
         path: 'countries',
         loadComponent: () => import('./components/countries/countries.component').then(c => c.CountriesComponent)
     },

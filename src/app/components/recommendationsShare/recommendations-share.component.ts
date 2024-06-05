@@ -15,7 +15,7 @@ declare var link: any;
 declare var Email: any;
 
 @Component({
-  selector: 'app-recommendations',
+  selector: 'app-recommendations-share',
   standalone: true,
   imports: [
     FooterComponent,
@@ -26,16 +26,14 @@ declare var Email: any;
     ChipsModule,
     NgxPrintModule,
   ],
-  templateUrl: './recommendations.component.html',
-  styleUrl: './recommendations.component.scss'
+  templateUrl: './recommendations-share.component.html',
+  styleUrl: './recommendations-share.component.scss'
 })
-export class RecommendationsComponent implements OnInit {
+export class RecommendationsShareComponent implements OnInit {
 
   clientName: string | null = '';
   clientCountry: string | null = '';
-  country: string  = '';
   recommendedProducts: Array<any> = [];
-  clientQuestions: Array<any> = [];
   link: string = '';
 
   numberProducts: number = 4;
@@ -54,18 +52,18 @@ export class RecommendationsComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
+
+
     let utag_data = environment.utagInfo.recommendations;
+
+    this.code = sessionStorage.getItem('code');
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
-
-    console.log(window.utag_data);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
-
-
-
-
 
     this.clientName = sessionStorage.getItem('clientName');
     this.clientCountry = sessionStorage.getItem('clientCountry');
@@ -77,9 +75,7 @@ export class RecommendationsComponent implements OnInit {
         item.active = false;
         return item;
       });
-    }    
-    
-
+    }
 
     this.funtionAtribute();
     this.buildForm();
@@ -191,51 +187,27 @@ export class RecommendationsComponent implements OnInit {
         window.open(whatsappWebUrl , '_blank');
       }
   }
- 
- 
 
  CopyLink(){
 
-  var message =     encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
-  encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
-  encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
-  encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
 
-    var copyHref = "http://localhost:4200/#/recommendations-share/?product=shirt&color=blue&newuser&size=m";
+    //const searchParams = new URLSearchParams(window.location.search);
 
-    try {
-    navigator.clipboard.writeText(copyHref);
-    alert("El enlace se copio correctamente");
+    //console.log(searchParams.has('sort')); 
 
-    this.router.navigate(['recommendations-share']);
-    } catch (error) {
+    //console.log(searchParams.get('sort'));
+
+    // for (const param of searchParams) {
+    //     console.log(param);
+    //   }
       
-    }
 
-    
-    // try{
-    //   navigator.clipboard.writeText(copyHref); 
-    //   alert("El enlace a sido copiado");
-    // }
-    // catch{
-    //   alert("El enlace NO se copio correctamente");
-    // }
-   
-    // console.log(window.location.href);
 
-        // Join array elements with a delimiter, e.g., a comma
-        // var joinedItems = encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);;
-        // // Create the shareable link
-        // this.link = window.location.href + '?items=' + joinedItems;
-
-        //this.clipboardService.copyFromContent(this.link);
-        // alert('Link copied to clipboard!');
 
 
   }
+
+
 
 
 
@@ -331,14 +303,7 @@ DBB6AD785D81E60B33707AD39F5235A97A44
 
   get cSend(){ return this.sendForm.controls; }
 
-
-
-
-
 }
-
-
-
 
 
 /**
