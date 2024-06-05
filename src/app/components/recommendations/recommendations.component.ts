@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../../template/footer/footer.component';
-import {NgxPrintModule} from 'ngx-print'
+import {NgxPrintModule} from 'ngx-print';
+import { ClipboardService } from 'ngx-clipboard';
 
 import { ChipsModule } from 'primeng/chips';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 declare var utag: any;
 declare var window: any;
+declare var link: any;
 declare var Email: any;
 
 @Component({
@@ -32,6 +34,7 @@ export class RecommendationsComponent implements OnInit {
   clientName: string | null = '';
   clientCountry: string | null = '';
   recommendedProducts: Array<any> = [];
+  link: string = '';
 
   numberProducts: number = 4;
 
@@ -45,7 +48,8 @@ export class RecommendationsComponent implements OnInit {
   isFormSubmitted: boolean = false;
 
   constructor(private router: Router,
-              private fb: FormBuilder){}
+              private fb: FormBuilder,
+              private clipboardService: ClipboardService){}
 
   ngOnInit(): void {
 
@@ -53,7 +57,7 @@ export class RecommendationsComponent implements OnInit {
 
 
 
-    let utag_data = environment.utagInfo.startQuestionnaire;
+    let utag_data = environment.utagInfo.recommendations;
 
     this.code = sessionStorage.getItem('code');
         
@@ -73,45 +77,45 @@ export class RecommendationsComponent implements OnInit {
         return item;
       });
     }
+
     this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
     
   }
 
+
   funtionAtribute(){
     try {
-      var nodo0 = document.getElementById("comprar0");
-      var nodo1 = document.getElementById("comprar1");
-      var nodo2 = document.getElementById("comprar2");
-      var nodo3 = document.getElementById("comprar3");
-      var nodo4 = document.getElementById("comprar4");
-      var nodo5 = document.getElementById("comprar5");
+      var nodo0 = document.getElementById("comprar1");
+      var nodo1 = document.getElementById("comprar2");
+      var nodo2 = document.getElementById("comprar3");
+      var nodo3 = document.getElementById("comprar4");
+      var nodo4 = document.getElementById("comprar5");
+      var nodo5 = document.getElementById("comprar6");
     
-    var valor0 = document.createAttribute("item-name");
-    var valor1 = document.createAttribute("item-name");
-    var valor2 = document.createAttribute("item-name");
-    var valor3 = document.createAttribute("item-name");
-    var valor4 = document.createAttribute("item-name");
-    var valor5 = document.createAttribute("item-name");
+      var valor0 = document.createAttribute("item-name");
+      var valor1 = document.createAttribute("item-name");
+      var valor2 = document.createAttribute("item-name");
+      var valor3 = document.createAttribute("item-name");
+      var valor4 = document.createAttribute("item-name");
+      var valor5 = document.createAttribute("item-name");
 
-    valor0.value = this.recommendedProducts[0].name;
-    valor1.value = this.recommendedProducts[1].name;
-    valor2.value = this.recommendedProducts[2].name;
-    valor3.value = this.recommendedProducts[3].name;
-    valor4.value = this.recommendedProducts[4].name;
-    valor5.value = this.recommendedProducts[5].name;
 
-    nodo0?.setAttributeNode(valor0);
-    nodo1?.setAttributeNode(valor1);
-    nodo2?.setAttributeNode(valor2);
-    nodo3?.setAttributeNode(valor3);
-    nodo4?.setAttributeNode(valor4);
-    nodo5?.setAttributeNode(valor5);
 
-    console.log(nodo0?.getAttribute("item-name"));
-    console.log(nodo4?.getAttribute("item-name"));
-    console.log(nodo5?.getAttribute("item-name"));
+      valor0.value = this.recommendedProducts[0].name;
+      valor1.value = this.recommendedProducts[1].name;
+      valor2.value = this.recommendedProducts[2].name;
+      valor3.value = this.recommendedProducts[3].name;
+      valor4.value = this.recommendedProducts[4].name;
+      valor5.value = this.recommendedProducts[5].name;
+
+      nodo0?.setAttributeNode(valor0);
+      nodo1?.setAttributeNode(valor1);
+      nodo2?.setAttributeNode(valor2);
+      nodo3?.setAttributeNode(valor3);
+      nodo4?.setAttributeNode(valor4);
+      nodo5?.setAttributeNode(valor5);
     } catch (error) {
       console.log(error);
     }
@@ -189,24 +193,45 @@ export class RecommendationsComponent implements OnInit {
 
     var copyHref = window.location.href;
     
-    try{
-      navigator.clipboard.writeText(copyHref); 
-      alert("El enlace a sido copiado");
-    }
-    catch{
-      alert("El enlace NO se copio correctamente");
-    }
+    // try{
+    //   navigator.clipboard.writeText(copyHref); 
+    //   alert("El enlace a sido copiado");
+    // }
+    // catch{
+    //   alert("El enlace NO se copio correctamente");
+    // }
    
-    console.log(window.location.href);
+    // console.log(window.location.href);
+
+        // Join array elements with a delimiter, e.g., a comma
+        var joinedItems = encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
+        encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
+        encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
+        encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);;
+        // Create the shareable link
+        this.link = window.location.href + '?items=' + joinedItems;
+
+        this.clipboardService.copyFromContent(this.link);
+        alert('Link copied to clipboard!');
+
 
   }
+
+
+
 
   printToPDF(){   
 
   }
   
   openLink(link: string){
-    window.open(link, '_blank')
+
+    //let rec = environment.utagInfo.RecommendationsContinue;
+
+    //window.utag_data = Object.assign(window.utag_data, rec);
+       window.open(link, '_blank')
+       //utag.link(window.open(link, '_blank'));
+       //console.log(window.utag_data);
   }
   /*
   Secure token

@@ -22,9 +22,14 @@ declare var window: any;
 })
 export class QuestionnaireComponent implements OnInit {
 
+
   utag_data: Array<any> = [];
   questionIndex: number = 0;
-  answer: number = 0;
+  value: number = 0;
+  answer: string | null = '';
+  question: string | null = '';
+  multiples: Array<any> = [];
+
   questions: Array<any> = [
     {
       question: '¿Puedes darnos tu nombre y país?',
@@ -480,19 +485,25 @@ export class QuestionnaireComponent implements OnInit {
     }, 500);
   }
 
-  selectOption(indexQuestion: number, value: number, isMulti: boolean){
+  selectOption(indexQuestion: number, value: number, isMulti: boolean, option: string){
       if(isMulti){
       let index = this.questions[indexQuestion].selected.indexOf(value);
       if(index == -1){
         this.questions[indexQuestion].selected.push(value); 
-        
+
+        this.question = this.utag_data[indexQuestion].page_section;
+        this.answer = option;
         
       }else { 
         this.questions[indexQuestion].selected.splice(index, 1); 
+        this.question = this.utag_data[indexQuestion].page_section;
+        this.answer = option;
        
       }
     }else{
       this.questions[indexQuestion].selected = value; 
+      this.question = this.utag_data[indexQuestion].page_section;
+      this.answer = option;
      
     }
 
@@ -791,17 +802,19 @@ export class QuestionnaireComponent implements OnInit {
        
           }
 
-        // eliminar Ajo concentrado
-        if(this.recommendedProducts[i].name == 'Ajo Concentrado')
-          this.recommendedProducts[i] = null;
-
         if(this.recommendedProducts[i].name == 'Double X'){
 
           let aux = this.recommendedProducts[5];
 
           this.recommendedProducts[5] = this.recommendedProducts[i];
           this.recommendedProducts[i] = aux;  
-       }  
+       }
+
+        // eliminar Ajo concentrado
+        if(this.recommendedProducts[i].name == 'Ajo Concentrado')
+          this.recommendedProducts[i] = null;
+
+  
 
       }else if(country == 'cr'){
               // LinkBuy DailyPlus
@@ -1742,6 +1755,9 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
     this.questionIndex += 1;
     console.log(...this.recommendedProducts);
+
+    console.log(this.question);
+    console.log(this.answer);
 
     let country = this.questions[0].country;
 
