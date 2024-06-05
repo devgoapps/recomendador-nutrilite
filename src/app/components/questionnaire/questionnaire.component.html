@@ -27,7 +27,8 @@
                 @if (questions[questionIndex]?.isInput) {
                     <span class="g-text">¡Comencemos!</span><br>
                 }
-                <span class="g-title">{{ questions[questionIndex]?.question }}</span><br>
+                <span class="g-title" id="original">{{ questions[questionIndex]?.question }}</span><br>
+               <p id="result"></p>
                 <span class="g-text">{{ questions[questionIndex]?.subQuestion }}</span>
             }
 

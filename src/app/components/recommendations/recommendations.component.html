@@ -608,7 +608,7 @@
                 
 
 
-                <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;">
+                <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
                     Enviar <i class="fa-regular fa-envelope"></i>
                 </button>
             </div>
@@ -618,28 +618,28 @@
             
             <div class="col-sm-1 share-button">
 
-                    <button type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="Gmail">
+                    <button (click)="sendemails()" type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos">
                         <i class="fa-regular fa-envelope"></i>
                     </button>  
           
             </div>    
             <div class="col-sm-1 share-button">
 
-                <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" title="WhatsApp" id="buttonshare2" value="WhatsApp">
+                <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" title="WhatsApp" id="buttonshare2" value="whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </button>  
       
             </div>
             <div class="col-sm-1 share-button">
 
-                <button (click)="CopyLink()" type="button" class="btn btn-success btn-circle btn-lg" title="Copiar Enlace" id="buttonshare3" value="linkShare">
+                <button (click)="CopyLink()" type="button" class="btn btn-success btn-circle btn-lg" title="Copiar Enlace" id="buttonshare3" value="copy link">
                     <i class="fas fa-link"></i>
                 </button> 
       
             </div>
             <div class="col-sm-1 share-button">
 
-                <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" title="Imprimir" id="buttonshare4" value="Imprimir" printSectionId="mail2" ngxPrint>
+                <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" title="Imprimir" id="buttonshare4"  printSectionId="mail2" ngxPrint value="print">
                     <i class="fas fa-print"></i>
                 </button>  
       

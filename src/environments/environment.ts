@@ -398,10 +398,30 @@ export const environment = {
         RecommendationsContinue: {
             event_name: 'view_recommendations',  
         },
-        ShareContinue: {
+        ShareContinue: 
+        [
+            {
             event_name: 'share',  
             share_channel: '',
-        },
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+        
+        ],
         countries: {
             page_category: 'countries | Recomendador',  
             page_name: 'countries',

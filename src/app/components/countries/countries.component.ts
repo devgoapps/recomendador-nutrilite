@@ -72,8 +72,6 @@ export class CountriesComponent implements OnInit {
         link: 'https://www.amway.com.ve/Store/Catalogue.aspx?show=Top&line=A&utm_source=site&utm_medium=home&utm_campaign=ve_es&utm_content=cta_compra&utm_term=boton_comprar'
     },
 
-   
-
 
 
   ]
@@ -84,8 +82,9 @@ export class CountriesComponent implements OnInit {
     let utag_data = environment.utagInfo.countries;
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
+    console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
   }
 

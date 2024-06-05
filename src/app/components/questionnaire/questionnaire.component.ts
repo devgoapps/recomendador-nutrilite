@@ -31,7 +31,9 @@ export class QuestionnaireComponent implements OnInit {
   question: string | null = '';
   clientQuestions: Array<any> = [];
   multiples: Array<any> = [];
-  country: string = '';
+  country: string | null = '';
+
+  paragraph: string = '';
 
   questions: Array<any> = [
     {
@@ -484,9 +486,10 @@ export class QuestionnaireComponent implements OnInit {
 
 
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
-
+    utag.view(window.utag_data);
+    console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
   }
 
@@ -495,19 +498,15 @@ export class QuestionnaireComponent implements OnInit {
       let index = this.questions[indexQuestion].selected.indexOf(value);
       if(index == -1){
         this.questions[indexQuestion].selected.push(value); 
-
-        this.question = this.utag_data[indexQuestion].page_section;
         this.answer = option;
         
       }else { 
         this.questions[indexQuestion].selected.splice(index, 1); 
-        this.question = this.utag_data[indexQuestion].page_section;
         this.answer = option;
        
       }
     }else{
       this.questions[indexQuestion].selected = value; 
-      this.question = this.utag_data[indexQuestion].page_section;
       this.answer = option;
      
     }
@@ -1745,6 +1744,23 @@ if(this.recommendedProducts[i].name == 'B Plus'){
   }
 
   nextQuestion() {
+    const paragraphElement = document.getElementById('original');
+    const resultElement = document.getElementById('result');
+    
+    if (paragraphElement && resultElement) {
+        const paragraph = paragraphElement.innerText;
+        const result = this.concatenateWithHyphens(paragraph);
+
+        this.question = result;
+
+    } else {
+        console.error('Uno o ambos elementos no existen.');
+    }
+
+
+
+
+
     if(this.questionIndex == (this.questions.length - 1)) return;
 
     if(!this.questions[this.questionIndex].selected || this.questions[this.questionIndex].selected.length == 0){
@@ -1765,9 +1781,18 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     console.log(this.answer);
 
 
-    let utag_dataanwers =environment.utagInfo.QuestionnarieContinue;
+
+
+
+
+
+    let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
 
     this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
+
+
+
+ 
 
     this.utag_dataAnwers[this.questionIndex].page_section = this.question;
     this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
@@ -1783,7 +1808,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     this.clientQuestions = this.questions;
 
     this.utag_data[this.questionIndex].site_country = this.questions[0].country;
-    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.country);
+    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
 
 
 
@@ -1791,7 +1816,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
 
 
-console.log(window.utag_data);
+
+
+
+    console.log(window.utag_data);
     // utag.view(window.utag_data);
     // console.log(utag.view(window.utag_data));
     console.log(this.questionIndex);
@@ -1820,6 +1848,23 @@ console.log(window.utag_data);
     else if (country == 've') return 'vef';  //venezuela
     else return '';
   }
+
+  concatenateWithHyphens(text: string): string {
+    return text.split(' ').join('-');
+}
+
+concat(){
+  const paragraphElement = document.getElementById('original')!;
+  const paragraph = paragraphElement.innerText;
+  const result = this.concatenateWithHyphens(paragraph);
+  
+  const resultElement = document.getElementById('result')!;
+  resultElement.innerText = result;
+
+  console.log(resultElement.innerText);
+}
+
+
 
 
 }
