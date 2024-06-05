@@ -220,7 +220,6 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
-
   sendemails(){
 
 
@@ -317,7 +316,7 @@ console.log(recomendado);
                     encodeURIComponent(this.recommendedProducts[2].id)+ "%" +
                     encodeURIComponent(this.recommendedProducts[3].id);
 
-    var copyHref = window.location.href + "/?text=" + message;
+    var copyHref = window.location.href + "?text=" + message;
 
     try {
     navigator.clipboard.writeText(copyHref);
