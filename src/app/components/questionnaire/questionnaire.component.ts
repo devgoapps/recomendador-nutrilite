@@ -23,7 +23,17 @@ declare var window: any;
 export class QuestionnaireComponent implements OnInit {
 
   utag_data: Array<any> = [];
+  utag_dataAnwers: Array<any> = [];
   questionIndex: number = 0;
+  value: number = 0;
+  answer: string | null = '';
+  question: string | null = '';
+  clientQuestions: Array<any> = [];
+  multiples: Array<any> = [];
+  country: string | null = '';
+
+  paragraph: string = '';
+
   questions: Array<any> = [
     {
       question: 'Que tal nos contar o seu nome?',
@@ -473,21 +483,25 @@ export class QuestionnaireComponent implements OnInit {
     this.utag_data = environment.utagInfo.questionnaire;
         
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    console.log(window.utag_data);
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);
   }
 
-  selectOption(indexQuestion: number, value: number, isMulti: boolean){
+  selectOption(indexQuestion: number, value: number, isMulti: boolean, option: string){
     if(isMulti){
       let index = this.questions[indexQuestion].selected.indexOf(value);
       if(index == -1){
         this.questions[indexQuestion].selected.push(value);
+        this.answer = option;
       }else { 
         this.questions[indexQuestion].selected.splice(index, 1);
+        this.answer = option;
       }
     }else{
       this.questions[indexQuestion].selected = value; 
+      this.answer = option;
     }
   }
   
@@ -654,6 +668,19 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   nextQuestion() {
+    const paragraphElement = document.getElementById('original');
+    const resultElement = document.getElementById('result');
+
+    if (paragraphElement && resultElement) {
+        const paragraph = paragraphElement.innerText;
+        const result = this.concatenateWithHyphens(paragraph);
+
+        this.question = result;
+
+    } else {
+        console.error('Uno o ambos elementos no existen.');
+    }
+
     if(this.questionIndex == (this.questions.length - 1)) return;
 
     if(!this.questions[this.questionIndex].selected || this.questions[this.questionIndex].selected.length == 0){
@@ -663,13 +690,64 @@ export class QuestionnaireComponent implements OnInit {
 
 
     this.questionIndex += 1;
+    console.log(...this.recommendedProducts);
+    console.log(this.question);
+    console.log(this.answer);
+
+    let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
+
+    this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
+
+    this.utag_dataAnwers[this.questionIndex].page_section = this.question;
+    this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
+    utag.link(this.utag_dataAnwers[this.questionIndex]);
+
+    this.questions[0].country = 'br';
+    this.country = this.questions[0].country;
+
+    console.log(this.country);
+
+
+    this.utag_data[this.questionIndex].site_country = this.country;
+    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
+
+    
+
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+
+    
+    console.log(window.utag_data);
+    // utag.view(window.utag_data);
+    // console.log(utag.view(window.utag_data));
+    console.log(this.questionIndex);
+    console.log(this.utag_dataAnwers[this.questionIndex]);
+    console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
+    
+    
     setTimeout(() => {
       //utag.view(window.utag_data);
     }, 500);    
     
-    console.log(this.utag_data);
-    console.log(this.questionIndex);
-    console.log(this.questions[this.questionIndex]);
+
   }
+
+  getCurrencyCode(country: string) {
+    if (country == 'br') return 'brl';
+    else return '';
+  }
+
+  concatenateWithHyphens(text: string): string {
+    return text.split(' ').join('-');
+}
+
+concat(){
+  const paragraphElement = document.getElementById('original')!;
+  const paragraph = paragraphElement.innerText;
+  const result = this.concatenateWithHyphens(paragraph);
+
+  const resultElement = document.getElementById('result')!;
+  resultElement.innerText = result;
+
+  console.log(resultElement.innerText);
+}
 }

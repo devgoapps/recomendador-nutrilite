@@ -17,11 +17,12 @@ export class HowDoesItWorkComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.startQuestionnaire;
+    let utag_data = environment.utagInfo.howDoesItWork;
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
+    console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
   }
 

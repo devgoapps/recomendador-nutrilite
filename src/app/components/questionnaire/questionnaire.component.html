@@ -27,7 +27,8 @@
                 @if (questions[questionIndex]?.isInput) {
                     <span class="g-text">Vamos começar!</span><br>
                 }
-                <span class="g-title">{{ questions[questionIndex]?.question }}</span><br>
+                <span class="g-title" id="original">{{ questions[questionIndex]?.question }}</span><br>
+               <p id="result"></p>
                 <span class="g-text">{{ questions[questionIndex]?.subQuestion }}</span>
             }
 
@@ -71,7 +72,7 @@
             </div>
         } @else {
             @for (option of questions[questionIndex]?.options; track $index) {
-                <div (click)="selectOption(questionIndex, option.value, questions[questionIndex]?.multi)" class="option-btn gw-30">
+                <div (click)="selectOption(questionIndex, option.value, questions[questionIndex]?.multi,  option.label)" class="option-btn gw-30">
                     <span [ngClass]="{ 'checkbox': questions[questionIndex]?.multi, 'radio': !questions[questionIndex]?.multi, 'active': isActive(questionIndex, option.value, questions[questionIndex]?.multi) }" ></span>
                     <label class="g-text">{{ option.label }}</label>
                 </div>

@@ -31,14 +31,20 @@ export class RecommendationsComponent implements OnInit {
 
   clientName: string | null = '';
   clientCountry: string | null = '';
+  country: string  = '';
   recommendedProducts: Array<any> = [];
+  clientQuestions: Array<any> = [];
+  link: string = '';
+  Share0: string = '';
+  Share1: string = '';
+  Share2: string = '';
+  Share3: string = '';
+  Share4: string = '';
 
   numberProducts: number = 4;
 
   code: string | null = '';
-
   values = [];
-
   sendForm!: FormGroup;
   captcha: string = '';
   captchaIsValid: boolean = false;
@@ -48,19 +54,19 @@ export class RecommendationsComponent implements OnInit {
               private fb: FormBuilder){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.startQuestionnaire;
+    let utag_data = environment.utagInfo.recommendations;
 
     this.code = sessionStorage.getItem('code');
 
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
+    console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
 
     this.clientName = sessionStorage.getItem('clientName');
     this.clientCountry = sessionStorage.getItem('clientCountry');
-
     let products = sessionStorage.getItem('recommendedProducts');
     if(products){
       this.recommendedProducts = JSON.parse(products);
@@ -68,10 +74,82 @@ export class RecommendationsComponent implements OnInit {
         item.active = false;
         return item;
       });
-    }
-
+    }    
+    
+    this.linkcopiado();
+    this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
+  }
+
+
+  funtionAtribute(){
+    try {
+      var nodo0 = document.getElementById("comprar1");
+      var nodo1 = document.getElementById("comprar2");
+      var nodo2 = document.getElementById("comprar3");
+      var nodo3 = document.getElementById("comprar4");
+      var nodo4 = document.getElementById("comprar5");
+      var nodo5 = document.getElementById("comprar6");
+
+
+      var share0 = document.getElementById("buttonshare0");
+      var share1 = document.getElementById("buttonshare1");
+      var share2 = document.getElementById("buttonshare2");
+      var share3 = document.getElementById("buttonshare3");
+      var share4 = document.getElementById("buttonshare4");
+
+      var valors0 = document.createAttribute("item-name");
+      var valor0 = document.createAttribute("item-name");
+      var valor1 = document.createAttribute("item-name");
+      var valor2 = document.createAttribute("item-name");
+      var valor3 = document.createAttribute("item-name");
+      var valor4 = document.createAttribute("item-name");
+      var valor5 = document.createAttribute("item-name");
+
+      var valor6 = document.createAttribute("item-name");
+      var valor7 = document.createAttribute("item-name");
+      var valor8 = document.createAttribute("item-name");
+      var valor9 = document.createAttribute("item-name");
+
+
+
+      valor0.value = this.recommendedProducts[0].name;
+      valor1.value = this.recommendedProducts[1].name;
+      valor2.value = this.recommendedProducts[2].name;
+      valor3.value = this.recommendedProducts[3].name;
+      valor4.value = this.recommendedProducts[4].name;
+      valor5.value = this.recommendedProducts[5].name;
+
+      valors0.value = 'Correo Enviar';
+      valor6.value = 'Correo';
+      valor7.value = 'Whatssapp';
+      valor8.value = 'Link Recomendador';
+      valor9.value = 'Imprimir';
+
+      this.Share0 = valors0.value;
+      this.Share1 = valor6.value;
+      this.Share2 = valor7.value;
+      this.Share3 = valor8.value;
+      this.Share4 = valor9.value;
+
+
+      nodo0?.setAttributeNode(valor0);
+      nodo1?.setAttributeNode(valor1);
+      nodo2?.setAttributeNode(valor2);
+      nodo3?.setAttributeNode(valor3);
+      nodo4?.setAttributeNode(valor4);
+      nodo5?.setAttributeNode(valor5);
+
+      share1?.setAttributeNode(valor6);
+      share2?.setAttributeNode(valor7);
+      share3?.setAttributeNode(valor8);
+      share4?.setAttributeNode(valor9);
+
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   buildForm(){
@@ -98,6 +176,15 @@ export class RecommendationsComponent implements OnInit {
 
     let emails = this.vSend.emails.toString();
 
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[0].share_channel = this.Share0;
+
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
+
+    utag.link(recomendado);
+    console.log(recomendado);
+
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
       From: "brenda@ethos.com.mx", // nutrirec@amway.com  Cambiar ruta de Amway
@@ -122,8 +209,32 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
+  sendemails(){
+
+    let recomendado = environment.utagInfo.ShareContinue;
+  
+    recomendado[1].share_channel = this.Share1;
+  
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
+  
+    utag.link(recomendado);
+    console.log(recomendado);
+
+    }
+
 
   sendWhatsapp(){
+    
+  let recomendado = environment.utagInfo.ShareContinue;
+
+  recomendado[2].share_channel = this.Share2;
+
+  //window.utag_data = Object.assign(window.utag_data, recomendado);
+
+  utag.link(recomendado);
+  console.log(recomendado);
+
+
       var message = encodeURIComponent('As suas recomendações NUTRILITE™') + encodeURI('\n') +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
       encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
@@ -134,22 +245,81 @@ export class RecommendationsComponent implements OnInit {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (isMobile) {
         window.location.href = whatsapp_url;
+
       }else{
 
-        const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
-        window.open(whatsappWebUrl , '_blank');
+        try { 
+
+          const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
+           window.open(whatsappWebUrl , '_blank');
+
+        } catch (error) {
+          console.log(error)
+        }   
+
+        // let share = environment.utagInfo.ShareContinue; 
+
+        // share.share_channel = this.Share2;
+
+        // utag.link(share);
+
+        // console.log(share);
 
       }
   }
 
-  CopyLink(){
-    var message =
-    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
-    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
-    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
-    encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
+  linkcopiado(){
+    document.addEventListener('DOMContentLoaded', () => {
+      const saveArrayBtn = document.getElementById('saveArrayBtn') as HTMLButtonElement;
+      const loadArrayBtn = document.getElementById('loadArrayBtn') as HTMLButtonElement;
+      const output = document.getElementById('output') as HTMLDivElement;
+  
+      // Ejemplo de array a guardar en la URL
+      const exampleArray = [1, 2, 3, 4, 5];
+  
+      // Función para guardar el array en la URL
+      saveArrayBtn.onclick = () => {
+          const arrayString = JSON.stringify(exampleArray);
+          const encodedArray = encodeURIComponent(arrayString);
+          const currentUrl = new URL(window.location.href);
+          currentUrl.searchParams.set('array', encodedArray);
+          window.history.pushState({}, '', currentUrl.toString());
+          alert('Array guardado en la URL');
+      };
+  
+      // Función para cargar el array desde la URL
+      loadArrayBtn.onclick = () => {
+          const currentUrl = new URL(window.location.href);
+          const encodedArray = currentUrl.searchParams.get('array');
+          if (encodedArray) {
+              const arrayString = decodeURIComponent(encodedArray);
+              const loadedArray = JSON.parse(arrayString);
+              output.innerText = `Array cargado: ${loadedArray.join(', ')}`;
+          } else {
+              output.innerText = 'No hay array guardado en la URL';
+          }
+      };
+  });
+  }
 
-    var copyHref = window.location.href;
+  CopyLink(){
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[3].share_channel = this.Share3;
+    
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
+    
+    utag.link(recomendado);
+    console.log(recomendado);
+
+
+      var message =     "%" + 
+                        encodeURIComponent(this.recommendedProducts[0].id)  + "%" +
+                        encodeURIComponent(this.recommendedProducts[1].id) + "%" +
+                        encodeURIComponent(this.recommendedProducts[2].id)+ "%" +
+                        encodeURIComponent(this.recommendedProducts[3].id);
+    
+        var copyHref = window.location.href + "/?text=" + message;
 
     try{
       navigator.clipboard.writeText(copyHref); 
@@ -159,17 +329,28 @@ export class RecommendationsComponent implements OnInit {
       alert("El enlace NO se copio correctamente");
     }
 
-
-    console.log(window.location.href);
-
   }
 
   printToPDF(){
 
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[4].share_channel = this.Share4;
+
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
+
+    utag.link(recomendado);
+    console.log(recomendado);
+
 }
   
   openLink(link: string){
-    window.open(link, '_blank')
+    let recomendado = environment.utagInfo.RecommendationsContinue;
+
+    window.open(link, '_blank');
+
+    utag.link(recomendado);
+    console.log(recomendado);
   }
   /*
   Secure token
