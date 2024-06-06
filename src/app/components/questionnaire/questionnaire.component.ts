@@ -481,6 +481,15 @@ export class QuestionnaireComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
+
+    // const icon = document.getElementById('ada-entry');
+
+    // if (icon) {
+    //   (icon as HTMLElement).style.display = 'none';
+    // } else {
+    //   console.error('Elemento con id "ada-entry" no encontrado.');
+    // }
+    
     this.utag_data = environment.utagInfo.questionnaire;
 
 

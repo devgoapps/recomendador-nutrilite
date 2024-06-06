@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecommendationsShareComponent } from './recommendations-share.component';
+import { RecommendationsShareComponent } from './recommendationsShare.component';
 
-describe('RecommendationsShareComponent', () => {
+describe('RecommendationsComponent', () => {
   let component: RecommendationsShareComponent;
   let fixture: ComponentFixture<RecommendationsShareComponent>;
 
@@ -11,7 +11,7 @@ describe('RecommendationsShareComponent', () => {
       imports: [RecommendationsShareComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(RecommendationsShareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

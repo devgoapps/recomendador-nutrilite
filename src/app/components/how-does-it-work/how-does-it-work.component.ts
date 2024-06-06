@@ -17,6 +17,15 @@ export class HowDoesItWorkComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
+
+    const icon = document.getElementById('ada-entry');
+
+    if (icon) {
+      (icon as HTMLElement).style.display = 'none';
+    } else {
+      console.error('Elemento con id "ada-entry" no encontrado.');
+    }
+    
     let utag_data = environment.utagInfo.howDoesItWork;
         
     window.utag_data = Object.assign(window.utag_data, utag_data);

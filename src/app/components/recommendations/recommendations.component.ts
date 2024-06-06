@@ -59,6 +59,15 @@ export class RecommendationsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    const icon = document.getElementById('ada-entry');
+
+    if (icon) {
+      (icon as HTMLElement).style.display = 'block';
+    } else {
+      console.error('Elemento con id "ada-entry" no encontrado.');
+    }
+    
+
     let utag_data = environment.utagInfo.recommendations;
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
@@ -275,58 +284,33 @@ export class RecommendationsComponent implements OnInit {
  
  
 
- CopyLink(){
+  copyUrl(): void {    
+
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[2].share_channel = this.Share3;
 
 
-let recomendado = environment.utagInfo.ShareContinue;
+    utag.link(recomendado);
+    console.log(recomendado);
+    // Convertir los IDs a una cadena codificada
+    const productIds = this.recommendedProducts.map(product => product.id).join('%');
+    const encodedProductIds = encodeURIComponent(productIds);
+    const newUrl = `${window.location.origin}/recommendationsShare/${encodedProductIds}`;
 
-recomendado[2].share_channel = this.Share3;
+    // Copiar la URL al portapapeles
+    navigator.clipboard.writeText(newUrl).then(() => {
 
-//window.utag_data = Object.assign(window.utag_data, recomendado);
+      alert("LINK DEL RECOMENDADOR A SIDO COPIADO");
+      console.error('URL COPIADO: ' + newUrl);
 
-utag.link(recomendado);
-console.log(recomendado);
-    
-  var message =     "%" + 
-                    encodeURIComponent(this.recommendedProducts[0].id)  + "%" +
-                    encodeURIComponent(this.recommendedProducts[1].id) + "%" +
-                    encodeURIComponent(this.recommendedProducts[2].id)+ "%" +
-                    encodeURIComponent(this.recommendedProducts[3].id);
-
-    var copyHref = window.location.href + "?text=" + message;
-
-    try {
-    navigator.clipboard.writeText(copyHref);
-    alert("El enlace se copio correctamente");
-
-    //this.router.navigate(['recommendations-share']);
-    } catch (error) {
-      
-    }
-    
-    // try{
-    //   navigator.clipboard.writeText(copyHref); 
-    //   alert("El enlace a sido copiado");
-    // }
-    // catch{
-    //   alert("El enlace NO se copio correctamente");
-    // }
-   
-    // console.log(window.location.href);
-
-        // Join array elements with a delimiter, e.g., a comma
-        // var joinedItems = encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
-        // encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);;
-        // // Create the shareable link
-        // this.link = window.location.href + '?items=' + joinedItems;
-
-        //this.clipboardService.copyFromContent(this.link);
-        // alert('Link copied to clipboard!');
-
-
+        
+    }).catch(err => {
+      console.error('Error al copiar la URL: ', err);
+    });
   }
+
+  
 
 
 

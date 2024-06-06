@@ -1,21 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../../template/footer/footer.component';
 import {NgxPrintModule} from 'ngx-print';
-
 
 import { ChipsModule } from 'primeng/chips';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 declare var utag: any;
 declare var window: any;
-declare var link: any;
 declare var Email: any;
 
 @Component({
-  selector: 'app-recommendations-share',
+  selector: 'app-recommendations',
   standalone: true,
   imports: [
     FooterComponent,
@@ -26,61 +24,80 @@ declare var Email: any;
     ChipsModule,
     NgxPrintModule,
   ],
-  templateUrl: './recommendations-share.component.html',
-  styleUrl: './recommendations-share.component.scss'
+  templateUrl: './recommendationsShare.component.html',
+  styleUrl: './recommendationsShare.component.scss'
 })
 export class RecommendationsShareComponent implements OnInit {
-
+  category: string = '';
   clientName: string | null = '';
   clientCountry: string | null = '';
+  country: string  = '';
   recommendedProducts: Array<any> = [];
+  clientQuestions: Array<any> = [];
   link: string = '';
+  Share0: string = '';
+  Share1: string = '';
+  Share2: string = '';
+  Share3: string = '';
+  Share4: string = '';
 
   numberProducts: number = 4;
 
   code: string | null = '';
-
   values = [];
-
   sendForm!: FormGroup;
   captcha: string = '';
   captchaIsValid: boolean = false;
   isFormSubmitted: boolean = false;
 
-  constructor(private router: Router,
-              private fb: FormBuilder){}
+  linknuevo: string = '';
+
+
+  productIds: number[] = [];
+
+  constructor(private router: Router,private route: ActivatedRoute){}
+
+
+
 
   ngOnInit(): void {
-
-
-
-
-
     let utag_data = environment.utagInfo.recommendations;
 
     this.code = sessionStorage.getItem('code');
-        
+
+
+
     window.utag_data = Object.assign(window.utag_data, utag_data);
+    console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
 
-    this.clientName = sessionStorage.getItem('clientName');
-    this.clientCountry = sessionStorage.getItem('clientCountry');
+          this.clientName = sessionStorage.getItem('clientName');
+          this.clientCountry = sessionStorage.getItem('clientCountry');
+          let products = sessionStorage.getItem('recommendedProducts');
+          if(products){
+          this.recommendedProducts = JSON.parse(products);
+              this.recommendedProducts = this.recommendedProducts.map((item) => {
+                 item.active = false;
+                  return item;
+          });
+        } 
 
-    let products = sessionStorage.getItem('recommendedProducts');
-    if(products){
-      this.recommendedProducts = JSON.parse(products);
-      this.recommendedProducts = this.recommendedProducts.map((item) => {
-        item.active = false;
-        return item;
+
+    this.route.paramMap.subscribe(params => {
+        const encodedProductIds = params.get('ids');
+        if (encodedProductIds) {
+          try {
+            const decodedProductIds = decodeURIComponent(encodedProductIds);
+            this.productIds = decodedProductIds.split('%').map(id => +id);
+            console.log('Product IDs:', this.productIds);
+          } catch (error) {
+            console.error('Error decoding URL parameters:', error);
+          }
+        }
       });
-    }
 
-    this.funtionAtribute();
-    this.buildForm();
-    this.makeCaptcha();
-    
   }
 
 
@@ -92,13 +109,23 @@ export class RecommendationsShareComponent implements OnInit {
       var nodo3 = document.getElementById("comprar4");
       var nodo4 = document.getElementById("comprar5");
       var nodo5 = document.getElementById("comprar6");
-    
+
+      var share1 = document.getElementById("buttonshare1");
+      var share2 = document.getElementById("buttonshare2");
+      var share3 = document.getElementById("buttonshare3");
+      var share4 = document.getElementById("buttonshare4");
+
       var valor0 = document.createAttribute("item-name");
       var valor1 = document.createAttribute("item-name");
       var valor2 = document.createAttribute("item-name");
       var valor3 = document.createAttribute("item-name");
       var valor4 = document.createAttribute("item-name");
       var valor5 = document.createAttribute("item-name");
+
+      var valor6 = document.createAttribute("item-name");
+      var valor7 = document.createAttribute("item-name");
+      var valor8 = document.createAttribute("item-name");
+      var valor9 = document.createAttribute("item-name");
 
 
 
@@ -109,126 +136,139 @@ export class RecommendationsShareComponent implements OnInit {
       valor4.value = this.recommendedProducts[4].name;
       valor5.value = this.recommendedProducts[5].name;
 
+      valor6.value = 'Correo';
+      valor7.value = 'Whatssapp';
+      valor8.value = 'Link Recomendador';
+      valor9.value = 'Imprimir';
+
+      this.Share1 = valor6.value;
+      this.Share2 = valor7.value;
+      this.Share3 = valor8.value;
+      this.Share4 = valor9.value;
+
+
       nodo0?.setAttributeNode(valor0);
       nodo1?.setAttributeNode(valor1);
       nodo2?.setAttributeNode(valor2);
       nodo3?.setAttributeNode(valor3);
       nodo4?.setAttributeNode(valor4);
       nodo5?.setAttributeNode(valor5);
+
+      share1?.setAttributeNode(valor6);
+      share2?.setAttributeNode(valor7);
+      share3?.setAttributeNode(valor8);
+      share4?.setAttributeNode(valor9);
+
+
     } catch (error) {
       console.log(error);
+    }
+  }
+
+
+
+  linkcopiado(){
+
+     // 1. Obtén la URL actual
+//const currentUrl = window.location.href;
+
+
+// 3. Construye un objeto con los parámetros
+const parametros = {
+  parametro1: this.recommendedProducts[0].name,
+  parametro2: this.recommendedProducts[0].whyIsRecommended,
+  parametro3: this.recommendedProducts[1].name,
+  parametro4: this.recommendedProducts[1].whyIsRecommended,
+  parametro5: this.recommendedProducts[2].name,
+  parametro6: this.recommendedProducts[2].whyIsRecommended,
+  parametro7: this.recommendedProducts[3].name,
+  parametro8: this.recommendedProducts[3].whyIsRecommended,
+  // Aquí puedes agregar más parámetros si es necesario
+};
+
+// 4. Convierte el objeto en una cadena de consulta
+const queryString = new URLSearchParams(parametros).toString();
+
+// 5. Combina la cadena de consulta con la URL parseada
+//const nuevaUrl = `?${currentUrl.search.slice(1)}&${queryString}`;
+
+//const link = currentUrl + nuevaUrl;
+
+
+const arrayString = JSON.stringify(parametros);
+const encodedArray = encodeURIComponent(arrayString);
+const currentUrl = new URL(window.location.href);
+currentUrl.searchParams.set('array', encodedArray);
+
+// Actualiza la URL en la barra de direcciones del navegador
+window.history.pushState({}, '', currentUrl.toString());
+
+// Copia la URL resultante al portapapeles
+const nuevaUrl = currentUrl.toString(); // Obtiene la URL actualizada después de pushState
+this.linknuevo = nuevaUrl;
+navigator.clipboard.writeText(nuevaUrl)
+  .then(() => {
+    console.log('URL copiada al portapapeles:', nuevaUrl);
+  })
+  .catch((error) => {
+    console.error('Error al copiar la URL:', error);
+  });
+
+  }
+
+  CopyLink(){
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[2].share_channel = this.Share3;
+
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
+
+    utag.link(recomendado);
+    console.log(recomendado);
+
+
+      var message =     "%" + 
+                        encodeURIComponent(this.recommendedProducts[0].id)  + "%" +
+                        encodeURIComponent(this.recommendedProducts[1].id) + "%" +
+                        encodeURIComponent(this.recommendedProducts[2].id)+ "%" +
+                        encodeURIComponent(this.recommendedProducts[3].id);
+
+        var copyHref = window.location.href;
+
+    try{
+      navigator.clipboard.writeText(copyHref); 
+      alert("El enlace a sido copiado");
+    }
+    catch{
+      alert("El enlace NO se copio correctamente");
     }
 
   }
 
+  printToPDF(){
 
-  buildForm(){
-    this.sendForm = this.fb.group({
-      emails: [[], [Validators.required]],
-      aditionalNote: [null],
-      captcha: [null, [Validators.required]]
-    });
-  }
+    let recomendado = environment.utagInfo.ShareContinue;
 
-  submitForm(){
-    this.isFormSubmitted = true;
+    recomendado[3].share_channel = this.Share4;
 
-    if(this.sendForm.invalid || !this.captchaIsValid) return;
+    //window.utag_data = Object.assign(window.utag_data, recomendado);
 
-    console.log(this.vSend);
+    utag.link(recomendado);
+    console.log(recomendado);
 
-    this.sendEmail();
-  }
+}
 
-  sendEmail(){
-    let toast = document.getElementById('toast');
-    let mailBody = document.getElementById('mail2');
-
-    let emails = this.vSend.emails.toString();
-
-    Email.send({
-      SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
-      From: "nutrirec@amway.com", // Cambiar ruta de Amway   nutrirec@amway.com
-
-      //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
-      //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
-
-      To: emails,
-      Subject: "Tus recomendaciones Nutrilite",
-      Body: mailBody?.outerHTML,
-    }).then((message: any) => {
-      console.log(message);
-
-      this.sendForm.reset();
-      this.isFormSubmitted = false;
-      this.makeCaptcha();
-
-      toast?.classList.add("show");
-      setTimeout(() => {
-        toast?.classList.remove("show");
-      }, 2000)
-    });
-  }
-
-  sendWhatsapp(){
-      var message = encodeURIComponent('Tus recomendaciones de NUTRILITE™') + encodeURI('\n') +
-      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[0].linkBuy) +
-      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[1].linkBuy) +
-      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[2].linkBuy) +
-      encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].name) + encodeURI('\n') + encodeURIComponent(this.recommendedProducts[3].linkBuy);
-      var whatsapp_url = "whatsapp://send?text=" + message;
-      
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        window.location.href = whatsapp_url;
-      }else{
-        
-        const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
-        window.open(whatsappWebUrl , '_blank');
-      }
-  }
-
- CopyLink(){
-
-
-    //const searchParams = new URLSearchParams(window.location.search);
-
-    //console.log(searchParams.has('sort')); 
-
-    //console.log(searchParams.get('sort'));
-
-    // for (const param of searchParams) {
-    //     console.log(param);
-    //   }
-      
-
-
-
-
-  }
-
-
-
-
-
-
-  printToPDF(){   
-
-  }
-  
   openLink(link: string){
+    let recomendado = environment.utagInfo.RecommendationsContinue;
 
-    //let rec = environment.utagInfo.RecommendationsContinue;
+    window.open(link, '_blank');
 
-    //window.utag_data = Object.assign(window.utag_data, rec);
-       window.open(link, '_blank')
-       //utag.link(window.open(link, '_blank'));
-       //console.log(window.utag_data);
+    utag.link(recomendado);
+    console.log(recomendado);
   }
   /*
   Secure token
   c646155a-175b-47c7-b135-812a36bc50fc
-
   Nombre de usuario
   diego.hernandez.condor@gmail.com
   
@@ -249,7 +289,6 @@ export class RecommendationsShareComponent implements OnInit {
   f374c7fd-3795-49cd-b789-67042c1c5e5e
   3037af90-3a76-4406-84ae-6935e5361872
   288B302B23A8A6B58CC0297142A99B585ACE2938FBCABE718BC61C7C43C50524DFBC2C4538ED466CBBA65E8823D55FEE
-
   Nombre de usuario
   nutrirec@amway.com
   brendacavazos14@outlook.es
@@ -262,8 +301,6 @@ DBB6AD785D81E60B33707AD39F5235A97A44
   Puerto
   2525
   */
-
-
 
   validateCaptcha(){
     if(this.vSend.captcha == this.captcha){
@@ -303,19 +340,22 @@ DBB6AD785D81E60B33707AD39F5235A97A44
 
   get cSend(){ return this.sendForm.controls; }
 
+
+
+
 }
+
+
+
 
 
 /**
  * 
  let body = ` 
       <div id="mail" style="display: flex; align-items: center; justify-content: center; background: #fff;">
-
         <div style="width: 100%; background: #fff;">
           <h1 style="color: green; text-align: center; font-size: 3rem;">Tus recomendaciones de Nutrilite</h1>
-
           <p style="color: #444;">Aqui estan tus recomendaciones de productos Nutrilite personalizadas según tu evaluación de suplementos recientemente completada.</p>`; 
-
     let products = `<div style="border: 1px solid #ccc;">`;
     for (let i = 0; i < this.recommendedProducts.length; i++) {
       //let img = await this.imageUrlToBase64('');
@@ -341,8 +381,5 @@ DBB6AD785D81E60B33707AD39F5235A97A44
     `<div>
       <p style="color: #444;" >Notas adicionales: ${ this.vSend.aditionalNote }</p>
     </div>`;
-
-
     body = body + `</div></div>`;
-
  */
