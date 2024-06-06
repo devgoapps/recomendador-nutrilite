@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../../template/footer/footer.component';
 import {NgxPrintModule} from 'ngx-print';
@@ -28,7 +28,7 @@ declare var Email: any;
   styleUrl: './recommendations.component.scss'
 })
 export class RecommendationsComponent implements OnInit {
-
+  category: string = '';
   clientName: string | null = '';
   clientCountry: string | null = '';
   country: string  = '';
@@ -50,7 +50,9 @@ export class RecommendationsComponent implements OnInit {
   captchaIsValid: boolean = false;
   isFormSubmitted: boolean = false;
 
-  constructor(private router: Router,
+  linknuevo: string = '';
+                            
+  constructor(private router: Router,private route: ActivatedRoute,
               private fb: FormBuilder){}
 
   ngOnInit(): void {
@@ -74,9 +76,58 @@ export class RecommendationsComponent implements OnInit {
         item.active = false;
         return item;
       });
-    }    
+    } 
     
-    this.linkcopiado();
+        // Leer parámetros de consulta
+        this.route.queryParams.subscribe(params => {
+          const urlActual = window.location.href;
+            // Verificar si hay una cadena de consulta en la URL
+  const index = urlActual.indexOf('?');
+  if (index === -1) {
+    return {}; // Devuelve un objeto vacío si no hay cadena de consulta
+  }
+
+  const queryString = urlActual.substring(index + 1); // Obtener la cadena de consulta sin el signo de interrogación
+  params = new URLSearchParams(queryString); // Crear un objeto URLSearchParams para manejar los parámetros
+
+// Pega la URL copiada
+const urlPegada = 'http://localhost:4200/?array=%257B%2522parametro1%2522%253A%2522Daily%2520%252B1%2520-%2520Bem-estar%2522%252C%2522parametro2%2522%253A%2522Esta%2520solu%25C3%25A7%25C3%25A3o%2520contribui%2520para%2520o%2520bom%2520funcionamento%2520e%2520a%2520manuten%25C3%25A7%25C3%25A3o%2520do%2520sistema%2520circulat%25C3%25B3rio.%2520Daily%2520Plus%2520fornece%2520vitaminas%2520e%2520minerais%2520como%2520vitamina%2520B1%252C%2520B2%252C%2520B6%252C%2520%25C3%25A1cido%2520f%25C3%25B3lico%252C%2520vitamina%2520C%252C%2520ferro%252C%2520cobre%2520e%2520zinco%2520que%2520contribuem%2520para%2520a%2520sa%25C3%25BAde%2520do%2520cora%25C3%25A7%25C3%25A3o%252C%2520apoiam%2520o%2520funcionamento%2520normal%2520dos%2520vasos%2520sangu%25C3%25ADneos%252C%2520ajudam%2520a%2520formar%2520e%2520manter%2520as%2520c%25C3%25A9lulas%2520sangu%25C3%25ADneas%2520e%2520a%2520hemoglobina.%2520Os%2520%25C3%25A1cidos%2520%25C3%25B4mega%25203%2520EPA%2520e%2520DHA%2520contribuem%2520para%2520o%2520funcionamento%2520normal%2520do%2520cora%25C3%25A7%25C3%25A3o.%2522%252C%2522parametro3%2522%253A%2522Vitamina%2520E%2522%252C%2522parametro4%2522%253A%2522Suplemento%2520alimentar%2520mastig%25C3%25A1vel%2520com%2520vitamina%2520E%2520e%2520lecitina%252C%2520com%2520um%2520sabor%2520agrad%25C3%25A1vel%2520de%2520mel%2520e%2520noz%2520de%2520%25C3%25A1cer.%2520A%2520vitamina%2520E%2520%25C3%25A9%2520antioxidante%252C%2520ajuda%2520a%2520diminuir%2520os%2520danos%2520celulares%2520causados%2520pelos%2520radicais%2520livres.%2522%252C%2522parametro5%2522%253A%2522Alho%2520Concentrado%2522%252C%2522parametro6%2522%253A%2522Cont%25C3%25A9m%2520alicina%2520e%2520quercetina.%2520Pode%2520contribuir%2520para%2520a%2520redu%25C3%25A7%25C3%25A3o%2520dos%2520n%25C3%25ADveis%2520elevados%2520de%2520gordura%2520no%2520sangue%2520e%2520prevenir%2520a%2520forma%25C3%25A7%25C3%25A3o%2520de%2520dep%25C3%25B3sitos%2520de%2520gordura%2520nas%2520art%25C3%25A9rias.%2520Hipotensor.%2522%252C%2522parametro7%2522%253A%2522Prote%25C3%25ADna%2520Vegetal%2520em%2520P%25C3%25B3%2522%252C%2522parametro8%2522%253A%2522F%25C3%25B3rmula%2520com%2520prote%25C3%25ADna%2520100%2525%2520vegetal%2520de%2520alta%2520qualidade%252C%2520livre%2520de%2520ingredientes%2520geneticamente%2520modificados.%2520A%2520Prote%25C3%25ADna%2520Vegetal%2520em%2520P%25C3%25B3%2520combina%2520propriedades%2520da%2520soja%252C%2520ervilha%2520e%2520trigo.%2520Naturalmente%2520livre%2520de%2520lactose%252C%2520gorduras%2520saturadas%2520e%2520colesterol.%2522%257D#/recommendations';
+//const link = this.linknuevo;
+// Seleccionar el elemento de lista donde se agregarán los parámetros
+const paramsList = document.getElementById('params-list');
+// Analiza la URL para obtener los parámetros
+const url = new URL(urlActual);
+const parametros = url.searchParams.get('array');
+const parames = new URLSearchParams(url.search);
+
+if (parametros) {
+  // Decodifica y parsea el parámetro de array
+  const decodedArray = decodeURIComponent(parametros);
+  const array = JSON.parse(decodedArray);
+  
+      // Iterar sobre los parámetros y agregarlos como elementos de lista
+
+      const decodedValues : Record<string, string> = {}; 
+      for (const key in array) {
+        if (Object.hasOwnProperty.call(array, key)) {
+          const encodedValue = array[key];
+          const decodedValue = decodeURIComponent(encodedValue);
+          decodedValues[key] = decodedValue;
+          const listItem = document.createElement('p');
+          listItem.textContent = decodedValues[key];
+          paramsList?.appendChild(listItem);
+        }
+      }
+
+  // Utiliza el array como desees
+  console.log('Array encontrado:', array);
+} else {
+  console.log('No se encontró ningún parámetro de array en la URL.');
+}
+
+return
+        });
+    
     this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
@@ -92,14 +143,11 @@ export class RecommendationsComponent implements OnInit {
       var nodo4 = document.getElementById("comprar5");
       var nodo5 = document.getElementById("comprar6");
 
-
-      var share0 = document.getElementById("buttonshare0");
       var share1 = document.getElementById("buttonshare1");
       var share2 = document.getElementById("buttonshare2");
       var share3 = document.getElementById("buttonshare3");
       var share4 = document.getElementById("buttonshare4");
 
-      var valors0 = document.createAttribute("item-name");
       var valor0 = document.createAttribute("item-name");
       var valor1 = document.createAttribute("item-name");
       var valor2 = document.createAttribute("item-name");
@@ -121,13 +169,11 @@ export class RecommendationsComponent implements OnInit {
       valor4.value = this.recommendedProducts[4].name;
       valor5.value = this.recommendedProducts[5].name;
 
-      valors0.value = 'Correo Enviar';
       valor6.value = 'Correo';
       valor7.value = 'Whatssapp';
       valor8.value = 'Link Recomendador';
       valor9.value = 'Imprimir';
 
-      this.Share0 = valors0.value;
       this.Share1 = valor6.value;
       this.Share2 = valor7.value;
       this.Share3 = valor8.value;
@@ -178,7 +224,7 @@ export class RecommendationsComponent implements OnInit {
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[0].share_channel = this.Share0;
+    recomendado[0].share_channel = this.Share1;
 
     //window.utag_data = Object.assign(window.utag_data, recomendado);
 
@@ -209,25 +255,12 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
-  sendemails(){
-
-    let recomendado = environment.utagInfo.ShareContinue;
-  
-    recomendado[1].share_channel = this.Share1;
-  
-    //window.utag_data = Object.assign(window.utag_data, recomendado);
-  
-    utag.link(recomendado);
-    console.log(recomendado);
-
-    }
-
 
   sendWhatsapp(){
     
   let recomendado = environment.utagInfo.ShareContinue;
 
-  recomendado[2].share_channel = this.Share2;
+  recomendado[1].share_channel = this.Share2;
 
   //window.utag_data = Object.assign(window.utag_data, recomendado);
 
@@ -269,43 +302,58 @@ export class RecommendationsComponent implements OnInit {
   }
 
   linkcopiado(){
-    document.addEventListener('DOMContentLoaded', () => {
-      const saveArrayBtn = document.getElementById('saveArrayBtn') as HTMLButtonElement;
-      const loadArrayBtn = document.getElementById('loadArrayBtn') as HTMLButtonElement;
-      const output = document.getElementById('output') as HTMLDivElement;
-  
-      // Ejemplo de array a guardar en la URL
-      const exampleArray = [1, 2, 3, 4, 5];
-  
-      // Función para guardar el array en la URL
-      saveArrayBtn.onclick = () => {
-          const arrayString = JSON.stringify(exampleArray);
-          const encodedArray = encodeURIComponent(arrayString);
-          const currentUrl = new URL(window.location.href);
-          currentUrl.searchParams.set('array', encodedArray);
-          window.history.pushState({}, '', currentUrl.toString());
-          alert('Array guardado en la URL');
-      };
-  
-      // Función para cargar el array desde la URL
-      loadArrayBtn.onclick = () => {
-          const currentUrl = new URL(window.location.href);
-          const encodedArray = currentUrl.searchParams.get('array');
-          if (encodedArray) {
-              const arrayString = decodeURIComponent(encodedArray);
-              const loadedArray = JSON.parse(arrayString);
-              output.innerText = `Array cargado: ${loadedArray.join(', ')}`;
-          } else {
-              output.innerText = 'No hay array guardado en la URL';
-          }
-      };
+   
+     // 1. Obtén la URL actual
+//const currentUrl = window.location.href;
+
+
+// 3. Construye un objeto con los parámetros
+const parametros = {
+  parametro1: this.recommendedProducts[0].name,
+  parametro2: this.recommendedProducts[0].whyIsRecommended,
+  parametro3: this.recommendedProducts[1].name,
+  parametro4: this.recommendedProducts[1].whyIsRecommended,
+  parametro5: this.recommendedProducts[2].name,
+  parametro6: this.recommendedProducts[2].whyIsRecommended,
+  parametro7: this.recommendedProducts[3].name,
+  parametro8: this.recommendedProducts[3].whyIsRecommended,
+  // Aquí puedes agregar más parámetros si es necesario
+};
+
+// 4. Convierte el objeto en una cadena de consulta
+const queryString = new URLSearchParams(parametros).toString();
+
+// 5. Combina la cadena de consulta con la URL parseada
+//const nuevaUrl = `?${currentUrl.search.slice(1)}&${queryString}`;
+
+//const link = currentUrl + nuevaUrl;
+
+
+const arrayString = JSON.stringify(parametros);
+const encodedArray = encodeURIComponent(arrayString);
+const currentUrl = new URL(window.location.href);
+currentUrl.searchParams.set('array', encodedArray);
+
+// Actualiza la URL en la barra de direcciones del navegador
+window.history.pushState({}, '', currentUrl.toString());
+
+// Copia la URL resultante al portapapeles
+const nuevaUrl = currentUrl.toString(); // Obtiene la URL actualizada después de pushState
+this.linknuevo = nuevaUrl;
+navigator.clipboard.writeText(nuevaUrl)
+  .then(() => {
+    console.log('URL copiada al portapapeles:', nuevaUrl);
+  })
+  .catch((error) => {
+    console.error('Error al copiar la URL:', error);
   });
+
   }
 
   CopyLink(){
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[3].share_channel = this.Share3;
+    recomendado[2].share_channel = this.Share3;
     
     //window.utag_data = Object.assign(window.utag_data, recomendado);
     
@@ -335,7 +383,7 @@ export class RecommendationsComponent implements OnInit {
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[4].share_channel = this.Share4;
+    recomendado[3].share_channel = this.Share4;
 
     //window.utag_data = Object.assign(window.utag_data, recomendado);
 

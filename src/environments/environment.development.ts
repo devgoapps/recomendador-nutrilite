@@ -416,10 +416,6 @@ export const environment = {
                 event_name: 'share',  
                 share_channel: '',
                 },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
         
         ],
         countries: {

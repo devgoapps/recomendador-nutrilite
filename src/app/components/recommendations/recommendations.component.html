@@ -22,6 +22,10 @@
     </div>
 
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+
+        <div id="params-list">
+            <!-- Aquí se agregarán los parámetros como elementos de lista -->
+        </div>
         <div class="row">
 
 
@@ -449,9 +453,8 @@
     </div>
 
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50">
-            <div class="form-group">
+    <div style="display: flex; justify-content: center; margin-bottom: 2rem; text-align: center;">
+            <!-- <div class="form-group">
                 <label class="g-text required">Endereço de e-mail</label>
                 <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Você pode enviar essas recomendações para até 5 e-mails.)</b>
                 <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
@@ -464,11 +467,11 @@
                 <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo obrigatório</span>
                 }
                 }
-            </div>
+            </div> -->
 
 
 
-            <div style="margin-bottom: 2rem;">
+            <!-- <div style="margin-bottom: 2rem;">
                 <label class="g-text required">Digite o texto que aparece na imagem</label>
                 <div style="display: flex; gap: 1rem;">
                     <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
@@ -490,39 +493,40 @@
                 }@else if (!captchaIsValid && isFormSubmitted) {
                 <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Captcha inválido</span>
                 }
-            </div>
+            </div> -->
 
-            <div style="display: flex; justify-content: end;">
+            <!-- <div style="display: flex; justify-content: end;">
                 <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
                     Enviar <i class="fa-regular fa-envelope"></i>
                 </button>
-            </div>        
-            
+            </div>         -->
+        <form class="gw-45">  
+
 <label class="g-text mb0">Receba seus resultados através de:</label>
 <div class="row" style="width: 100%;"> 
 
-<div class="col-sm-1 share-button">
+<div class="col-lg-2 share-button">
 
-        <button type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare1" value="correos">
+    <button type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="fa-regular fa-envelope"></i>
-        </button>  
+    </button>  
 
 </div>    
-<div class="col-sm-1 share-button">
+<div class="col-lg-2 share-button">
 
     <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare2" value="whatsapp">
         <i class="fab fa-whatsapp"></i>
     </button>  
 
 </div>
-<div class="col-sm-1 share-button">
+<div class="col-lg-2 share-button">
 
-    <button (click)="CopyLink()" type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare3" value="copy link">
+    <button (click)="linkcopiado()" type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare3" value="copy link">
         <i class="fas fa-link"></i>
     </button> 
 
 </div>
-<div class="col-sm-1 share-button">
+<div class="col-lg-2 share-button">
 
     <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" [useExistingCss]="true" title="Imprimir" id="buttonshare4"  printSectionId="mail2" ngxPrint value="print">
         <i class="fas fa-print"></i>
@@ -531,8 +535,8 @@
 </div>
 
 </div>
-        </form>
-
+    
+</form>  
     </div>
 
 
@@ -1299,3 +1303,84 @@
 
 
 <app-footer></app-footer>
+
+ <!------------------------   START-MODAL    ----------------------------->
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center;">
+          <h5 class="modal-title " id="staticBackdropLabel" style="font-family: 'GTWalsheimPro-Regular'; font-weight: bold;">COMPARTE TUS RESULTADOS</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-5">
+                    <div class="form-group">
+                        <label class="g-text required">Dirección de correo electrónico</label>
+                        <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Puedes enviar estas recomendaciones hasta 5 correos)</b>
+                        <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
+                            [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"
+                            placeholder=" "></p-chips>
+                            <b></b>
+
+                        @if (cSend['emails'].errors && isFormSubmitted) {
+                        @if (cSend['emails'].errors['required']) {
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        }
+                        }
+                    </div>
+
+
+
+                    <div style="margin-bottom: 2rem;">
+                        <label class="g-text required">Escribe el texto que se muestra en la imagen</label>
+                        <div style="display: flex; gap: 1rem;">
+                            <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
+
+                            <span class="g-text"
+                                style="text-decoration: line-through; padding: 0.5rem 1rem; border: 1px solid  #84c344; display: inline; user-select: none; font-weight: 600;">{{
+                                captcha }}</span>
+
+                            <button (click)="makeCaptcha()" type="button" class="secondary-btn g-text"
+                                style="margin: 0; color:#006d46;">
+                                <i class="fa-solid fa-rotate"></i>
+                            </button>
+                        </div>
+
+                        @if (cSend['captcha'].errors && isFormSubmitted) {
+                        @if (cSend['captcha'].errors['required']) {
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        }
+                        }@else if (!captchaIsValid && isFormSubmitted) {
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
+                        }
+                    </div>
+
+                    <div style="display: flex; justify-content: end;">
+
+
+
+                        <button  class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
+                            Enviar <i class="fa-regular fa-envelope"></i>
+                        </button>
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!------------------------   END-MODAL    ----------------------------->
