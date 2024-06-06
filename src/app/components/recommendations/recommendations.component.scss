@@ -217,7 +217,6 @@ p-chips{
     width: 55px;
     height: 55px;
     border-radius: 35px;
-    text-align: center;
     padding: 0px 0px 0px 0px;
     font-size: 35px;
     background-color: #222;
@@ -225,9 +224,8 @@ p-chips{
 }
 
 .share-button{
-    padding: 15px; 
-    text-align: center; 
-    width: 12%;
+    padding: 15px;  
+    width: 25%;
 }
 
 
@@ -273,7 +271,7 @@ p-chips{
     }
 
     .share-button{
-        width: 15%;
+        width: 20%;
     }
 }
 
@@ -320,7 +318,7 @@ p-chips{
     }
 
     .share-button{
-        width: 15%;
+        width: 20%;
     }
 
 }

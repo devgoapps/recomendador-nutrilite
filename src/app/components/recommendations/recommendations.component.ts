@@ -102,13 +102,12 @@ export class RecommendationsComponent implements OnInit {
       var nodo4 = document.getElementById("comprar5");
       var nodo5 = document.getElementById("comprar6");
 
-      var share0 = document.getElementById("buttonshare0");
+
       var share1 = document.getElementById("buttonshare1");
       var share2 = document.getElementById("buttonshare2");
       var share3 = document.getElementById("buttonshare3");
       var share4 = document.getElementById("buttonshare4");
 
-      var valors0 = document.createAttribute("item-name");
       var valor0 = document.createAttribute("item-name");
       var valor1 = document.createAttribute("item-name");
       var valor2 = document.createAttribute("item-name");
@@ -121,8 +120,6 @@ export class RecommendationsComponent implements OnInit {
       var valor8 = document.createAttribute("item-name");
       var valor9 = document.createAttribute("item-name");
 
-
-
       valor0.value = this.recommendedProducts[0].name;
       valor1.value = this.recommendedProducts[1].name;
       valor2.value = this.recommendedProducts[2].name;
@@ -130,13 +127,11 @@ export class RecommendationsComponent implements OnInit {
       valor4.value = this.recommendedProducts[4].name;
       valor5.value = this.recommendedProducts[5].name;
 
-      valors0.value = 'Correo Enviar';
       valor6.value = 'Correo';
       valor7.value = 'Whatssapp';
       valor8.value = 'Link Recomendador';
       valor9.value = 'Imprimir';
 
-      this.Share0 = valors0.value;
       this.Share1 = valor6.value;
       this.Share2 = valor7.value;
       this.Share3 = valor8.value;
@@ -189,7 +184,7 @@ export class RecommendationsComponent implements OnInit {
 
     let recomendado = environment.utagInfo.ShareContinue;
   
-    recomendado[0].share_channel = this.Share0;
+    recomendado[0].share_channel = this.Share1;
     
     //window.utag_data = Object.assign(window.utag_data, recomendado);
     
@@ -220,30 +215,12 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
-  sendemails(){
-
-
-  let recomendado = environment.utagInfo.ShareContinue;
-  
-  recomendado[1].share_channel = this.Share1;
-  
-  //window.utag_data = Object.assign(window.utag_data, recomendado);
-  
-  utag.link(recomendado);
-  console.log(recomendado);
-
-
-
-
-
-
-  }
 
   sendWhatsapp(){
 
   let recomendado = environment.utagInfo.ShareContinue;
   
-  recomendado[2].share_channel = this.Share2;
+  recomendado[1].share_channel = this.Share2;
   
   //window.utag_data = Object.assign(window.utag_data, recomendado);
   
@@ -303,7 +280,7 @@ export class RecommendationsComponent implements OnInit {
 
 let recomendado = environment.utagInfo.ShareContinue;
 
-recomendado[3].share_channel = this.Share3;
+recomendado[2].share_channel = this.Share3;
 
 //window.utag_data = Object.assign(window.utag_data, recomendado);
 
@@ -358,7 +335,7 @@ console.log(recomendado);
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[4].share_channel = this.Share4;
+    recomendado[3].share_channel = this.Share4;
 
     //window.utag_data = Object.assign(window.utag_data, recomendado);
   

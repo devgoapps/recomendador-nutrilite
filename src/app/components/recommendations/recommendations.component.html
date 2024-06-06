@@ -24,6 +24,9 @@
     </div>
 
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;" id="productosRecom">
+        <div id="params-list">
+            <!-- Aquí se agregarán los parámetros como elementos de lista -->
+        </div>
         <div class="row">
 
 
@@ -561,9 +564,8 @@
     </div>
 
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-50">
-            <div class="form-group">
+
+            <!-- <div class="form-group">
                 <label class="g-text required">Dirección de correo electrónico</label>
                 <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Puedes enviar estas recomendaciones hasta 5 correos)</b>
                 <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
@@ -576,11 +578,11 @@
                 <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
                 }
                 }
-            </div>
+            </div> -->
 
 
 
-            <div style="margin-bottom: 2rem;">
+            <!-- <div style="margin-bottom: 2rem;">
                 <label class="g-text required">Escribe el texto que se muestra en la imagen</label>
                 <div style="display: flex; gap: 1rem;">
                     <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
@@ -602,42 +604,43 @@
                 }@else if (!captchaIsValid && isFormSubmitted) {
                 <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
                 }
-            </div>
+            </div> -->
 
-            <div style="display: flex; justify-content: end;">
+            <!-- <div style="display: flex; justify-content: end;">
                 
 
 
                 <button class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
                     Enviar <i class="fa-regular fa-envelope"></i>
                 </button>
-            </div>
-
+            </div> -->
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem; text-align: center;">
+            <form class="gw-45">  
              <label class="g-text mb0">Recibe tus resultados por medio de:</label>
             <div class="row" style="width: 100%;"> 
             
-            <div class="col-sm-1 share-button">
+            <div class="col-lg-2 share-button">
 
-                    <button (click)="sendemails()" type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <i class="fa-regular fa-envelope"></i>
                     </button>  
           
             </div>    
-            <div class="col-sm-1 share-button">
+            <div class="col-lg-2 share-button">
 
                 <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" title="WhatsApp" id="buttonshare2" value="whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </button>  
       
             </div>
-            <div class="col-sm-1 share-button">
+            <div class="col-lg-2 share-button">
 
                 <button (click)="CopyLink()" type="button" class="btn btn-success btn-circle btn-lg" title="Copiar Enlace" id="buttonshare3" value="copy link">
                     <i class="fas fa-link"></i>
                 </button> 
       
             </div>
-            <div class="col-sm-1 share-button">
+            <div class="col-lg-2 share-button">
 
                 <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" title="Imprimir" id="buttonshare4"  printSectionId="mail2" ngxPrint value="print">
                     <i class="fas fa-print"></i>
@@ -647,11 +650,9 @@
 
             </div>
 
-        </form>
+            </form>
+</div>
 
-
-
-    </div>
 </div>
 
 </div>

@@ -400,26 +400,22 @@ export const environment = {
         },
         ShareContinue: 
         [
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
+            {
+            event_name: 'share',  
+            share_channel: '',
+            },
         
         ],
         countries: {
