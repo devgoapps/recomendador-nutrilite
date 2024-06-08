@@ -706,13 +706,13 @@ export class QuestionnaireComponent implements OnInit {
     console.log(this.question);
     console.log(this.answer);
 
-    let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
+    // let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
 
-    this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
+    // this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
 
-    this.utag_dataAnwers[this.questionIndex].page_section = this.question;
-    this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
-    utag.link(this.utag_dataAnwers[this.questionIndex]);
+    // this.utag_dataAnwers[this.questionIndex].page_section = this.question;
+    // this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
+    // utag.link(this.utag_dataAnwers[this.questionIndex]);
 
     this.questions[0].country = 'br';
     this.country = this.questions[0].country;
@@ -732,8 +732,8 @@ export class QuestionnaireComponent implements OnInit {
     // utag.view(window.utag_data);
     // console.log(utag.view(window.utag_data));
     console.log(this.questionIndex);
-    console.log(this.utag_dataAnwers[this.questionIndex]);
-    console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
+    // console.log(this.utag_dataAnwers[this.questionIndex]);
+    // console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
     
     
     setTimeout(() => {

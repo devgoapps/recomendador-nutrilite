@@ -390,11 +390,6 @@ export const environment = {
             site_webProperty: 'nutrilite recommender',  
             site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender',  
         },
-        QuestionnarieContinue: {
-            event_name: 'continue',  
-            page_section: '',
-            continueAnswer: '',
-        },
         RecommendationsContinue: {
             event_name: 'view_recommendations',  
         },
