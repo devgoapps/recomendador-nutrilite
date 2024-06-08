@@ -73,7 +73,7 @@
         } @else {
             @for (option of questions[questionIndex]?.options; track $index) {
                 <div (click)="selectOption(questionIndex, option.value, questions[questionIndex]?.multi,  option.label)" class="option-btn gw-30">
-                    <span [ngClass]="{ 'checkbox': questions[questionIndex]?.multi, 'radio': !questions[questionIndex]?.multi, 'active': isActive(questionIndex, option.value, questions[questionIndex]?.multi) }" ></span>
+                    <span [ngClass]="{ 'checkbox': questions[questionIndex]?.multi, 'radio': !questions[questionIndex]?.multi, 'active': isActive(questionIndex, option.value, questions[questionIndex]?.multi) }" id="seleccion"></span>
                     <label class="g-text">{{ option.label }}</label>
                 </div>
             }
