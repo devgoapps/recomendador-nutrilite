@@ -27,8 +27,8 @@ export class QuestionnaireComponent implements OnInit {
   utag_dataAnwers: Array<any> = [];
   questionIndex: number = 0;
   value: number = 0;
-  answer: string | null = '';
-  question: string | null = '';
+  answer: string = '';
+  question: string  = '';
   clientQuestions: Array<any> = [];
   multiples: Array<any> = [];
   country: string | null = '';
@@ -500,6 +500,30 @@ export class QuestionnaireComponent implements OnInit {
     setTimeout(() => {
       utag.view(window.utag_data);
     }, 500);
+
+  
+  }
+
+  funtionAtribute(pregunta: string){
+    try {
+      var nodo = document.getElementById("seleccion");
+
+      var valorQuestion = document.createAttribute("question");
+      var valorAnswer = document.createAttribute("answer");
+
+      valorQuestion.value = pregunta;
+      valorAnswer.value = this.answer;
+
+
+      nodo?.setAttributeNode(valorQuestion);
+      nodo?.setAttributeNode(valorAnswer);
+
+
+
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
   selectOption(indexQuestion: number, value: number, isMulti: boolean, option: string){
@@ -1734,8 +1758,21 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
       return exist;
     }else{
-      if(this.questions[indexQuestion].selected == value) return true;
-      else return false;
+     
+      if(this.questions[indexQuestion].selected == value){
+
+        if(this.questions[indexQuestion].question == "¿Eres mujer u hombre?"){
+          this.funtionAtribute(this.questions[indexQuestion].question);
+        }
+        if(this.questions[indexQuestion].question == "¿Qué edad tienes?"){
+          this.funtionAtribute(this.questions[indexQuestion].question);
+        }
+        
+        return true;
+      }
+
+      else {return false;}
+      
     }
   }
 
