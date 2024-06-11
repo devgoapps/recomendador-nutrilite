@@ -43,6 +43,14 @@ export class RecommendationsComponent implements OnInit {
   Share3: string = '';
   Share4: string = '';
 
+  resID: Array<any> = [];
+  resName: Array<any> = [];
+
+  recommendations: { product_id: number[] } = {
+    product_id: []
+  };
+  
+
   numberProducts: number = 4;
 
   code: string | null = '';
@@ -55,31 +63,18 @@ export class RecommendationsComponent implements OnInit {
   isFormSubmitted: boolean = false;
 
   constructor(private router: Router,
-              private fb: FormBuilder){}
+              private fb: FormBuilder){
+              }
 
   ngOnInit(): void {
 
     const icon = document.getElementById('ada-entry');
 
     if (icon) {
-      (icon as HTMLElement).style.display = 'block';
+      (icon as HTMLElement).style.display = 'none';
     } else {
       console.error('Elemento con id "ada-entry" no encontrado.');
     }
-    
-
-    let utag_data = environment.utagInfo.recommendations;
-        
-    window.utag_data = Object.assign(window.utag_data, utag_data);
-
-    console.log(window.utag_data);
-    setTimeout(() => {
-      utag.view(window.utag_data);
-    }, 500);
-
-
-
-
 
     this.clientName = sessionStorage.getItem('clientName');
     this.clientCountry = sessionStorage.getItem('clientCountry');
@@ -93,12 +88,48 @@ export class RecommendationsComponent implements OnInit {
       });
     }    
     
+    const IDs = this.fillProductIdsDirectly(this.resID);
+    const Names =this.fillProductNameDirectly(this.resName);
 
+    let utag_data = environment.utagInfo.recommendations;
 
+    utag_data.product_id = IDs;
+    utag_data.product_name = Names;
+        
+    window.utag_data = Object.assign(window.utag_data, utag_data);
+
+   
+    setTimeout(() => {
+      utag.view(window.utag_data);
+    }, 500);
+     console.log(window.utag_data);
     this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
+
     
+  }
+
+  fillProductIdsDirectly(resultado: Array<any>){
+
+    const newProductIds = [this.recommendedProducts[0].id, this.recommendedProducts[1].id, this.recommendedProducts[2].id, this.recommendedProducts[3].id];
+
+    resultado = newProductIds;
+    
+    console.log(resultado);
+    return resultado;
+
+  }
+
+  fillProductNameDirectly(resultado: Array<any>){
+
+    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name];
+
+    resultado = newProductName;
+
+    console.log(resultado);
+    return resultado;
+
   }
 
 

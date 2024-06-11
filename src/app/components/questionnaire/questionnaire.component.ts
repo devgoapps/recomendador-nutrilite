@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, NavigationExtras } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 
@@ -54,6 +54,7 @@ export class QuestionnaireComponent implements OnInit {
       isMessage: true,
       options: [],
       selected: 'Saludo',
+      text: 'inicio'
     },
     {
       question: '¿Eres mujer u hombre?',
@@ -292,6 +293,7 @@ export class QuestionnaireComponent implements OnInit {
       isFinished: true,
       options: [],
       selected: 'Despedida',
+      text: 'final',
       footer: ` <span class="gw-50 g-text text-center" >
                   Ahora tenemos todo lo que necesitamos para elegir recomendaciones personalizadas solo para ti. <br><br>
                   Siéntate, relájate y prepárate para descubrir recomendaciones y productos que pueden ayudarte a mejorar tu bienestar. Además, tenemos algunas sugerencias de productos especiales para tu bienestar diario. 
@@ -480,22 +482,23 @@ export class QuestionnaireComponent implements OnInit {
 
   constructor(private router: Router){}
 
+
+
   ngOnInit(): void {
 
-    // const icon = document.getElementById('ada-entry');
+    const icon = document.getElementById('ada-entry');
 
-    // if (icon) {
-    //   (icon as HTMLElement).style.display = 'none';
-    // } else {
-    //   console.error('Elemento con id "ada-entry" no encontrado.');
-    // }
+    if (icon) {
+    (icon as HTMLElement).style.display = 'none';
+    } else {
+     console.error('Elemento con id "ada-entry" no encontrado.');
+    }
     
     this.utag_data = environment.utagInfo.questionnaire;
 
 
 
     window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
-    utag.view(window.utag_data);
     console.log(window.utag_data);
     setTimeout(() => {
       utag.view(window.utag_data);
@@ -1826,6 +1829,8 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     console.log(this.question);
     console.log(this.answer);
 
+    console.log(this.questions[0].country);
+
 
 
 
@@ -1846,19 +1851,34 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     // utag.link(this.utag_dataAnwers[this.questionIndex]);
 
 
-
-
-
-    this.country = this.questions[0].country;
-
+this.country = this.questions[0].country;
     this.clientQuestions = this.questions;
-
-    this.utag_data[this.questionIndex].site_country = this.questions[0].country;
-    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-
+if(this.questions[this.questionIndex].text == 'inicio'){
+    
 
 
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+
+    this.utag_data[1].site_country = this.questions[0].country;
+    this.utag_data[1].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
+
+
+
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[1]);
+}
+if(this.questions[this.questionIndex].text == 'final'){
+    
+
+
+
+  this.utag_data[2].site_country = this.questions[0].country;
+  this.utag_data[2].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
+
+
+
+  window.utag_data = Object.assign(window.utag_data, this.utag_data[2]);
+}
+
+
 
 
 
@@ -1872,7 +1892,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     // console.log(this.utag_dataAnwers[this.questionIndex]);
     // console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
 
-    
+    const navigationExtras: NavigationExtras = {
+    fragment: 'question' + this.questionIndex
+    };
+    this.router.navigate(['/questionnaire'], navigationExtras);
   
 
     setTimeout(() => {

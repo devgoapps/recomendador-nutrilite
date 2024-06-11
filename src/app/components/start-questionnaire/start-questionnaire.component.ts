@@ -24,7 +24,7 @@ export class StartQuestionnaireComponent implements OnInit {
     const icon = document.getElementById('ada-entry');
 
     if (icon) {
-      (icon as HTMLElement).style.display = 'block';
+      (icon as HTMLElement).style.display = 'none';
     } else {
       console.error('Elemento con id "ada-entry" no encontrado.');
     }
@@ -34,9 +34,9 @@ export class StartQuestionnaireComponent implements OnInit {
     window.utag_data = Object.assign(window.utag_data, utag_data);
 
     console.log(window.utag_data);
-  
+   
     setTimeout(() => {
-      utag.view(window.utag_data);
+       utag.view(window.utag_data);
     }, 500);
   }
 }
