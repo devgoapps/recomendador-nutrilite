@@ -79,13 +79,13 @@ export class CountriesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.countries;
+    // let utag_data = environment.utagInfo.countries;
         
-    window.utag_data = Object.assign(window.utag_data, utag_data);
-    console.log(window.utag_data);
-    setTimeout(() => {
-      utag.view(window.utag_data);
-    }, 500);
+    // window.utag_data = Object.assign(window.utag_data, utag_data);
+    // console.log(window.utag_data);
+    // setTimeout(() => {
+    //   utag.view(window.utag_data);
+    // }, 500);
   }
 
   openLink(link: string){

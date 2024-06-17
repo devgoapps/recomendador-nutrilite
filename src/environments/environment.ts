@@ -124,21 +124,5 @@ export const environment = {
             },
         
         ],
-        countries: {
-            page_category: 'countries | Recomendador',  
-            page_name: 'countries',
-            page_section: 'countries',
-            page_subCategory: 'targeted',
-            //site_country: '',
-            //site_currencyCode: '',  
-            site_language: 'es',  
-            // site_prefix: 'amway',
-            // site_region: 'americas', 
-            // site_subRegion: 'latam', 
-            // site_type: 'desktop',  
-            // site_type_short: 'web', 
-            // site_webProperty: 'nutrilite recommender',  
-            // site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender', 
-        }
     }
 };

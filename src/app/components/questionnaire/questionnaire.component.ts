@@ -498,7 +498,7 @@ export class QuestionnaireComponent implements OnInit {
 
 
 
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[0]);
     console.log(window.utag_data);
     setTimeout(() => {
       utag.view(window.utag_data);
@@ -1807,7 +1807,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
 
 
-
+this.country = this.questions[0].country;
 
 
     if(this.questionIndex == (this.questions.length - 1)) return;
@@ -1829,7 +1829,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     console.log(this.question);
     console.log(this.answer);
 
-    console.log(this.questions[0].country);
+    console.log(this.country);
 
 
 
@@ -1851,7 +1851,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     // utag.link(this.utag_dataAnwers[this.questionIndex]);
 
 
-this.country = this.questions[0].country;
+
     this.clientQuestions = this.questions;
 if(this.questions[this.questionIndex].text == 'inicio'){
     

@@ -33,7 +33,7 @@ export class RecommendationsComponent implements OnInit {
 
   clientName: string | null = '';
   clientCountry: string | null = '';
-  country: string  = '';
+  country: string = '';
   recommendedProducts: Array<any> = [];
   clientQuestions: Array<any> = [];
   link: string = '';
@@ -93,16 +93,20 @@ export class RecommendationsComponent implements OnInit {
 
     let utag_data = environment.utagInfo.recommendations;
 
+    this.country = this.clientCountry ?? '';
+
     utag_data.product_id = IDs;
     utag_data.product_name = Names;
+    utag_data.site_country = this.country;
+    utag_data.site_currencyCode = this.getCurrencyCode(this.country);
         
     window.utag_data = Object.assign(window.utag_data, utag_data);
 
-   
+     console.log(window.utag_data);   
     setTimeout(() => {
       utag.view(window.utag_data);
     }, 500);
-     console.log(window.utag_data);
+
     this.funtionAtribute();
     this.buildForm();
     this.makeCaptcha();
@@ -110,9 +114,24 @@ export class RecommendationsComponent implements OnInit {
     
   }
 
+  getCurrencyCode(country: string) {
+    if (country == 'mx') return 'mxn';
+    else if (country == 'gt') return 'gtq';  //guatemala
+    else if (country == 'sv') return 'svc';  //el salvador
+    else if (country == 'hn') return 'hnl';  //honduras
+    else if (country == 'pa') return 'pab';  //panama
+    else if (country == 'cr') return 'crc';  //costa rica
+    else if (country == 'ar') return 'ars';  //argentina
+    else if (country == 'cl') return 'clp';  //chile
+    else if (country == 'uy') return 'uyu';  //uruguay
+    else if (country == 'co') return 'cop';  //colombia
+    else if (country == 've') return 'vef';  //venezuela
+    else return '';
+  }
+
   fillProductIdsDirectly(resultado: Array<any>){
 
-    const newProductIds = [this.recommendedProducts[0].id, this.recommendedProducts[1].id, this.recommendedProducts[2].id, this.recommendedProducts[3].id];
+    const newProductIds = [this.recommendedProducts[0].id, this.recommendedProducts[1].id, this.recommendedProducts[2].id, this.recommendedProducts[3].id, this.recommendedProducts[4].id, this.recommendedProducts[5].id];
 
     resultado = newProductIds;
     
@@ -123,7 +142,7 @@ export class RecommendationsComponent implements OnInit {
 
   fillProductNameDirectly(resultado: Array<any>){
 
-    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name];
+    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name, this.recommendedProducts[4].name, this.recommendedProducts[5].name];
 
     resultado = newProductName;
 
