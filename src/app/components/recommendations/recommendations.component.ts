@@ -41,6 +41,13 @@ export class RecommendationsComponent implements OnInit {
   Share3: string = '';
   Share4: string = '';
 
+  resID: Array<any> = [];
+  resName: Array<any> = [];
+
+  recommendations: { product_id: number[] } = {
+    product_id: []
+  };
+
   numberProducts: number = 4;
 
   code: string | null = '';
@@ -64,19 +71,11 @@ export class RecommendationsComponent implements OnInit {
       console.error('Elemento con id "ada-entry" no encontrado.');
     }
 
-    let utag_data = environment.utagInfo.recommendations;
 
-    this.code = sessionStorage.getItem('code');
-
-        
-    window.utag_data = Object.assign(window.utag_data, utag_data);
-    console.log(window.utag_data);
-    setTimeout(() => {
-      utag.view(window.utag_data);
-    }, 500);
 
     this.clientName = sessionStorage.getItem('clientName');
     this.clientCountry = sessionStorage.getItem('clientCountry');
+
     let products = sessionStorage.getItem('recommendedProducts');
     if(products){
       this.recommendedProducts = JSON.parse(products);
@@ -84,7 +83,27 @@ export class RecommendationsComponent implements OnInit {
         item.active = false;
         return item;
       });
-    } 
+    }
+    
+    const IDs = this.fillProductIdsDirectly(this.resID);
+    const Names =this.fillProductNameDirectly(this.resName);
+
+    let utag_data = environment.utagInfo.recommendations;
+
+    this.country = this.clientCountry ?? '';
+
+    utag_data.product_id = IDs;
+    utag_data.product_name = Names;
+    utag_data.site_country = this.country;
+    utag_data.site_currencyCode = this.getCurrencyCode(this.country);
+
+    window.utag_data = Object.assign(window.utag_data, utag_data);
+
+
+    setTimeout(() => {
+      utag.view(window.utag_data);
+    }, 500);
+     console.log(window.utag_data);
     
     
     this.funtionAtribute();
@@ -92,6 +111,31 @@ export class RecommendationsComponent implements OnInit {
     this.makeCaptcha();
   }
 
+  getCurrencyCode(country: string) {
+    if (country == 'br') return 'brl';
+    else return '';
+  }
+
+  fillProductIdsDirectly(resultado: Array<any>){
+
+    const newProductIds = [this.recommendedProducts[0].id, this.recommendedProducts[1].id, this.recommendedProducts[2].id, this.recommendedProducts[3].id, this.recommendedProducts[4].id, this.recommendedProducts[5].id];
+
+    resultado = newProductIds;
+
+
+    return resultado;
+
+  }
+
+  fillProductNameDirectly(resultado: Array<any>){
+
+    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name, this.recommendedProducts[4].name, this.recommendedProducts[5].name];
+    resultado = newProductName;
+
+
+    return resultado;
+
+  }
 
   funtionAtribute(){
     try {

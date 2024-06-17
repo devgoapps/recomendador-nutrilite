@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, NavigationExtras } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 
@@ -53,6 +53,7 @@ export class QuestionnaireComponent implements OnInit {
       isMessage: true,
       options: [],
       selected: 'Saludo',
+      text: 'inicio'
     },
     {
       question: 'Você é mulher ou homem?',
@@ -291,6 +292,7 @@ export class QuestionnaireComponent implements OnInit {
       isFinished: true,
       options: [],
       selected: 'Despedida',
+      text: 'final',
       footer: ` <span class="gw-50 g-text text-center" >
       Agora temos tudo o que precisamos para preparar recomendações personalizadas para você. <br><br>
       Sente-se, relaxe e prepare-se para descobrir recomendações e produtos que podem ajudar a melhorar o seu bem-estar. Além disso, temos algumas sugestões de produtos especiais para o seu bem-estar diário.
@@ -494,10 +496,10 @@ export class QuestionnaireComponent implements OnInit {
     
     this.utag_data = environment.utagInfo.questionnaire;
         
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    window.utag_data = Object.assign(window.utag_data, this.utag_data[0]);
     console.log(window.utag_data);
     setTimeout(() => {
-      //utag.view(window.utag_data);
+      utag.view(window.utag_data);
     }, 500);
   }
 
@@ -750,15 +752,29 @@ export class QuestionnaireComponent implements OnInit {
     this.questions[0].country = 'br';
     this.country = this.questions[0].country;
 
+
     console.log(this.country);
 
+    if(this.questions[this.questionIndex].text == 'inicio'){
 
-    this.utag_data[this.questionIndex].site_country = this.country;
-    this.utag_data[this.questionIndex].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-
+      this.utag_data[1].site_country = this.questions[0].country;
+      this.utag_data[1].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
     
+    
+    
+      window.utag_data = Object.assign(window.utag_data, this.utag_data[1]);
 
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
+    }
+
+    if(this.questions[this.questionIndex].text == 'final'){
+      this.utag_data[2].site_country = this.questions[0].country;
+      this.utag_data[2].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
+    
+    
+    
+      window.utag_data = Object.assign(window.utag_data, this.utag_data[2]);
+    }
+
 
     
     console.log(window.utag_data);
@@ -768,6 +784,10 @@ export class QuestionnaireComponent implements OnInit {
     // console.log(this.utag_dataAnwers[this.questionIndex]);
     // console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
     
+    const navigationExtras: NavigationExtras = {
+      fragment: 'question' + this.questionIndex
+      };
+      this.router.navigate(['/questionnaire'], navigationExtras);
     
     setTimeout(() => {
       //utag.view(window.utag_data);

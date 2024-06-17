@@ -23,7 +23,7 @@ export class AppComponent {
 
     sessionStorage.setItem('code', code);
 
-    window.utag_data.site_webProperty_mod = hostname + ' | ecommerce';
+    //window.utag_data.site_webProperty_mod = hostname + ' | ecommerce';
     window.utag_data.site_country = code;
     window.utag_data.site_currencyCode = this.getCurrencyCode(code);
   }
