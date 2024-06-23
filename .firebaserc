@@ -1,10 +1,8 @@
 {
   "projects": {
     "default": "amway2024-br",
-    "brasil": "amway2024-br",
-    "wha": "amway2024-br",
-    "brasiil2": "amway2024-br",
-    "brasil2": "amway2024-br"
+    "brasilp": "amway2024-br",
+    "bra": "amway2024-br"
   },
   "targets": {},
   "etags": {},
