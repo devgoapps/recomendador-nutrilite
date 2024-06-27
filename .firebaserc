@@ -1,9 +1,5 @@
 {
   "projects": {
-    "default": "amway-2024",
-    "recom": "amway-2024"
-  },
-  "targets": {},
-  "etags": {},
-  "dataconnectEmulatorConfig": {}
+    "default": "recomendador-amway"
+  }
 }
