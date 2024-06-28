@@ -21,12 +21,18 @@
     max-width: 80%;
 }
 
-
+.logo-img{
+    width: 40%; 
+    padding-bottom: 2rem;
+}
 
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
     .cart-start {
         padding: 2rem;
+    }
+    .logo-img{
+        width: 80%; 
     }
 }
 
@@ -35,6 +41,9 @@
 @media (min-width: 375px) and (max-width: 576px) { 
     .cart-start {
         padding: 2rem;
+    }
+    .logo-img{
+        width: 80%; 
     }
 }
 

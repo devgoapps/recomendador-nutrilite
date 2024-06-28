@@ -122,6 +122,8 @@ transform: perspective(900px) rotateY(360deg);
 
 }
 
+
+
 .whyIsRecommended-Text{
     display: block;
     font-weight: 400;
@@ -134,6 +136,13 @@ transform: perspective(900px) rotateY(360deg);
     display: block;
     font-weight: 400;
     font-size: 2.3rem;
+    font-family: "GTWalsheimPro-Regular";
+}
+
+.product-name2{
+    display: block;
+    font-weight: 400;
+    font-size: 1.8rem;
     font-family: "GTWalsheimPro-Regular";
 }
 
@@ -253,6 +262,10 @@ p-chips{
         font-size: 1.8rem;
     }
 
+    .product-name2{
+        font-size: 1.5rem;
+    }
+
     .whyIsRecommended-Text{
         
         font-size: .9rem;
@@ -297,6 +310,10 @@ p-chips{
 
     .product-name{
         font-size: 1.8rem;
+    }
+
+    .product-name2{
+        font-size: 1.5rem;
     }
 
     .whyIsRecommended-Text{

@@ -19,6 +19,7 @@ declare var window: any;
   templateUrl: './questionnaire.component.html',
   styleUrl: './questionnaire.component.scss',
   //encapsulation: ViewEncapsulation.None,
+
 })
 export class QuestionnaireComponent implements OnInit {
 
@@ -62,8 +63,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Mujer', value: 1, products: [] },
-        { label: 'Hombre', value: 2, products: [] }
+        { label: `<label class="g-text">Mujer</label> `, value: 1, products: [] },
+        { label: `<label class="g-text">Hombre</label> `, value: 2, products: [] }
       ],
       selected: null,
     },
@@ -73,25 +74,24 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: '18 a 39 años', value: 1, productsWomen: [10], productsMen: [], checkSex: true },
-        { label: '40 a 49 años', value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
-        { label: '50 a 59 años', value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
-        { label: '60 o más años', value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
+        { label: `<label class="g-text">18 a 39 años</label> `, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label: `<label class="g-text">40 a 49 años</label> `, value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
+        { label: `<label class="g-text">50 a 59 años</label> `, value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
+        { label: `<label class="g-text">60 o más años</label> `, value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
       ],
       selected: null
     },
     {
       question: '¿Por qué te concentras en tu bienestar?',
-      subQuestion: 'Selecciona todo lo que aplique.',
-      multi: true,
+      multi: false,
       margin: 70,
       options: [
-        { label: 'Quiero ser mi mejor versión.', value: 1, products: [14] },
-        { label: 'Quiero desarrollar hábitos más saludables.', value: 2, products: [7] },
-        { label: 'Estoy buscando mejorar mi bienestar.', value: 3, products: [3, 6] },
+        { label: `<label class="g-text">Estoy comenzando a hacer pequeños cambios para mejorar mi bienestar.</label> `, value: 1, products: [14] },
+        { label: `<label class="g-text">He realizado algunos cambios en mi vida y quiero desarrollar hábitos más saludables.</label> `, value: 2, products: [7] },
+        { label: `<label class="g-text">Me enfoco en mi bienestar diario y quiero lograr mi mejor versión.</label> `, value: 3, products: [3, 6] },
       ],
       selected: [],
-      footer: ` <span class="gw-20 g-text text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
+      footer: ` <span class="gw-20 g-text-footer text-center">¡Comprender por qué estás aquí, es importante para nosotros y tus resultados!</span>`
     },
     {
       question: '¿Consumes actualmente un suplemento alimenticio/dietario con vitaminas y/o minerales?',
@@ -99,8 +99,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [] },
-        { label: 'No', value: 2, products: [1] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [1] },
       ],
       selected: null
     },
@@ -110,17 +110,17 @@ export class QuestionnaireComponent implements OnInit {
       margin: 20,
       showRequired: false,
       options: [
-        { label: 'De inicio', value: 1, products: [1] },
-        { label: 'Avanzada', value: 2, products: [5, 12] },
+        { label: `<label class="g-text">Básica</label> `, value: 1, products: [1] },
+        { label: `<label class="g-text">Avanzada</label> `, value: 2, products: [5, 12] },
       ],
       selected: null,
-      footer: ` <small class="gw-20 g-text">
+      footer: ` <small class="gw-20 g-text-footer">
                 <ul style="list-style-type: circle;">
                 <li>
                   <b class="field-items"> Básica:</b> Es complementar la alimentación con suplementos alimenticios/dietarios que se inicia cuando no se han consumido antes estos productos y que sirve como adaptación. <br><br> 
                 </li>
                 <li>  
-                  <b class="field-items"> Óptima:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/nutrientes para una complementación más específica según las necesidades.
+                  <b class="field-items"> Avanzada:</b> Es el paso siguiente a la básica, se incluye mayor variedad de productos/nutrientes para una complementación más específica según las necesidades.
                 </li>
                 </ul>
                 </small>`
@@ -131,11 +131,11 @@ export class QuestionnaireComponent implements OnInit {
       margin: 40,
       showRequired: false,
       options: [
-        { label: 'Ninguna (0)', value: 1, products: [6, 13] },
-        { label: '1 a 2 frutas y vegetales al día.', value: 2, products: [8, 16] },
-        { label: '3 a 4 frutas y vegetales al día.', value: 3, products: [] },
-        { label: '5 a 6 frutas y vegetales al día.', value: 4, products: [] },
-        { label: '7 o más frutas y vegetales al día.', value: 5, products: [] },
+        { label: `<label class="g-text">Ninguna (0)</label> `, value: 1, products: [6, 13] },
+        { label: `<label class="g-text">1 a 2 frutas y vegetales al día.</label> `, value: 2, products: [8, 16] },
+        { label: `<label class="g-text">3 a 4 frutas y vegetales al día.</label> `, value: 3, products: [] },
+        { label: `<label class="g-text">5 a 6 frutas y vegetales al día.</label> `, value: 4, products: [] },
+        { label: `<label class="g-text">7 o más frutas y vegetales al día.</label> `, value: 5, products: [] },
       ],
       selected: null
     },
@@ -145,18 +145,30 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Baja en carbohidratos (harina y azúcares), con mayor cantidad de proteínas y grasa.', value: 1, products: [18] },
-        { label: 'Balanceada, con una mezcla equilibrada  de carbohidratos (harina y azúcares), proteínas y grasa.', value: 2, products: [1] },
-        { label: 'Baja en grasa, con mayor cantidad de proteína y carbohidratos (harina y azúcares).', value: 3, products: [7] },
-        { label: 'Alta en grasa y carbohidratos (harina y azúcares) y baja en proteína.', value: 4, products: [7, 18] },
+        { label: `<label class="g-text"> 
+                  <b>Proteína:</b> Alta.<br>
+                  <b>Grasas:</b> Alta.<br>               
+                  <b>Carbohidratos:</b> Baja.
+                  </label> `, value: 1, products: [18] },
+        { label: `<label class="g-text"> 
+                  <b>Proteína:</b> Alta.<br>
+                  <b>Grasas:</b> Baja.<br>               
+                  <b>Carbohidratos:</b> Alta.
+                  </label> `, value: 3, products: [7] },
+        { label: `<label class="g-text"> 
+                  <b>Proteína:</b> Baja.<br>
+                  <b>Grasas:</b> Alta.<br>               
+                  <b>Carbohidratos:</b> Alta.
+                  </label> `, value: 4, products: [7, 18] },
+        { label: `<label class="g-text"><b>Balanceada:</b> con una mezcla equilibrada de carbohidratos, proteínas y grasa.</label> `, value: 2, products: [1] },      
       ],
       selected: null,
-      footer: ` <small class="gw-20 g-text">
+      footer: ` <small class="gw-20 g-text-footer">
 
                   <b>Algunos ejemplos que te ayudarán a seleccionar la mejor respuesta de acuerdo a tu alimentación.</b><br><br>
                 <ul style="list-style-type: circle;">
                 <li>
-                  <b>Carbohidratos (harinas y azúcares):</b> pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros.<br>
+                  <b>Carbohidratos:</b><b> harinas</b> como pan, arepa, tortilla de maíz, tostada de maíz, pasta, papa, entre otros y<b> azúcares</b> como azúcar de mesa, miel, melaza, jarabe de caña, dulces, caramelos, entre otros.<br>
                 </li>
                 <li>  
                   <b>Proteína:</b> carne de res, pollo, pescado, mariscos, huevos, leche y derivados, leguminosas como frijol, guisantes y semillas como nueces, avellanas, piñones.<br>
@@ -174,9 +186,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Rara vez', value: 1, products: [12] },
-        { label: 'Ocasionalmente', value: 2, products: [9] },
-        { label: 'Me levanto muy activo(a).', value: 3, products: [] },
+        { label: `<label class="g-text">Rara vez</label> `, value: 1, products: [12] },
+        { label: `<label class="g-text">Ocasionalmente</label> `, value: 2, products: [9] },
+        { label: `<label class="g-text">Me levanto muy activo(a).</label> `, value: 3, products: [] },
       ],
       selected: null
     },
@@ -186,12 +198,12 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Ninguna (0)', value: 1, products: [2] },
-        { label: '1 porción al día.', value: 2, products: [2] },
-        { label: '2 porciones al día.', value: 3, products: [] },
+        { label: `<label class="g-text">Ninguna (0)</label> `, value: 1, products: [2] },
+        { label: `<label class="g-text">1 porción al día.</label> `, value: 2, products: [2] },
+        { label: `<label class="g-text">2 porciones al día.</label> `, value: 3, products: [] },
       ],
       selected: null,
-      footer: ` <small class="gw-20 g-text" >
+      footer: ` <small class="gw-20 g-text-footer" >
                   <b>Por ejemplo:</b>  Leche, yogurt, queso, bebidas con soya fortificada, entre otros.
                 </small>`
     },
@@ -201,10 +213,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'No hago ejercicios regularmente.', value: 1, products: [1] },
-        { label: 'Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.', value: 2, products: [8, 9] },
-        { label: 'Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.', value: 3, products: [3, 10] },
-        { label: 'Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.', value: 4, products: [9, 10, 14] },
+        { label: `<label class="g-text">No hago ejercicios regularmente.</label> `, value: 1, products: [1] },
+        { label: `<label class="g-text">Hago ejercicios ligeros (caminar, actividades cotidianas) 1 a 2 días a la semana.</label> `, value: 2, products: [8, 9] },
+        { label: `<label class="g-text">Hago ejercicios moderados (trotar, ejercicio de fuerza moderados) 3 o 4 veces a la semana.</label> `, value: 3, products: [3, 10] },
+        { label: `<label class="g-text">Hago ejercicios moderados a vigorosos (correr, bicicleta, natación, ejercicios fuerza intensos) al menos 5 veces a la semana.</label> `, value: 4, products: [9, 10, 14] },
       ],
       selected: null
     },
@@ -214,8 +226,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [13, 17] },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [13, 17] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
       selected: null
     },
@@ -225,8 +237,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [18] },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [18] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
       selected: null
     },
@@ -236,21 +248,34 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [15, 16] },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [15, 16] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
       selected: null
     },
     {
-      question: '¿Te dijo tu doctor que necesitas más hierro en tu dieta?',
+      question: '¿Tu doctor te recomendó  incluir más fuentes de  hierro en tu alimentación?​',
       multi: false,
       margin: 70,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, productsWomen: [10], productsMen: [], checkSex: true },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
-      selected: null
+      selected: null,
+      footer: ` <small class="gw-20 g-text-footer">
+
+                  <b>Algunos ejemplos de alimentos que son fuentes de Hierro​</b><br><br>
+                <ul style="list-style-type: circle;">
+                <li>
+                  <b>Origen animal:</b> hígado, carne roja y magra ( especialmente de res), salmón, atún, huevos, carnes de aves (especialmente patos y gansos).<br>
+                </li>
+                <li>  
+                  <b>Origen vegetal:</b> leguminosas (frijol, garbanzo, lentejas, etc.), espinacas, brócoli, col rizada, espárragos, semillas (almendras, nueces de Brasil).<br>
+                </li>  
+                </ul>          
+                  </small>
+              `
     },
     {
       question: '¿Quieres mantener niveles sanos de colesterol y triglicéridos, además de promover tu bienestar cardiovascular?',
@@ -258,8 +283,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [7, 19] },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [7, 19] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
       selected: null
     },
@@ -269,19 +294,19 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label: 'Menos de 20 minutos al día.', value: 1, products: [16] },
-        { label: 'Más de 20 minutos al día.', value: 2, products: [15] },
+        { label: `<label class="g-text">Menos de 20 minutos al día.</label> `, value: 1, products: [16] },
+        { label: `<label class="g-text">Más de 20 minutos al día.</label> `, value: 2, products: [15] },
       ],
       selected: null
     },
     {
-      question: '¿Estás interesado(a) en mantener en condiciones normales las  uñas, el cabello y la piel?',
+      question: '¿Estás interesado(a) en mantener en condiciones normales las  uñas, el cabello y/o la piel?',
       multi: false,
       margin: 40,
       showRequired: false,
       options: [
-        { label: 'Si', value: 1, products: [17] },
-        { label: 'No', value: 2, products: [] },
+        { label: `<label class="g-text">Si</label> `, value: 1, products: [17] },
+        { label: `<label class="g-text">No</label> `, value: 2, products: [] },
       ],
       selected: null
     },
@@ -308,7 +333,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario con 22 micronutrientes esenciales: 12 vitaminas y 10 minerales, además de concentrados vegetales que aportan fitonutrientes que ayudan en el funcionamiento diario del cuerpo.',
       img: 'assets/img/LAS/Daily_Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily_Plus.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=126009&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Daily_Plus',  // LINKS DE COMPRA PRODUCTOS
       count: 0,
     },
@@ -317,7 +342,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Cal Mag D',
       whyIsRecommended: 'Aporta dos fuentes naturales de calcio: carbonato de calcio (piedra caliza) y algas marinas calcificadas, además contiene vitamina D y magnesio que promueven y ayudan al organismo con la absorción, retención y utilización del calcio para el desarrollo de huesos y dientes fuertes.',
       img: 'assets/img/LAS/CalMagD.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/CalMagD.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/CalMagD.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110609&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Calmag_D',
       count: 0,
     },
@@ -326,7 +351,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Proteína Vegetal en polvo',
       whyIsRecommended: 'Fórmula con proteína 100% vegetal de alta calidad, libre de ingredientes modificados genéticamente, que combina propiedades de soya, chícharo/ arveja y trigo. Naturalmente libre de lactosa, grasas saturadas y colesterol.',
       img: 'assets/img/LAS/Protein.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Protein.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Protein.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110415&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Proteina',
       count: 0,
     },
@@ -335,7 +360,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Omega 3 Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario fuente de ácidos grasos Omega 3 esenciales, EPA y DHA, que junto con el ejercicio regular y una alimentación balanceada puede contribuir a mantener la salud cardiovascular.',
       img: 'assets/img/LAS/Omega.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Omega.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Omega.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=122173&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Omega3',
       count: 0,
     },
@@ -344,7 +369,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Double X',
       whyIsRecommended: 'Suplemento alimenticio/dietario que contiene 12 Vitaminas, 10 Minerales y 22 Concentrados de Plantas (fitonutrientes) que ayudan a complementar tu alimentación, utilizando mejor la energía de los alimentos para mantener las exigencias del ritmo de vida diario.',
       img: 'assets/img/LAS/Double_X.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Double_X.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Double_X.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=120843&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=Double_X',
       count: 0,
     },
@@ -353,7 +378,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Fibra en Polvo',
       whyIsRecommended: 'Suplemento alimenticio/dietario/alimento a base de tres fuentes de fibra soluble: maltodextrina, raíz de chicoria/ achicoria y goma guar. Fórmula libre de lactosa y colorantes artificiales que ayuda a reducir el azúcar y el colesterol en sangre y a su vez a disminuir la sensación de hambre.',
       img: 'assets/img/LAS/Fibra.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Fibra.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Fibra.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&line=G&NavM=N&BC=102736&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=fibra_polvo',
       count: 0,
     },
@@ -362,7 +387,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Equilibra tu vida',
       whyIsRecommended: 'Esta solución contribuye en el buen funcionamiento y mantenimiento del sistema circulatorio. Daily Plus aporta vitaminas y minerales como la vitamina B1, B2, B6, ácido fólico, vitamina C, hierro, cobre y zinc que contribuyen a la salud del corazón, apoyan el funcionamiento normal de los vasos sanguíneos, ayudan a formar y mantener las células sanguíneas y a la hemoglobina. Los Omega 3 EPA y DHA, contribuyen al funcionamiento normal del corazón.',
       img: 'assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321299&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=omega3_daily1',
       count: 0,
     },
@@ -371,7 +396,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'C Plus',
       whyIsRecommended: 'Suplemento alimenticio/dietario que tiene la capacidad de liberar lentamente la vitamina C en el cuerpo, fortaleciendo las defensas y permitiendo que sus propiedades se aprovechen mejor.',
       img: 'assets/img/LAS/C_Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/C_Plus.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/C_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=109741&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=C_Plus',
       count: 0,
     },
@@ -380,7 +405,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'B Plus',
       whyIsRecommended: 'Aporta 8 vitaminas del complejo B que se liberan de forma gradual durante 8 horas gracias a su tecnología bicapa de doble acción. Las vitaminas B2 y B12 se liberan de inmediato, mientras que las vitaminas B1, B3, B5, B6, B7 y B9 se liberan de forma gradual, lenta y constantemente durante 8 horas. Las vitaminas del complejo B  ayudan a obtener la energía a partir de los alimentos. Si consume  B Plus y Daily Plus el mismo día, deje una ventana de 8 horas. Ej: Desayuno: Daily Plus y Cena: B Plus.',
       img: 'assets/img/LAS/B_Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/B_Plus.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/B_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=110170&C=KH&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_ver&utm_term=B_Plus',
       count: 0,
     },
@@ -389,7 +414,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Tri Iron Folic',
       whyIsRecommended: 'Suplemento alimenticio/dietario rico en fitonutrientes. Aporta tres fuentes de hierro, ácido fólico y vitamina C la cual ayuda a una mejor absorción del hierro.',
       img: 'assets/img/LAS/Tri-Iron_Folic.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Tri-Iron_Folic.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Tri-Iron_Folic.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=102046&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Tri_iron_folic',
       count: 0,
     },
@@ -398,7 +423,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Bodykey Shake Plus',
       whyIsRecommended: 'Bebida en polvo baja en grasa y carbohidratos. Proporciona 9 g de proteína, además de vitaminas, minerales y fibra.',
       img: 'assets/img/LAS/Shake_Plus.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Shake_Plus.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Shake_Plus.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdsList&Brand=GL&NC=BodyKey&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Bodykey',
       count: 0,
     },
@@ -407,7 +432,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Prende tu día',
       whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras. Se recomienda consumir ambos suplementos con una diferencia de 8 horas. Ej: Desayuno: Daily Plus y Cena: B Plus.',
       img: 'assets/img/LAS/Daily+1/Prende_tu_dia.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321276&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Bplus_daily1',
       count: 0,
     },
@@ -416,7 +441,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Respuesta Óptima',
       whyIsRecommended: 'Esta combinación de la mano de hábitos saludables como el ejercicio, una alimentación equilibrada y el descanso, aporta variedad de nutrientes como vitamina C, D, E, A, B6, selenio y zinc que pueden contribuir para que el sistema de defensas funcione apropiadamente, protegiendo el organismo de multitud de agresores como virus y bacterias.',
       img: 'assets/img/LAS/Daily+1/Respuesta_optima.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321288&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=cplus_daily1',
       count: 0,
     },
@@ -425,7 +450,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Muévete Libre',
       whyIsRecommended: 'Para ayudar a mantener huesos y músculos fuertes y resistentes, que nos permitan movilizarnos con facilidad, realizar trabajos de fuerza y potencia, junto con hábitos saludables, requerimos de nutrientes como proteína, calcio, vitamina C y vitamina D, presentes en esta solución.',
       img: 'assets/img/LAS/Daily+1/Mueevete_libre.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321291&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=proteina_daily1',
       count: 0,
     },
@@ -434,7 +459,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Lecitina E',
       whyIsRecommended: 'Suplemento alimenticio/dietario masticable con vitamina E y lecitina, tiene un agradable sabor a miel y nuez de arce. La Vitamina E es antioxidante, ayuda a disminuir el daño celular ocasionado por los radicales libres.',
       img: 'assets/img/LAS/LecithinE.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/LecithinE.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/LecithinE.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=122174&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=lecitina',
       count: 0,
     },
@@ -443,7 +468,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Multicaroteno',
       whyIsRecommended: 'Suplemento alimenticio/dietario aporta alfa y betacarotenos, luteína y zeaxantina. Los alfa y betacarotenos se transforman en vitamina A en el organismo después de ser consumidos. Importante para la protección de las células contra el daño ocasionado por los radicales libres y para el mantenimiento de la visión.Si consume Multicaroteno y Daily Plus el mismo día, deje una ventana de 8 horas. Ej: Desayuno: Daily  y Cena: Multicaroteno.',
       img: 'assets/img/LAS/Multicaroteno.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Multicaroteno.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Multicaroteno.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&line=G&NavM=N&BC=109536&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Multicaroteno',
       count: 0,
     },
@@ -452,7 +477,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily +1 Luce Radiante',
       whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales, brillante, suave y resistente, así como mantener las uñas saludables, es decir, fuertes y resistentes.',
       img: 'assets/img/LAS/Daily+1/Luce_radiante.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321280&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=lecitina_daily1',
       count: 0,
     },
@@ -461,7 +486,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Daily + 1 Vive Libre',
       whyIsRecommended: 'La función principal del intestino es absorber los nutrientes y el agua; y a la vez eliminar los desechos de la digestión. Cumple otras funciones extraintestinales, relacionadas con la microbiota intestinal. Los prebióticos o fibras vegetales (como la de chicoria/ achicoria), les sirven de alimento a las bacterias buenas, estimula su crecimiento y ayuda a disminuir la absorción de grasas y azúcares de la alimentación. Esta solución apoya el bienestar intestinal aportando vitaminas, minerales y fibra soluble.',
       img: 'assets/img/LAS/Daily+1/Vive_libre.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321296&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=fibra_daily1',
       count: 0,
     },
@@ -470,7 +495,7 @@ export class QuestionnaireComponent implements OnInit {
       name: 'Ajo Concentrado',
       whyIsRecommended: 'Contiene el ingrediente Alicina y Quercetina. Puede contribuir en la reducción de los niveles altos de grasa en sangre y a prevenir la formación de depósitos de grasa en las arterias. Hipotensor.',
       img: 'assets/img/LAS/Ajo_Concentrado.png',
-      emailImg: 'https://amway-2024.web.app/assets/img/LAS/Ajo_Concentrado.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Ajo_Concentrado.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=100566&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=ajo',
       count: 0,
     }
@@ -620,6 +645,46 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   validateSpecialConditions(){
+
+    let hasDaily1 = false;
+    let daily1Index = null;
+
+    let hasDailyPlus = false;
+    let dailyPlusIndex = null;
+
+    let hasDoubleX = false;
+    let doubleXIndex = null;
+
+
+    for (let i = 0; i < this.recommendedProducts.length; i++) {
+      if(this.recommendedProducts[i].name == 'Daily Plus'){
+        hasDailyPlus = true;
+        dailyPlusIndex = i;
+      }else if(this.recommendedProducts[i].name.includes('Daily +1')){
+        hasDaily1 = true;
+        daily1Index = i;
+      }else if(this.recommendedProducts[i].name == 'Double X'){
+        hasDoubleX = true;
+        doubleXIndex = i;
+      }
+    }
+    console.log(hasDaily1, hasDailyPlus, hasDoubleX)
+    console.log(daily1Index, dailyPlusIndex, doubleXIndex)
+
+    if(hasDailyPlus && hasDoubleX){
+      if(dailyPlusIndex !== null && doubleXIndex !== null) {
+        this.recommendedProducts[dailyPlusIndex] = null;
+      }
+    }
+    else if(hasDailyPlus && hasDaily1){
+      if(dailyPlusIndex !== null && daily1Index !== null) {
+        this.recommendedProducts[dailyPlusIndex] = null;
+      }
+    }
+
+    console.log([...this.recommendedProducts]);
+
+
 
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
