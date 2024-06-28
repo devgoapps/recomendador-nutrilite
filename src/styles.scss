@@ -154,7 +154,14 @@ label.required::after {
 .g-text {
     display: block;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-family: "GTWalsheimPro-Regular";
+}
+
+.g-text-footer {
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
     font-family: "GTWalsheimPro-Regular";
 }
 
@@ -240,6 +247,11 @@ label.required::after {
     .g-text {
         font-size: .8rem;
     }
+
+    .g-text-footer {
+        font-size: .6rem;
+    }
+
     .g-text2 {
         font-size: .8rem;
     }
@@ -304,6 +316,10 @@ label.required::after {
         font-size: .8rem;
     }
 
+    .g-text-footer {
+        font-size: .6rem;
+    }
+
     .g-text2 {
         font-size: .9rem;
     }
@@ -366,6 +382,10 @@ label.required::after {
         font-size: 1.2rem;
     }
 
+    .g-text-footer {
+        font-size: 1rem;
+    }
+
     .g-text2 {
         font-size: 1.2rem;
     }
@@ -422,6 +442,10 @@ label.required::after {
         font-size: 1.2rem;
     }
 
+    .g-text-footer {
+        font-size: 1rem;
+    }
+
     .g-text2 {
         font-size: 1.2rem;
     }
@@ -464,6 +488,10 @@ label.required::after {
         font-size: 1.3rem;
     }
 
+    .g-text-footer {
+        font-size: 1.1rem;
+    }
+
     .g-text2 {
         font-size: 1.3rem;
     }
@@ -502,6 +530,10 @@ label.required::after {
 
     .g-text {
         font-size: 1.4rem;
+    }
+
+    .g-text-footer {
+        font-size: 1.2rem;
     }
 
     .g-text2 {

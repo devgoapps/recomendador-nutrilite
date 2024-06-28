@@ -195,7 +195,7 @@
 
 
         <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
-            <h4>VOCÊ PODE GOSTAR</h4>
+            <h4 class="g-subtitle">VOCÊ PODE GOSTAR</h4>
         </div>
 
        <div class="col-lg-6 col-md-12 col-sm-12"
@@ -204,7 +204,7 @@
                     <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
                     <div class="front">
                         <div>
-                            <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                            <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                     this.recommendedProducts[4].name }} </b></span>
 
                             <img [src]="this.recommendedProducts[4].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
@@ -217,7 +217,7 @@
 
                     <div class="back" style="height: 520px;">
                         <div>
-                            <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
+                            <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
                                     this.recommendedProducts[4].name }} </b></span>
                             <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
                                 <b>Por que recomendamos isso?</b></span>
@@ -245,7 +245,7 @@
             <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
             <div class="front">
                 <div>
-                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                    <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                             this.recommendedProducts[5].name }} </b></span>
 
                     <img [src]="this.recommendedProducts[5].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
@@ -258,7 +258,7 @@
 
             <div class="back" style="height: 520px;">
                 <div>
-                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
+                    <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
                             this.recommendedProducts[5].name }} </b></span>
                     <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
                         <b>Por que recomendamos isso?</b></span>
@@ -294,10 +294,6 @@
         } -->
 
 </div>
-<div style="text-align: center;">
-    <h4 class="g-text-md" style="padding-bottom: 20px; color: #84c344;">Consulte a disponibilidade dos produtos</h4>
-</div>
-
 
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
@@ -503,16 +499,16 @@
         <form class="gw-45">  
 
 <label class="g-text mb0">Receba seus resultados através de:</label>
-<div class="row" style="width: 100%;"> 
+<div class="row" style="display: flex; justify-content: center;"> 
 
-<div class="col-lg-2 share-button">
+<div class="col-lg-3 share-button">
 
     <button type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="fa-regular fa-envelope"></i>
     </button>  
 
 </div>    
-<div class="col-lg-2 share-button">
+<div class="col-lg-3 share-button">
 
     <button (click)="sendWhatsapp()" type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare2" value="whatsapp">
         <i class="fab fa-whatsapp"></i>
@@ -520,14 +516,14 @@
 
 </div>    
 
-<div class="col-lg-2 share-button">
+<!-- <div class="col-lg-3 share-button">
 
     <button (click)=" copyUrl()" type="button" class="btn btn-success btn-circle btn-lg" id="buttonshare3" value="copy link">
         <i class="fas fa-link"></i>
     </button> 
 
-</div>
-<div class="col-lg-2 share-button">
+</div> -->
+<div class="col-lg-3 share-button">
 
     <button (click)="printToPDF()" type="button" class="btn btn-success btn-circle btn-lg" [useExistingCss]="true" title="Imprimir" id="buttonshare4"  printSectionId="mail2" ngxPrint value="print">
         <i class="fas fa-print"></i>

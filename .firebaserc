@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "amway2024-br",
-    "recomBr": "amway2024-br"
+    "recomBr": "amway2024-br",
+    "brasiil": "recomendador-br-amway"
   },
   "targets": {},
   "etags": {},
