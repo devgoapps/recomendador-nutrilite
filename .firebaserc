@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "recomendador-amway"
-  }
+    "default": "recomendador-amway",
+    "español": "recomendador-amway"
+  },
+  "targets": {},
+  "etags": {}
 }
