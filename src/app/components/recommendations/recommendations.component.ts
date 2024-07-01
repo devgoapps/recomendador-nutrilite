@@ -186,10 +186,10 @@ export class RecommendationsComponent implements OnInit {
       valor4.value = this.recommendedProducts[4].name;
       valor5.value = this.recommendedProducts[5].name;
 
-      valor6.value = 'Correo';
-      valor7.value = 'Whatssapp';
-      valor8.value = 'Link Recomendador';
-      valor9.value = 'Imprimir';
+      valor6.value = 'email';
+      valor7.value = 'whatssapp';
+      valor8.value = 'copy link';
+      valor9.value = 'print';
 
       this.Share1 = valor6.value;
       this.Share2 = valor7.value;
@@ -241,14 +241,11 @@ export class RecommendationsComponent implements OnInit {
 
     let emails = this.vSend.emails.toString();
 
-    let recomendado = environment.utagInfo.ShareContinue;
+    // let recomendado = environment.utagInfo.ShareContinue;
   
-    recomendado[0].share_channel = this.Share1;
+    // recomendado[0].share_channel = this.Share1;
     
     //window.utag_data = Object.assign(window.utag_data, recomendado);
-    
-    utag.link(recomendado);
-    console.log(recomendado);
 
     Email.send({
       SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
@@ -274,6 +271,14 @@ export class RecommendationsComponent implements OnInit {
     });
   }
 
+  sendemails(){
+    let recomendado = environment.utagInfo.ShareContinue;
+
+    recomendado[0].share_channel = this.Share1;
+
+    utag.link(recomendado);
+    console.log(recomendado);
+  }
 
   sendWhatsapp(){
 
@@ -369,7 +374,7 @@ export class RecommendationsComponent implements OnInit {
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[3].share_channel = this.Share4;
+    recomendado[2].share_channel = this.Share4;
 
     //window.utag_data = Object.assign(window.utag_data, recomendado);
   
