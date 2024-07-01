@@ -236,6 +236,13 @@ p-chips{
     width: 25%;
 }
 
+.g-text-rec {
+    display: block;
+    font-weight: 400;
+    font-size: 2.2rem;
+    font-family: "GTWalsheimPro-Regular";
+}
+
 
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
@@ -284,6 +291,10 @@ p-chips{
 
     .share-button{
         width: 20%;
+    }
+
+    .g-text-rec {
+        font-size: 1.8rem;
     }
 
 }
@@ -336,6 +347,10 @@ p-chips{
 
     .share-button{
         width: 20%;
+    }
+
+    .g-text-rec {
+        font-size: 1.8rem;
     }
 
 }

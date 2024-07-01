@@ -195,7 +195,7 @@
 
 
         <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
-            <h4 class="g-subtitle">VOCÊ PODE GOSTAR</h4>
+            <h4 class="g-text-rec">VOCÊ PODE GOSTAR</h4>
         </div>
 
        <div class="col-lg-6 col-md-12 col-sm-12"
@@ -503,7 +503,7 @@
 
 <div class="col-lg-3 share-button">
 
-    <button type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button (click)="sendemails()" type="button" class="btn btn-success btn-circle btn-lg" title="Correo" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="fa-regular fa-envelope"></i>
     </button>  
 
@@ -1308,7 +1308,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header" style="text-align: center;">
-          <h5 class="modal-title " id="staticBackdropLabel" style="font-family: 'GTWalsheimPro-Regular'; font-weight: bold;">COMPARTE TUS RESULTADOS</h5>
+          <h5 class="modal-title " id="staticBackdropLabel" style="font-family: 'GTWalsheimPro-Regular'; font-weight: bold;">COMPARTILHE SEUS RESULTADOS</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -1316,8 +1316,8 @@
             <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
                 <form [formGroup]="sendForm" (ngSubmit)="submitForm()" class="gw-5">
                     <div class="form-group">
-                        <label class="g-text required">Dirección de correo electrónico</label>
-                        <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Puedes enviar estas recomendaciones hasta 5 correos)</b>
+                        <label class="g-text required">Endereço de e-mail</label>
+                        <b class="g-text-sm" style="font-weight: bold; color: #84c344;">(Você pode enviar essas recomendações para até 5 e-mails.)</b>
                         <p-chips class="email-text" formControlName="emails" (onAdd)="addEmail($event)" [max]="5"
                             [allowDuplicate]="false" [addOnTab]="true" [addOnBlur]="true"
                             placeholder=" "></p-chips>
@@ -1325,7 +1325,7 @@
 
                         @if (cSend['emails'].errors && isFormSubmitted) {
                         @if (cSend['emails'].errors['required']) {
-                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo obrigatório</span>
                         }
                         }
                     </div>
@@ -1333,7 +1333,7 @@
 
 
                     <div style="margin-bottom: 2rem;">
-                        <label class="g-text required">Escribe el texto que se muestra en la imagen</label>
+                        <label class="g-text required">Digite o texto que aparece na imagem</label>
                         <div style="display: flex; gap: 1rem;">
                             <input formControlName="captcha" (change)="validateCaptcha()" type="text" class="form-control">
 
@@ -1349,10 +1349,10 @@
 
                         @if (cSend['captcha'].errors && isFormSubmitted) {
                         @if (cSend['captcha'].errors['required']) {
-                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo requerido</span>
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Campo obrigatório</span>
                         }
                         }@else if (!captchaIsValid && isFormSubmitted) {
-                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> El captcha no es valido</span>
+                        <span style="color: red;"><i class="fa-solid fa-circle-info"></i> Captcha inválido</span>
                         }
                     </div>
 
