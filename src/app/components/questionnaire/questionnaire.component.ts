@@ -146,7 +146,7 @@ export class QuestionnaireComponent implements OnInit {
         { label:  `<label class="g-text"> 
                   <b>Proteína:</b> Alta.<br>
                   <b>Gordura:</b> Alta.<br>               
-                  <b>Carboidratos:</b> Baixa.
+                  <b>Carboidratos:</b> Baixo.
                   </label>`, value: 1, products: [18] },
         { label:  `<label class="g-text"> 
                   <b>Proteína:</b> Alta.<br>
@@ -158,7 +158,7 @@ export class QuestionnaireComponent implements OnInit {
                   <b>Gordura:</b> Alta.<br>               
                   <b>Carboidratos:</b> Alto.
                   </label>`, value: 4, products: [7, 18] },  
-        { label:  `<label class="g-text">Equilibrada, com uma mistura equilibrada de carboidratos, proteínas e gorduras.​</label> `, value: 2, products: [1] },
+        { label:  `<label class="g-text"><b>Equilibrada:</b> com uma mistura equilibrada de carboidratos, proteínas e gorduras.​</label> `, value: 2, products: [1] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
@@ -262,7 +262,7 @@ export class QuestionnaireComponent implements OnInit {
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
-                <b>Alguns exemplos de alimentos fontes de Ferro​​</b><br><br>
+                <b>Alguns exemplos de alimentos fontes de Ferro.​​</b><br><br>
               <ul style="list-style-type: circle;">
               <li>
                 <b>Origem animal:</b> fígado, carne vermelha e magra (especialmente carne bovina), salmão, atum, ovos, carne de aves (especialmente patos e gansos).​<br>
