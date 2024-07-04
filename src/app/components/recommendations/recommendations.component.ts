@@ -235,8 +235,11 @@ export class RecommendationsComponent implements OnInit {
     this.sendEmail();
   }
 
+  
+
   sendEmail(){
     let toast = document.getElementById('toast');
+
     let mailBody = document.getElementById('mail2');
 
     let emails = this.vSend.emails.toString();
@@ -266,11 +269,12 @@ export class RecommendationsComponent implements OnInit {
 
       toast?.classList.add("show");
       setTimeout(() => {
-        toast?.classList.remove("show");
+        toast?.classList.remove("show");        
       }, 2000)
     });
   }
 
+  
   sendemails(){
     let recomendado = environment.utagInfo.ShareContinue;
 

@@ -37,7 +37,95 @@
         flex-shrink: 0;
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+.card-ad{
+    padding: 2rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 550px;
+    flex-direction: column;
+
+    img {
+        max-width: 320px;
+        max-height: 320px; 
+        flex-grow: 0; 
+        flex-shrink: 0;
+    }
+}
+
+.card-ad div{
+    position:absolute;
+    padding: 5rem;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    background-color: transparent;
+}
+
+.card-ad  button{
+    position: absolute;
+    margin: 15px; 
+    bottom: 0;
+    background-color: #006d46; 
+
+}
+
+
+.card-ad .front{
+    
+transform: perspective(900px) rotateY(0deg);
+
+}
+
+.card-ad .back{
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: auto;
+transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card-ad.card-active .front{
+
+transform: perspective(900px) rotateY(180deg);
+
+}
+
+.card-ad.card-active .back{
+
+transform: perspective(900px) rotateY(360deg);
+
+}
+
+.whyIsRecommended-Text2{
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    font-family: "GTWalsheimPro-Light";
+}
+
+.product-name2{
+    display: block;
+    font-weight: 400;
+    font-size: 1.8rem;
+    font-family: "GTWalsheimPro-Regular";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .card{
     padding: 2rem; 
@@ -139,12 +227,7 @@ transform: perspective(900px) rotateY(360deg);
     font-family: "GTWalsheimPro-Regular";
 }
 
-.product-name2{
-    display: block;
-    font-weight: 400;
-    font-size: 1.8rem;
-    font-family: "GTWalsheimPro-Regular";
-}
+
 
 .cart-recommendation {
     border: 1px solid #ccc; 
@@ -266,17 +349,30 @@ p-chips{
 
     }
 
+    .card-ad{
+        img {
+            width: 60%;
+        }
+
+    }
+
     .product-name{
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .product-name2{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .whyIsRecommended-Text{
         
         font-size: .9rem;
+    }
+
+    .whyIsRecommended-Text2{
+        
+        font-size: .8rem;
+        width: 320px;
     }
 
     .headers{
@@ -320,18 +416,31 @@ p-chips{
         }
     }
 
+    .card-ad{
+        img {
+            width: 60%;
+        }
+
+    }
+
     .product-name{
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .product-name2{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .whyIsRecommended-Text{
         font-size: .9rem;
         width: 320px;
 
+    }
+
+    .whyIsRecommended-Text2{
+        
+        font-size: .8rem;
+        width: 320px;
     }
 
     .headers{
@@ -375,6 +484,13 @@ p-chips{
         }
     }
 
+    .card-ad{
+        img {
+            width: 80%;
+        }
+
+    }
+
     .product-name{
         font-size: 2rem;
     }
@@ -415,6 +531,13 @@ p-chips{
         }
     }
 
+    .card-ad{
+        img {
+            width: 80%;
+        }
+
+    }
+
     .product-name{
         font-size: 2.1rem;
     }
@@ -453,6 +576,13 @@ p-chips{
         img {
             width: 100%;
         }
+    }
+
+    .card-ad{
+        img {
+            width: 80%;
+        }
+
     }
 
     .card2{

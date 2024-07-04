@@ -265,10 +265,10 @@ export class QuestionnaireComponent implements OnInit {
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
 
-                  <b>Algunos ejemplos de alimentos que son fuentes de Hierro​</b><br><br>
+                  <b>Algunos ejemplos de alimentos que son fuentes de Hierro.</b><br><br>
                 <ul style="list-style-type: circle;">
                 <li>
-                  <b>Origen animal:</b> hígado, carne roja y magra ( especialmente de res), salmón, atún, huevos, carnes de aves (especialmente patos y gansos).<br>
+                  <b>Origen animal:</b> hígado, carne roja y magra (especialmente de res), salmón, atún, huevos, carnes de aves (especialmente patos y gansos).<br>
                 </li>
                 <li>  
                   <b>Origen vegetal:</b> leguminosas (frijol, garbanzo, lentejas, etc.), espinacas, brócoli, col rizada, espárragos, semillas (almendras, nueces de Brasil).<br>
