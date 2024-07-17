@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "recomendador-br-amway",
-    "brasil": "recomendador-br-amway"
+    "brasil": "recomendador-br-amway",
+    "brarec": "recomendador-br-amway"
   },
   "targets": {},
   "etags": {}

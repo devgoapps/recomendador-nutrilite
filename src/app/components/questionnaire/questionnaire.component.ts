@@ -158,7 +158,7 @@ export class QuestionnaireComponent implements OnInit {
                   <b>Gordura:</b> Alta.<br>               
                   <b>Carboidratos:</b> Alto.
                   </label>`, value: 4, products: [7, 18] },  
-        { label:  `<label class="g-text"><b>Equilibrada:</b> com uma mistura equilibrada de carboidratos, proteínas e gorduras.​</label> `, value: 2, products: [1] },
+        { label:  `<label class="g-text"><b>Equilibrado:</b> com uma mistura equilibrada de carboidratos, proteínas e gorduras.​</label> `, value: 2, products: [1] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
