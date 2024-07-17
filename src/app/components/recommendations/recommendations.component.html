@@ -194,14 +194,14 @@
 </div>
 
         <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
-                    <div class="card-ad" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }" >
+                    <div class="card" style="height: 550px;" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }" >
                         <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
                         <div class="front">
                             <div>
                                 <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                         this.recommendedProducts[4].name }} </b></span>
 
-                                <img [src]="this.recommendedProducts[4].img" draggable="false" alt="" style="margin-top:-55px;">
+                                <img [src]="this.recommendedProducts[4].img" draggable="false" alt="" style="margin-top:-55px; max-width: 320px; max-height: 320px; flex-grow: 0; flex-shrink: 0;">
                                 <span class="g-text-sm" style="bottom: 70px; position: absolute; margin-bottom:10px;">
                                     <b>¿Por qué recomendamos esto?</b></span>
                                 <p class="buttonClick-text" (click)="this.recommendedProducts[4].active = true" style="margin-bottom:60px;">Haz clic aquí</p>
@@ -234,14 +234,14 @@
             </div>
 
         <div class="col-lg-6 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
-            <div class="card-ad" [ngClass]="{ 'card-active': this.recommendedProducts[5].active }" >
+            <div class="card" style="height: 550px;" [ngClass]="{ 'card-active': this.recommendedProducts[5].active }" >
                 <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
                 <div class="front">
                     <div>
                         <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
                                 this.recommendedProducts[5].name }} </b></span>
 
-                        <img [src]="this.recommendedProducts[5].img" draggable="false" alt="" style="margin-top:-55px;">
+                        <img [src]="this.recommendedProducts[5].img" draggable="false" alt="" style="margin-top:-55px; max-width: 320px; max-height: 320px; flex-grow: 0; flex-shrink: 0;">
                         <span class="g-text-sm" style="bottom: 70px; position: absolute; margin-bottom:10px;">
                             <b>¿Por qué recomendamos esto?</b></span>
                         <p class="buttonClick-text" (click)="this.recommendedProducts[5].active = true" style="margin-bottom: 60px;">Haz clic aquí</p>
@@ -614,8 +614,23 @@
             <div style="display: flex; justify-content: center; margin-bottom: 2rem; text-align: center;">
             <form class="gw-45">  
              <label class="g-text mb0">Recibe tus resultados por medio de:</label>
-            <div class="row" style="display: flex; justify-content: center;"> 
             
+
+<!-- AddToAny BEGIN -->
+<!-- <div class="row" style="display: flex; justify-content: center;">
+    <div class="col-lg-3 share-button">    
+    <a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Frecomendador-amway.web.app%2F%23%2Frecommendations&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="50" height="50" style="background-color:#1f1f1f; cursor: pointer; border-radius: 35px; width: 55px; height: 55px;"></a>
+    </div>
+    <div class="col-lg-3 share-button">    
+    <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Frecomendador-amway.web.app%2F%23%2Frecommendations&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="50" height="50" style="background-color:#1f1f1f; cursor: pointer; border-radius: 35px; width: 55px; height: 55px;"></a>
+    </div>
+    <div class="col-lg-3 share-button">    
+    <a href="https://www.addtoany.com/add_to/print?linkurl=https%3A%2F%2Frecomendador-amway.web.app%2F%23%2Frecommendations&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/print.svg" width="50" height="50" style="background-color: #1f1f1f; cursor: pointer; border-radius: 35px; width: 55px; height: 55px;"></a>
+    </div>
+</div> -->
+<!-- AddToAny END -->
+
+        <div class="row" style="display: flex; justify-content: center;">             
             <div class="col-lg-3 share-button">
 
                 <button (click)="sendemails()" type="button" class="btn btn-success btn-circle btn-lg" title="email" id="buttonshare1" value="email" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

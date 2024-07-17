@@ -3,7 +3,13 @@
     "default": "recomendador-amway",
     "español": "recomendador-amway",
     "mex": "recomendador-amway",
-    "recom": "recomendador-amway"
+    "recom": "recomendador-amway",
+    "plugins": "recomendador-amway",
+    "rec": "recomendador-amway",
+    "re": "recomendador-amway",
+    "recmx": "recomendador-amway",
+    "prueba1": "recomendador-amway",
+    "mexrecom": "recomendador-amway"
   },
   "targets": {},
   "etags": {}
