@@ -28,56 +28,66 @@
         </div>
         <div class="row">
 
+            <div class="col-lg-6 col-md-12 col-sm-12"
+            style="margin-bottom: 1rem;">
+            <div class="card" [ngClass]="{ 'card-active': this.recommendedProducts[0].active }" >
+            
 
-                    <div class="col-lg-6 col-md-12 col-sm-12"
-                    style="margin-bottom: 1rem;">
-                    <div class="card" [ngClass]="{ 'card-active': this.recommendedProducts[0].active }" >
-                        <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-                        <div class="front">
-                            <div>
-                                <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                                        this.recommendedProducts[0].name }} </b></span>
-
-                                <img [src]="this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
-                                <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
-                                    <b>Por que recomendamos isso?</b></span>
-                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = true" style="margin-bottom: -20px;">Clique aqui</p>
-                            </div>
-
-                        </div>
-
-                        <div class="back" style="height: 520px;">
-                            <div>
-                                <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                                        this.recommendedProducts[0].name }} </b></span>
-                                <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
-                                    <b>Por que recomendamos isso?</b></span>
-                                        <br>
-                                <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
-                                    {{ this.recommendedProducts[0].whyIsRecommended | slice: 0: 2000 }} </span>
-
-                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = false">Voltar</p>
-                            </div>
-                        </div>
-
-                        <br>
-                        <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
-                        <button (click)="openLink(this.recommendedProducts[0].linkBuy)" class="primary-btn g-text-sm"
-                            style="margin-bottom: 25px;" id="comprar1">
-                            Compre agora
-                        </button>
+                    <div style="width: 80%; text-align: center;">
+                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                                this.recommendedProducts[0].name }} </b></span>                        
                     </div>
+            
+
+                <div class="front" style="margin-top: 10px;">                        
+
+
+                    <div>
+
+
+                        <img [src]="this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                        <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
+                            <b>Por que recomendamos isso?</b></span>
+                        <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = true" style="margin-bottom: -20px;">Clique aqui</p>
+                    </div>
+
+                </div>
+
+                <div class="back" style="height: 520px; margin-top: 10px;">
+                    <div>
+                        <!-- <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
+                                this.recommendedProducts[6].name }} </b></span> -->
+                        <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
+                            <b>Por que recomendamos isso?</b></span>
+                                <br>
+                        <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
+                            {{ this.recommendedProducts[0].whyIsRecommended | slice: 0: 2000 }} </span>
+
+                        <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = false">Voltar</p>
+                    </div>
+                </div>
+
+                <br>
+                <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
+                <button (click)="openLink(this.recommendedProducts[0].linkBuy)" class="primary-btn g-text-sm"
+                    style="margin-bottom: 25px;" id="comprar2">
+                    Compre agora
+                </button>
+            </div>
 
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12"
             style="margin-bottom: 1rem;">
             <div class="card" [ngClass]="{ 'card-active': this.recommendedProducts[1].active }" >
-                <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-                <div class="front">
+
+
+                <div style="width: 80%; text-align: center;">
+                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                                this.recommendedProducts[1].name }} </b></span>                        
+                    </div>
+                <div class="front" style="margin-top: 10px;">
                     <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                                this.recommendedProducts[1].name }} </b></span>
 
                         <img [src]="this.recommendedProducts[1].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
@@ -87,10 +97,8 @@
 
                 </div>
 
-                <div class="back" style="height: 520px;">
+                <div class="back" style="height: 520px; margin-top: 10px;">
                     <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                                this.recommendedProducts[1].name }} </b></span>
                         <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
                             <b>Por que recomendamos isso?</b></span>
                                 <br>
@@ -114,12 +122,13 @@
             <div class="col-lg-6 col-md-12 col-sm-12"
             style="margin-bottom: 1rem;">
             <div class="card" [ngClass]="{ 'card-active': this.recommendedProducts[2].active }" >
-                <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-                <div class="front">
+                
+                <div style="width: 80%; text-align: center;">
+                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                                this.recommendedProducts[2].name }} </b></span>                        
+                    </div>
+                <div class="front" style="margin-top: 10px;">
                     <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                                this.recommendedProducts[2].name }} </b></span>
-
                         <img [src]="this.recommendedProducts[2].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
@@ -128,10 +137,8 @@
 
                 </div>
 
-                <div class="back" style="height: 520px;">
+                <div class="back" style="height: 520px; margin-top: 10px;">
                     <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                                this.recommendedProducts[2].name }} </b></span>
                         <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
                             <b>Por que recomendamos isso?</b></span>
                                 <br>
@@ -155,12 +162,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12"
             style="margin-bottom: 1rem;">
             <div class="card" [ngClass]="{ 'card-active': this.recommendedProducts[3].active }" >
-                <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-                <div class="front">
-                    <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                                this.recommendedProducts[3].name }} </b></span>
+                
 
+                <div style="width: 80%; text-align: center;">
+                    <span class="product-name" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
+                                this.recommendedProducts[3].name }} </b></span>                        
+                    </div>
+
+                <div class="front" style="margin-top: 10px;">
+                    <div>
                         <img [src]="this.recommendedProducts[3].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
@@ -169,10 +179,8 @@
 
                 </div>
 
-                <div class="back" style="height: 520px;">
+                <div class="back" style="height: 520px; margin-top: 10px;">
                     <div>
-                        <span class="product-name" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                                this.recommendedProducts[3].name }} </b></span>
                         <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
                             <b>Por que recomendamos isso?</b></span>
                                 <br>
@@ -198,90 +206,91 @@
             <h4 class="g-text-rec">VOCÊ PODE GOSTAR</h4>
         </div>
 
-       <div class="col-lg-6 col-md-12 col-sm-12"
-                style="margin-bottom: 1rem;">
-                <div class="card" style="height: 550px;" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }" >
-                    <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-                    <div class="front">
-                        <div>
-                            <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                                    this.recommendedProducts[4].name }} </b></span>
-
-                            <img [src]="this.recommendedProducts[4].img" draggable="false" alt="" style="margin-top:-55px; max-width: 320px; max-height: 320px; flex-grow: 0; flex-shrink: 0;">
-                            <span class="g-text-sm" style="bottom: 70px; position: absolute; margin-bottom:10px;">
-                                <b>Por que recomendamos isso?</b></span>
-                            <p class="buttonClick-text" (click)="this.recommendedProducts[4].active = true" style="margin-bottom: 60px;">Clique aqui</p>
-                        </div>
-
-                    </div>
-
-                    <div class="back" style="height: 520px;">
-                        <div>
-                            <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                                    this.recommendedProducts[4].name }} </b></span>
-                            <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
-                                <b>Por que recomendamos isso?</b></span>
-                                    <br>
-                            <span class="whyIsRecommended-Text2 mb4" style="margin-top: 10px;">
-                                {{ this.recommendedProducts[4].whyIsRecommended | slice: 0: 2000 }} </span>
-
-                            <p class="buttonClick-text" (click)="this.recommendedProducts[4].active = false" style="margin-bottom:70px;">Voltar</p>
-                        </div>
-                    </div>
-
-                    <br>
-                    <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
-                    <button (click)="openLink(this.recommendedProducts[4].linkBuy)" class="primary-btn g-text-sm"
-                        style="margin-bottom: 25px;" id="comprar5">
-                        Compre agora
-                    </button>
-                </div>
-
-        </div>
-
-        <div class="col-lg-6 col-md-12 col-sm-12"
+        
+       <div class="col-lg-3"
         style="margin-bottom: 1rem;">
-        <div class="card" style="height: 550px;" [ngClass]="{ 'card-active': this.recommendedProducts[5].active }" >
-            <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
-            <div class="front">
-                <div>
-                    <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15rem;"><b> {{
-                            this.recommendedProducts[5].name }} </b></span>
+        <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }">
 
-                        <img [src]="this.recommendedProducts[5].img" draggable="false" alt="" style="margin-top:-55px; max-width: 320px; max-height: 320px; flex-grow: 0; flex-shrink: 0;">
-                        <span class="g-text-sm" style="bottom: 70px; position: absolute; margin-bottom:10px;">
-                        <b>Por que recomendamos isso?</b></span>
-                    <p class="buttonClick-text" (click)="this.recommendedProducts[5].active = true" style="margin-bottom: 60px;">Clique aqui</p>
-                </div>
+                       <div style="height: 80px;">
+                        <span class="product-name2"><b>{{this.recommendedProducts[4].name}}</b></span>
+                       </div>
+                       <br>
+                       <div class="imagenprod">
+                        <img [src]="this.recommendedProducts[4].img" draggable="false" alt="">
+                       </div> 
+                       <div class="buttonprod">
+                        <button (click)="openLink(this.recommendedProducts[4].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                        Compre agora
+                        </button>
+                       </div>
+   
 
-            </div>
+        </div>
 
-            <div class="back" style="height: 520px;">
-                <div>
-                    <span class="product-name2" style="top: 0; position: absolute; margin-bottom:15px;"><b> {{
-                            this.recommendedProducts[5].name }} </b></span>
-                    <span class="g-text-sm" style="margin-top: -300px; position: absolute;">
-                        <b>Por que recomendamos isso?</b></span>
-                            <br>
-                    <span class="whyIsRecommended-Text2 mb4" style="margin-top: 10px;">
-                        {{ this.recommendedProducts[5].whyIsRecommended | slice: 0: 2000 }} </span>
+        </div>
 
-                    <p class="buttonClick-text" (click)="this.recommendedProducts[5].active = false" style="margin-bottom: 70px;">Voltar</p>
-                </div>
-            </div>
-
-            <br>
-            <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
-            <button (click)="openLink(this.recommendedProducts[5].linkBuy)" class="primary-btn g-text-sm"
-                style="margin-bottom: 25px;" id="comprar6">
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[5].active }" >
+            
+                <div style="height: 80px;">
+                <span class="product-name2"><b>{{ this.recommendedProducts[5].name }}</b></span>
+               </div>
+               <br>
+               <div class="imagenprod">
+                <img [src]="this.recommendedProducts[5].img" draggable="false" alt="">
+               </div> 
+               <div class="buttonprod">
+                <button (click)="openLink(this.recommendedProducts[5].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
                 Compre agora
-            </button>
+                </button>
+               </div>
+
+        </div>
+
+        </div>
+
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[6].active }" >
+          
+               <div style="height: 80px;">
+                <span class="product-name2"><b>{{ this.recommendedProducts[6].name }}</b></span>
+               </div>
+               <br>
+               <div class="imagenprod">
+                <img [src]="this.recommendedProducts[6].img" draggable="false" alt="">
+               </div> 
+               <div class="buttonprod">
+                <button (click)="openLink(this.recommendedProducts[6].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                Compre agora
+                </button>
+               </div>
+
         </div>
 
         </div>
-  
 
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[7].active }" >
+            <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
+            <div style="height: 80px;">
+                <span class="product-name2"><b>{{ this.recommendedProducts[7].name }}</b></span>
+               </div>
+               <br>
+               <div class="imagenprod">
+                <img [src]="this.recommendedProducts[7].img" draggable="false" alt="">
+               </div> 
+               <div class="buttonprod">
+                <button (click)="openLink(this.recommendedProducts[7].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                Compre agora
+                </button>
+               </div>
 
+        </div>
+
+        </div>
 
     </div>
 
