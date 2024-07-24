@@ -38,7 +38,61 @@
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.card2{
+    padding: 1rem; 
+    //display: flex; 
+    align-items: center;
+    text-align: center;
+    gap: 1rem; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    //position: relative;
+    width: 100%;
+    height: 420px;
+    //flex-direction: column;
 
+}
+
+.card2 div{
+    // position:absolute;
+    //padding: 5rem;
+    width: 100%;
+    //height: 500px;
+    //display: flex;
+    align-items: center;
+    justify-content: center;
+    // backface-visibility: hidden;
+    // transition: 1s;    
+
+}
+
+.imagenprod{
+    padding: 2rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 5px;
+    img {
+        max-width: 250px;
+        max-height: 250px; 
+        flex-grow: 0; 
+        flex-shrink: 0;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.buttonprod{
+    text-align: center;
+    display: flex;
+    bottom: 0;
+    }
+    
+    .card2 button{
+        background-color: #006d46; 
+    }
 .whyIsRecommended-Text2{
     display: block;
     font-weight: 400;
@@ -50,7 +104,7 @@
 .product-name2{
     display: block;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: "GTWalsheimPro-Regular";
 }
 
@@ -278,6 +332,21 @@ p-chips{
 
     }
 
+    .card2{
+        width: 100%;
+        height: 430px;
+    
+    }
+
+    .imagenprod{
+        height: 250px;
+        margin-bottom: 5px;
+        img {
+            max-width: 250px;
+            max-height: 250px; 
+        }
+    }
+
     .card-ad{
         img {
             width: 60%;
@@ -290,7 +359,7 @@ p-chips{
     }
 
     .product-name2{
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     .whyIsRecommended-Text{
@@ -345,6 +414,21 @@ p-chips{
         }
     }
 
+    .card2{
+        width: 100%;
+        height: 430px;
+    
+    }
+
+    .imagenprod{
+        height: 250px;
+        margin-bottom: 5px;
+        img {
+            max-width: 250px;
+            max-height: 250px; 
+        }
+    }
+
     .card-ad{
         img {
             width: 60%;
@@ -357,7 +441,7 @@ p-chips{
     }
 
     .product-name2{
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     .whyIsRecommended-Text{
@@ -510,13 +594,6 @@ p-chips{
     .card-ad{
         img {
             width: 80%;
-        }
-
-    }
-
-    .card2{
-        img {
-            width: 500px; 
         }
 
     }
