@@ -3,7 +3,8 @@
     "default": "recomendador-amway",
     "español": "recomendador-amway",
     "mex": "recomendador-amway",
-    "recom": "recomendador-amway"
+    "recom": "recomendador-amway",
+    "recomen": "recomendador-amway"
   },
   "targets": {},
   "etags": {}

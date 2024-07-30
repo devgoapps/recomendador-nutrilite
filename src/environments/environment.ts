@@ -105,20 +105,9 @@ export const environment = {
             event_name: 'view_recommendations',  
         },
         ShareContinue: 
-        [
-            {
+        {            
             event_name: 'share',  
             share_channel: '',
-            },
-            {
-            event_name: 'share',  
-            share_channel: '',
-            },
-            {
-            event_name: 'share',  
-            share_channel: '',
-            },
-
-        ],
+        }
     }
 };
