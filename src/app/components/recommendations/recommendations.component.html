@@ -70,7 +70,7 @@
                 <br>
                 <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
                 <button (click)="openLink(this.recommendedProducts[0].linkBuy)" class="primary-btn g-text-sm"
-                    style="margin-bottom: 25px;" id="comprar2">
+                    style="margin-bottom: 25px;" id="comprar1">
                     Compre agora
                 </button>
             </div>
@@ -202,12 +202,113 @@
             </div>
 
 
-        <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
+        <!-- <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
             <h4 class="g-text-rec">VOCÊ PODE GOSTAR</h4>
-        </div>
+        </div> -->
 
+            @if(recommendedProducts.length > 4) {
+                <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
+                    <h4 class="g-text-rec">VOCÊ PODE GOSTAR</h4>
+                </div>    
+            }
+            @else {
+                  <h4 class="g-text-rec"></h4>
+            }
+        @for (product of recommendedProducts; track $index) {
+
+
+        @if(($index + 1) == 5) {
+            <div class="col-lg-3"
+            style="margin-bottom: 1rem;">
+            <div class="card2">
+    
+                    <div style="height: 80px;">
+                    <span class="product-name2"><b>{{  product.name }}</b></span>
+                </div>
+    
+                <div class="imagenprod">
+                    <img [src]="product.img" draggable="false" alt="">
+                </div> 
+                <div class="buttonprod">
+                    <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                    Comprar ahora
+                    </button>
+                </div>
+    
+            </div>
+    
+            </div>
+        }
+        @if(($index + 1) == 6) {
+            <div class="col-lg-3"
+            style="margin-bottom: 1rem;">
+            <div class="card2">
+    
+                    <div style="height: 80px;">
+                    <span class="product-name2"><b>{{  product.name }}</b></span>
+                </div>
+    
+                <div class="imagenprod">
+                    <img [src]="product.img" draggable="false" alt="">
+                </div> 
+                <div class="buttonprod">
+                    <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar6">
+                    Comprar ahora
+                    </button>
+                </div>
+    
+            </div>
+    
+            </div>
+        }
+        @if(($index + 1) == 7) {
+            <div class="col-lg-3"
+            style="margin-bottom: 1rem;">
+            <div class="card2">
+    
+                    <div style="height: 80px;">
+                    <span class="product-name2"><b>{{  product.name }}</b></span>
+                </div>
+    
+                <div class="imagenprod">
+                    <img [src]="product.img" draggable="false" alt="">
+                </div> 
+                <div class="buttonprod">
+                    <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar7">
+                    Comprar ahora
+                    </button>
+                </div>
+    
+            </div>
+    
+            </div>
+        }
+        @if(($index + 1) == 8) {
+            <div class="col-lg-3"
+            style="margin-bottom: 1rem;">
+            <div class="card2">
+    
+                    <div style="height: 80px;">
+                    <span class="product-name2"><b>{{  product.name }}</b></span>
+                </div>
+    
+                <div class="imagenprod">
+                    <img [src]="product.img" draggable="false" alt="">
+                </div> 
+                <div class="buttonprod">
+                    <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar8">
+                    Comprar ahora
+                    </button>
+                </div>
+    
+            </div>
+    
+            </div>
+        }
+
+    }
         
-       <div class="col-lg-3"
+       <!-- <div class="col-lg-3"
         style="margin-bottom: 1rem;">
         <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }">
 
@@ -271,7 +372,6 @@
         <div class="col-lg-3"
         style="margin-bottom: 1rem;">
         <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[7].active }" >
-            <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
             <div style="height: 80px;">
                 <span class="product-name2"><b>{{ this.recommendedProducts[7].name }}</b></span>
                </div>
@@ -286,7 +386,7 @@
 
         </div>
 
-        </div>
+        </div> -->
 
     </div>
 
@@ -320,7 +420,7 @@
 <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
     <div class="row">
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
 
             <div class="cart-recommendation">
                 <img src="assets/img/Tip1.png" draggable="false" alt=""
@@ -337,7 +437,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
             <div class="cart-recommendation">
                 <img src="assets/img/Tip2.png" draggable="false" alt=""
                     style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
@@ -355,7 +455,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 10px;">
             <div class="cart-recommendation">
                 <img src="assets/img/Tip3.png" draggable="false" alt=""
                     style="border-top-right-radius: 20px; border-top-left-radius: 20px;">

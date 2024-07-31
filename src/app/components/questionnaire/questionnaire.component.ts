@@ -529,7 +529,7 @@ export class QuestionnaireComponent implements OnInit {
         
     this.functionpage2(this.pagina);
   }
-
+  
   funtionAtribute(pregunta: string){
     try {
       var nodo = document.getElementById("seleccion");
@@ -825,7 +825,7 @@ updateUtagView() {
       if(product != null) return product;
     });
 
-    console.warn([...this.recommendedProducts]);
+   // console.warn([...this.recommendedProducts]);
 
     this.validateCountryConditions();
   }
@@ -860,13 +860,13 @@ updateUtagView() {
       
     }
 
-    console.log([...this.recommendedProducts]);
+    //console.log([...this.recommendedProducts]);
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
     });+
 
-    console.warn([...this.recommendedProducts]);
+    //console.warn([...this.recommendedProducts]);
 
     sessionStorage.setItem('clientName', this.questions[0].selected);
     sessionStorage.setItem('clientCountry', this.questions[0].country);

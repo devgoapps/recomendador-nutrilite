@@ -4,7 +4,10 @@
     "brasil": "recomendador-br-amway",
     "brarec": "recomendador-br-amway",
     "bras": "recomendador-br-amway",
-    "br": "recomendador-br-amway"
+    "br": "recomendador-br-amway",
+    "pruebabr": "recomendador-br-amway",
+    "prueb": "recomendador-br-amway",
+    "brc": "recomendador-br-amway"
   },
   "targets": {},
   "etags": {}
