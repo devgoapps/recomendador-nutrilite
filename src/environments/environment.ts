@@ -32,14 +32,14 @@ export const environment = {
             // site_webProperty: 'nutrilite recommender',  
             // site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender',
         },
-        questionnaire: [
+        questionnaire: 
             {
                 page_category: 'questionnaire | Recomendador',  
                 page_name: 'questionnaire',
-                page_section: 'country',
+                page_section: '',
                 page_subCategory: 'targeted',
-                //site_country: '',
-                //site_currencyCode: '',  
+                site_country: '',
+                site_currencyCode: '',  
                 site_language: 'es',  
                 // site_prefix: 'amway',
                 // site_region: 'americas', 
@@ -49,39 +49,6 @@ export const environment = {
                 // site_webProperty: 'nutrilite recommender',  
                 // site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender',
             },
-            {
-                page_category: 'questionnaire | Recomendador',  
-                page_name: 'questionnaire',
-                page_section: 'questionnaire_start',
-                page_subCategory: 'targeted',
-                site_country: '',
-                site_currencyCode: '', 
-                site_language: 'es',  
-                //site_prefix: 'amway',
-                //site_region: 'americas', 
-                //site_subRegion: 'latam', 
-                //site_type: 'desktop',  
-                //site_type_short: 'web', 
-                //site_webProperty: 'nutrilite recommender',  
-                //site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender',
-            },            
-            {
-                page_category: 'questionnaire | Recomendador',  
-                page_name: 'questionnaire',
-                page_section: 'questionnaire_complete',
-                page_subCategory: 'targeted',
-                site_country: '',
-                site_currencyCode: '',   
-                site_language: 'es',  
-                // site_prefix: 'amway',
-                // site_region: 'americas', 
-                // site_subRegion: 'latam', 
-                // site_type: 'desktop',  
-                // site_type_short: 'web', 
-                // site_webProperty: 'nutrilite recommender',  
-                // site_webProperty_mod: 'https://latinamway.com/recomendador | nutrilite recommender',
-            },
-        ],
         recommendations: {
             event_name: 'product_list_view',
             page_category: 'recommendations | Recomendador',  
@@ -105,20 +72,12 @@ export const environment = {
             event_name: 'view_recommendations',  
         },
         ShareContinue:
-        [
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
-                {
-                event_name: 'share',  
-                share_channel: '',
-                },
+        
                 {
                 event_name: 'share',  
                 share_channel: '',
                 },
         
-        ]
+        
     }
 };

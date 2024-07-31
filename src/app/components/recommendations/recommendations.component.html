@@ -239,7 +239,7 @@
                 <img [src]="this.recommendedProducts[5].img" draggable="false" alt="">
                </div> 
                <div class="buttonprod">
-                <button (click)="openLink(this.recommendedProducts[5].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                <button (click)="openLink(this.recommendedProducts[5].linkBuy)" class="primary-btn g-text-sm" id="comprar6">
                 Compre agora
                 </button>
                </div>
@@ -259,7 +259,7 @@
                 <img [src]="this.recommendedProducts[6].img" draggable="false" alt="">
                </div> 
                <div class="buttonprod">
-                <button (click)="openLink(this.recommendedProducts[6].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                <button (click)="openLink(this.recommendedProducts[6].linkBuy)" class="primary-btn g-text-sm" id="comprar7">
                 Compre agora
                 </button>
                </div>
@@ -279,7 +279,7 @@
                 <img [src]="this.recommendedProducts[7].img" draggable="false" alt="">
                </div> 
                <div class="buttonprod">
-                <button (click)="openLink(this.recommendedProducts[7].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                <button (click)="openLink(this.recommendedProducts[7].linkBuy)" class="primary-btn g-text-sm" id="comprar8">
                 Compre agora
                 </button>
                </div>
@@ -508,7 +508,7 @@
 
 <div class="col-lg-3 share-button">
 
-    <button (click)="sendemails()" type="button" class="btn btn-success btn-circle btn-lg" title="email" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-success btn-circle btn-lg" title="email" id="buttonshare1" value="correos" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="fa-regular fa-envelope"></i>
     </button>  
 
@@ -2084,7 +2084,7 @@
 
 
 
-                        <button  class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
+                        <button (click)="sendemails()" class="primary-btn g-text" style="margin: 0; background-color: #006d46;" id="buttonshare0">
                             Enviar <i class="fa-regular fa-envelope"></i>
                         </button>
                     </div>

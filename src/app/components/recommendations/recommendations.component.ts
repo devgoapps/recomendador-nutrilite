@@ -118,8 +118,7 @@ export class RecommendationsComponent implements OnInit {
 
   fillProductIdsDirectly(resultado: Array<any>){
 
-    const newProductIds = [this.recommendedProducts[0].id, this.recommendedProducts[1].id, this.recommendedProducts[2].id, this.recommendedProducts[3].id, this.recommendedProducts[4].id, this.recommendedProducts[5].id];
-
+    const newProductIds = [this.recommendedProducts[0].itemsku, this.recommendedProducts[1].itemsku, this.recommendedProducts[2].itemsku, this.recommendedProducts[3].itemsku, this.recommendedProducts[4].itemsku, this.recommendedProducts[5].itemsku, this.recommendedProducts[6].itemsku, this.recommendedProducts[7].itemsku];
     resultado = newProductIds;
 
 
@@ -129,7 +128,7 @@ export class RecommendationsComponent implements OnInit {
 
   fillProductNameDirectly(resultado: Array<any>){
 
-    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name, this.recommendedProducts[4].name, this.recommendedProducts[5].name];
+    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name, this.recommendedProducts[4].name, this.recommendedProducts[5].name, this.recommendedProducts[6].name, this.recommendedProducts[7].name];
     resultado = newProductName;
 
 
@@ -145,6 +144,8 @@ export class RecommendationsComponent implements OnInit {
       var nodo3 = document.getElementById("comprar4");
       var nodo4 = document.getElementById("comprar5");
       var nodo5 = document.getElementById("comprar6");
+      var nodo6 = document.getElementById("comprar7");
+      var nodo7 = document.getElementById("comprar8");
 
       var share1 = document.getElementById("buttonshare1");
       var share2 = document.getElementById("buttonshare2");
@@ -157,6 +158,18 @@ export class RecommendationsComponent implements OnInit {
       var valor3 = document.createAttribute("item-name");
       var valor4 = document.createAttribute("item-name");
       var valor5 = document.createAttribute("item-name");
+      var valor10 = document.createAttribute("item-name");
+      var valor11 = document.createAttribute("item-name");
+
+
+      var idvalor0 = document.createAttribute("item-sku");
+      var idvalor1 = document.createAttribute("item-sku");
+      var idvalor2 = document.createAttribute("item-sku");
+      var idvalor3 = document.createAttribute("item-sku");
+      var idvalor4 = document.createAttribute("item-sku");
+      var idvalor5 = document.createAttribute("item-sku");
+      var idvalor6 = document.createAttribute("item-sku");
+      var idvalor7 = document.createAttribute("item-sku");
 
       var valor6 = document.createAttribute("item-name");
       var valor7 = document.createAttribute("item-name");
@@ -171,6 +184,17 @@ export class RecommendationsComponent implements OnInit {
       valor3.value = this.recommendedProducts[3].name;
       valor4.value = this.recommendedProducts[4].name;
       valor5.value = this.recommendedProducts[5].name;
+      valor10.value = this.recommendedProducts[6].name;
+      valor11.value = this.recommendedProducts[7].name;
+
+      idvalor0.value = this.recommendedProducts[0].itemsku;
+      idvalor1.value = this.recommendedProducts[1].itemsku;
+      idvalor2.value = this.recommendedProducts[2].itemsku;
+      idvalor3.value = this.recommendedProducts[3].itemsku;
+      idvalor4.value = this.recommendedProducts[4].itemsku;
+      idvalor5.value = this.recommendedProducts[5].itemsku;
+      idvalor6.value = this.recommendedProducts[6].itemsku;
+      idvalor7.value = this.recommendedProducts[7].itemsku;
 
       valor6.value = 'email';
       valor7.value = 'whatsapp';
@@ -189,6 +213,17 @@ export class RecommendationsComponent implements OnInit {
       nodo3?.setAttributeNode(valor3);
       nodo4?.setAttributeNode(valor4);
       nodo5?.setAttributeNode(valor5);
+      nodo6?.setAttributeNode(valor10);
+      nodo7?.setAttributeNode(valor11);
+
+      nodo0?.setAttributeNode(idvalor0);
+      nodo1?.setAttributeNode(idvalor1);
+      nodo2?.setAttributeNode(idvalor2);
+      nodo3?.setAttributeNode(idvalor3);
+      nodo4?.setAttributeNode(idvalor4);
+      nodo5?.setAttributeNode(idvalor5);
+      nodo6?.setAttributeNode(idvalor6);
+      nodo7?.setAttributeNode(idvalor7);
 
       share1?.setAttributeNode(valor6);
       share2?.setAttributeNode(valor7);
@@ -260,7 +295,7 @@ export class RecommendationsComponent implements OnInit {
   sendemails(){
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[0].share_channel = this.Share1;
+    recomendado.share_channel = this.Share1;
 
     utag.link(recomendado);
     console.log(recomendado);
@@ -270,7 +305,7 @@ export class RecommendationsComponent implements OnInit {
     
   let recomendado = environment.utagInfo.ShareContinue;
 
-  recomendado[1].share_channel = this.Share2;
+  recomendado.share_channel = this.Share2;
 
   //window.utag_data = Object.assign(window.utag_data, recomendado);
 
@@ -366,7 +401,7 @@ navigator.clipboard.writeText(nuevaUrl)
     
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[2].share_channel = this.Share3;
+    recomendado.share_channel = this.Share3;
     
     //window.utag_data = Object.assign(window.utag_data, recomendado);
     
@@ -395,7 +430,7 @@ navigator.clipboard.writeText(nuevaUrl)
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado[2].share_channel = this.Share4;
+    recomendado.share_channel = this.Share4;
 
     //window.utag_data = Object.assign(window.utag_data, recomendado);
 

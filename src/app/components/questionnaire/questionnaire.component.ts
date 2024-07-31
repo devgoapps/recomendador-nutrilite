@@ -22,7 +22,7 @@ declare var window: any;
 })
 export class QuestionnaireComponent implements OnInit {
 
-  utag_data: Array<any> = [];
+  utag_data: any = environment.utagInfo.questionnaire;
   utag_dataAnwers: Array<any> = [];
   questionIndex: number = 0;
   value: number = 0;
@@ -31,6 +31,7 @@ export class QuestionnaireComponent implements OnInit {
   clientQuestions: Array<any> = [];
   multiples: Array<any> = [];
   country: string | null = '';
+  pagina: number = 0;
 
   paragraph: string = '';
 
@@ -61,8 +62,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Mulher</label> `, value: 1, products: [] },
-        { label:  `<label class="g-text">Homem</label> `, value: 2, products: [] }
+        { label:  `Mulher`, value: 1, products: [] },
+        { label:  `Homem`, value: 2, products: [] }
       ],
       selected: null,
     },
@@ -72,10 +73,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">18 a 39 anos</label> `, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
-        { label:  `<label class="g-text">40 a 49 anos</label> `, value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
-        { label:  `<label class="g-text">50 a 59 anos</label> `, value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
-        { label:  `<label class="g-text">60 anos ou mais</label> `, value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
+        { label:  `18 a 39 anos`, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label:  `40 a 49 anos`, value: 2, productsWomen: [2], productsMen: [4], checkSex: true },
+        { label:  `50 a 59 anos`, value: 3, productsWomen: [2], productsMen: [19], checkSex: true },
+        { label:  `60 anos ou mais`, value: 4, productsWomen: [2, 19], productsMen: [3, 4], checkSex: true },
       ],
       selected: null
     },
@@ -84,9 +85,9 @@ export class QuestionnaireComponent implements OnInit {
       multi: false,
       margin: 70,
       options: [
-        { label:  `<label class="g-text">Estou começando a fazer pequenas mudanças para melhorar meu bem-estar.</label> `, value: 3, products: [3, 6] },
-        { label:  `<label class="g-text">Já fiz algumas mudanças na minha vida e quero desenvolver hábitos mais saudáveis.​</label> `, value: 2, products: [7] },
-        { label:  `<label class="g-text">Foco no meu bem-estar diário e quero alcançar a minha melhor versão.​</label> `, value: 1, products: [14] },
+        { label:  `Estou começando a fazer pequenas mudanças para melhorar meu bem-estar.`, value: 3, products: [3, 6] },
+        { label:  `Já fiz algumas mudanças na minha vida e quero desenvolver hábitos mais saudáveis.​`, value: 2, products: [7] },
+        { label:  `Foco no meu bem-estar diário e quero alcançar a minha melhor versão.​`, value: 1, products: [14] },
       ],
       selected: [],
       footer: ` <span class="gw-20 g-text-footer text-center">Compreender por que você está aqui é importante para nós e para a precisão dos seus resultados!</span>`
@@ -97,8 +98,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [1] },
+        { label:  `Sim`, value: 1, products: [] },
+        { label:  `Não`, value: 2, products: [1] },
       ],
       selected: null
     },
@@ -108,8 +109,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 20,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Básica</label> `, value: 1, products: [1] },
-        { label:  `<label class="g-text">Avançada</label> `, value: 2, products: [5, 12] },
+        { label:  `Básica`, value: 1, products: [1] },
+        { label:  `Avançada`, value: 2, products: [5, 12] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
@@ -129,11 +130,11 @@ export class QuestionnaireComponent implements OnInit {
       margin: 40,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Nenhuma (0)</label> `, value: 1, products: [6, 13] },
-        { label:  `<label class="g-text">1 a 2 frutas e verduras por dia.</label> `, value: 2, products: [8, 16] },
-        { label:  `<label class="g-text">3 a 4 frutas e verduras por dia.</label> `, value: 3, products: [] },
-        { label:  `<label class="g-text">5 a 6 frutas e verduras por dia.</label> `, value: 4, products: [] },
-        { label:  `<label class="g-text">7 ou mais frutas e verduras por dia.</label> `, value: 5, products: [] },
+        { label:  `Nenhuma (0)`, value: 1, products: [6, 13] },
+        { label:  `1 a 2 frutas e verduras por dia.`, value: 2, products: [8, 16] },
+        { label:  `3 a 4 frutas e verduras por dia.`, value: 3, products: [] },
+        { label:  `5 a 6 frutas e verduras por dia.`, value: 4, products: [] },
+        { label:  `7 ou mais frutas e verduras por dia.`, value: 5, products: [] },
       ],
       selected: null
     },
@@ -143,22 +144,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text"> 
-                  <b>Proteína:</b> Alta.<br>
-                  <b>Gordura:</b> Alta.<br>               
-                  <b>Carboidratos:</b> Baixo.
-                  </label>`, value: 1, products: [18] },
-        { label:  `<label class="g-text"> 
-                  <b>Proteína:</b> Alta.<br>
-                  <b>Gordura:</b> Baixa.<br>               
-                  <b>Carboidratos:</b> Alto.
-                  </label>`, value: 3, products: [7] },
-        { label:  `<label class="g-text"> 
-                  <b>Proteína:</b> Baixa.<br>
-                  <b>Gordura:</b> Alta.<br>               
-                  <b>Carboidratos:</b> Alto.
-                  </label>`, value: 4, products: [7, 18] },  
-        { label:  `<label class="g-text"><b>Equilibrado:</b> com uma mistura equilibrada de carboidratos, proteínas e gorduras.​</label> `, value: 2, products: [1] },
+        { label:  `Proteína: Alta. Gordura: Alta. Carboidratos: Baixo.`, value: 1, products: [18] },
+        { label:  `Proteína: Alta. Gordura: Baixa. Carboidratos: Alto.`, value: 3, products: [7] },
+        { label:  `Proteína: Baixa. Gordura: Alta. Carboidratos: Alto.`, value: 4, products: [7, 18] },  
+        { label:  `Equilibrado: com uma mistura equilibrada de carboidratos, proteínas e gorduras.`, value: 2, products: [1] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
@@ -184,9 +173,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Raramente</label> `, value: 1, products: [12] },
-        { label:  `<label class="g-text">De vez em quando.</label> `, value: 2, products: [9] },
-        { label:  `<label class="g-text">Acordo muito ativo(a).</label> `, value: 3, products: [] },
+        { label:  `Raramente`, value: 1, products: [12] },
+        { label:  `De vez em quando.`, value: 2, products: [9] },
+        { label:  `Acordo muito ativo(a).`, value: 3, products: [] },
       ],
       selected: null
     },
@@ -196,9 +185,9 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Nenhuma (0)</label> `, value: 1, products: [2] },
-        { label:  `<label class="g-text">1 porção por dia.</label> `, value: 2, products: [2] },
-        { label:  `<label class="g-text">2 porções por dia.</label> `, value: 3, products: [] },
+        { label:  `Nenhuma (0)`, value: 1, products: [2] },
+        { label:  `1 porção por dia.`, value: 2, products: [2] },
+        { label:  `2 porções por dia.`, value: 3, products: [] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer" >
@@ -211,10 +200,10 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Não pratico exercícios físicos regularmente.</label> `, value: 1, products: [1] },
-        { label:  `<label class="g-text">Faço exercícios físicos leves (caminhadas, atividades cotidianas), 1 ou 2 vezes por semana.</label> `, value: 2, products: [8, 9] },
-        { label:  `<label class="g-text">Faço atividades físicas moderadas (corrida leve, exercícios de força moderados), de 3 a 4 vezes por semana.</label> `, value: 3, products: [3, 10] },
-        { label:  `<label class="g-text">Tenho uma rotina de exercícios de moderados a vigorosos (corrida, ciclismo, natação, exercícios de força intensos), pelo menos, 5 vezes por semana.</label> `, value: 4, products: [9, 10, 14] },
+        { label:  `Não pratico exercícios físicos regularmente.`, value: 1, products: [1] },
+        { label:  `Faço exercícios físicos leves (caminhadas, atividades cotidianas), 1 ou 2 vezes por semana.`, value: 2, products: [8, 9] },
+        { label:  `Faço atividades físicas moderadas (corrida leve, exercícios de força moderados), de 3 a 4 vezes por semana.`, value: 3, products: [3, 10] },
+        { label:  `Tenho uma rotina de exercícios de moderados a vigorosos (corrida, ciclismo, natação, exercícios de força intensos), pelo menos, 5 vezes por semana.`, value: 4, products: [9, 10, 14] },
       ],
       selected: null
     },
@@ -224,8 +213,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 30,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [13, 17] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, products: [13, 17] },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null
     },
@@ -235,8 +224,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 60,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [18] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, products: [18] },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null
     },
@@ -246,8 +235,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 50,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [15, 16] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, products: [15, 16] },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null
     },
@@ -257,8 +246,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 70,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, productsWomen: [10], productsMen: [], checkSex: true },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null,
       footer: ` <small class="gw-20 g-text-footer">
@@ -280,8 +269,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 10,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [7, 19] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, products: [7, 19] },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null
     },
@@ -291,8 +280,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 0,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Menos de 20 minutos por dia.</label> `, value: 1, products: [16] },
-        { label:  `<label class="g-text">Mais de 20 minutos por dia.</label> `, value: 2, products: [15] },
+        { label:  `Menos de 20 minutos por dia.`, value: 1, products: [16] },
+        { label:  `Mais de 20 minutos por dia.`, value: 2, products: [15] },
       ],
       selected: null
     },
@@ -302,8 +291,8 @@ export class QuestionnaireComponent implements OnInit {
       margin: 40,
       showRequired: false,
       options: [
-        { label:  `<label class="g-text">Sim</label> `, value: 1, products: [17] },
-        { label:  `<label class="g-text">Não</label> `, value: 2, products: [] },
+        { label:  `Sim`, value: 1, products: [17] },
+        { label:  `Não`, value: 2, products: [] },
       ],
       selected: null
     },
@@ -333,6 +322,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily_Plus.png',
       linkBuy:'https://amway.com.br/pt/Multivitaminico-Nutrilite-Daily-Plus-45-tabletes/p/126007?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Daily_Plus_45',  // LINKS DE COMPRA PRODUCTOS
       count: 0,
+      itemsku: '126007',
     },
     {
       id: 2,
@@ -342,6 +332,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/CalMagD.png',
       linkBuy:'https://amway.com.br/pt/Vitamina-D-Calcio-Magnesio/p/110609?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Cal_mag_D',
       count: 0,
+      itemsku: '110609',
     },
     {
       id: 3,
@@ -351,6 +342,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Protein.png',
       linkBuy:'https://amway.com.br/pt/Proteina-Vegetal-em-Po-Nutrilite/p/110415?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Proteina_Vegetal',
       count: 0,
+      itemsku: '110415',
     },
     {
       id: 4,
@@ -360,6 +352,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Omega.png',
       linkBuy:'https://amway.com.br/pt/Omega-3-Nutrilite---Oleo-de-Peixe-em-Capsulas/p/A8919?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=omega3',
       count: 0,
+      itemsku: 'A8919',
     },
     {
       id: 5,
@@ -369,6 +362,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Double_X.png',
       linkBuy:'',
       count: 0,
+      itemsku: '',
     },
     {
       id: 6,
@@ -378,6 +372,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Fibra.png',
       linkBuy:'https://www.amway.com.br/pt/Fibras-em-Po-Nutrilite/p/102736?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=fibras_po',
       count: 0,
+      itemsku: '102736',
     },
     {
       id: 7,
@@ -387,6 +382,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/321304?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_bem_estar',
       count: 0,
+      itemsku: '321304',
     },
     {
       id: 8,
@@ -396,6 +392,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/C_Plus.png',
       linkBuy:'https://amway.com.br/pt/Acerola-C-Mastigavel/p/106710?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Acerola',
       count: 0,
+      itemsku: '106710',
     },
     {
       id: 9,
@@ -405,6 +402,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/B_Plus.png',
       linkBuy:'',
       count: 0,
+      itemsku: '',
     },
     {
       id: 10,
@@ -414,6 +412,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Tri-Iron_Folic.png',
       linkBuy:'',
       count: 0,
+      itemsku: '',
     },
     {
       id: 11,
@@ -423,6 +422,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Shake_Plus.png',
       linkBuy:'https://www.amway.com.br/pt/Nutri%C3%A7%C3%A3o/c/nutricao?q=%3Arelevance%3Abrand%3ABodyKey&view=&utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Bodykey',
       count: 0,
+      itemsku: '',
     },
     {
       id: 12,
@@ -432,6 +432,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
       linkBuy:'',
       count: 0,
+      itemsku: '',
     },
     {
       id: 13,
@@ -441,6 +442,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
       linkBuy:'https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/321240?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_imunidade',
       count: 0,
+      itemsku: '321240',
     },
     {
       id: 14,
@@ -450,6 +452,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-MOVIMENTO-D90/p/321628?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_movimento',
       count: 0,
+      itemsku: '321628',
     },
     {
       id: 15,
@@ -459,6 +462,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/LecithinE.png',
       linkBuy:'https://www.amway.com.br/pt/Suplemento-de-Vitamina-E---Nutrilite/p/A4309?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=vitaminaE',
       count: 0,
+      itemsku: 'A4309',
     },
     {
       id: 16,
@@ -468,6 +472,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Multicaroteno.png',
       linkBuy:'',
       count: 0,
+      itemsku: '',
     },
     {
       id: 17,
@@ -477,6 +482,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/321236?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_beleza',
       count: 0,
+      itemsku: '321236',
     },
     {
       id: 18,
@@ -486,6 +492,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-EQUILIBRIO-INTESTINAL-D90/p/321611?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=equilibrio_intestinal',
       count: 0,
+      itemsku: '321611',
     },
     {
       id: 19,
@@ -495,6 +502,7 @@ export class QuestionnaireComponent implements OnInit {
       emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Ajo_Concentrado.png',
       linkBuy:'https://www.amway.com.br/pt/Garlic-Plus-Nutrilite/p/125618?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Garlic',
       count: 0,
+      itemsku: '125618',
     }
   ];
 
@@ -519,24 +527,16 @@ export class QuestionnaireComponent implements OnInit {
     
     this.utag_data = environment.utagInfo.questionnaire;
         
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[0]);
-    console.log(window.utag_data);
-    setTimeout(() => {
-      utag.view(window.utag_data);
-    }, 500);
+    this.functionpage2(this.pagina);
   }
 
   funtionAtribute(pregunta: string){
     try {
       var nodo = document.getElementById("seleccion");
-
       var valorQuestion = document.createAttribute("question");
       var valorAnswer = document.createAttribute("answer");
-
       valorQuestion.value = pregunta;
       valorAnswer.value = this.answer;
-
-
       nodo?.setAttributeNode(valorQuestion);
       nodo?.setAttributeNode(valorAnswer);
 
@@ -545,6 +545,168 @@ export class QuestionnaireComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+
+  }
+
+
+funtionAtribute2(){
+  try{
+    var nodo = document.getElementById("seleccion");
+
+    var valorQuestion = document.createAttribute("question");
+    var valorAnswer = document.createAttribute("answer");
+
+    valorQuestion.value = "";
+    valorAnswer.value = "";
+
+
+    nodo?.setAttributeNode(valorQuestion);
+    nodo?.setAttributeNode(valorAnswer);
+
+
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+  
+updateUtagView() {
+  if (window.utag && window.utag.view) {
+      // Asegúrate de que los datos de utag_data están correctamente definidos
+      if (window.utag_data) {
+          utag.view(window.utag_data);
+          console.log('Datos enviados a Tealium:', window.utag_data);
+      } else {
+          console.error('Datos de uTag no están definidos.');
+      }
+  } else {
+      console.error('uTag o uTag.view no está disponible.');
+  }
+}
+
+  functionpage2(pagina: number) {
+    // Asegúrate de que `utag` y `window.utag_data` estén definidos
+    if (!window.utag || !window.utag_data) {
+        console.error('Tealium uTag no está disponible.');
+        return;
+    }
+
+    // Actualizar `utag_data` según el valor de `pagina`
+    switch (pagina) {
+        case 0:
+            this.utag_data.page_section = "country";
+            break;
+
+        case 1:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        case 2:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        case 3:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 4:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 5:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 6:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        case 7:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 8:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 9:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 10:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 11:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 12:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 13:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 14:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 15:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 16:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 17:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 18:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        case 19:
+                this.utag_data.page_section = "questionnaire_complete";
+                this.utag_data.site_country = this.questions[0]?.country || '';
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        default:
+            console.warn('Página no reconocida:', pagina);
+            return;
+    }
+
+
+        // Actualizar `window.utag_data` con los nuevos datos
+        window.utag_data = { ...window.utag_data, ...this.utag_data };
+
+        this.updateUtagView();
   }
 
 
@@ -624,7 +786,7 @@ export class QuestionnaireComponent implements OnInit {
 
     //console.error([...this.recommendedProducts]);
     this.recommendedProducts = this.recommendedProducts.sort(this.sortByCount);
-    console.error([...this.recommendedProducts]);
+    //console.error([...this.recommendedProducts]);
 
     this.validateSpecialConditions();
   }
@@ -648,8 +810,6 @@ export class QuestionnaireComponent implements OnInit {
         daily1Index = i;
       }
     }
-    console.log(hasDaily1, hasDailyPlus)
-    console.log(daily1Index, dailyPlusIndex)
 
 
     if(hasDailyPlus && hasDaily1){
@@ -659,7 +819,7 @@ export class QuestionnaireComponent implements OnInit {
     }
 
 
-    console.log([...this.recommendedProducts]);
+    //console.log([...this.recommendedProducts]);
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
@@ -736,8 +896,11 @@ export class QuestionnaireComponent implements OnInit {
         if(this.questions[indexQuestion].question == "Você é mulher ou homem?"){
           this.funtionAtribute(this.questions[indexQuestion].question);
         }
-        if(this.questions[indexQuestion].question == "Qual é a sua idade?"){
+        else if(this.questions[indexQuestion].question == "Qual é a sua idade?"){
           this.funtionAtribute(this.questions[indexQuestion].question);
+        }
+        else{
+          this.funtionAtribute2();
         }
 
         return true;
@@ -754,14 +917,12 @@ export class QuestionnaireComponent implements OnInit {
     }
 
     this.questionIndex -= 1;
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
-    setTimeout(() => {
-      //utag.view(window.utag_data);
-    }, 500);
+    this.pagina = this.questionIndex;
 
-    console.log(this.utag_data);
-    console.log(this.questionIndex);
-    console.log(this.questions[this.questionIndex]);
+    this.functionpage2(this.pagina);
+    //this.updateUtagView();    
+
+
   }
 
   nextQuestion() {
@@ -786,53 +947,19 @@ export class QuestionnaireComponent implements OnInit {
     }
 
 
-    this.questionIndex += 1;
-    console.log(...this.recommendedProducts);
-    console.log(this.question);
-    console.log(this.answer);
-
-    // let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
-
-    // this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
-
-    // this.utag_dataAnwers[this.questionIndex].page_section = this.question;
-    // this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
-    // utag.link(this.utag_dataAnwers[this.questionIndex]);
+    
 
     this.questions[0].country = 'br';
     this.country = this.questions[0].country;
 
+this.questionIndex += 1;
+this.pagina = this.questionIndex;
 
+this.functionpage2(this.pagina);
+//this.updateUtagView();    
     console.log(this.country);
 
-    if(this.questions[this.questionIndex].text == 'inicio'){
 
-      this.utag_data[1].site_country = this.questions[0].country;
-      this.utag_data[1].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-    
-    
-    
-      window.utag_data = Object.assign(window.utag_data, this.utag_data[1]);
-
-    }
-
-    if(this.questions[this.questionIndex].text == 'final'){
-      this.utag_data[2].site_country = this.questions[0].country;
-      this.utag_data[2].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-    
-    
-    
-      window.utag_data = Object.assign(window.utag_data, this.utag_data[2]);
-    }
-
-
-    
-    console.log(window.utag_data);
-    // utag.view(window.utag_data);
-    // console.log(utag.view(window.utag_data));
-    console.log(this.questionIndex);
-    // console.log(this.utag_dataAnwers[this.questionIndex]);
-    // console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
     
     const navigationExtras: NavigationExtras = {
       fragment: 'question' + this.questionIndex
