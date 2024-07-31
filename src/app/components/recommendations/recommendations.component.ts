@@ -107,11 +107,15 @@ export class RecommendationsComponent implements OnInit {
       utag.view(window.utag_data);
     }, 500);
 
-    this.funtionAtribute();
+    //this.functionatribute2();
     this.buildForm();
     this.makeCaptcha();
 
     
+  }
+
+  ngAfterViewInit() {
+    this.functionatribute2();
   }
 
   getCurrencyCode(country: string) {
@@ -250,6 +254,48 @@ export class RecommendationsComponent implements OnInit {
       console.log(error);
     }
 
+  }
+
+  functionatribute2() {
+    try {
+      // Obtén todos los botones y atributos de compartir
+      const nodes: any[] = [];
+      for (let i = 1; i <= 8; i++) {
+        const node = document.getElementById(`comprar${i}`);
+        nodes.push(node);
+      }
+  
+      const shares = [];
+      for (let i = 1; i <= 4; i++) {
+        const share = document.getElementById(`buttonshare${i}`);
+        shares.push(share);
+      }
+  
+    // Agrega atributos a los botones de compra
+    for (let i = 0; i <= 8; i++) {
+      const product = this.recommendedProducts[i];
+      const node = nodes[i - 0];
+      if (node) {
+        console.log(`Setting attributes for product ${i + 1}:`, product);
+        node.setAttribute('item-name', product.name || 'No name');
+        node.setAttribute('item-sku', product.itemsku || 'No SKU');
+      } else {
+        console.error(`Node with ID 'comprar${i + 1}' not found for setting attributes.`);
+      }
+    }
+  
+      // Agrega atributos a los botones de compartir
+      const shareValues = ['email', 'whatssapp', 'copy link', 'print'];
+      shares.forEach((share, index) => {
+        if (share) {
+          console.log(`Setting share attributes for button ${index + 1}`);
+          share.setAttribute('item-name', shareValues[index]);
+        }
+      });
+  
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   }
 
 

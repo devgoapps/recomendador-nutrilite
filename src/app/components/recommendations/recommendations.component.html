@@ -24,9 +24,6 @@
     </div>
 
     <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;" id="productosRecom">
-        <div id="params-list">
-            <!-- Aquí se agregarán los parámetros como elementos de lista -->
-        </div>
         <div class="row">
 
 
@@ -196,10 +193,101 @@
     <h4 class="g-text-rec">TAMBIÉN TE PUEDE INTERESAR</h4>
 </div>
 
+@for (product of recommendedProducts; track $index) {
 
-            <div class="col-lg-3"
+    @if(($index + 1) == 5) {
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2">
+            
+                <div style="height: 80px;">
+                <span class="product-name2"><b>{{  product.name }}</b></span>
+            </div>
+           
+            <div class="imagenprod">
+                <img [src]="product.img" draggable="false" alt="">
+            </div> 
+            <div class="buttonprod">
+                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar5">
+                Comprar ahora
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+    }
+    @if(($index + 1) == 6) {
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2">
+            
+                <div style="height: 80px;">
+                <span class="product-name2"><b>{{  product.name }}</b></span>
+            </div>
+           
+            <div class="imagenprod">
+                <img [src]="product.img" draggable="false" alt="">
+            </div> 
+            <div class="buttonprod">
+                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar6">
+                Comprar ahora
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+    }
+    @if(($index + 1) == 7) {
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2">
+            
+                <div style="height: 80px;">
+                <span class="product-name2"><b>{{  product.name }}</b></span>
+            </div>
+           
+            <div class="imagenprod">
+                <img [src]="product.img" draggable="false" alt="">
+            </div> 
+            <div class="buttonprod">
+                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar7">
+                Comprar ahora
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+    }
+    @if(($index + 1) == 8) {
+        <div class="col-lg-3"
+        style="margin-bottom: 1rem;">
+        <div class="card2">
+            
+                <div style="height: 80px;">
+                <span class="product-name2"><b>{{  product.name }}</b></span>
+            </div>
+           
+            <div class="imagenprod">
+                <img [src]="product.img" draggable="false" alt="">
+            </div> 
+            <div class="buttonprod">
+                <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar8">
+                Comprar ahora
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+    }
+}
+
+            <!-- <div class="col-lg-3"
             style="margin-bottom: 1rem;">
-            <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[4].active }">
+            <div class="card2">
 
                         <div style="height: 80px;">
                             <span class="product-name2"><b>{{this.recommendedProducts[4].name}}</b></span>
@@ -221,7 +309,7 @@
 
             <div class="col-lg-3"
             style="margin-bottom: 1rem;">
-            <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[5].active }" >
+            <div class="card2">
                 
                     <div style="height: 80px;">
                     <span class="product-name2"><b>{{ this.recommendedProducts[5].name }}</b></span>
@@ -242,7 +330,7 @@
 
             <div class="col-lg-3"
             style="margin-bottom: 1rem;">
-            <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[6].active }" >
+            <div class="card2">
             
                 <div style="height: 80px;">
                     <span class="product-name2"><b>{{ this.recommendedProducts[6].name }}</b></span>
@@ -259,12 +347,12 @@
 
             </div>
 
-            </div>
+            </div> -->
 
-            <div class="col-lg-3"
+            <!-- <div class="col-lg-3"
             style="margin-bottom: 1rem;">
-            <div class="card2" [ngClass]="{ 'card-active': this.recommendedProducts[7].active }" >
-                <!-- <span class="g-subtitle" style="margin-bottom: 0rem;"><b> {{ product.name }} </b></span>  -->
+            <div class="card2">
+                
                 <div style="height: 80px;">
                     <span class="product-name2"><b>{{ this.recommendedProducts[7].name }}</b></span>
                 </div>
@@ -280,7 +368,7 @@
 
             </div>
 
-            </div>
+            </div> -->
 
   
         
