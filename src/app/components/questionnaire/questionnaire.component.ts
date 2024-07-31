@@ -25,8 +25,7 @@ declare var window: any;
 
 export class QuestionnaireComponent implements OnInit {
 
-
-  utag_data: Array<any> = [];
+  utag_data: any = environment.utagInfo.questionnaire;
   utag_dataAnwers: Array<any> = [];
   questionIndex: number = 0;
   value: number = 0;
@@ -38,6 +37,8 @@ export class QuestionnaireComponent implements OnInit {
 
   paragraph: string = '';
 
+
+  pagina: number = 0;
 
 
   questions: Array<any> = [
@@ -532,70 +533,20 @@ export class QuestionnaireComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    console.log(this.pagina);
+  
     const icon = document.getElementById('ada-entry');
-
     if (icon) {
-    (icon as HTMLElement).style.display = 'none';
+      (icon as HTMLElement).style.display = 'none';
     } else {
-     console.error('Elemento con id "ada-entry" no encontrado.');
+      console.error('Elemento con id "ada-entry" no encontrado.');
     }
-    
     this.utag_data = environment.utagInfo.questionnaire;
 
 
+    this.functionpage2(this.pagina);
 
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[0]);
-    console.log(utag.view(window.utag_data));
-
-  //   if(this.questions[this.questionIndex].text == 'inicio'){
-    
-
-  //     this.utag_data = environment.utagInfo.questionnaire;
-  
-  //     this.utag_data[1].site_country = this.questions[0].country;
-  //     this.utag_data[1].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-  
-  
-  
-  //     window.utag_data = Object.assign(window.utag_data, this.utag_data[1]);
-  //     setTimeout(() => {
-  //       utag.view(window.utag_data);
-  //     }, 1000); 
-        
-  //       console.log(utag.view(window.utag_data)); 
-  // }
-  // else if(this.questions[this.questionIndex].text == 'final'){
-      
-  
-  //   this.utag_data = environment.utagInfo.questionnaire;
-  
-  //   this.utag_data[2].site_country = this.questions[0].country;
-  //   this.utag_data[2].site_currencyCode = this.getCurrencyCode(this.questions[0].country);
-  
-  
-  
-  //   window.utag_data = Object.assign(window.utag_data, this.utag_data[2]);
-  //   setTimeout(() => {
-  //     utag.view(window.utag_data);
-  //   }, 1000); 
-      
-  //     console.log(utag.view(window.utag_data)); 
-  // }
-  // else{
-  //   this.utag_data = environment.utagInfo.questionnaire;
-  
-  
-  //   window.utag_data = Object.assign(window.utag_data, this.utag_data[0]);     
-    
-  //   setTimeout(() => {
-  //   utag.view(window.utag_data);
-  // }, 1000); 
-    
-  //   console.log(utag.view(window.utag_data)); 
-  // }
-
-
+   
   }
 
   funtionAtribute(pregunta: string){
@@ -642,6 +593,148 @@ export class QuestionnaireComponent implements OnInit {
 
   }
 
+
+
+ updateUtagView() {
+  if (window.utag && window.utag.view) {
+      // Asegúrate de que los datos de utag_data están correctamente definidos
+      if (window.utag_data) {
+          utag.view(window.utag_data);
+          console.log('Datos enviados a Tealium:', window.utag_data);
+      } else {
+          console.error('Datos de uTag no están definidos.');
+      }
+  } else {
+      console.error('uTag o uTag.view no está disponible.');
+  }
+}
+
+  functionpage2(pagina: number) {
+    // Asegúrate de que `utag` y `window.utag_data` estén definidos
+    if (!window.utag || !window.utag_data) {
+        console.error('Tealium uTag no está disponible.');
+        return;
+    }
+
+    // Actualizar `utag_data` según el valor de `pagina`
+    switch (pagina) {
+        case 0:
+            this.utag_data.page_section = "country";
+            break;
+        
+        case 1:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        
+        case 2:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        
+        case 3:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 4:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 5:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 6:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+
+        case 7:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 8:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 9:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 10:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 11:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 12:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 13:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 14:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 15:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 16:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 17:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        case 18:
+                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        
+        case 19:
+                this.utag_data.page_section = "questionnaire_complete";
+                this.utag_data.site_country = this.questions[0]?.country || '';
+                this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
+                break;
+        
+        default:
+            console.warn('Página no reconocida:', pagina);
+            return;
+    }
+
+
+        // Actualizar `window.utag_data` con los nuevos datos
+        window.utag_data = { ...window.utag_data, ...this.utag_data };
+
+        this.updateUtagView();
+  }
+
+
   selectOption(indexQuestion: number, value: number, isMulti: boolean, option: string){
       if(isMulti){
       let index = this.questions[indexQuestion].selected.indexOf(value);
@@ -659,10 +752,7 @@ export class QuestionnaireComponent implements OnInit {
       this.answer = option;
      
     }
-
-    
-    
-    
+    return
 
     
   }
@@ -725,9 +815,9 @@ export class QuestionnaireComponent implements OnInit {
         this.recommendedProducts.push(this.products[c]);
     }
 
-    //console.error([...this.recommendedProducts]);
+    
     this.recommendedProducts = this.recommendedProducts.sort(this.sortByCount);
-    console.error([...this.recommendedProducts]);
+    //console.error([...this.recommendedProducts]);
 
     this.validateSpecialConditions();
   }
@@ -756,8 +846,8 @@ export class QuestionnaireComponent implements OnInit {
         doubleXIndex = i;
       }
     }
-    console.log(hasDaily1, hasDailyPlus, hasDoubleX)
-    console.log(daily1Index, dailyPlusIndex, doubleXIndex)
+    //console.log(hasDaily1, hasDailyPlus, hasDoubleX)
+    //console.log(daily1Index, dailyPlusIndex, doubleXIndex)
 
     if(hasDailyPlus && hasDoubleX){
       if(dailyPlusIndex !== null && doubleXIndex !== null) {
@@ -770,7 +860,7 @@ export class QuestionnaireComponent implements OnInit {
       }
     }
 
-    console.log([...this.recommendedProducts]);
+    //console.log([...this.recommendedProducts]);
 
 
 
@@ -1812,7 +1902,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
       }
     }
 
-    console.log([...this.recommendedProducts]);
+    //console.log([...this.recommendedProducts]);
 
     this.recommendedProducts = this.recommendedProducts.filter((product) => {
       if(product != null) return product;
@@ -1872,10 +1962,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
 
     this.questionIndex -= 1;
-    window.utag_data = Object.assign(window.utag_data, this.utag_data[this.questionIndex]);
-    setTimeout(() => {
-      //utag.view(window.utag_data);
-    }, 500);
+    this.pagina = this.questionIndex;
+
+    this.functionpage2(this.pagina);
+    //this.updateUtagView();    
   }
 
   nextQuestion() {
@@ -1893,7 +1983,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
 
 
-this.country = this.questions[0].country;
+    this.country = this.questions[0].country;
 
 
     if(this.questionIndex == (this.questions.length - 1)) return;
@@ -1908,43 +1998,19 @@ this.country = this.questions[0].country;
       return;
     }
 
-
     this.questionIndex += 1;
-    console.log(...this.recommendedProducts);
 
-    console.log(this.question);
-    console.log(this.answer);
+    this.pagina = this.questionIndex;
 
+    this.functionpage2(this.pagina);
+    //this.updateUtagView();
     console.log(this.country);
-
-
-    // let utag_dataanwers = environment.utagInfo.QuestionnarieContinue;
-
-    // this.utag_dataAnwers[this.questionIndex] = utag_dataanwers;
-
-
-
- 
-
-    // this.utag_dataAnwers[this.questionIndex].page_section = this.question;
-    // this.utag_dataAnwers[this.questionIndex].continueAnswer = this.answer;
-
-    // utag.link(this.utag_dataAnwers[this.questionIndex]);
 
 
 
     this.clientQuestions = this.questions;
 
 
-
-
-
-
-    // utag.view(window.utag_data);
-    // console.log(utag.view(window.utag_data));
-    console.log(this.questionIndex);
-    // console.log(this.utag_dataAnwers[this.questionIndex]);
-    // console.log(utag.link(this.utag_dataAnwers[this.questionIndex]));
 
     const navigationExtras: NavigationExtras = {
     fragment: 'question' + this.questionIndex

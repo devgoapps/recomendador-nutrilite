@@ -135,7 +135,7 @@ export class RecommendationsComponent implements OnInit {
 
     resultado = newProductIds;
     
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 
   }
@@ -146,7 +146,7 @@ export class RecommendationsComponent implements OnInit {
 
     resultado = newProductName;
 
-    console.log(resultado);
+    //console.log(resultado);
     return resultado;
 
   }
@@ -416,9 +416,9 @@ export class RecommendationsComponent implements OnInit {
 
     recomendado.share_channel = this.Share4;
 
-    //window.utag_data = Object.assign(window.utag_data, recomendado);
-  
     utag.link(recomendado);
+
+    
     console.log(recomendado);
 
   }
