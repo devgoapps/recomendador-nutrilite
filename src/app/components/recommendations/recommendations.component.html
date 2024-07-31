@@ -188,10 +188,15 @@
 </div>
 
 
+@if(recommendedProducts.length > 4) {
+    <div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
+        <h4 class="g-text-rec">TAMBIÉN TE PUEDE INTERESAR</h4>
+    </div>    
+}
+@else {
+      <h4 class="g-text-rec"></h4>
+}
 
-<div class="g-text-md mb4" style=" color: #fff; text-align: center; background-color: #006d46; margin-bottom: 25px; max-width: 100%; padding: 20px;">
-    <h4 class="g-text-rec">TAMBIÉN TE PUEDE INTERESAR</h4>
-</div>
 
 @for (product of recommendedProducts; track $index) {
 
@@ -390,7 +395,7 @@
 
 
 
-@if (code == 'mx') {
+@if (clientCountry == 'mx') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -401,7 +406,7 @@
 
 </footer>
 }
-@else if (code == 'gt') {
+@else if (clientCountry == 'gt') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -416,7 +421,7 @@
 
 </footer>
 }
-@else if (code == 'sv') {
+@else if (clientCountry == 'sv') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -431,7 +436,7 @@
 
 </footer>
 }
-@else if (code == 'hn') {
+@else if (clientCountry == 'hn') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -441,7 +446,7 @@
 
 </footer>
 }
-@else if (code == 'pa') {
+@else if (clientCountry == 'pa') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -451,7 +456,7 @@
 
 </footer>
 }
-@else if (code == 'cr') {
+@else if (clientCountry == 'cr') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -464,7 +469,7 @@
 
 </footer>
 }
-@else if (code == 'ar') {
+@else if (clientCountry == 'ar') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -474,7 +479,7 @@
 
 </footer>
 }
-@else if (code == 'cl') {
+@else if (clientCountry == 'cl') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -485,7 +490,7 @@
 
 </footer>
 }
-@else if (code == 'uy') {
+@else if (clientCountry == 'uy') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -495,7 +500,7 @@
 
 </footer>
 }
-@else if (code == 'co') {
+@else if (clientCountry == 'co') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">
@@ -509,7 +514,7 @@
 
 </footer>
 }
-@else if (code == 've') {
+@else if (clientCountry == 've') {
 <footer>
     <div class="text-center" style="padding: 1.5rem; background-color: #f1f1f1; margin-top: 10px;">
         <span class="g-text-sm-footer">

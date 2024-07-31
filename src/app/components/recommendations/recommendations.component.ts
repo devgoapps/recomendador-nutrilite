@@ -134,26 +134,55 @@ export class RecommendationsComponent implements OnInit {
   }
 
   fillProductIdsDirectly(resultado: Array<any>){
-
-    const newProductIds = [this.recommendedProducts[0].itemsku, this.recommendedProducts[1].itemsku, this.recommendedProducts[2].itemsku, this.recommendedProducts[3].itemsku, this.recommendedProducts[4].itemsku, this.recommendedProducts[5].itemsku, this.recommendedProducts[6].itemsku, this.recommendedProducts[7].itemsku];
-
+    // Inicializa el arreglo para almacenar los itemsku
+    const newProductIds: string[] = [];
+  
+    // Recorre los primeros 8 productos (ajustado a 0-7 para evitar índice fuera de rango)
+    for (let i = 0; i < 8; i++) {
+      const product = this.recommendedProducts[i];
+      if (product) {
+        // Añade el itemsku del producto al arreglo
+        newProductIds.push(product.itemsku);
+      } else {
+        // Si el producto no existe, salimos del bucle
+        resultado = newProductIds;
+        return resultado;
+      }
+    }
+  
+    // Asigna el arreglo completo a resultado
     resultado = newProductIds;
-    
-    //console.log(resultado);
+    console.log( resultado);
+    // Devuelve el resultado actualizado
     return resultado;
-
-  }
-
-  fillProductNameDirectly(resultado: Array<any>){
-
-    const newProductName = [this.recommendedProducts[0].name, this.recommendedProducts[1].name, this.recommendedProducts[2].name, this.recommendedProducts[3].name, this.recommendedProducts[4].name, this.recommendedProducts[5].name, this.recommendedProducts[6].name, this.recommendedProducts[7].name];
-
-    resultado = newProductName;
-
-    //console.log(resultado);
+    }
+  
+    fillProductNameDirectly(resultado: Array<any>){
+  
+    // Inicializa el arreglo para almacenar los itemsku
+    const newProductNames: string[] = [];
+  
+    // Recorre los primeros 8 productos (ajustado a 0-7 para evitar índice fuera de rango)
+    for (let i = 0; i < 8; i++) {
+      const product = this.recommendedProducts[i];
+      if (product) {
+        // Añade el itemsku del producto al arreglo
+        newProductNames.push(product.name);
+      } else {
+        // Si el producto no existe, salimos del bucle
+        resultado = newProductNames;
+        return resultado;
+      }
+    }
+  
+    // Asigna el arreglo completo a resultado
+    resultado = newProductNames;
+    console.log( resultado);
+    // Devuelve el resultado actualizado
     return resultado;
-
-  }
+  
+  
+    }
 
 
   funtionAtribute(){
@@ -264,35 +293,33 @@ export class RecommendationsComponent implements OnInit {
         const node = document.getElementById(`comprar${i}`);
         nodes.push(node);
       }
-  
+
       const shares = [];
       for (let i = 1; i <= 4; i++) {
         const share = document.getElementById(`buttonshare${i}`);
         shares.push(share);
       }
-  
+
     // Agrega atributos a los botones de compra
     for (let i = 0; i <= 8; i++) {
       const product = this.recommendedProducts[i];
       const node = nodes[i - 0];
       if (node) {
-        console.log(`Setting attributes for product ${i + 1}:`, product);
         node.setAttribute('item-name', product.name || 'No name');
         node.setAttribute('item-sku', product.itemsku || 'No SKU');
       } else {
         console.error(`Node with ID 'comprar${i + 1}' not found for setting attributes.`);
       }
     }
-  
+
       // Agrega atributos a los botones de compartir
       const shareValues = ['email', 'whatssapp', 'copy link', 'print'];
       shares.forEach((share, index) => {
         if (share) {
-          console.log(`Setting share attributes for button ${index + 1}`);
           share.setAttribute('item-name', shareValues[index]);
         }
       });
-  
+
     } catch (error) {
       console.error('An error occurred:', error);
     }
@@ -360,7 +387,7 @@ export class RecommendationsComponent implements OnInit {
   sendemails(){
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado.share_channel = this.Share1;
+    recomendado.share_channel = "email";
 
     utag.link(recomendado);
     console.log(recomendado);
@@ -370,7 +397,7 @@ export class RecommendationsComponent implements OnInit {
 
   let recomendado = environment.utagInfo.ShareContinue;
   
-  recomendado.share_channel = this.Share2;
+  recomendado.share_channel = "whatssapp";
   
   //window.utag_data = Object.assign(window.utag_data, recomendado);
   
@@ -460,7 +487,7 @@ export class RecommendationsComponent implements OnInit {
 
     let recomendado = environment.utagInfo.ShareContinue;
 
-    recomendado.share_channel = this.Share4;
+    recomendado.share_channel = "print";
 
     utag.link(recomendado);
 
