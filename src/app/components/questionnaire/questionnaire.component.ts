@@ -378,8 +378,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 7,
       name: 'Daily +1 - Bem-estar',
       whyIsRecommended: 'Esta solução contribui para o bom funcionamento e a manutenção do sistema circulatório. Daily Plus fornece vitaminas e minerais como vitamina B1, B2, B6, ácido fólico, vitamina C, ferro, cobre e zinco que contribuem para a saúde do coração, apoiam o funcionamento normal dos vasos sanguíneos, ajudam a formar e manter as células sanguíneas e a hemoglobina. Os ácidos ômega 3 EPA e DHA contribuem para o funcionamento normal do coração.',
-      img: 'assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
+      img: 'assets/img/LAS/Daily/Equilibra_tu_vida.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Equilibra_tu_vida.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/321304?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_bem_estar',
       count: 0,
       itemsku: '321304',
@@ -428,8 +428,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 12,
       name: 'Daily +1 Prende tu día',
       whyIsRecommended: 'Esta combinação fornece vitaminas do complexo B que, juntamente com a vitamina C, o magnésio e o manganês, são nutrientes necessários para liberar a energia dos alimentos para que o organismo possa usá-la em suas funções diárias como as de movimento, manutenção da temperatura corporal, metabolismo, defesas, entre outras.',
-      img: 'assets/img/LAS/Daily+1/Prende_tu_dia.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
+      img: 'assets/img/LAS/Daily/Prende_tu_dia.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Prende_tu_dia.png',
       linkBuy:'',
       count: 0,
       itemsku: '',
@@ -438,8 +438,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 13,
       name: 'Daily +1 - Imunidade',
       whyIsRecommended: 'Esta combinação de hábitos saudáveis, como, por exemplo, exercícios físicos, alimentação equilibrada e descanso, fornece uma variedade de nutrientes como as vitaminas C, D, E, A, B6, além de selênio e zinco, que podem contribuir para o bom funcionamento do sistema imunológico, protegendo o corpo contra uma variedade de agressores como vírus e bactérias.',
-      img: 'assets/img/LAS/Daily+1/Respuesta_optima.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
+      img: 'assets/img/LAS/Daily/Respuesta_optima.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Respuesta_optima.png',
       linkBuy:'https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/321240?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_imunidade',
       count: 0,
       itemsku: '321240',
@@ -448,8 +448,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 14,
       name: 'Daily +1 - Movimento',
       whyIsRecommended: 'Para ajudar a manter ossos e músculos fortes e resistentes, que nos permitam nos movimentar com facilidade, realizar trabalhos de força e potência, juntamente com hábitos saudáveis, precisamos de nutrientes como proteína, cálcio, vitaminas C e D, presentes nesta solução.',
-      img: 'assets/img/LAS/Daily+1/Mueevete_libre.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
+      img: 'assets/img/LAS/Daily/Mueevete_libre.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Mueevete_libre.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-MOVIMENTO-D90/p/321628?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_movimento',
       count: 0,
       itemsku: '321628',
@@ -478,8 +478,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 17,
       name: 'Daily +1 - Beleza',
       whyIsRecommended: 'Esta combinação, juntamente com uma alimentação equilibrada, fornece nutrientes como a vitamina C, que ajuda na formação do colágeno, uma proteína que dá estrutura, firmeza e elasticidade à pele e seus órgãos anexos: cabelo e unhas. Além disso, nutrientes como vitamina B2, biotina, vitamina A, vitamina E, cobre e selênio podem ajudar a manter a pele em condições adequadas (macia, lisa, fresca, firme), o cabelo em condições normais, brilhante, macio e resistente, e as unhas saudáveis, ou seja, fortes e resistentes.',
-      img: 'assets/img/LAS/Daily+1/Luce_radiante.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
+      img: 'assets/img/LAS/Daily/Luce_radiante.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Luce_radiante.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/321236?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_beleza',
       count: 0,
       itemsku: '321236',
@@ -488,8 +488,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 18,
       name: 'Daily + 1 - Equilíbrio intestinal',
       whyIsRecommended: 'A principal função do intestino é absorver os nutrientes e a água, ao mesmo tempo em que elimina os resíduos da digestão. O intestino também desempenha outras funções extraintestinais relacionadas à microbiota intestinal. Os prebióticos ou fibras vegetais (como a da chicória) servem como alimento para as bactérias benéficas, estimulam o seu crescimento e ajudam a diminuir a absorção de gorduras e açúcares da alimentação. Esta solução contribui para o bem-estar intestinal, fornecendo vitaminas, minerais e fibras solúveis.',
-      img: 'assets/img/LAS/Daily+1/Vive_libre.png',
-      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
+      img: 'assets/img/LAS/Daily/Vive_libre.png',
+      emailImg: 'https://recomendador-br-amway.web.app/assets/img/LAS/Daily/Vive_libre.png',
       linkBuy:'https://www.amway.com.br/pt/Daily%2B1-EQUILIBRIO-INTESTINAL-D90/p/321611?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=equilibrio_intestinal',
       count: 0,
       itemsku: '321611',
@@ -575,7 +575,7 @@ updateUtagView() {
       // Asegúrate de que los datos de utag_data están correctamente definidos
       if (window.utag_data) {
           utag.view(window.utag_data);
-          console.log('Datos enviados a Tealium:', window.utag_data);
+          //console.log('Datos enviados a Tealium:', window.utag_data);
       } else {
           console.error('Datos de uTag no están definidos.');
       }
@@ -956,8 +956,8 @@ this.questionIndex += 1;
 this.pagina = this.questionIndex;
 
 this.functionpage2(this.pagina);
-//this.updateUtagView();    
-    console.log(this.country);
+    //this.updateUtagView();    
+    //console.log(this.country);
 
 
     

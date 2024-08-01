@@ -1,16 +1,33 @@
 
-<div class="home-section" >
-    <div class="home-cart">
-        <span class="g-title-xl mb-4" style="color:  #84c344;">Tu salud es personal.<br>Estas recomendaciones tambien lo son.</span>
-        <span class="g-text mb-4"><b>Elimina las conjeturas cuando se trata de tu bienestar</b></span>
+<div style="padding-bottom: 4rem; height: 70%;">
 
-        <button (click)="startQuestionnaire()" class="primary-btn g-subtitle" style="margin: 0; margin-bottom: 2rem; background-color:  #006d46;">
-            Iniciar evaluación
-        </button>
 
-        <span class="g-text-sm"><b>¿Quieres <span style="color: #84c344;">conocer más</span> antes de comenzar?</b></span>
+    <div class="start-section">
+        <img src="assets/img/homee.png" draggable="false" style="width: 100%; height:100%;" alt="">
+
+        <div class="cart-start">    
+
+            <span class="g-title-xl mb-4">Recomendador de bienestar/ <br> Recomendador de bem-estar</span>            
+            <div class="mb4 pb4">
+               <img src="assets/img/logo.png" draggable="false" alt="" class="logo-img mb4">  
+            </div>
+            <span class="g-subtitle mb-4">Selecciona tu idioma/ Selecione o seu idioma</span>
+
+
+            <div class="row">
+                <div class="col-lg-6 mb-4" style=" justify-content: center; align-items: center; display: flex;">
+            <button class="primary-btn g-subtitle" [routerLink]="['/how-does-it-work']" style=" background-color:  #006d46;" >
+                Español
+            </button>                    
+                </div>
+                <div class="col-lg-6 mb-4" style=" justify-content: center; align-items: center; display: flex;">
+            <button class="primary-btn g-subtitle" [routerLink]="['/how-does-it-work']" style=" background-color:  #006d46;" >
+                Portugués
+            </button>                         
+                </div>                
+            </div>
+
+        </div>
     </div>
 </div>
-
-
-<app-footer></app-footer>
+        

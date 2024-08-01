@@ -1,14 +1,6 @@
 {
   "projects": {
-    "default": "recomendador-br-amway",
-    "brasil": "recomendador-br-amway",
-    "brarec": "recomendador-br-amway",
-    "bras": "recomendador-br-amway",
-    "br": "recomendador-br-amway",
-    "pruebabr": "recomendador-br-amway",
-    "prueb": "recomendador-br-amway",
-    "brc": "recomendador-br-amway",
-    "braa": "recomendador-br-amway"
+    "default": "recomendador-br-amway"
   },
   "targets": {},
   "etags": {}
