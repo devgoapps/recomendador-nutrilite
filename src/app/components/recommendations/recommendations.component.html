@@ -41,7 +41,7 @@
                                 <img [src]="this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                                 <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                                     <b>¿Por qué recomendamos esto?</b></span>
-                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = true" style="margin-bottom: -20px;">Haz clic aquí</p>
+                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = true" style="margin-bottom: -20px;" id="Showfront">Haz clic aquí</p>
                             </div>
 
                         </div>
@@ -54,12 +54,11 @@
                                 <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                                     {{ this.recommendedProducts[0].whyIsRecommended | slice: 0: 2000 }} </span>
 
-                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = false">Regresar</p>
+                                <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = false" id="Showback">Regresar</p>
                             </div>
                         </div>
 
                         <br>
-                        <!-- <span class="g-text-sm"><b>¿Por qué recomendamos esto?</b></span>        -->
                         <button (click)="openLink(this.recommendedProducts[0].linkBuy)" class="primary-btn g-text-sm"
                             style="margin-bottom: 25px;" id="comprar1">
                             Comprar ahora
@@ -185,7 +184,7 @@
                     </button>
                 </div>
 
-</div>
+            </div>
 
 
 @if(recommendedProducts.length > 4) {
@@ -290,92 +289,6 @@
     }
 }
 
-            <!-- <div class="col-lg-3"
-            style="margin-bottom: 1rem;">
-            <div class="card2">
-
-                        <div style="height: 80px;">
-                            <span class="product-name2"><b>{{this.recommendedProducts[4].name}}</b></span>
-                        </div>
-                        
-                        <div class="imagenprod">
-                            <img [src]="this.recommendedProducts[4].img" draggable="false" alt="">
-                        </div> 
-                        <div class="buttonprod">
-                            <button (click)="openLink(this.recommendedProducts[4].linkBuy)" class="primary-btn g-text-sm" id="comprar5">
-                            Comprar ahora
-                            </button>
-                        </div>
-
-
-            </div>
-
-            </div>
-
-            <div class="col-lg-3"
-            style="margin-bottom: 1rem;">
-            <div class="card2">
-                
-                    <div style="height: 80px;">
-                    <span class="product-name2"><b>{{ this.recommendedProducts[5].name }}</b></span>
-                </div>
-               
-                <div class="imagenprod">
-                    <img [src]="this.recommendedProducts[5].img" draggable="false" alt="">
-                </div> 
-                <div class="buttonprod">
-                    <button (click)="openLink(this.recommendedProducts[5].linkBuy)" class="primary-btn g-text-sm" id="comprar6">
-                    Comprar ahora
-                    </button>
-                </div>
-
-            </div>
-
-            </div>
-
-            <div class="col-lg-3"
-            style="margin-bottom: 1rem;">
-            <div class="card2">
-            
-                <div style="height: 80px;">
-                    <span class="product-name2"><b>{{ this.recommendedProducts[6].name }}</b></span>
-                </div>
-               
-                <div class="imagenprod">
-                    <img [src]="this.recommendedProducts[6].img" draggable="false" alt="">
-                </div> 
-                <div class="buttonprod">
-                    <button (click)="openLink(this.recommendedProducts[6].linkBuy)" class="primary-btn g-text-sm" id="comprar7">
-                    Comprar ahora
-                    </button>
-                </div>
-
-            </div>
-
-            </div> -->
-
-            <!-- <div class="col-lg-3"
-            style="margin-bottom: 1rem;">
-            <div class="card2">
-                
-                <div style="height: 80px;">
-                    <span class="product-name2"><b>{{ this.recommendedProducts[7].name }}</b></span>
-                </div>
-              
-                <div class="imagenprod">
-                    <img [src]="this.recommendedProducts[7].img" draggable="false" alt="">
-                </div> 
-                <div class="buttonprod">
-                    <button (click)="openLink(this.recommendedProducts[7].linkBuy)" class="primary-btn g-text-sm" id="comprar8">
-                    Comprar ahora
-                    </button>
-                </div>
-
-            </div>
-
-            </div> -->
-
-  
         
     </div>
 

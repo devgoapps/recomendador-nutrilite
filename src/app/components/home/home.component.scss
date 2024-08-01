@@ -1,115 +1,80 @@
-.home-section {
-    width: 100%;
-    height: 80%;
+
+.start-section {
+    position: relative;
     display: flex;
-    align-items: center;
-    background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    background-position: center;
+    justify-content: center;
 }
 
 
-.home-cart {
-    width: 30%;
+.cart-start {
+    border: 1px solid #ccc; 
     padding: 2rem;
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    margin-bottom: 4rem;
+    max-width: 100%;
+
+    button{
+        display: flex;
+    }
 }
 
-
-
+.logo-img{
+    width: 40%; 
+    padding-bottom: 2rem;
+}
 
 // extra Small devices (smartphones, 576px and down)
 @media (min-width: 250px) and (max-width: 374px) { 
-    .home-cart {
-        width: 90%;
+    .cart-start {
+        padding: 2rem;
     }
-    .home-section {
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .logo-img{
+        width: 80%; 
     }
 }
 
 
 // Small devices (smartphones, 576px and down)
 @media (min-width: 375px) and (max-width: 576px) { 
-    .home-cart {
-        width: 90%;
+    .cart-start {
+        padding: 2rem;
     }
-    .home-section {
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .logo-img{
+        width: 80%; 
     }
-
 }
 
 // Medium devices (tablets, 768px and down)
 @media (min-width: 577px) and (max-width: 768px) {
-    .home-cart {
-        width: 60%;
+    .cart-start {
+        padding: 2rem;
     }
-    .home-section {
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
 }
 
 // Large devices (desktops, 992px and dpwn)
 @media (min-width: 769px) and (max-width: 1024px) { 
-    .home-cart {
-        width: 40%;
-    }
-    .home-section {
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .cart-start {
+        padding: 2rem;
     }
 }
 
 // X-Large devices (large desktops, 1399px and down)
 @media (min-width: 1025px) and (max-width: 1399px) {
-    .home-cart {
-        width: 35%;
-    }
-    .home-section {
-        width: 100%;
-        height: 80%;
-        display: flex;
-        align-items: center;
-        background-image: radial-gradient(46.86% 140.74% at 0% 0%, rgb(255, 255, 255) 59.31%, rgba(255, 255, 255, 0.51) 86.73%, rgba(255, 255, 255, 0) 99.77%), url('/assets/img/headerHome_2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .cart-start {
+        padding: 3rem;
     }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) and (max-width: 1799px) {
-    
+
 }
 
 @media (min-width: 1800px) {

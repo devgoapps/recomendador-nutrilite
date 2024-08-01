@@ -33,7 +33,7 @@ export class StartQuestionnaireComponent implements OnInit {
 
     window.utag_data = Object.assign(window.utag_data, utag_data);
 
-    console.log(window.utag_data);
+    //console.log(window.utag_data);
    
     setTimeout(() => {
        utag.view(window.utag_data);

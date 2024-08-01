@@ -396,8 +396,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 7,
       name: 'Daily +1 Equilibra tu vida',
       whyIsRecommended: 'Esta solución contribuye en el buen funcionamiento y mantenimiento del sistema circulatorio. Daily Plus aporta vitaminas y minerales como la vitamina B1, B2, B6, ácido fólico, vitamina C, hierro, cobre y zinc que contribuyen a la salud del corazón, apoyan el funcionamiento normal de los vasos sanguíneos, ayudan a formar y mantener las células sanguíneas y a la hemoglobina. Los Omega 3 EPA y DHA, contribuyen al funcionamiento normal del corazón.',
-      img: 'assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Equilibra_tu_vida.png',
+      img: 'assets/img/LAS/Daily/Equilibra_tu_vida.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Equilibra_tu_vida.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321299&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=omega3_daily1',
       count: 0,
       itemsku: '321299',
@@ -446,8 +446,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 12,
       name: 'Daily +1 Prende tu día',
       whyIsRecommended: 'Esta combinación aporta vitaminas del complejo B que junto con la vitamina C, el magnesio y el manganeso, son nutrientes necesarios para liberar la energía de los alimentos para que el organismo pueda utilizarla en sus funciones diarias como movimiento, mantenimiento de la temperatura corporal, metabolismo, defensas, entre otras. Se recomienda consumir ambos suplementos con una diferencia de 8 horas. Ej: Desayuno: Daily Plus y Cena: B Plus.',
-      img: 'assets/img/LAS/Daily+1/Prende_tu_dia.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Prende_tu_dia.png',
+      img: 'assets/img/LAS/Daily/Prende_tu_dia.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Prende_tu_dia.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321276&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=Bplus_daily1',
       count: 0,
       itemsku: '321276',
@@ -456,8 +456,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 13,
       name: 'Daily +1 Respuesta Óptima',
       whyIsRecommended: 'Esta combinación de la mano de hábitos saludables como el ejercicio, una alimentación equilibrada y el descanso, aporta variedad de nutrientes como vitamina C, D, E, A, B6, selenio y zinc que pueden contribuir para que el sistema de defensas funcione apropiadamente, protegiendo el organismo de multitud de agresores como virus y bacterias.',
-      img: 'assets/img/LAS/Daily+1/Respuesta_optima.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Respuesta_optima.png',
+      img: 'assets/img/LAS/Daily/Respuesta_optima.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Respuesta_optima.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321288&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=cplus_daily1',
       count: 0,
       itemsku: '321288',
@@ -466,8 +466,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 14,
       name: 'Daily +1 Muévete Libre',
       whyIsRecommended: 'Para ayudar a mantener huesos y músculos fuertes y resistentes, que nos permitan movilizarnos con facilidad, realizar trabajos de fuerza y potencia, junto con hábitos saludables, requerimos de nutrientes como proteína, calcio, vitamina C y vitamina D, presentes en esta solución.',
-      img: 'assets/img/LAS/Daily+1/Mueevete_libre.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Mueevete_libre.png',
+      img: 'assets/img/LAS/Daily/Mueevete_libre.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Mueevete_libre.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321291&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=proteina_daily1',
       count: 0,
       itemsku: '321291',
@@ -496,8 +496,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 17,
       name: 'Daily +1 Luce Radiante',
       whyIsRecommended: 'Esta combinación junto con una alimentación equilibrada aporta nutrientes como la vitamina C que ayuda a formar el colágeno, proteína que da estructura, firmeza y elasticidad a la piel y sus órganos anexos:  cabello y  uñas. Además, vitamina B2, biotina, vitamina A, vitamina E, cobre y selenio que pueden ayudar a tener la piel en adecuadas condiciones (suave, lisa, fresca, tersa), el cabello en condiciones normales, brillante, suave y resistente, así como mantener las uñas saludables, es decir, fuertes y resistentes.',
-      img: 'assets/img/LAS/Daily+1/Luce_radiante.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Luce_radiante.png',
+      img: 'assets/img/LAS/Daily/Luce_radiante.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Luce_radiante.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321280&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=lecitina_daily1',
       count: 0,
       itemsku: '321280',
@@ -506,8 +506,8 @@ export class QuestionnaireComponent implements OnInit {
       id: 18,
       name: 'Daily + 1 Vive Libre',
       whyIsRecommended: 'La función principal del intestino es absorber los nutrientes y el agua; y a la vez eliminar los desechos de la digestión. Cumple otras funciones extraintestinales, relacionadas con la microbiota intestinal. Los prebióticos o fibras vegetales (como la de chicoria/ achicoria), les sirven de alimento a las bacterias buenas, estimula su crecimiento y ayuda a disminuir la absorción de grasas y azúcares de la alimentación. Esta solución apoya el bienestar intestinal aportando vitaminas, minerales y fibra soluble.',
-      img: 'assets/img/LAS/Daily+1/Vive_libre.png',
-      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily+1/Vive_libre.png',
+      img: 'assets/img/LAS/Daily/Vive_libre.png',
+      emailImg: 'https://recomendador-amway.web.app/assets/img/LAS/Daily/Vive_libre.png',
       linkBuy:'https://www.amway.com.mx/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=K&BC=321296&C=KR&Brand=&utm_source=site&utm_medium=home&utm_campaign=mx_es_site_trazabilidad&utm_content=cta_comprar&utm_term=fibra_daily1',
       count: 0,
       itemsku: '321296',
@@ -533,7 +533,7 @@ export class QuestionnaireComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.pagina);
+    //console.log(this.pagina);
   
     const icon = document.getElementById('ada-entry');
     if (icon) {
@@ -600,7 +600,7 @@ export class QuestionnaireComponent implements OnInit {
       // Asegúrate de que los datos de utag_data están correctamente definidos
       if (window.utag_data) {
           utag.view(window.utag_data);
-          console.log('Datos enviados a Tealium:', window.utag_data);
+          //console.log('Datos enviados a Tealium:', window.utag_data);
       } else {
           console.error('Datos de uTag no están definidos.');
       }
@@ -2004,7 +2004,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
     this.functionpage2(this.pagina);
     //this.updateUtagView();
-    console.log(this.country);
+    //console.log(this.country);
 
 
 

@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    let utag_data = environment.utagInfo.startQuestionnaire;
+    // let utag_data = environment.utagInfo.startQuestionnaire;
         
-    window.utag_data = Object.assign(window.utag_data, utag_data);
-    setTimeout(() => {
+    // window.utag_data = Object.assign(window.utag_data, utag_data);
+    //setTimeout(() => {
       //utag.view(window.utag_data);
-    }, 500);
+    //}, 500);
   }
 
   startQuestionnaire(){

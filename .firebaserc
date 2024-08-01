@@ -1,14 +1,7 @@
 {
   "projects": {
     "default": "recomendador-amway",
-    "español": "recomendador-amway",
-    "mex": "recomendador-amway",
-    "recom": "recomendador-amway",
-    "recomen": "recomendador-amway",
-    "firebase españ": "recomendador-amway",
-    "rec": "recomendador-amway",
-    "prueba": "recomendador-amway",
-    "pr": "recomendador-amway"
+    "español": "recomendador-amway"
   },
   "targets": {},
   "etags": {}
