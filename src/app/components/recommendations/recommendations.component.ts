@@ -189,17 +189,79 @@ export class RecommendationsComponent implements OnInit {
       const showback = document.getElementById('Showback');
 
       if (showfront && showback) {
-          // Toggle the `active` state
-          this.recommendedProducts[0].active = !this.recommendedProducts[0].active;
 
-          // Update visibility based on the `active` state
-          if (this.recommendedProducts[0].active) {
-              showfront.style.display = 'none';
-              showback.style.display = 'block';
-          } else {
-              showfront.style.display = 'block';
-              showback.style.display = 'none';
-          }
+            // Toggle the `active` state
+            this.recommendedProducts[0].active = !this.recommendedProducts[0].active;
+
+            // Update visibility based on the `active` state
+            if (this.recommendedProducts[0].active) {
+                showfront.style.display = 'none';
+                showback.style.display = 'block';
+            } else {
+                showfront.style.display = 'block';
+                showback.style.display = 'none';
+            }         
+
+      }
+  }
+    toggleCard2() {
+      const showfront = document.getElementById('Showfront2');
+      const showback = document.getElementById('Showback2');
+
+      if (showfront && showback) {
+
+            // Toggle the `active` state
+            this.recommendedProducts[1].active = !this.recommendedProducts[1].active;
+
+            // Update visibility based on the `active` state
+            if (this.recommendedProducts[1].active) {
+                showfront.style.display = 'none';
+                showback.style.display = 'block';
+            } else {
+                showfront.style.display = 'block';
+                showback.style.display = 'none';
+            }         
+
+      }
+  }
+    toggleCard3() {
+      const showfront = document.getElementById('Showfront3');
+      const showback = document.getElementById('Showback3');
+
+      if (showfront && showback) {
+
+            // Toggle the `active` state
+            this.recommendedProducts[2].active = !this.recommendedProducts[2].active;
+
+            // Update visibility based on the `active` state
+            if (this.recommendedProducts[2].active) {
+                showfront.style.display = 'none';
+                showback.style.display = 'block';
+            } else {
+                showfront.style.display = 'block';
+                showback.style.display = 'none';
+            }         
+
+      }
+  }
+    toggleCard4() {
+      const showfront = document.getElementById('Showfront4');
+      const showback = document.getElementById('Showback4');
+
+      if (showfront && showback) {
+
+            // Toggle the `active` state
+            this.recommendedProducts[3].active = !this.recommendedProducts[3].active;
+
+            // Update visibility based on the `active` state
+            if (this.recommendedProducts[3].active) {
+                showfront.style.display = 'none';
+                showback.style.display = 'block';
+            } else {
+                showfront.style.display = 'block';
+                showback.style.display = 'none';
+            }         
+
       }
   }
 
