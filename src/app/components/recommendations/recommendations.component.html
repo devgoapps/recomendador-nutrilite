@@ -48,7 +48,7 @@
                         <img [src]="this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = true" style="margin-bottom: -20px;" id="Showfront">Clique aqui</p>
+                        <p class="buttonClick-text" (click)="toggleCard()" style="margin-bottom: -20px;" id="Showfront">Clique aqui</p>
                     </div>
 
                 </div>
@@ -63,7 +63,7 @@
                         <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                             {{ this.recommendedProducts[0].whyIsRecommended | slice: 0: 2000 }} </span>
 
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[0].active = false" id="Showback">Voltar</p>
+                        <p class="buttonClick-text" (click)="toggleCard()" id="Showback">Voltar</p>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                         <img [src]="this.recommendedProducts[1].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[1].active = true" style="margin-bottom: -20px;">Clique aqui</p>
+                        <p class="buttonClick-text" (click)="toggleCard2()" style="margin-bottom: -20px;" id="Showfront2">Clique aqui</p>
                     </div>
 
                 </div>
@@ -105,7 +105,7 @@
                         <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                             {{ this.recommendedProducts[1].whyIsRecommended | slice: 0: 2000 }} </span>
 
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[1].active = false">Voltar</p>
+                        <p class="buttonClick-text" (click)="toggleCard2()" id="Showback2">Voltar</p>
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@
                         <img [src]="this.recommendedProducts[2].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[2].active = true" style="margin-bottom: -20px;">Clique aqui</p>
+                        <p class="buttonClick-text" (click)="toggleCard3()" style="margin-bottom: -20px;" id="Showfront3">Clique aqui</p>
                     </div>
 
                 </div>
@@ -145,7 +145,7 @@
                         <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                             {{ this.recommendedProducts[2].whyIsRecommended | slice: 0: 2000 }} </span>
 
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[2].active = false">Voltar</p>
+                        <p class="buttonClick-text" (click)="toggleCard3()" id="Showback3">Voltar</p>
                     </div>
                 </div>
 
@@ -174,7 +174,7 @@
                         <img [src]="this.recommendedProducts[3].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[3].active = true" style="margin-bottom: -20px;">Clique aqui</p>
+                        <p class="buttonClick-text" (click)="toggleCard4()" style="margin-bottom: -20px;" id="Showfront4">Clique aqui</p>
                     </div>
 
                 </div>
@@ -187,7 +187,7 @@
                         <span class="whyIsRecommended-Text mb4" style="margin-top: 100px;">
                             {{ this.recommendedProducts[3].whyIsRecommended | slice: 0: 2000 }} </span>
 
-                        <p class="buttonClick-text" (click)="this.recommendedProducts[3].active = false">Voltar</p>
+                        <p class="buttonClick-text" (click)="toggleCard4()" id="Showback4">Voltar</p>
                     </div>
                 </div>
 
