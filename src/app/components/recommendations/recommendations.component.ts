@@ -1,9 +1,11 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { FooterComponent } from '../../template/footer/footer.component';
 import {NgxPrintModule} from 'ngx-print';
+
 
 
 import { ChipsModule } from 'primeng/chips';
@@ -13,6 +15,8 @@ declare var utag: any;
 declare var window: any;
 declare var link: any;
 declare var Email: any;
+
+declare var mailSendingApp: any;
 
 @Component({
   selector: 'app-recommendations',
@@ -156,7 +160,7 @@ export class RecommendationsComponent implements OnInit {
     return resultado;
     }
   
-    fillProductNameDirectly(resultado: Array<any>){
+  fillProductNameDirectly(resultado: Array<any>){
   
     // Inicializa el arreglo para almacenar los itemsku
     const newProductNames: string[] = [];
@@ -317,60 +321,66 @@ export class RecommendationsComponent implements OnInit {
   submitForm(){
     this.isFormSubmitted = true;
 
-    if(this.sendForm.invalid || !this.captchaIsValid) return;
-
-    console.log(this.vSend);
-
-    this.sendEmail();
-  }
-
+    if(this.sendForm.invalid || !this.captchaIsValid){
+      console.log("No Send Email");
+      return;       
+    }
   
-
-  sendEmail(){
-    let toast = document.getElementById('toast');
-
-    let mailBody = document.getElementById('mail2');
-
-    let emails = this.vSend.emails.toString();
-
-    // let recomendado = environment.utagInfo.ShareContinue;
+    // Log form values for debugging
+    //console.log(this.vSend);
   
-    // recomendado[0].share_channel = this.Share1;
-    
-    //window.utag_data = Object.assign(window.utag_data, recomendado);
+    // Proceed to send the email
+    this.sendemails();
 
-    Email.send({
-      SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
-      From: "nutrirec@amway.com", // Cambiar ruta de Amway   nutrirec@amway.com
 
-      //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
-      //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
-
-      To: emails,
-      Subject: "Tus recomendaciones Nutrilite",
-      Body: mailBody?.outerHTML,
-    }).then((message: any) => {
-      console.log(message);
-
-      this.sendForm.reset();
-      this.isFormSubmitted = false;
-      this.makeCaptcha();
-
-      toast?.classList.add("show");
-      setTimeout(() => {
-        toast?.classList.remove("show");        
-      }, 2000)
-    });
   }
 
   
   sendemails(){
+
+    let toast = document.getElementById('toast');
+
+    let mailBody = document.getElementById('mail2');
+
+    let emails = this.vSend.emails;
+
+
     let recomendado = environment.utagInfo.ShareContinue;
 
     recomendado.share_channel = "email";
 
     utag.link(recomendado);
     //console.log(recomendado);
+
+
+
+      let emailReq = {
+
+        "from": "nutrirec@amway.com",
+
+        "to": emails,
+
+        "content": mailBody?.outerHTML,
+
+        "subject": "Tus recomendaciones Nutrilite",
+
+        "isHtml": true               
+
+      }  
+
+    mailSendingApp.sendEmail(emailReq,'qa')
+
+
+    this.sendForm.reset();
+    this.isFormSubmitted = false;
+    this.makeCaptcha();
+
+    toast?.classList.add("show");
+    setTimeout(() => {
+      toast?.classList.remove("show");        
+    }, 2000)
+
+
   }
 
   sendWhatsapp(){
@@ -396,25 +406,11 @@ export class RecommendationsComponent implements OnInit {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       if (isMobile) {
         window.location.href = whatsapp_url;
-        let recomendado = environment.utagInfo.ShareContinue;
-
-        //window.utag_data = Object.assign(window.utag_data, recomendado);
-        utag.link(recomendado);
-        //console.log(recomendado);
-        // let share = environment.utagInfo.ShareContinue; 
-
-        // share.share_channel = this.Share2;
       }else{
         try { 
           
           const whatsappWebUrl = `https://web.whatsapp.com/send?text=` + message;
            window.open(whatsappWebUrl , '_blank');
-
-           let recomendado = environment.utagInfo.ShareContinue;
-
-           //window.utag_data = Object.assign(window.utag_data, recomendado);
-           utag.link(recomendado);
-           //console.log(recomendado);
 
         } catch (error) {
           console.log(error)
@@ -430,7 +426,42 @@ export class RecommendationsComponent implements OnInit {
       }
   }
  
- 
+   // sendEmail(){
+  //   let toast = document.getElementById('toast');
+
+  //   let mailBody = document.getElementById('mail2');
+
+  //   let emails = this.vSend.emails;
+
+  //   // let recomendado = environment.utagInfo.ShareContinue;
+  
+  //   // recomendado[0].share_channel = this.Share1;
+    
+  //   //window.utag_data = Object.assign(window.utag_data, recomendado);
+
+  //   Email.send({
+  //     SecureToken: "3037af90-3a76-4406-84ae-6935e5361872",
+  //     From: "nutrirec@amway.com", // Cambiar ruta de Amway   nutrirec@amway.com
+
+  //     //SecureToken: "c646155a-175b-47c7-b135-812a36bc50fc",
+  //     //From: "diego.hernandez.condor@gmail.com", // Cambiar ruta de Amway
+
+  //     To: emails,
+  //     Subject: "Tus recomendaciones Nutrilite",
+  //     Body: mailBody?.outerHTML,
+  //   }).then((message: any) => {
+  //     console.log(message);
+
+  //     this.sendForm.reset();
+  //     this.isFormSubmitted = false;
+  //     this.makeCaptcha();
+
+  //     toast?.classList.add("show");
+  //     setTimeout(() => {
+  //       toast?.classList.remove("show");        
+  //     }, 2000)
+  //   });
+  // }
 
   copyUrl(): void {    
 
