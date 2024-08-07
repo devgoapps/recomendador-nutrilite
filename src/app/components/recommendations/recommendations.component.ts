@@ -337,7 +337,7 @@ export class RecommendationsComponent implements OnInit {
 
       "content": mailBody?.outerHTML,
 
-      "subject": "Tus recomendaciones Nutrilite",
+      "subject": "Suas recomendações NUTRILITE",
 
       "isHtml": true               
 
