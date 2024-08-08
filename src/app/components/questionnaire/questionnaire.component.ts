@@ -327,7 +327,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 2,
-      name: 'Cal Mag D',
+      name: 'Cal Mag D Advanced',
       whyIsRecommended: 'Oferece duas fontes naturais de cálcio: carbonato de cálcio (pedra calcária) e algas marinhas calcificadas, além de conter vitamina D e magnésio que promovem e auxiliam o corpo na absorção, retenção e utilização do cálcio para o desenvolvimento de ossos e dentes fortes.',
       img: 'assets/img/LAS/CalMagD.png',
       emailImg: this.ruta + 'assets/img/LAS/CalMagD.png',
@@ -347,7 +347,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 4,
-      name: 'Ômega 3 Plus',
+      name: 'Ômega 3',
       whyIsRecommended: 'Suplemento alimentar, fonte de ácidos graxos ômega 3 essenciais, EPA e DHA, que, juntamente com a prática regular de exercícios físicos e uma alimentação equilibrada, pode contribuir para a manutenção da saúde cardiovascular.',
       img: 'assets/img/LAS/Omega.png',
       emailImg: this.ruta + 'assets/img/LAS/Omega.png',
@@ -367,7 +367,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 6,
-      name: 'Fibra em Pó',
+      name: 'Fibras em Pó',
       whyIsRecommended: 'Combina três fontes de fibra solúvel: maltodextrina, raiz de chicória e goma guar. Fórmula livre de lactose e corantes artificiais que ajuda a reduzir o açúcar e o colesterol no sangue e, ao mesmo tempo, diminui a sensação de fome.',
       img: 'assets/img/LAS/Fibra.png',
       emailImg: this.ruta + 'assets/img/LAS/Fibra.png',
@@ -387,7 +387,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 8,
-      name: 'C Plus',
+      name: 'Acerola C Mastigável',
       whyIsRecommended: 'Suplemento alimentar que possibilita a liberação lenta da vitamina C no corpo, fortalecendo as defesas e permitindo aproveitar melhor as suas propriedades.',
       img: 'assets/img/LAS/C_Plus.png',
       emailImg: this.ruta + 'assets/img/LAS/C_Plus.png',
@@ -417,7 +417,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 11,
-      name: 'Bodykey Shake Plus',
+      name: 'Shake BodyKey',
       whyIsRecommended: 'Bebida em pó com baixo teor de gordura e carboidratos. Fornece 9 g de proteína, além de vitaminas, minerais e fibras.',
       img: 'assets/img/LAS/Shake_Plus.png',
       emailImg: this.ruta +'assets/img/LAS/Shake_Plus.png',
@@ -497,7 +497,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     {
       id: 19,
-      name: 'Alho Concentrado',
+      name: 'Garlic Plus',
       whyIsRecommended: 'Contém alicina e quercetina. Pode contribuir para a redução dos níveis elevados de gordura no sangue e prevenir a formação de depósitos de gordura nas artérias. Hipotensor.',
       img: 'assets/img/LAS/Ajo_Concentrado.png',
       emailImg: this.ruta + 'assets/img/LAS/Ajo_Concentrado.png',
@@ -850,9 +850,6 @@ updateUtagView() {
         // eliminar Tri Iron Folic
         this.recommendedProducts[i].img = this.recommendedProducts[i].img.replaceAll(/LAS/gi, "BZ");
         this.recommendedProducts[i].emailImg = this.recommendedProducts[i].emailImg.replaceAll(/LAS/gi, "BZ");
-
-        if(this.recommendedProducts[i].name == 'C Plus')
-          this.recommendedProducts[i].name = 'Acerola Masticable';
 
         if(this.recommendedProducts[i].name == 'Double X' || 
           this.recommendedProducts[i].name == 'Multicaroteno' ||
