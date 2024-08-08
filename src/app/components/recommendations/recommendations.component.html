@@ -45,7 +45,7 @@
                     <div>
 
 
-                        <img [src]="this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                        <img [src]="this.ruta + this.recommendedProducts[0].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
                         <p class="buttonClick-text" (click)="toggleCard()" style="margin-bottom: -20px;" id="Showfront">Clique aqui</p>
@@ -89,7 +89,7 @@
                 <div class="front" style="margin-top: 10px;">
                     <div>
 
-                        <img [src]="this.recommendedProducts[1].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                        <img [src]="this.ruta + this.recommendedProducts[1].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
                         <p class="buttonClick-text" (click)="toggleCard2()" style="margin-bottom: -20px;" id="Showfront2">Clique aqui</p>
@@ -129,7 +129,7 @@
                     </div>
                 <div class="front" style="margin-top: 10px;">
                     <div>
-                        <img [src]="this.recommendedProducts[2].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                        <img [src]="this.ruta + this.recommendedProducts[2].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
                         <p class="buttonClick-text" (click)="toggleCard3()" style="margin-bottom: -20px;" id="Showfront3">Clique aqui</p>
@@ -171,7 +171,7 @@
 
                 <div class="front" style="margin-top: 10px;">
                     <div>
-                        <img [src]="this.recommendedProducts[3].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
+                        <img [src]="this.ruta + this.recommendedProducts[3].img" draggable="false" alt="" style="margin-bottom: 5rem; margin-top: 100px;">
                         <span class="g-text-sm" style="bottom: 0; position: absolute; margin-bottom:10px;">
                             <b>Por que recomendamos isso?</b></span>
                         <p class="buttonClick-text" (click)="toggleCard4()" style="margin-bottom: -20px;" id="Showfront4">Clique aqui</p>
@@ -222,7 +222,7 @@
                 </div>
     
                 <div class="imagenprod">
-                    <img [src]="product.img" draggable="false" alt="">
+                    <img [src]="this.ruta + product.img" draggable="false" alt="">
                 </div> 
                 <div class="buttonprod">
                     <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar5">
@@ -244,7 +244,7 @@
                 </div>
     
                 <div class="imagenprod">
-                    <img [src]="product.img" draggable="false" alt="">
+                    <img [src]="this.ruta + product.img" draggable="false" alt="">
                 </div> 
                 <div class="buttonprod">
                     <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar6">
@@ -266,7 +266,7 @@
                 </div>
     
                 <div class="imagenprod">
-                    <img [src]="product.img" draggable="false" alt="">
+                    <img [src]="this.ruta + product.img" draggable="false" alt="">
                 </div> 
                 <div class="buttonprod">
                     <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar7">
@@ -288,7 +288,7 @@
                 </div>
     
                 <div class="imagenprod">
-                    <img [src]="product.img" draggable="false" alt="">
+                    <img [src]="this.ruta + product.img" draggable="false" alt="">
                 </div> 
                 <div class="buttonprod">
                     <button (click)="openLink(product.linkBuy)" class="primary-btn g-text-sm" id="comprar8">
@@ -905,7 +905,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                            [src]="recommendedProducts[0].emailImg"
+                                                                            [src]="this.ruta + recommendedProducts[0].emailImg"
                                                                             width="320" height="" alt=""
                                                                             style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                             class="g-img"></td>
@@ -1002,7 +1002,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[1].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[1].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
@@ -1099,7 +1099,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[2].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[2].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
@@ -1196,7 +1196,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[3].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[3].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
@@ -1632,7 +1632,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                            [src]="recommendedProducts[0].emailImg"
+                                                                            [src]="this.ruta + recommendedProducts[0].emailImg"
                                                                             width="320" height="" alt=""
                                                                             style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                             class="g-img"></td>
@@ -1732,7 +1732,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[1].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[1].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
@@ -1832,7 +1832,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[2].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[2].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
@@ -1932,7 +1932,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td style="padding:0"><img
-                                                                                [src]="recommendedProducts[3].emailImg"
+                                                                                [src]="this.ruta + recommendedProducts[3].emailImg"
                                                                                 width="320" height="" alt=""
                                                                                 style="border-radius:0px;display:block;height:auto;width:100%;max-width:100%;border:0"
                                                                                 class="g-img"></td>
