@@ -119,9 +119,6 @@ export class RecommendationsComponent implements OnInit {
 
     this.ruta = (window.location.host.startsWith("www.latinamway.com") || window.location.host.startsWith("latinamway.com")) ? 
     'https://latinamway.com/recomendadornutrilite/es/' : 'https://latinamway-qas.com/recomendadornutrilite/es/';
-
-    console.log(this.ruta);
-    console.log(this.ruta +'assets/img/LAS/Daily/Vive_libre.png');
     
   }
 
