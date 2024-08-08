@@ -2,7 +2,10 @@
   "projects": {
     "default": "recomendador-amway",
     "español": "recomendador-amway",
-    "es": "recomendador-amway"
+    "es": "recomendador-amway",
+    "ess": "recomendador-amway",
+    "qa": "recomendador-amway",
+    "rec": "recomendador-amway"
   },
   "targets": {},
   "etags": {}
