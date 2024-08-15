@@ -48,27 +48,6 @@
                     <span class="g-text-sm gw-30" style="color: red;">Espere! Por favor, digite o seu nome aqui.</span>
                 }
                 <br>
-
-                <!-- <label class="g-text required" >País</label>
-                <div class="item">
-                <select [(ngModel)]="questions[questionIndex].country" class="form-select" aria-label="Default select example"  [ngClass]="{ 'required-error': !questions[questionIndex]?.country && questions[questionIndex]?.showRequired }">
-                    <option value="AR">Argentina</option>
-                    <option value="CH">Chile</option>
-                    <option value="CO">Colômbia</option>
-                    <option value="CR">Costa Rica</option>
-                    <option value="ES">El Salvador</option>
-                    <option value="GU">Guatemala</option>
-                    <option value="HO">Honduras</option>
-                    <option value="MX">México</option>
-                    <option value="PA">Panamá</option>
-                    <option value="UY">Uruguai</option>
-                    <option value="VZ">Venezuela</option>
-                  </select>                    
-                </div> -->
-
-                  <!-- @if (!questions[questionIndex]?.country && questions[questionIndex]?.showRequired) {
-                      <span class="g-text-sm gw-30" style="color: red;">Espere! Por favor, digite o seu país aqui.</span>
-                  } -->
             </div>
         } @else {
             @for (option of questions[questionIndex]?.options; track $index) {

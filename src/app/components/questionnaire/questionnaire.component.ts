@@ -371,7 +371,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Combina três fontes de fibra solúvel: maltodextrina, raiz de chicória e goma guar. Fórmula livre de lactose e corantes artificiais que ajuda a reduzir o açúcar e o colesterol no sangue e, ao mesmo tempo, diminui a sensação de fome.',
       img: 'assets/img/LAS/Fibra.png',
       emailImg: this.ruta + 'assets/img/LAS/Fibra.png',
-      linkBuy:'https://www.amway.com.br/pt/Fibras-em-Po-Nutrilite/p/102736?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=fibras_po',
+      linkBuy:'https://www.amway.com.br/pt/Fibras-em-Po-Nutrilite/p/102736?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=fibra',
       count: 0,
       itemsku: '102736',
     },
@@ -381,7 +381,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Esta solução contribui para o bom funcionamento e a manutenção do sistema circulatório. Daily Plus fornece vitaminas e minerais como vitamina B1, B2, B6, ácido fólico, vitamina C, ferro, cobre e zinco que contribuem para a saúde do coração, apoiam o funcionamento normal dos vasos sanguíneos, ajudam a formar e manter as células sanguíneas e a hemoglobina. Os ácidos ômega 3 EPA e DHA contribuem para o funcionamento normal do coração.',
       img: 'assets/img/LAS/Daily/Equilibra_tu_vida.png',
       emailImg: this.ruta + 'assets/img/LAS/Daily/Equilibra_tu_vida.png',
-      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/321304?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_bem_estar',
+      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/321304?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=bem-estar',
       count: 0,
       itemsku: '321304',
     },
@@ -421,7 +421,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Bebida em pó com baixo teor de gordura e carboidratos. Fornece 9 g de proteína, além de vitaminas, minerais e fibras.',
       img: 'assets/img/LAS/Shake_Plus.png',
       emailImg: this.ruta +'assets/img/LAS/Shake_Plus.png',
-      linkBuy:'https://www.amway.com.br/pt/Nutri%C3%A7%C3%A3o/c/nutricao?q=%3Arelevance%3Abrand%3ABodyKey&view=&utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Bodykey',
+      linkBuy:'https://www.amway.com.br/pt/Controle-de-Peso/c/Controle-de-Peso?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=Bodykey',
       count: 0,
       itemsku: '',
     },
@@ -441,7 +441,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Esta combinação de hábitos saudáveis, como, por exemplo, exercícios físicos, alimentação equilibrada e descanso, fornece uma variedade de nutrientes como as vitaminas C, D, E, A, B6, além de selênio e zinco, que podem contribuir para o bom funcionamento do sistema imunológico, protegendo o corpo contra uma variedade de agressores como vírus e bactérias.',
       img: 'assets/img/LAS/Daily/Respuesta_optima.png',
       emailImg: this.ruta +'assets/img/LAS/Daily/Respuesta_optima.png',
-      linkBuy:'https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/321240?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_imunidade',
+      linkBuy:'https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/321240?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=inmunidade',
       count: 0,
       itemsku: '321240',
     },
@@ -451,7 +451,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Para ajudar a manter ossos e músculos fortes e resistentes, que nos permitam nos movimentar com facilidade, realizar trabalhos de força e potência, juntamente com hábitos saudáveis, precisamos de nutrientes como proteína, cálcio, vitaminas C e D, presentes nesta solução.',
       img: 'assets/img/LAS/Daily/Mueevete_libre.png',
       emailImg: this.ruta +'assets/img/LAS/Daily/Mueevete_libre.png',
-      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-MOVIMENTO-D90/p/321628?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_movimento',
+      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-MOVIMENTO-D90/p/321628?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=movimento',
       count: 0,
       itemsku: '321628',
     },
@@ -461,7 +461,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Suplemento alimentar mastigável com vitamina E e lecitina, com um sabor agradável de mel e noz de ácer. A vitamina E é antioxidante, ajuda a diminuir os danos celulares causados pelos radicais livres.',
       img: 'assets/img/LAS/LecithinE.png',
       emailImg: this.ruta +'assets/img/LAS/LecithinE.png',
-      linkBuy:'https://www.amway.com.br/pt/Suplemento-de-Vitamina-E---Nutrilite/p/A4309?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=vitaminaE',
+      linkBuy:'https://www.amway.com.br/pt/Suplemento-de-Vitamina-E---Nutrilite/p/A4309?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=vitaminaE',
       count: 0,
       itemsku: 'A4309',
     },
@@ -481,7 +481,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Esta combinação, juntamente com uma alimentação equilibrada, fornece nutrientes como a vitamina C, que ajuda na formação do colágeno, uma proteína que dá estrutura, firmeza e elasticidade à pele e seus órgãos anexos: cabelo e unhas. Além disso, nutrientes como vitamina B2, biotina, vitamina A, vitamina E, cobre e selênio podem ajudar a manter a pele em condições adequadas (macia, lisa, fresca, firme), o cabelo em condições normais, brilhante, macio e resistente, e as unhas saudáveis, ou seja, fortes e resistentes.',
       img: 'assets/img/LAS/Daily/Luce_radiante.png',
       emailImg: this.ruta +'assets/img/LAS/Daily/Luce_radiante.png',
-      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/321236?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=daily1_beleza',
+      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/321236?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=beleza',
       count: 0,
       itemsku: '321236',
     },
@@ -491,7 +491,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'A principal função do intestino é absorver os nutrientes e a água, ao mesmo tempo em que elimina os resíduos da digestão. O intestino também desempenha outras funções extraintestinais relacionadas à microbiota intestinal. Os prebióticos ou fibras vegetais (como a da chicória) servem como alimento para as bactérias benéficas, estimulam o seu crescimento e ajudam a diminuir a absorção de gorduras e açúcares da alimentação. Esta solução contribui para o bem-estar intestinal, fornecendo vitaminas, minerais e fibras solúveis.',
       img: 'assets/img/LAS/Daily/Vive_libre.png',
       emailImg: this.ruta +'assets/img/LAS/Daily/Vive_libre.png',
-      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-EQUILIBRIO-INTESTINAL-D90/p/321611?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=equilibrio_intestinal',
+      linkBuy:'https://www.amway.com.br/pt/Daily%2B1-EQUILIBRIO-INTESTINAL-D90/p/321611?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=equilibrio',
       count: 0,
       itemsku: '321611',
     },
@@ -501,7 +501,7 @@ export class QuestionnaireComponent implements OnInit {
       whyIsRecommended: 'Contém alicina e quercetina. Pode contribuir para a redução dos níveis elevados de gordura no sangue e prevenir a formação de depósitos de gordura nas artérias. Hipotensor.',
       img: 'assets/img/LAS/Ajo_Concentrado.png',
       emailImg: this.ruta + 'assets/img/LAS/Ajo_Concentrado.png',
-      linkBuy:'https://www.amway.com.br/pt/Garlic-Plus-Nutrilite/p/125618?utm_source=site&utm_medium=home&utm_campaign=br_pt_site_trazabilidad&utm_content=cta_compra&utm_term=Garlic',
+      linkBuy:'https://www.amway.com.br/pt/Garlic-Plus-Nutrilite/p/125618?utm_source=recomendador&utm_medium=recommendations&utm_campaign=br_pt_recomendador_produtos&utm_content=cta_comprar&utm_term=garlic',
       count: 0,
       itemsku: '125618',
     }
@@ -608,89 +608,89 @@ updateUtagView() {
                 break;
 
         case 2:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
 
         case 3:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 4:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section ='question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 5:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 6:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
 
         case 7:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 8:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 9:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 10:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 11:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 12:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 13:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 14:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 15:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 16:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 17:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 18:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
@@ -709,7 +709,7 @@ updateUtagView() {
 
         // Actualizar `window.utag_data` con los nuevos datos
         window.utag_data = { ...window.utag_data, ...this.utag_data };
-
+        console.log(window.utag_data);
         this.updateUtagView();
   }
 
@@ -920,6 +920,7 @@ updateUtagView() {
     this.questionIndex -= 1;
     this.pagina = this.questionIndex;
 
+    this.questionExtra(this.pagina);
     this.functionpage2(this.pagina);
     //this.updateUtagView();    
 
@@ -956,23 +957,44 @@ updateUtagView() {
 this.questionIndex += 1;
 this.pagina = this.questionIndex;
 
+this.questionExtra(this.pagina);
 this.functionpage2(this.pagina);
     //this.updateUtagView();    
-    //console.log(this.country);
-
-
-    
-    const navigationExtras: NavigationExtras = {
-      fragment: 'question' + this.questionIndex
-      };
-      this.router.navigate(['/questionnaire'], navigationExtras);
-    
-    setTimeout(() => {
-      //utag.view(window.utag_data);
-    }, 500);    
+    //console.log(this.country);  
     
 
   }
+
+  questionExtra(pagina : number) {
+
+    if(pagina == 1){
+
+      const navigationExtras: NavigationExtras = {
+        fragment: 'questionnaire_start'
+        };    
+
+        this.router.navigate(['/questionnaire'], navigationExtras);
+
+    }
+    else if(pagina == 19){
+      const navigationExtras: NavigationExtras = {
+        fragment: 'questionnaire_complete'
+        };    
+
+        this.router.navigate(['/questionnaire'], navigationExtras);
+    }
+    else{
+      const navigationExtras: NavigationExtras = {
+        fragment: 'question' + this.questionIndex
+        };
+        this.router.navigate(['/questionnaire'], navigationExtras);      
+    }
+
+
+
+  }
+
+
 
   getCurrencyCode(country: string) {
     if (country == 'br') return 'brl';
