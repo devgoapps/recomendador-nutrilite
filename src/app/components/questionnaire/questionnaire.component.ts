@@ -633,89 +633,89 @@ export class QuestionnaireComponent implements OnInit {
                 break;
         
         case 2:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         
         case 3:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 4:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 5:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 6:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
 
         case 7:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 8:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 9:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 10:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 11:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 12:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 13:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 14:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 15:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 16:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 17:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
         case 18:
-                this.utag_data.page_section = "questionnaire_start";
+                this.utag_data.page_section = 'question' + pagina;
                 this.utag_data.site_country = this.questions[0]?.country || ''; // Asegúrate de que `questions[0]` esté definido
                 this.utag_data.site_currencyCode = this.getCurrencyCode(this.questions[0]?.country || '');
                 break;
@@ -734,7 +734,7 @@ export class QuestionnaireComponent implements OnInit {
 
         // Actualizar `window.utag_data` con los nuevos datos
         window.utag_data = { ...window.utag_data, ...this.utag_data };
-
+        console.log(window.utag_data);
         this.updateUtagView();
   }
 
@@ -1288,7 +1288,7 @@ if(this.recommendedProducts[i].name == 'B Plus'){
           }
         // LinkBuy Daily+1 Muévete libre
         if(this.recommendedProducts[i].name == 'Daily +1 Muévete Libre'){
-          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.gt/Store/Catalogue.aspx?show=PrdDetail&NavM=N&line=C&BC=321291&C=CZ&Brand=&utm_source=&utm_medium=recommendations&utm_campaign=gt_es_site_recomendador&utm_content=cta_comprar&utm_term=Muevete_libre';
+          this.recommendedProducts[i].linkBuy = 'https://www.amway.com.gt/Store/Catalogue.aspxshow=PrdDetail&NavM=N&line=C&BC=321291&C=CZ&Brand=&utm_source=&utm_medium=recommendations&utm_campaign=gt_es_site_recomendador&utm_content=cta_comprar&utm_term=Muevete_libre';
           this.recommendedProducts[i].itemsku = '321291';       
           }
         // LinkBuy Daily+1 Respuesta óptima
@@ -1959,7 +1959,10 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     }
   }
 
-  prevQuestion() {
+  prevQuestion() {    
+    
+
+
     if(this.questionIndex == 0) {
       this.router.navigate(['how-does-it-work']);
       return;
@@ -1968,8 +1971,11 @@ if(this.recommendedProducts[i].name == 'B Plus'){
     this.questionIndex -= 1;
     this.pagina = this.questionIndex;
 
+    this.questionExtra(this.pagina);
     this.functionpage2(this.pagina);
     //this.updateUtagView();    
+
+
   }
 
   nextQuestion() {
@@ -2014,14 +2020,41 @@ if(this.recommendedProducts[i].name == 'B Plus'){
 
     this.clientQuestions = this.questions;
 
+    this.questionExtra(this.pagina);
 
+
+
+  
+
+
+  }
+
+  questionExtra(pagina : number){
+
+    if(pagina == 1){
+
+      const navigationExtras: NavigationExtras = {
+        fragment: 'questionnaire_start'
+        };    
+        
+        this.router.navigate(['/questionnaire'], navigationExtras);
+
+    }
+    else if(pagina == 19){
+      const navigationExtras: NavigationExtras = {
+        fragment: 'questionnaire_complete'
+        };    
+        
+        this.router.navigate(['/questionnaire'], navigationExtras);
+    }
+    else{
 
     const navigationExtras: NavigationExtras = {
     fragment: 'question' + this.questionIndex
-    };
-    this.router.navigate(['/questionnaire'], navigationExtras);
-  
-
+    };    
+    
+    this.router.navigate(['/questionnaire'], navigationExtras);      
+    }
 
   }
 
